@@ -1,0 +1,15 @@
+# Optional from-scratch sequence-model training dependency.
+# Tested environment: Windows x64, Python 3.12.14, NumPy 2.5.3.
+# sequence_experiment.py imports Torch and NumPy; it does not import
+# answer_group_experiment, SciPy or scikit-learn. Deployment is NumPy-only.
+#
+# Run these separate installation commands from repo/code/ in PowerShell:
+#   py -3.12 -m venv ..\..\.local\sequenceenv
+#   ..\..\.local\sequenceenv\Scripts\python.exe -m pip install --index-url https://pypi.org/simple -r requirements.txt
+#   ..\..\.local\sequenceenv\Scripts\python.exe -m pip install --index-url https://download.pytorch.org/whl/cpu -r requirements-sequence.txt
+#   ..\..\.local\sequenceenv\Scripts\python.exe sequence_experiment.py
+#
+# Other research routes use requirements-research.txt from normal PyPI in a
+# separate pip invocation. Do not resolve NumPy/research packages using the
+# Torch CPU index. No GPU/CUDA wheel, external checkpoint or model API is used.
+torch==2.14.1+cpu

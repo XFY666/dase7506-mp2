@@ -1,0 +1,1230 @@
+{
+  "schema_version": 1,
+  "scope": "Generalization research following the historical 333-fit and 275-fit rounds",
+  "metadata_only": true,
+  "raw_data_or_checkpoints_loaded": false,
+  "new_test_evaluations": 0,
+  "fit_definition": "Fresh learner optimization/refit counts once; PCA/PLS counted separately. Existing-score readouts, fusion vectors, epochs and optimizer steps are not learner fits.",
+  "score_interpretation": "Pooled OOF selection is exploratory. Nested diagnostics evaluate an inner-only choice where recorded; none of these are untouched test estimates.",
+  "history": {
+    "first_round_model_fits": 333,
+    "refinement_model_fits": 275,
+    "independent_reproduction_fits": 3
+  },
+  "families": [
+    {
+      "family": "stable_group",
+      "label": "Fixed-seed group-network stability",
+      "source": "runs/stable_group/summary.json",
+      "status": "completed",
+      "commands": [
+        "python stable_group_experiment.py",
+        "python validate_generalization.py --family S --evaluate"
+      ],
+      "model_fit_calls": 28,
+      "transform_fit_calls": {},
+      "training_configurations": 2,
+      "selected_training_metric": {
+        "hard_correct": 1768,
+        "hard_n": 2114,
+        "correct": 4409,
+        "n": 4755
+      },
+      "selected_recipe": "full",
+      "nested_training_metric": null,
+      "validation_metric": {
+        "hard_correct": 306,
+        "hard_n": 355,
+        "correct": 749,
+        "n": 798
+      },
+      "validation_evaluations": 1,
+      "validation_status": "completed_selected_recipe_only",
+      "recorded_seconds": 36.42663890001131,
+      "training_scope": "Shared three-fold training OOF, with question-level folds; selection-conditional estimate",
+      "conclusion": "The fixed four-seed full-question ensemble wins its two-variant training screen; no individual seed is chosen from validation.",
+      "asset_bytes": 2636043,
+      "fit_accounting": "2 variants × 3 folds × 4 fixed seeds + 4 selected full-training members = 28; previous epoch14 held fixed.",
+      "training_variants": [
+        {
+          "name": "full",
+          "metrics": {
+            "hard_correct": 1768,
+            "hard_n": 2114,
+            "correct": 4409,
+            "n": 4755
+          },
+          "normalized_group_ce": 0.4032148244905898
+        },
+        {
+          "name": "subsample80",
+          "metrics": {
+            "hard_correct": 1752,
+            "hard_n": 2114,
+            "correct": 4393,
+            "n": 4755
+          },
+          "normalized_group_ce": 0.4056898834738916
+        }
+      ],
+      "validation_source": "runs/stable_group/validation.json",
+      "source_sha256": {
+        "runs/stable_group/summary.json": "96d09a8d906fc34006966e8e3e7625e49e22ed6f1cb741683e4c29ff9cb0b420",
+        "runs/stable_group/protocol.json": "adedac2cda5906297bc657b40508fe9a1c8d8c2aa18bf95ba3deda6548daf291",
+        "runs/stable_group/results.json": "7f931d9a1a17d42d0e46cdb8ad2ea17c7c816570fd6623280a14c9ffd0bec070",
+        "runs/stable_group/training_selection.json": "4289d8985470b431c5de94188df8cfb51099174cf5f1312e61aa3441b81e959f",
+        "runs/stable_group/validation.json": "54742045896e66b3eac99e1a3339cb288caef746f2b6237c16b00489d3f16b4f",
+        "runs/stable_group/validation_started.json": "bab4b19300e92777b2f76c127a8f8ce3e541badf0b71c7ce736e9859fc1c01cb"
+      }
+    },
+    {
+      "family": "conditional_pair",
+      "label": "Context-conditioned pair comparison",
+      "source": "runs/conditional_pair/summary.json",
+      "status": "completed",
+      "commands": [
+        "python conditional_pair_experiment.py",
+        "python conditional_pair_verify.py",
+        "python validate_generalization.py --family P --evaluate"
+      ],
+      "model_fit_calls": 25,
+      "transform_fit_calls": {
+        "PCA": 13
+      },
+      "training_configurations": 4,
+      "selected_training_metric": {
+        "hard_correct": 1741,
+        "hard_n": 2114,
+        "correct": 4382,
+        "n": 4755
+      },
+      "selected_recipe": {
+        "pca": 64,
+        "l2": 0.03,
+        "hidden": 64,
+        "key": "pca64_l20.03"
+      },
+      "nested_training_metric": {
+        "hard_correct": 1732,
+        "hard_n": 2114,
+        "correct": 4373,
+        "n": 4755
+      },
+      "validation_metric": {
+        "hard_correct": 303,
+        "hard_n": 355,
+        "correct": 746,
+        "n": 798
+      },
+      "validation_evaluations": 1,
+      "validation_status": "completed_selected_recipe_only",
+      "recorded_seconds": 46.77886250001029,
+      "training_scope": "Shared three-fold training OOF, with question-level folds; selection-conditional estimate",
+      "conclusion": "The fixed pooled-OOF winner achieves 1741/2114. Choosing each outer fold's recipe exclusively on its inner holdout yields 1732/2114; this stricter nested diagnostic reuses existing fits and is reported separately.",
+      "asset_bytes": 671947,
+      "fit_accounting": "4 recipes × 3 folds × (inner stopping + fresh outer refit) + 1 full refit = 25; PCA32/64 shared across L2 values, 13 PCA fits.",
+      "validation_source": "runs/conditional_pair/validation.json",
+      "source_sha256": {
+        "runs/conditional_pair/summary.json": "1e0833af3ddf39d6ceb202316428cfe0cc11f9e6905929de1457b058a25325db",
+        "runs/conditional_pair/protocol.json": "9eec1b908e079c9e2aa05d58fa1ac995ef7330aa8cba1845e3e25fe81c9a5a04",
+        "runs/conditional_pair/training_selection.json": "6683874c00c928b6c429c16733c84a8bc31fd4b2fa2f0c14d883877832d08e11",
+        "runs/conditional_pair/source_hashes.json": "75d75cefbff01fcac5c6af8ecbc4cd915fc50044d2c5a26125761331fdd7a8c8",
+        "runs/conditional_pair/fold_results.json": "425410f7a28b36e9d51594e5da64597c7dfed3eef86b0ad7cb8b7fb65e1ae01a",
+        "runs/conditional_pair/transform_records.json": "cba932fdebde026a46870e4a4896fabc8c989032674ba0478a3f327b8fe96c53",
+        "runs/conditional_pair/internal_results.json": "71a92d6936597e5bff5a2bf14f4e9cb728b50a32397a2e677570f09fde22a222",
+        "runs/conditional_pair/nested_recipe_selection.json": "4f2f90308c2ba5017ef920cfb153fd64041d6d92a2f5ec09982384cb1f4de432",
+        "runs/conditional_pair/cost_probe.json": "c1eac8c23f8e5097250df72baf21865e8ffa0bb8430133986a74dc8402698bf8",
+        "runs/conditional_pair/selected_checks.json": "a9dfc574b276ad6b31f4c7ca0341015031e4f5c8cb724e8e9f81c6c90e1c81b2",
+        "runs/conditional_pair/inference_checks.json": "3000f23a155af74f8f543752537b3d4bf3edd1b808fb567326a41d7eea138f76",
+        "runs/conditional_pair/validation.json": "6409ca3e7ce813b643f512903fee5044138d33b34845f5a51f1a699747b1a95d",
+        "runs/conditional_pair/validation_started.json": "f8bbaa85e86d3e8f712d96ec731db0704909233804ac7ecb3d006e64e7116edd"
+      }
+    },
+    {
+      "family": "condition_experiments",
+      "label": "Local condition correspondence",
+      "source": "runs/condition_experiments/summary.json",
+      "status": "completed",
+      "commands": [
+        "python condition_experiment.py --probe-only",
+        "python condition_experiment.py",
+        "python condition_verify.py",
+        "python validate_generalization.py --family C --evaluate"
+      ],
+      "model_fit_calls": 20,
+      "transform_fit_calls": {
+        "PLS": 4
+      },
+      "training_configurations": 6,
+      "selected_training_metric": {
+        "hard_correct": 1719,
+        "hard_n": 2114,
+        "correct": 4360,
+        "n": 4755
+      },
+      "selected_recipe": "condition_pls8__L31",
+      "nested_training_metric": null,
+      "validation_metric": {
+        "hard_correct": 296,
+        "hard_n": 355,
+        "correct": 739,
+        "n": 798
+      },
+      "validation_evaluations": 1,
+      "validation_status": "completed_selected_recipe_only",
+      "recorded_seconds": 129.60006230001454,
+      "training_scope": "Shared three-fold training OOF, with question-level folds; selection-conditional estimate",
+      "conclusion": "The 54 local correspondence features do not improve matching base75 controls: 1663→1651 at 15 leaves and 1661→1654 at 31 leaves. The selected condition+PLS8 tree reaches 1719/2114, but this does not isolate a benefit from condition features; no matched PLS-only design is added after seeing results.",
+      "asset_bytes": 589524,
+      "fit_accounting": "6 recipes × 3 folds + 1 full refit + 1 separate timing-probe tree = 20; 4 PLS fits. Recorded main-stage seconds exclude the earlier probe invocation.",
+      "training_variants": [
+        {
+          "name": "base75__L15",
+          "metrics": {
+            "hard_correct": 1663,
+            "hard_n": 2114,
+            "correct": 4304,
+            "n": 4755
+          },
+          "normalized_pair_loss": 0.3902367697115927
+        },
+        {
+          "name": "base75__L31",
+          "metrics": {
+            "hard_correct": 1661,
+            "hard_n": 2114,
+            "correct": 4302,
+            "n": 4755
+          },
+          "normalized_pair_loss": 0.39258154493529646
+        },
+        {
+          "name": "condition__L15",
+          "metrics": {
+            "hard_correct": 1651,
+            "hard_n": 2114,
+            "correct": 4292,
+            "n": 4755
+          },
+          "normalized_pair_loss": 0.39461304316872375
+        },
+        {
+          "name": "condition__L31",
+          "metrics": {
+            "hard_correct": 1654,
+            "hard_n": 2114,
+            "correct": 4295,
+            "n": 4755
+          },
+          "normalized_pair_loss": 0.4000071283870048
+        },
+        {
+          "name": "condition_pls8__L15",
+          "metrics": {
+            "hard_correct": 1714,
+            "hard_n": 2114,
+            "correct": 4355,
+            "n": 4755
+          },
+          "normalized_pair_loss": 0.3463990345466341
+        },
+        {
+          "name": "condition_pls8__L31",
+          "metrics": {
+            "hard_correct": 1719,
+            "hard_n": 2114,
+            "correct": 4360,
+            "n": 4755
+          },
+          "normalized_pair_loss": 0.3510034105228831
+        }
+      ],
+      "validation_source": "runs/condition_experiments/validation.json",
+      "source_sha256": {
+        "runs/condition_experiments/summary.json": "91e5988c4bfb6861a0c537d64af714a910b29ec071bbc222b8433af66040b252",
+        "runs/condition_experiments/protocol.json": "b99fd37fc78b02cd9dc7325d8ce31deb31e823b5523ec1abb29a9416ab27eeb7",
+        "runs/condition_experiments/selected_training_recipe.json": "f295bbe4e8815a0379cffc30dcc049b000c993b4ec3386ea8407b5ce4a4bfb5a",
+        "runs/condition_experiments/selected_config.json": "6f3aa4354992b53d015b20238c288ee625cdb7bd6576fb23643fb614773e4044",
+        "runs/condition_experiments/source_hashes.json": "9e1d64ad5f04918bccd61051ac0c09f3927e6edfb9ce4c05798548e781e654c3",
+        "runs/condition_experiments/fold_records.json": "b28e3210bc49bb861008fcba69b9f88df39669e6838dfb1b1c4491a2ef5efe4d",
+        "runs/condition_experiments/transform_records.json": "da0c32441f55e9e9b22da0e831971bda7d76984971c4cb7f555897fa9760c5d5",
+        "runs/condition_experiments/cost_probe.json": "50c4ca0b793f4e07501f28d7e36db77b467df2426ed84038ad234edc61331dea",
+        "runs/condition_experiments/feature_definitions.json": "938e54218e58adccf7444605abbb55551070f40134514f1c8480d75a4f747b6d",
+        "runs/condition_experiments/feature_coverage.json": "e232eed76df9fd92b2d8d5ce24e3ece77227de3eec8fc2a7fb29e015e6ed502d",
+        "runs/condition_experiments/deployment_check.json": "da05c4373bf75d7141202efbb930ad45daca692e5bbf10afefbf5e061543d84c",
+        "runs/condition_experiments/pure_numpy_check.json": "0a741703e77e64eceb93a81ae97b63c4f77b393c6227664ab5d6f6011f541321",
+        "runs/condition_experiments/validation.json": "3519b681b893d737c260c7123223c4ca939026a25d690dc265bb9c6aa667700e",
+        "runs/condition_experiments/validation_started.json": "66af41fb2538ac7debb11c2bc1882549c46fff43077e3d81993399325872feed"
+      }
+    },
+    {
+      "family": "generalization_fusion",
+      "label": "Five-source finite score fusion",
+      "source": "runs/generalization_fusion/summary.json",
+      "status": "completed",
+      "commands": [
+        "python generalization_fusion.py"
+      ],
+      "model_fit_calls": 0,
+      "transform_fit_calls": {},
+      "training_configurations": 70,
+      "selected_training_metric": {
+        "hard_correct": 1781,
+        "hard_n": 2114,
+        "correct": 4422,
+        "n": 4755
+      },
+      "selected_recipe": {
+        "heads": [
+          "D",
+          "F",
+          "P",
+          "C",
+          "S"
+        ],
+        "weights": [
+          0.0,
+          0.25,
+          0.5,
+          0.25,
+          0.0
+        ]
+      },
+      "nested_training_metric": null,
+      "validation_metric": null,
+      "validation_evaluations": 0,
+      "validation_status": "not_evaluated_training_gate_failed",
+      "recorded_seconds": 10.89364610001212,
+      "training_scope": "Shared three-fold training OOF, with question-level folds; selection-conditional estimate",
+      "conclusion": "The selected 0.25F+0.50P+0.25C reaches 1781/2114 versus F's 1778, with fold gains +1/−1/+3. It fails the predeclared +8 pooled and positive-every-fold gate; no fusion validation evaluation is performed.",
+      "reference_metric": {
+        "hard_correct": 1778,
+        "hard_n": 2114,
+        "correct": 4419,
+        "n": 4755
+      },
+      "training_gate": {
+        "passed": false,
+        "pooled_gain": 3,
+        "required_pooled_gain": 8,
+        "fold_gains": [
+          1,
+          -1,
+          3
+        ],
+        "reference_hard_correct": 1778,
+        "interpretation": "Predeclared exploration threshold, not a significance test"
+      },
+      "paired_folds": [
+        {
+          "fold": 0,
+          "hard_n": 708,
+          "correct": 607,
+          "reference_correct": 606,
+          "repaired": 13,
+          "regressed": 12,
+          "gain": 1
+        },
+        {
+          "fold": 1,
+          "hard_n": 714,
+          "correct": 610,
+          "reference_correct": 611,
+          "repaired": 13,
+          "regressed": 14,
+          "gain": -1
+        },
+        {
+          "fold": 2,
+          "hard_n": 692,
+          "correct": 564,
+          "reference_correct": 561,
+          "repaired": 10,
+          "regressed": 7,
+          "gain": 3
+        }
+      ],
+      "fit_accounting": "70 quarter-step weight vectors over fixed D/F/P/C/S scores; all base models reused, 0 new learner fits.",
+      "source_evidence_addendum": {
+        "schema_version": 1,
+        "scope": "Append-only explanation of a mutable verification metadata hash; original fusion source_evidence.json is not replaced",
+        "original_source_evidence_sha256": "c97d05648a746f3aba09926c28404f7e3c44cdd4b3b55caee9498b084945ddab",
+        "changed_metadata": [
+          {
+            "path": "runs/conditional_pair/selected_checks.json",
+            "snapshot_sha256": "e1af1d220654f1a893472040f21da933c271787a077d98ee86185fa36af6c05d",
+            "current_sha256": "a9dfc574b276ad6b31f4c7ca0341015031e4f5c8cb724e8e9f81c6c90e1c81b2",
+            "current_file_modified_utc": "2026-10-16T00:31:43.861964+00:00"
+          }
+        ],
+        "reason": "The already prepared train-input-only verification script was copied from runs/conditional_pair/verify_selected.py to the publicly reproducible top-level conditional_pair_verify.py. Only its CODE/OUT path calculation was changed. Running the new entry point reran diagnostic checks and overwrote selected_checks.json, including its measured inference time. This metadata file had previously been included in the immutable fusion source snapshot.",
+        "command": "E:/Edge/7506/MP2/.local/checkenv/Scripts/python.exe conditional_pair_verify.py",
+        "verification_source": {
+          "original": "runs/conditional_pair/verify_selected.py",
+          "top_level": "conditional_pair_verify.py",
+          "top_level_sha256": "4a16b2fc6102739e7765f4686ba61697bdab7f9d20e60cf3587d0cce2b41ce92"
+        },
+        "unchanged_protected_files": {
+          "conditional_pair.py": {
+            "sha256": "e53f381710da79d8ad67a5fc5d36f6a2113ed3bb72f329ab51691988c52cf22a",
+            "matches_fusion_snapshot": true
+          },
+          "condition_model.py": {
+            "sha256": "bd92915169ee5fec651f8c39c2395528002a83eb47440de86a412ec3ba144dbf",
+            "matches_fusion_snapshot": true
+          },
+          "condition_features.py": {
+            "sha256": "3070f63f38a1c230fb60bed63da38bbbbf660009d47416f6f8c67550d8f2eb7f",
+            "matches_fusion_snapshot": true
+          },
+          "runs/conditional_pair/selected_oof_logits.npz": {
+            "sha256": "403494fcaf2a15aaa540a0c244ea87e20aea80678160152f223392f8eb6fe5d1",
+            "matches_fusion_snapshot": true
+          },
+          "runs/conditional_pair/selected_oof_schema.json": {
+            "sha256": "5b85db2ae86298e1636d2aa388972132e0426ec9147c0179839b608734b4e789",
+            "matches_fusion_snapshot": true
+          },
+          "runs/conditional_pair/training_selection.json": {
+            "sha256": "6683874c00c928b6c429c16733c84a8bc31fd4b2fa2f0c14d883877832d08e11",
+            "matches_fusion_snapshot": true
+          },
+          "runs/conditional_pair/selected_bundle/config.json": {
+            "sha256": "a59b1e958d4b03e0fa89c2ffca4d70611478d97d2c53e0878fd5b4556f17ff15",
+            "matches_fusion_snapshot": true
+          },
+          "runs/conditional_pair/selected_bundle/model.npz": {
+            "sha256": "bb5eef96c5d61252bff3f6a7c3ec810d2c47d55a16e019611ed921a7f0590343",
+            "matches_fusion_snapshot": true
+          }
+        },
+        "new_diagnostic_findings": {
+          "data_scope": "Training inputs only; no validation/test",
+          "selected_key": "pca64_l20.03",
+          "numpy_only_imports": true,
+          "no_inference_data_reads": true,
+          "fold_replays": [
+            {
+              "fold": 0,
+              "questions": 64,
+              "raw_max_error": 0.0,
+              "normalized_max_error": 0.0,
+              "choice_differences": 0
+            },
+            {
+              "fold": 1,
+              "questions": 64,
+              "raw_max_error": 0.0,
+              "normalized_max_error": 0.0,
+              "choice_differences": 0
+            },
+            {
+              "fold": 2,
+              "questions": 64,
+              "raw_max_error": 0.0,
+              "normalized_max_error": 0.0,
+              "choice_differences": 0
+            }
+          ],
+          "new_ids_max_error": 0.0,
+          "permutation64_max_error": 8.881784197001252e-16,
+          "permutation64_answer_changes": 0,
+          "batch_sizes": [
+            0,
+            1,
+            3,
+            17
+          ],
+          "actual_invalid_question_count": 64,
+          "invalid_embedding_change_max_error": 0.0,
+          "all_invalid_scores_zero": true,
+          "single_valid_choice_correct": true,
+          "training_proxy467_inference_seconds": 0.7330586000171024,
+          "inference_opened_paths": [
+            "runs\\conditional_pair\\fold_0\\pca64_l20.03.npz",
+            "runs\\conditional_pair\\fold_1\\pca64_l20.03.npz",
+            "runs\\conditional_pair\\fold_2\\pca64_l20.03.npz",
+            "runs\\conditional_pair\\selected_bundle\\model.npz"
+          ],
+          "checkpoint_sha256": "bb5eef96c5d61252bff3f6a7c3ec810d2c47d55a16e019611ed921a7f0590343"
+        },
+        "model_training_executed": false,
+        "validation_executed_by_this_rerun": false,
+        "test_input_reference_or_score_read": false,
+        "fusion_selection_changed": false,
+        "score_arrays_or_checkpoint_rewritten": false,
+        "interpretation": "The changed hash belongs to a timing/check record, not a changed learner, transform, score column or checkpoint. The original snapshot hash is retained as the evidence of the file that existed when fusion was selected.",
+        "independent_reconstruction_review": {
+          "path": "runs/generalization_diagnostics/generalization_fusion_review.json",
+          "sha256": "c3248c2a9fda66fe8b2f78fe77b64f0a0006222a9d3cf82c273d5e521283fc12",
+          "candidate_vectors": 70,
+          "all_saved_accuracy_counts_exact": true,
+          "selected_weights_unchanged": true,
+          "max_group_ce_difference": 6.606247771046014e-10,
+          "training_gate_passed": false,
+          "new_model_fit_calls": 0
+        },
+        "reproduction_order": "Complete conditional_pair_verify.py and other mutable diagnostic checks before generalization_fusion.py captures source_evidence.json. Later diagnostic reruns must be documented in an addendum; never replace the original source snapshot to conceal a change."
+      },
+      "independent_reconstruction_review": {
+        "independent_review": true,
+        "model_fit_calls": 0,
+        "training_only": true,
+        "validation_or_test_read": false,
+        "candidate_vectors": 70,
+        "question_ids_and_folds_match": true,
+        "all_saved_accuracy_counts_exact": true,
+        "max_group_ce_difference": 6.606247771046014e-10,
+        "group_ce_note": "Independent exact arithmetic group means versus source float32 group weights",
+        "selected_weights": [
+          0.0,
+          0.25,
+          0.5,
+          0.25,
+          0.0
+        ],
+        "selected_hard_correct": 1781,
+        "reference_hard_correct": 1778,
+        "paired_folds": [
+          {
+            "fold": 0,
+            "hard_n": 708,
+            "correct": 607,
+            "reference_correct": 606,
+            "repaired": 13,
+            "regressed": 12,
+            "gain": 1
+          },
+          {
+            "fold": 1,
+            "hard_n": 714,
+            "correct": 610,
+            "reference_correct": 611,
+            "repaired": 13,
+            "regressed": 14,
+            "gain": -1
+          },
+          {
+            "fold": 2,
+            "hard_n": 692,
+            "correct": 564,
+            "reference_correct": 561,
+            "repaired": 10,
+            "regressed": 7,
+            "gain": 3
+          }
+        ],
+        "training_gate_passed": false,
+        "failed_gate_stops_before_validation_load": true,
+        "source_hashes_checked": 42,
+        "source_hash_mismatches": [
+          {
+            "path": "runs/conditional_pair/selected_checks.json",
+            "recorded_sha256": "e1af1d220654f1a893472040f21da933c271787a077d98ee86185fa36af6c05d",
+            "current_sha256": "a9dfc574b276ad6b31f4c7ca0341015031e4f5c8cb724e8e9f81c6c90e1c81b2"
+          }
+        ],
+        "seconds": 13.793360499985283,
+        "data_access_paths": [
+          "e:/edge/7506/mp2/repo/code/data/candidates/gsm8k_train.jsonl",
+          "e:/edge/7506/mp2/repo/code/data/candidates/gsm8k_train.npz",
+          "e:/edge/7506/mp2/repo/code/data/gsm8k_train.jsonl",
+          "e:/edge/7506/mp2/repo/code/data/manifest.json"
+        ],
+        "source_sha256": {
+          "generalization_fusion.py": "fae9dbd91565f5dae9ac09646a3c320bf8f8c093a928855ec6eff317149d8b37",
+          "../docs/generalization_protocol.md": "70cc9f5e51dbad461fe0bc615bcd935aea101c6f85ddd0ffdd4a6da8f330b887"
+        },
+        "findings": [
+          {
+            "kind": "post-selection metadata drift",
+            "detail": "A bound metadata file changed after screening. Preserve the historical source evidence and document the later addition separately; do not silently rebind selection."
+          }
+        ],
+        "interpretation": "The implementation and saved failed gate agree with the registered 70-vector protocol. OOF figures remain post-selection training evidence. Source-integrity findings are reported separately."
+      },
+      "source_sha256": {
+        "runs/generalization_fusion/summary.json": "6e2746ee7fe7a21d366fe6ee143f8216be85bf24540f5a9731d271e07c9fce2c",
+        "runs/generalization_fusion/protocol.json": "0be99a8f3ded2a051a60469056874bc130261fbe3dad845746cd8d7d634f0d49",
+        "runs/generalization_fusion/selected_config.json": "18ea3fe2210d7dc4619e86360ff4c4a04d00263370dece2fe01fb36b301c8266",
+        "runs/generalization_fusion/source_evidence.json": "c97d05648a746f3aba09926c28404f7e3c44cdd4b3b55caee9498b084945ddab",
+        "runs/generalization_fusion/evidence_addendum.json": "1374f4344f1eb33d109dbeb594d329042a1004168c4ca391ddd5f1124d3abb92",
+        "runs/generalization_fusion/training_diagnostics.json": "91d281b1b41b768d4a9ba9f58ff3103a963aab523298a2e137f7af5cb7682475"
+      }
+    },
+    {
+      "family": "generalization_diagnostics",
+      "label": "Training error mechanisms",
+      "source": "runs/generalization_diagnostics/summary.json",
+      "status": "completed",
+      "commands": [
+        "python diagnose_generalization.py"
+      ],
+      "model_fit_calls": 0,
+      "transform_fit_calls": {},
+      "training_configurations": 0,
+      "selected_training_metric": null,
+      "selected_recipe": null,
+      "nested_training_metric": null,
+      "validation_metric": null,
+      "validation_evaluations": 0,
+      "validation_status": "not_applicable",
+      "recorded_seconds": 9.056295499991393,
+      "training_scope": "Descriptive analysis of already selected training OOF outputs; no new learner or tuning decision",
+      "conclusion": "Among 2114 hard training questions, all seven selected learned scorers miss 172; 120 of those have no detected error among the explicitly checked arithmetic. The parser checks only a limited arithmetic subset, so this is evidence of a diagnostic blind spot, not proof that all steps are correct. The oracle union requires correctness labels and is not an implementable selector.",
+      "training_findings": {
+        "hard_questions": 2114,
+        "all_selected_oracle": {
+          "correct": 1942,
+          "n": 2114,
+          "accuracy": 0.9186376537369915
+        },
+        "all_selected_wrong": 172,
+        "F_errors": 336,
+        "F_errors_recoverable_by_any_other_selected": 164,
+        "F_high_confidence_errors": 9,
+        "allwrong_with_checked_error_free_arithmetic": 120
+      },
+      "fit_accounting": "Reuse existing OOF scores and training inputs; 0 model fits and 0 validation evaluations.",
+      "source_sha256": {
+        "runs/generalization_diagnostics/generalization_fusion_review.json": "c3248c2a9fda66fe8b2f78fe77b64f0a0006222a9d3cf82c273d5e521283fc12",
+        "runs/generalization_diagnostics/summary.json": "5fc67e1363089ae92a3f157ad748dab542ad5c5a7fe0c5a145e5480c75481e8c",
+        "runs/generalization_diagnostics/protocol.json": "317421b72be9b91fafafa0d5bba3464b97b5ff3d3d45e39a0dee2c25c4f1beca",
+        "runs/generalization_diagnostics/source_evidence.json": "01f72bc7bd1662d3e22d17a9985f4216aeea9f0d0569e45fc7dd836cefa860e6"
+      }
+    },
+    {
+      "family": "selective_routing",
+      "label": "Nested selective routing",
+      "source": "runs/selective_routing/summary.json",
+      "status": "completed",
+      "commands": [
+        "python selective_routing.py"
+      ],
+      "model_fit_calls": 60,
+      "transform_fit_calls": {
+        "PCA": 24,
+        "PLS": 24
+      },
+      "training_configurations": 3,
+      "selected_training_metric": {
+        "hard_correct": 1781,
+        "hard_n": 2114,
+        "correct": 4422,
+        "n": 4755
+      },
+      "selected_recipe": {
+        "name": "low20_disagree",
+        "q": 0.2,
+        "threshold": 0.6546996572586788,
+        "rule_index": 1,
+        "metrics": {
+          "correct": 4422,
+          "n": 4755,
+          "accuracy": 92.9968454258675,
+          "hard_correct": 1781,
+          "hard_n": 2114,
+          "hard_accuracy": 84.24787133396406
+        },
+        "hard_questions_below_threshold": 423,
+        "hard_disagreements": 77,
+        "routed_hard": 77
+      },
+      "nested_training_metric": {
+        "hard_correct": 1781,
+        "hard_n": 2114,
+        "correct": 4422,
+        "n": 4755
+      },
+      "validation_metric": null,
+      "validation_evaluations": 0,
+      "validation_status": "not_evaluated_training_gate_failed",
+      "recorded_seconds": 195.12465089999023,
+      "training_scope": "Shared three-fold training OOF, with question-level folds; selection-conditional estimate",
+      "conclusion": "The inner-selected routing procedure reaches 1781/2114 against the newly matched F's 1771, with nested fold gains +4/+5/+1. The separately chosen final q20 rule also reaches 1781, but its historical-F gate sees only +3 over 1778, with fold gains −1/+1/+3; the required +8 and all-positive condition fails, so no routing validation is performed. All 77 F/G disagreements are routed to G, making the final answers identical to fixed G on these OOF questions: this experiment shows no additional answer-selection benefit from gating beyond that fixed comparator. The nested estimate remains conditional on the previously selected base recipes, weights and routing hypothesis.",
+      "base_recipe_configurations": 1,
+      "routing_rule_comparisons": 12,
+      "selection_collections": 4,
+      "matched_reference_metric": {
+        "hard_correct": 1771,
+        "hard_n": 2114,
+        "correct": 4412,
+        "n": 4755
+      },
+      "historical_reference_metric": {
+        "hard_correct": 1778,
+        "hard_n": 2114,
+        "correct": 4419,
+        "n": 4755
+      },
+      "fixed_G_metric": {
+        "hard_correct": 1781,
+        "hard_n": 2114,
+        "correct": 4422,
+        "n": 4755
+      },
+      "nested_paired_vs_matched": [
+        {
+          "fold": null,
+          "n": 2114,
+          "candidate_correct": 1781,
+          "reference_correct": 1771,
+          "repairs": 38,
+          "regressions": 28,
+          "gain": 10
+        },
+        {
+          "fold": 0,
+          "n": 708,
+          "candidate_correct": 605,
+          "reference_correct": 601,
+          "repairs": 14,
+          "regressions": 10,
+          "gain": 4
+        },
+        {
+          "fold": 1,
+          "n": 714,
+          "candidate_correct": 612,
+          "reference_correct": 607,
+          "repairs": 15,
+          "regressions": 10,
+          "gain": 5
+        },
+        {
+          "fold": 2,
+          "n": 692,
+          "candidate_correct": 564,
+          "reference_correct": 563,
+          "repairs": 9,
+          "regressions": 8,
+          "gain": 1
+        }
+      ],
+      "final_paired_vs_historical": [
+        {
+          "fold": null,
+          "n": 2114,
+          "candidate_correct": 1781,
+          "reference_correct": 1778,
+          "repairs": 39,
+          "regressions": 36,
+          "gain": 3
+        },
+        {
+          "fold": 0,
+          "n": 708,
+          "candidate_correct": 605,
+          "reference_correct": 606,
+          "repairs": 14,
+          "regressions": 15,
+          "gain": -1
+        },
+        {
+          "fold": 1,
+          "n": 714,
+          "candidate_correct": 612,
+          "reference_correct": 611,
+          "repairs": 15,
+          "regressions": 14,
+          "gain": 1
+        },
+        {
+          "fold": 2,
+          "n": 692,
+          "candidate_correct": 564,
+          "reference_correct": 561,
+          "repairs": 10,
+          "regressions": 7,
+          "gain": 3
+        }
+      ],
+      "training_gate": {
+        "passed": false,
+        "required_pooled_gain": 8,
+        "pooled_gain": 3,
+        "fold_gains": [
+          -1,
+          1,
+          3
+        ],
+        "reference": "historical F=1778"
+      },
+      "nested_gate": {
+        "passed": true,
+        "pooled_gain": 10,
+        "fold_gains": [
+          4,
+          5,
+          1
+        ],
+        "reference": "fresh matched fixed-epoch F"
+      },
+      "fit_accounting_details": {
+        "inner_base_learners": 45,
+        "outer_base_learners": 15,
+        "full_training_base_learners": 0,
+        "probe_additional_fits": 0,
+        "learned_projections": 48,
+        "meta_learner_fits": 0,
+        "rule_comparisons": 12,
+        "routing_rules_per_selection": 3,
+        "selection_collections": 4
+      },
+      "fit_accounting": "3 outer folds × (3 inner folds × 5 fresh base learners + 5 matched outer refits) = 60 base fits. The three routing rules are compared in four selection collections (12 rule readouts); no meta-learner or full-training base refit is added. Learned transforms: 24 PCA and 24 PLS fits.",
+      "routing_coverage": {
+        "hard_questions_below_threshold": 423,
+        "hard_disagreements": 77,
+        "routed_hard": 77
+      },
+      "independent_routing_review": {
+        "independent_review": true,
+        "model_fit_calls": 0,
+        "validation_or_test_read": false,
+        "source_hashes_verified": 17,
+        "registered_protocol_hash_matches": true,
+        "partitions_checked": 12,
+        "learner_fit_records_checked": 60,
+        "asset_hashes_checked": 60,
+        "transform_records_checked": {
+          "PCA": 24,
+          "PLS": 24
+        },
+        "partition_checks": [
+          {
+            "partition": "outer0_inner0",
+            "fit_questions": 2113,
+            "held_questions": 1057,
+            "fit_held_overlap": 0,
+            "inner_outer_held_overlap": 0,
+            "assets": 5,
+            "transforms": 4,
+            "fixed_epochs_verified": true,
+            "scale_and_normalization_verified": true
+          },
+          {
+            "partition": "outer0_inner1",
+            "fit_questions": 2113,
+            "held_questions": 1057,
+            "fit_held_overlap": 0,
+            "inner_outer_held_overlap": 0,
+            "assets": 5,
+            "transforms": 4,
+            "fixed_epochs_verified": true,
+            "scale_and_normalization_verified": true
+          },
+          {
+            "partition": "outer0_inner2",
+            "fit_questions": 2114,
+            "held_questions": 1056,
+            "fit_held_overlap": 0,
+            "inner_outer_held_overlap": 0,
+            "assets": 5,
+            "transforms": 4,
+            "fixed_epochs_verified": true,
+            "scale_and_normalization_verified": true
+          },
+          {
+            "partition": "outer0_refit",
+            "fit_questions": 3170,
+            "held_questions": 1585,
+            "fit_held_overlap": 0,
+            "inner_outer_held_overlap": null,
+            "assets": 5,
+            "transforms": 4,
+            "fixed_epochs_verified": true,
+            "scale_and_normalization_verified": true
+          },
+          {
+            "partition": "outer1_inner0",
+            "fit_questions": 2113,
+            "held_questions": 1057,
+            "fit_held_overlap": 0,
+            "inner_outer_held_overlap": 0,
+            "assets": 5,
+            "transforms": 4,
+            "fixed_epochs_verified": true,
+            "scale_and_normalization_verified": true
+          },
+          {
+            "partition": "outer1_inner1",
+            "fit_questions": 2113,
+            "held_questions": 1057,
+            "fit_held_overlap": 0,
+            "inner_outer_held_overlap": 0,
+            "assets": 5,
+            "transforms": 4,
+            "fixed_epochs_verified": true,
+            "scale_and_normalization_verified": true
+          },
+          {
+            "partition": "outer1_inner2",
+            "fit_questions": 2114,
+            "held_questions": 1056,
+            "fit_held_overlap": 0,
+            "inner_outer_held_overlap": 0,
+            "assets": 5,
+            "transforms": 4,
+            "fixed_epochs_verified": true,
+            "scale_and_normalization_verified": true
+          },
+          {
+            "partition": "outer1_refit",
+            "fit_questions": 3170,
+            "held_questions": 1585,
+            "fit_held_overlap": 0,
+            "inner_outer_held_overlap": null,
+            "assets": 5,
+            "transforms": 4,
+            "fixed_epochs_verified": true,
+            "scale_and_normalization_verified": true
+          },
+          {
+            "partition": "outer2_inner0",
+            "fit_questions": 2113,
+            "held_questions": 1057,
+            "fit_held_overlap": 0,
+            "inner_outer_held_overlap": 0,
+            "assets": 5,
+            "transforms": 4,
+            "fixed_epochs_verified": true,
+            "scale_and_normalization_verified": true
+          },
+          {
+            "partition": "outer2_inner1",
+            "fit_questions": 2113,
+            "held_questions": 1057,
+            "fit_held_overlap": 0,
+            "inner_outer_held_overlap": 0,
+            "assets": 5,
+            "transforms": 4,
+            "fixed_epochs_verified": true,
+            "scale_and_normalization_verified": true
+          },
+          {
+            "partition": "outer2_inner2",
+            "fit_questions": 2114,
+            "held_questions": 1056,
+            "fit_held_overlap": 0,
+            "inner_outer_held_overlap": 0,
+            "assets": 5,
+            "transforms": 4,
+            "fixed_epochs_verified": true,
+            "scale_and_normalization_verified": true
+          },
+          {
+            "partition": "outer2_refit",
+            "fit_questions": 3170,
+            "held_questions": 1585,
+            "fit_held_overlap": 0,
+            "inner_outer_held_overlap": null,
+            "assets": 5,
+            "transforms": 4,
+            "fixed_epochs_verified": true,
+            "scale_and_normalization_verified": true
+          }
+        ],
+        "fitting_scale_max_error": 0.0,
+        "normalized_score_max_error": 0.0,
+        "saved_inner_rule_tables_exact": true,
+        "inner_choice_files_precede_outer_assets": true,
+        "saved_nested_and_final_vectors_exact": true,
+        "final_rule": "low20_disagree",
+        "final_threshold": 0.6546996572586788,
+        "final_routed_hard": 77,
+        "historical_paired": [
+          {
+            "fold": null,
+            "n": 2114,
+            "candidate_correct": 1781,
+            "reference_correct": 1778,
+            "repairs": 39,
+            "regressions": 36,
+            "gain": 3
+          },
+          {
+            "fold": 0,
+            "n": 708,
+            "candidate_correct": 605,
+            "reference_correct": 606,
+            "repairs": 14,
+            "regressions": 15,
+            "gain": -1
+          },
+          {
+            "fold": 1,
+            "n": 714,
+            "candidate_correct": 612,
+            "reference_correct": 611,
+            "repairs": 15,
+            "regressions": 14,
+            "gain": 1
+          },
+          {
+            "fold": 2,
+            "n": 692,
+            "candidate_correct": 564,
+            "reference_correct": 561,
+            "repairs": 10,
+            "regressions": 7,
+            "gain": 3
+          }
+        ],
+        "nested_paired": [
+          {
+            "fold": null,
+            "n": 2114,
+            "candidate_correct": 1781,
+            "reference_correct": 1771,
+            "repairs": 38,
+            "regressions": 28,
+            "gain": 10
+          },
+          {
+            "fold": 0,
+            "n": 708,
+            "candidate_correct": 605,
+            "reference_correct": 601,
+            "repairs": 14,
+            "regressions": 10,
+            "gain": 4
+          },
+          {
+            "fold": 1,
+            "n": 714,
+            "candidate_correct": 612,
+            "reference_correct": 607,
+            "repairs": 15,
+            "regressions": 10,
+            "gain": 5
+          },
+          {
+            "fold": 2,
+            "n": 692,
+            "candidate_correct": 564,
+            "reference_correct": 563,
+            "repairs": 9,
+            "regressions": 8,
+            "gain": 1
+          }
+        ],
+        "training_gate_passed": false,
+        "nested_gate_passed": true,
+        "validation_permitted": false,
+        "final_vs_fixed_G_answer_changes": 0,
+        "static_boundary_evidence": "A/P fit receives only fitting eligible arrays; K fit/design/gamma only fitting slices; Q/C PLS and tree helpers select local_fit then eligible rows; held labels never enter fit, transform, scale or inner rule choice.",
+        "inference": "The low-margin rule chooses the same parsed answers as fixed G on this OOF bank; this is no demonstrated selective-decision advantage over G.",
+        "data_access_paths": [
+          "e:/edge/7506/mp2/repo/code/data/candidates/gsm8k_train.jsonl",
+          "e:/edge/7506/mp2/repo/code/data/candidates/gsm8k_train.npz",
+          "e:/edge/7506/mp2/repo/code/data/gsm8k_train.jsonl",
+          "e:/edge/7506/mp2/repo/code/data/manifest.json"
+        ],
+        "seconds": 3.088103299989598,
+        "source_sha256": {
+          "selective_routing.py": "636a55fb9f77b0e60c311dd471bffb5b3d3e206a0593d99dd12885a68129a4cc"
+        },
+        "findings": []
+      },
+      "selectivity_check": {
+        "model_fit_calls": 0,
+        "transform_fit_calls": 0,
+        "data_scope": [
+          "train"
+        ],
+        "post_selection_only": true,
+        "selection_changed": false,
+        "validation_access": false,
+        "test_access": false,
+        "final_policy_vs_fixed_G": {
+          "parsed_answer_differences": 0,
+          "routed_questions": 77
+        },
+        "nested_policy_vs_fixed_G": {
+          "parsed_answer_differences": 0,
+          "routed_questions": 77
+        },
+        "interpretation_checks_sha256": "625bd763a8899ab2aa6791f2c22b5357b92f3387bf35097e47d9522db18e394c",
+        "interpretation": "Report these two policies separately. Both happen to route all 77 F/G disagreements and agree with fixed G on every parsed answer in this OOF sample."
+      },
+      "interpretation_checks": {
+        "model_fit_calls": 0,
+        "transform_fit_calls": 0,
+        "data_scope": [
+          "train"
+        ],
+        "post_selection_only": true,
+        "selection_changed": false,
+        "validation_access": false,
+        "test_access": false,
+        "parsed_answer_differences_from_fixed_G": {
+          "F": 77,
+          "selected": 0,
+          "nested": 0
+        },
+        "final_routed_questions": 77,
+        "nested_routed_questions": 77,
+        "final_and_nested_answer_differences": 0,
+        "outer_asset_sizes": [
+          {
+            "fold": 0,
+            "five_asset_uncompressed_NPY_bytes": 4708501
+          },
+          {
+            "fold": 1,
+            "five_asset_uncompressed_NPY_bytes": 4664509
+          },
+          {
+            "fold": 2,
+            "five_asset_uncompressed_NPY_bytes": 4609237
+          }
+        ],
+        "diagnostic_single_heads": [
+          {
+            "head": "A",
+            "metrics": {
+              "correct": 4408,
+              "n": 4755,
+              "accuracy": 92.70241850683492,
+              "hard_correct": 1767,
+              "hard_n": 2114,
+              "hard_accuracy": 83.58561967833491
+            }
+          },
+          {
+            "head": "K",
+            "metrics": {
+              "correct": 4392,
+              "n": 4755,
+              "accuracy": 92.36593059936908,
+              "hard_correct": 1751,
+              "hard_n": 2114,
+              "hard_accuracy": 82.82876064333018
+            }
+          },
+          {
+            "head": "Q",
+            "metrics": {
+              "correct": 4368,
+              "n": 4755,
+              "accuracy": 91.86119873817034,
+              "hard_correct": 1727,
+              "hard_n": 2114,
+              "hard_accuracy": 81.69347209082308
+            }
+          },
+          {
+            "head": "P",
+            "metrics": {
+              "correct": 4392,
+              "n": 4755,
+              "accuracy": 92.36593059936908,
+              "hard_correct": 1751,
+              "hard_n": 2114,
+              "hard_accuracy": 82.82876064333018
+            }
+          },
+          {
+            "head": "C",
+            "metrics": {
+              "correct": 4360,
+              "n": 4755,
+              "accuracy": 91.69295478443743,
+              "hard_correct": 1719,
+              "hard_n": 2114,
+              "hard_accuracy": 81.31504257332071
+            }
+          }
+        ],
+        "interpretation": "All 77 F/G parsed-answer disagreements are routed in this outer OOF sample. Both selected and nested routing therefore produce the same parsed answers as fixed G here. The positive matched-reference gain does not establish an additional benefit from selective routing; the historical-reference acceptance gate failed.",
+        "sources_sha256": {
+          "oof_logits.npz": "1dd9b4bd74323a76074b3ca87f6518c48999c47bea64b90c7b4c37f306d7a2f1",
+          "summary.json": "52532d7aa562b4ac00a0ffd80746cf886defee679bda9fc84dbb3e266798861e",
+          "selected_config.json": "3532a40501ad903ced493d11264a16e8c3a45c373098386d84eb4c2ffb8242a3",
+          "interpretation_checks.py": "c5c61f3d29033fb7fc6300431d5af4dbcf06051f9488cd0025fb2a51a8969800"
+        }
+      },
+      "source_sha256": {
+        "runs/selective_routing/summary.json": "52532d7aa562b4ac00a0ffd80746cf886defee679bda9fc84dbb3e266798861e",
+        "runs/selective_routing/protocol.json": "0ac45ea6cac0d5736928b44ae92a90e794bddd48219d91ea7f333ea3537cb637",
+        "runs/selective_routing/selected_config.json": "3532a40501ad903ced493d11264a16e8c3a45c373098386d84eb4c2ffb8242a3",
+        "runs/selective_routing/source_hashes.json": "37ea6f3d4efb5b13089653024c47d1be1498486489b1ca865978b5683fc146fc",
+        "runs/selective_routing/transform_records.json": "e1a8e15574d43e25c69257b479d9a7cbce9e258e3fb2adec8980e18ad9d408cc",
+        "runs/selective_routing/cost_probe.json": "6d9e3e563f19a76f0337bf6610b8673fa59b3700e9b5daf2a0266b3cfcaa370e",
+        "runs/selective_routing/selectivity_check.json": "43eceebf23a97b490855cd0b50bf165d9bca161958d272d36f86af786d9115d8",
+        "runs/selective_routing/interpretation_checks.json": "625bd763a8899ab2aa6791f2c22b5357b92f3387bf35097e47d9522db18e394c"
+      }
+    }
+  ],
+  "source_sha256": {
+    "runs/research_inventory.json": "d4ed1189b3be7fca96702cee58d80f31641b926a9a6cd6b627980a8c0ae6afd6",
+    "runs/refinement_inventory.json": "739405a0c4b063a4e5fe481d8d9e40836a875ec80baed274ce140056932ef6ea",
+    "runs/stable_group/summary.json": "96d09a8d906fc34006966e8e3e7625e49e22ed6f1cb741683e4c29ff9cb0b420",
+    "runs/stable_group/protocol.json": "adedac2cda5906297bc657b40508fe9a1c8d8c2aa18bf95ba3deda6548daf291",
+    "runs/stable_group/results.json": "7f931d9a1a17d42d0e46cdb8ad2ea17c7c816570fd6623280a14c9ffd0bec070",
+    "runs/stable_group/training_selection.json": "4289d8985470b431c5de94188df8cfb51099174cf5f1312e61aa3441b81e959f",
+    "runs/stable_group/validation.json": "54742045896e66b3eac99e1a3339cb288caef746f2b6237c16b00489d3f16b4f",
+    "runs/stable_group/validation_started.json": "bab4b19300e92777b2f76c127a8f8ce3e541badf0b71c7ce736e9859fc1c01cb",
+    "runs/conditional_pair/summary.json": "1e0833af3ddf39d6ceb202316428cfe0cc11f9e6905929de1457b058a25325db",
+    "runs/conditional_pair/protocol.json": "9eec1b908e079c9e2aa05d58fa1ac995ef7330aa8cba1845e3e25fe81c9a5a04",
+    "runs/conditional_pair/training_selection.json": "6683874c00c928b6c429c16733c84a8bc31fd4b2fa2f0c14d883877832d08e11",
+    "runs/conditional_pair/source_hashes.json": "75d75cefbff01fcac5c6af8ecbc4cd915fc50044d2c5a26125761331fdd7a8c8",
+    "runs/conditional_pair/fold_results.json": "425410f7a28b36e9d51594e5da64597c7dfed3eef86b0ad7cb8b7fb65e1ae01a",
+    "runs/conditional_pair/transform_records.json": "cba932fdebde026a46870e4a4896fabc8c989032674ba0478a3f327b8fe96c53",
+    "runs/conditional_pair/internal_results.json": "71a92d6936597e5bff5a2bf14f4e9cb728b50a32397a2e677570f09fde22a222",
+    "runs/conditional_pair/nested_recipe_selection.json": "4f2f90308c2ba5017ef920cfb153fd64041d6d92a2f5ec09982384cb1f4de432",
+    "runs/conditional_pair/cost_probe.json": "c1eac8c23f8e5097250df72baf21865e8ffa0bb8430133986a74dc8402698bf8",
+    "runs/conditional_pair/selected_checks.json": "a9dfc574b276ad6b31f4c7ca0341015031e4f5c8cb724e8e9f81c6c90e1c81b2",
+    "runs/conditional_pair/inference_checks.json": "3000f23a155af74f8f543752537b3d4bf3edd1b808fb567326a41d7eea138f76",
+    "runs/conditional_pair/validation.json": "6409ca3e7ce813b643f512903fee5044138d33b34845f5a51f1a699747b1a95d",
+    "runs/conditional_pair/validation_started.json": "f8bbaa85e86d3e8f712d96ec731db0704909233804ac7ecb3d006e64e7116edd",
+    "runs/condition_experiments/summary.json": "91e5988c4bfb6861a0c537d64af714a910b29ec071bbc222b8433af66040b252",
+    "runs/condition_experiments/protocol.json": "b99fd37fc78b02cd9dc7325d8ce31deb31e823b5523ec1abb29a9416ab27eeb7",
+    "runs/condition_experiments/selected_training_recipe.json": "f295bbe4e8815a0379cffc30dcc049b000c993b4ec3386ea8407b5ce4a4bfb5a",
+    "runs/condition_experiments/selected_config.json": "6f3aa4354992b53d015b20238c288ee625cdb7bd6576fb23643fb614773e4044",
+    "runs/condition_experiments/source_hashes.json": "9e1d64ad5f04918bccd61051ac0c09f3927e6edfb9ce4c05798548e781e654c3",
+    "runs/condition_experiments/fold_records.json": "b28e3210bc49bb861008fcba69b9f88df39669e6838dfb1b1c4491a2ef5efe4d",
+    "runs/condition_experiments/transform_records.json": "da0c32441f55e9e9b22da0e831971bda7d76984971c4cb7f555897fa9760c5d5",
+    "runs/condition_experiments/cost_probe.json": "50c4ca0b793f4e07501f28d7e36db77b467df2426ed84038ad234edc61331dea",
+    "runs/condition_experiments/feature_definitions.json": "938e54218e58adccf7444605abbb55551070f40134514f1c8480d75a4f747b6d",
+    "runs/condition_experiments/feature_coverage.json": "e232eed76df9fd92b2d8d5ce24e3ece77227de3eec8fc2a7fb29e015e6ed502d",
+    "runs/condition_experiments/deployment_check.json": "da05c4373bf75d7141202efbb930ad45daca692e5bbf10afefbf5e061543d84c",
+    "runs/condition_experiments/pure_numpy_check.json": "0a741703e77e64eceb93a81ae97b63c4f77b393c6227664ab5d6f6011f541321",
+    "runs/condition_experiments/validation.json": "3519b681b893d737c260c7123223c4ca939026a25d690dc265bb9c6aa667700e",
+    "runs/condition_experiments/validation_started.json": "66af41fb2538ac7debb11c2bc1882549c46fff43077e3d81993399325872feed",
+    "runs/generalization_fusion/summary.json": "6e2746ee7fe7a21d366fe6ee143f8216be85bf24540f5a9731d271e07c9fce2c",
+    "runs/generalization_fusion/protocol.json": "0be99a8f3ded2a051a60469056874bc130261fbe3dad845746cd8d7d634f0d49",
+    "runs/generalization_fusion/selected_config.json": "18ea3fe2210d7dc4619e86360ff4c4a04d00263370dece2fe01fb36b301c8266",
+    "runs/generalization_fusion/source_evidence.json": "c97d05648a746f3aba09926c28404f7e3c44cdd4b3b55caee9498b084945ddab",
+    "runs/generalization_fusion/evidence_addendum.json": "1374f4344f1eb33d109dbeb594d329042a1004168c4ca391ddd5f1124d3abb92",
+    "runs/generalization_fusion/training_diagnostics.json": "91d281b1b41b768d4a9ba9f58ff3103a963aab523298a2e137f7af5cb7682475",
+    "runs/generalization_diagnostics/generalization_fusion_review.json": "c3248c2a9fda66fe8b2f78fe77b64f0a0006222a9d3cf82c273d5e521283fc12",
+    "runs/generalization_diagnostics/summary.json": "5fc67e1363089ae92a3f157ad748dab542ad5c5a7fe0c5a145e5480c75481e8c",
+    "runs/generalization_diagnostics/protocol.json": "317421b72be9b91fafafa0d5bba3464b97b5ff3d3d45e39a0dee2c25c4f1beca",
+    "runs/generalization_diagnostics/source_evidence.json": "01f72bc7bd1662d3e22d17a9985f4216aeea9f0d0569e45fc7dd836cefa860e6",
+    "runs/selective_routing/summary.json": "52532d7aa562b4ac00a0ffd80746cf886defee679bda9fc84dbb3e266798861e",
+    "runs/selective_routing/protocol.json": "0ac45ea6cac0d5736928b44ae92a90e794bddd48219d91ea7f333ea3537cb637",
+    "runs/selective_routing/selected_config.json": "3532a40501ad903ced493d11264a16e8c3a45c373098386d84eb4c2ffb8242a3",
+    "runs/selective_routing/source_hashes.json": "37ea6f3d4efb5b13089653024c47d1be1498486489b1ca865978b5683fc146fc",
+    "runs/selective_routing/transform_records.json": "e1a8e15574d43e25c69257b479d9a7cbce9e258e3fb2adec8980e18ad9d408cc",
+    "runs/selective_routing/cost_probe.json": "6d9e3e563f19a76f0337bf6610b8673fa59b3700e9b5daf2a0266b3cfcaa370e",
+    "runs/generalization_diagnostics/routing_review.json": "bb90d87cb4bceb180ff52df0c6d5f33dc1fb9e92c867741ba938061cf7f5e933",
+    "runs/selective_routing/selectivity_check.json": "43eceebf23a97b490855cd0b50bf165d9bca161958d272d36f86af786d9115d8",
+    "runs/selective_routing/interpretation_checks.json": "625bd763a8899ab2aa6791f2c22b5357b92f3387bf35097e47d9522db18e394c"
+  },
+  "totals": {
+    "completed_model_fit_calls": 133,
+    "transform_fit_calls": {
+      "PCA": 37,
+      "PLS": 28
+    },
+    "all_rounds_research_model_fits": 741,
+    "independent_reproduction_fits": 3,
+    "validation_evaluations": 3,
+    "completed_families": 6,
+    "pending_training_families": [],
+    "pending_selected_validation_families": [],
+    "recorded_stage_seconds": 427.8801562000299
+  },
+  "wall_time_caveat": "Sum of recorded main stages; not elapsed project time or CPU-seconds. Concurrent work, probes recorded separately, metadata reconstruction and verification are not uniformly included."
+}

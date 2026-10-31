@@ -1,0 +1,11 @@
+{
+  "verified_utc": "2026-10-26T10:50:41.444001+00:00",
+  "upstream_commit": "bb801f4f2e7629d270df765ab12c333b2dc616bb",
+  "manifest_url": "https://raw.githubusercontent.com/xudongwu-0/DASE7506-MP2/bb801f4f2e7629d270df765ab12c333b2dc616bb/code/PACKAGE_MANIFEST.json",
+  "manifest_sha256": "2e9b714598e1addba61545f0d7ce4891d9d11aaf567fb341420d36694fcfd656",
+  "byte_identical_to_supplied_manifest": true,
+  "verified_manifest_entries": 20,
+  "network_data_files_downloaded": 0,
+  "model_fits": 0,
+  "evaluation_calls": 0
+}

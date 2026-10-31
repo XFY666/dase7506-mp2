@@ -1,0 +1,150 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-10-26T08:48:26.914001+00:00",
+  "stage": "F1 projected-neighbor head and D4 bounded arithmetic evidence",
+  "data_scope": [
+    "train"
+  ],
+  "validation_access": false,
+  "test_access": false,
+  "fold_seeds": [
+    20261027,
+    20261028
+  ],
+  "folds": 3,
+  "fold_assignment": "fold[default_rng(seed).permutation(N)]=arange(N)%3",
+  "independent_unit": "question, all four candidates together",
+  "configurations": [
+    {
+      "name": "PLS8_neighbors_k7",
+      "family": "neighbors",
+      "k": 7
+    },
+    {
+      "name": "PLS8_neighbors_k21",
+      "family": "neighbors",
+      "k": 21
+    },
+    {
+      "name": "PLS8_neighbors_k63",
+      "family": "neighbors",
+      "k": 63
+    },
+    {
+      "name": "weighted_base75",
+      "family": "tree",
+      "expression_features": false
+    },
+    {
+      "name": "weighted_base75_expression",
+      "family": "tree",
+      "expression_features": true
+    }
+  ],
+  "planned_model_fits": 12,
+  "planned_pls_fits": 6,
+  "planned_index_builds": 6,
+  "full_refits": 0,
+  "threads": 4,
+  "F1": {
+    "projection": "PLSRegression(n_components=8,scale=False,max_iter=500,tol=1e-6), fitted only on outer-fitting hard questions and valid candidate rows; x and y centered within valid candidates of each question",
+    "export": "float64 mean and rotations, used identically for fitting index and query; one shared projection/index per outer partition",
+    "index": "projected valid hard fitting candidates, binary final-correctness targets, and internal question membership for calibration only",
+    "metric": "Euclidean distance, weights1/max(distance,1e-3), stable distance sort, binary probability clipped[1e-4,1-1e-4] then logit",
+    "neighbors": [
+      7,
+      21,
+      63
+    ],
+    "calibration": "Every fitting-side query excludes ALL index entries from its own question. Held-out scores use no exclusions and never fit the projection/index/scale.",
+    "query_inputs": "Provided embeddings and parsed validity only; candidate/question IDs never used as prediction features",
+    "index_size": "Report uncompressed asset bytes; must be<=16MiB per candidate head, ensemble totals checked only at later freeze"
+  },
+  "D4": {
+    "source": "question numeric/word-number mentions only; Fraction arithmetic; no reference, labels or candidate answers guide search",
+    "initial_quantities": "at most8 occurrences: all if<=8, otherwise first4+last4; occurrence masks prevent reusing one source quantity in an expression",
+    "constants": [
+      1,
+      2,
+      100
+    ],
+    "operations": [
+      "add",
+      "subtract both orders",
+      "multiply",
+      "divide both orders when nonzero"
+    ],
+    "max_tree_depth": 3,
+    "retained_by_depth": [
+      160,
+      320,
+      480
+    ],
+    "total_state_cap": 1000,
+    "attempt_slots_by_depth": [
+      800,
+      2000,
+      3200
+    ],
+    "total_attempt_slots_cap": 6000,
+    "value_bounds": "abs(value)<=1e9 and denominator<=1e6 for derived states",
+    "search_order": "deterministic coprime spread over operand pairs, deduplicate(value,source-mask); retain by operation count, constant use, source coverage, rational complexity",
+    "features": [
+      "error_depth_0",
+      "error_depth_1",
+      "error_depth_2",
+      "error_depth_3",
+      "reachable_depth_0",
+      "reachable_depth_1",
+      "reachable_depth_2",
+      "reachable_depth_3",
+      "minimum_matching_depth",
+      "minimum_matching_operations",
+      "minimum_matching_constants",
+      "matching_question_coverage",
+      "matching_root_add",
+      "matching_root_subtract",
+      "matching_root_multiply",
+      "matching_root_divide",
+      "matching_all_quantities_fraction",
+      "matching_state_count",
+      "minimum_error_any",
+      "minimum_error_no_constants",
+      "minimum_error_all_quantities",
+      "minimum_error_at_most3_operations",
+      "question_quantity_count",
+      "question_quantities_truncated",
+      "retained_state_count",
+      "operation_budget_fraction",
+      "depth1_retention_capped",
+      "depth2_retention_capped",
+      "depth3_retention_capped"
+    ],
+    "equality": "exact Fraction or1e-6relative/absolute tolerance for feature matching; official exact parser still controls evaluation",
+    "interpretation": "Incomplete arithmetic reachability; reached values need not solve the word problem, unreached values are not proved impossible",
+    "cost_probe": "First16 training questions, feature extraction only, no learner fit or model choice; report projected full cost as estimate, then process full training bank",
+    "coverage": "quantities truncated, state/attempt counts and caps, candidate reachability, feature ranges/nonzero/within-question variation"
+  },
+  "trees": {
+    "parameters": {
+      "max_iter": 200,
+      "max_leaf_nodes": 31,
+      "learning_rate": 0.05,
+      "l2_regularization": 10.0,
+      "min_samples_leaf": 30,
+      "early_stopping": false,
+      "random_state": 20261013
+    },
+    "sampling": "only hard fitting questions and valid rows, sample weight4/validcandidatecount perquestion",
+    "base": "exact original75 features; matched+29expression features only"
+  },
+  "score_scale": "std of all-four-centered scores on valid candidates from all outer-fitting questions, separately per model; neighbor fitting predictions leave own question out",
+  "aggregation": "same-answer group mean, zero consensus bonus",
+  "selection_order": [
+    "summed hard correct across repeats",
+    "lower mean normalized group CE",
+    "earlier registered config"
+  ],
+  "adaptation": "No parameter/feature expansion after observing results. Repairs preserved explicitly. No validation/test/fullrefit/deployment in this stage.",
+  "interpretation": "Repeated questions across two fold seeds are not independent new samples; this is conditional exploratory research following previous study selection."
+}

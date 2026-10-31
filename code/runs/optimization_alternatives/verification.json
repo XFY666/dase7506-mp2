@@ -1,0 +1,138 @@
+{
+  "verified_utc": "2026-10-26T09:24:57.381772+00:00",
+  "audit_source_sha256": "ee718e9ea58a6377e82ddccac7e52aad1288ed11c1a4e6a862466c236ff6055c",
+  "elapsed_seconds": 85.58438550001301,
+  "training_questions": 4755,
+  "hard_questions": 2114,
+  "learner_fits": 0,
+  "validation_access": false,
+  "test_access": false,
+  "source_and_input_hashes_match": true,
+  "protocol_precedes_run_and_hash_matches": true,
+  "fixed_fold_schema_and_alignment_verified": true,
+  "matched_base75_tree_exactly_matches_B2_raw_normalized_scales": true,
+  "partitions": [
+    {
+      "repeat": 0,
+      "fold": 0,
+      "neighbor_replay_max_error": 0.0,
+      "neighbor_exclusion_scale_max_error": 2.886579864025407e-15,
+      "tree_replay_max_errors": [
+        0.0,
+        0.0
+      ],
+      "index_rows": 5456,
+      "index_and_projection_uncompressed_bytes": 472016,
+      "fit_and_held_question_disjoint": true,
+      "index_labels_and_rows_match_valid_hard_fit_candidates": true
+    },
+    {
+      "repeat": 0,
+      "fold": 1,
+      "neighbor_replay_max_error": 0.0,
+      "neighbor_exclusion_scale_max_error": 8.881784197001252e-15,
+      "tree_replay_max_errors": [
+        0.0,
+        0.0
+      ],
+      "index_rows": 5317,
+      "index_and_projection_uncompressed_bytes": 461869,
+      "fit_and_held_question_disjoint": true,
+      "index_labels_and_rows_match_valid_hard_fit_candidates": true
+    },
+    {
+      "repeat": 0,
+      "fold": 2,
+      "neighbor_replay_max_error": 0.0,
+      "neighbor_exclusion_scale_max_error": 5.773159728050814e-15,
+      "tree_replay_max_errors": [
+        0.0,
+        0.0
+      ],
+      "index_rows": 5391,
+      "index_and_projection_uncompressed_bytes": 467271,
+      "fit_and_held_question_disjoint": true,
+      "index_labels_and_rows_match_valid_hard_fit_candidates": true
+    },
+    {
+      "repeat": 1,
+      "fold": 0,
+      "neighbor_replay_max_error": 0.0,
+      "neighbor_exclusion_scale_max_error": 4.440892098500626e-15,
+      "tree_replay_max_errors": [
+        0.0,
+        0.0
+      ],
+      "index_rows": 5482,
+      "index_and_projection_uncompressed_bytes": 473914,
+      "fit_and_held_question_disjoint": true,
+      "index_labels_and_rows_match_valid_hard_fit_candidates": true
+    },
+    {
+      "repeat": 1,
+      "fold": 1,
+      "neighbor_replay_max_error": 0.0,
+      "neighbor_exclusion_scale_max_error": 3.552713678800501e-15,
+      "tree_replay_max_errors": [
+        0.0,
+        0.0
+      ],
+      "index_rows": 5393,
+      "index_and_projection_uncompressed_bytes": 467417,
+      "fit_and_held_question_disjoint": true,
+      "index_labels_and_rows_match_valid_hard_fit_candidates": true
+    },
+    {
+      "repeat": 1,
+      "fold": 2,
+      "neighbor_replay_max_error": 0.0,
+      "neighbor_exclusion_scale_max_error": 4.440892098500626e-15,
+      "tree_replay_max_errors": [
+        0.0,
+        0.0
+      ],
+      "index_rows": 5289,
+      "index_and_projection_uncompressed_bytes": 459825,
+      "fit_and_held_question_disjoint": true,
+      "index_labels_and_rows_match_valid_hard_fit_candidates": true
+    }
+  ],
+  "metrics": [
+    {
+      "name": "PLS8_neighbors_k7",
+      "hard_correct": [
+        1520,
+        1530
+      ]
+    },
+    {
+      "name": "PLS8_neighbors_k21",
+      "hard_correct": [
+        1564,
+        1547
+      ]
+    },
+    {
+      "name": "PLS8_neighbors_k63",
+      "hard_correct": [
+        1560,
+        1558
+      ]
+    },
+    {
+      "name": "weighted_base75",
+      "hard_correct": [
+        1659,
+        1645
+      ]
+    },
+    {
+      "name": "weighted_base75_expression",
+      "hard_correct": [
+        1651,
+        1661
+      ]
+    }
+  ],
+  "interpretation": "PLS neighbors underperform the matched tree. D4 changes -8/+16 hard answers across repeats; direction is not repeat-stable and CE is effectively unchanged. Postselected OOF is exploratory."
+}

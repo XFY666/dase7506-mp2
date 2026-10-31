@@ -1,0 +1,15 @@
+{
+  "raw_normalized_axes": [
+    "repeat",
+    "question",
+    "candidate",
+    "configuration"
+  ],
+  "shape": [
+    2,
+    4755,
+    4,
+    5
+  ],
+  "label_scope": "training only"
+}
