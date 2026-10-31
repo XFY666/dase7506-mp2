@@ -1,0 +1,17 @@
+{
+  "status": "passed",
+  "pdf_sha256": "a18839e0f8d59626d3eaa984ce3de46d06a229eaec3c6c05fa020e93e78258fc",
+  "pages": 9,
+  "content_sha256": "ed85513fcd3effb11208b9b9600b48cd0bf9c8921db4b9d35979a162101154ec",
+  "source_sha256": "8e72b2268f1afd9c2e422930f34d8c85a7b66d58414ab04ed9e2a22ae307726e",
+  "source_paragraphs_and_equations_checked": 45,
+  "source_tables_checked": 11,
+  "evidence_hashes_checked": 62,
+  "model_changes": false,
+  "training_fits": 0,
+  "prediction_runs": 0,
+  "human_verified": false,
+  "source_language": "zh",
+  "translation_source": "User-edited Chinese Word report",
+  "material_errors": []
+}

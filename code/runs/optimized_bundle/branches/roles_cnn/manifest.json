@@ -1,0 +1,134 @@
+{
+  "format": "mp2_sequence_branch_v1",
+  "branch": "headtail_roles",
+  "family": "role_cnn",
+  "asset_path": "model.npz",
+  "asset_sha256": "d544dc41496f5c4efbf863416a47dcbcc72ff365c38eb1bca4e43b046be8fa30",
+  "asset_bytes": 1277855,
+  "score_scale": 1.752054214477539,
+  "raw_scores_default": true,
+  "normalized_scores_option": "score_branch(..., normalize=True)",
+  "aggregation": "mean",
+  "tokenizer": "headtail_roles",
+  "inference_sources_sha256": {
+    "optimization_sequence_refit.py": "97478985f98501e992e24554550789b07587f17c1cbbff0f5fdec87d4d8a418b",
+    "common.py": "aecd10f7ff2e9e82ac5673d34d576e122caac51d2caaa7c7a8aa05906da51f6c",
+    "selection.py": "8b1f6ce4e7c1e445cbc0f6414a979722879d9fef9aa56073ebe052ac09563e64",
+    "sequence_model.py": "ef0ff6104e875338e9c6b3032cb8cd670f1e412064a0a2e4c924984b60ce4b07",
+    "text_features.py": "96eb0ee4d7e1a526b054db2b9fd5979997327ff0359f5de7baae89b557ab38c7",
+    "optimization_sequence_model.py": "20451c98236cdb9a270da5ef6b5ed496444fdc6e219db760948b4077ce8dea13"
+  },
+  "training_sources_sha256": {
+    "optimization_sequence.py": "0bfdd61832f6b6d78c8936ca19215b5d09a02c05bc623a81930327d7e763d5fd",
+    "optimization_sequence_model.py": "20451c98236cdb9a270da5ef6b5ed496444fdc6e219db760948b4077ce8dea13",
+    "sequence_experiment.py": "fd1277bb265ae56e6e436bb2575d7f720d256f0dc0f3a2132cd2ebb95d1c7150",
+    "sequence_model.py": "ef0ff6104e875338e9c6b3032cb8cd670f1e412064a0a2e4c924984b60ce4b07",
+    "common.py": "aecd10f7ff2e9e82ac5673d34d576e122caac51d2caaa7c7a8aa05906da51f6c",
+    "text_features.py": "96eb0ee4d7e1a526b054db2b9fd5979997327ff0359f5de7baae89b557ab38c7",
+    "selection.py": "8b1f6ce4e7c1e445cbc0f6414a979722879d9fef9aa56073ebe052ac09563e64",
+    "experiment_utils.py": "7f6dda4550acc7c6d3cc6429e46cc8978304ea7062118876ae763030ed2daa39"
+  },
+  "refit_source_sha256": "97478985f98501e992e24554550789b07587f17c1cbbff0f5fdec87d4d8a418b",
+  "epoch_provenance": {
+    "branch": "headtail_roles",
+    "family": "role_cnn",
+    "policy": "max(1, floor(median(six outer-fold selected epochs)+0.5))",
+    "epochs": 5,
+    "outer_selected_epochs": [
+      5,
+      3,
+      4,
+      6,
+      5,
+      5
+    ],
+    "outer_records": [
+      {
+        "repeat": 0,
+        "fold": 0,
+        "selected_epochs": 5
+      },
+      {
+        "repeat": 0,
+        "fold": 1,
+        "selected_epochs": 3
+      },
+      {
+        "repeat": 0,
+        "fold": 2,
+        "selected_epochs": 4
+      },
+      {
+        "repeat": 1,
+        "fold": 0,
+        "selected_epochs": 6
+      },
+      {
+        "repeat": 1,
+        "fold": 1,
+        "selected_epochs": 5
+      },
+      {
+        "repeat": 1,
+        "fold": 2,
+        "selected_epochs": 5
+      }
+    ],
+    "source_run": "runs/optimization_sequence",
+    "source_files": {
+      "optimization_sequence.py": "0bfdd61832f6b6d78c8936ca19215b5d09a02c05bc623a81930327d7e763d5fd",
+      "optimization_sequence_model.py": "20451c98236cdb9a270da5ef6b5ed496444fdc6e219db760948b4077ce8dea13",
+      "sequence_experiment.py": "fd1277bb265ae56e6e436bb2575d7f720d256f0dc0f3a2132cd2ebb95d1c7150",
+      "sequence_model.py": "ef0ff6104e875338e9c6b3032cb8cd670f1e412064a0a2e4c924984b60ce4b07",
+      "common.py": "aecd10f7ff2e9e82ac5673d34d576e122caac51d2caaa7c7a8aa05906da51f6c",
+      "text_features.py": "96eb0ee4d7e1a526b054db2b9fd5979997327ff0359f5de7baae89b557ab38c7",
+      "selection.py": "8b1f6ce4e7c1e445cbc0f6414a979722879d9fef9aa56073ebe052ac09563e64",
+      "experiment_utils.py": "7f6dda4550acc7c6d3cc6429e46cc8978304ea7062118876ae763030ed2daa39"
+    },
+    "evidence_files_sha256": {
+      "summary.json": "0fda72ec591e2dcce66c154e8c67055b976649f40b96264b8f57dd32152d0faf",
+      "fit_records.json": "69e4cde4d6b8d6205ec2f3760be8b9b27671aec5edf3f4b90918df11d9d82d16",
+      "source_evidence.json": "6d3848de028f380dd7c75083525f6e2e51eb1f1c324f65634e4c517c29f8cea0",
+      "protocol.json": "44272822dd889151ff5ac3c1f99cd7060f6e41222254b907e130731a4be52fb6"
+    },
+    "refit_protocol_sha256": "a2b57b77ee07729b9d97321d58d1da4f545919d2d235b28e4ec57b3d0407f269"
+  },
+  "initialization_seed": 7506,
+  "shuffle_seed": 7507,
+  "cpu_threads": 4,
+  "training_questions": 4755,
+  "optimizer_questions": 2114,
+  "training_ids_sha256": "511f59861244f4f3548a7f19559685c2874311158a305c1a1e0b0d51c9ad6c65",
+  "transform": {
+    "fit_questions": 4755,
+    "vocabulary_size": 4096,
+    "fit_indices_sha256": "6d7ba6be3a330fa4443235eea839e35caa2a9c1edbed9e98c74e86e484391071",
+    "seconds": 0.8757148000004236,
+    "encoding_diagnostic": {
+      "tokens": 3605914,
+      "unknown_tokens": 68644,
+      "unknown_fraction": 0.01903650503034737
+    }
+  },
+  "auxiliary_target_summary": null,
+  "model_fit_calls": 1,
+  "vocabulary_fits": 1,
+  "numeric_normalizer_fits": 1,
+  "fullfit_wall_seconds": 13.459904399991501,
+  "fullfit_process_cpu_seconds": 47.328125,
+  "total_wall_seconds": 32.18082510000386,
+  "total_process_cpu_seconds": 69.4375,
+  "torch_version": "2.14.1+cpu",
+  "numpy_version": "2.5.3",
+  "export_training_probe_questions": 32,
+  "export_max_abs_error": 9.5367431640625e-07,
+  "export_answer_changes": 0,
+  "validation_test_access": false,
+  "data_files_read": [
+    "candidates/gsm8k_train.jsonl",
+    "candidates/gsm8k_train.npz",
+    "gsm8k_train.jsonl",
+    "manifest.json"
+  ],
+  "created_utc": "2026-10-26T10:20:40.152042+00:00"
+}

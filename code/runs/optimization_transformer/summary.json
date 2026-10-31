@@ -1,0 +1,137 @@
+{
+  "configs": [
+    {
+      "config": "token_attention",
+      "repeats": [
+        {
+          "seed": 20261027,
+          "metrics": {
+            "correct": 4373,
+            "n": 4755,
+            "accuracy": 91.96635120925342,
+            "hard_correct": 1732,
+            "hard_n": 2114,
+            "hard_accuracy": 81.92999053926206
+          },
+          "group_ce": 0.44703513383865356,
+          "repairs_vs_token_only": 0,
+          "regressions_vs_token_only": 0
+        },
+        {
+          "seed": 20261028,
+          "metrics": {
+            "correct": 4388,
+            "n": 4755,
+            "accuracy": 92.28180862250262,
+            "hard_correct": 1747,
+            "hard_n": 2114,
+            "hard_accuracy": 82.63954588457901
+          },
+          "group_ce": 0.4354518949985504,
+          "repairs_vs_token_only": 0,
+          "regressions_vs_token_only": 0
+        }
+      ],
+      "mean_hard_correct": 1739.5,
+      "mean_group_ce": 0.441243514418602
+    },
+    {
+      "config": "token_set_attention",
+      "repeats": [
+        {
+          "seed": 20261027,
+          "metrics": {
+            "correct": 4365,
+            "n": 4755,
+            "accuracy": 91.7981072555205,
+            "hard_correct": 1724,
+            "hard_n": 2114,
+            "hard_accuracy": 81.5515610217597
+          },
+          "group_ce": 0.45326751470565796,
+          "repairs_vs_token_only": 49,
+          "regressions_vs_token_only": 57
+        },
+        {
+          "seed": 20261028,
+          "metrics": {
+            "correct": 4371,
+            "n": 4755,
+            "accuracy": 91.9242902208202,
+            "hard_correct": 1730,
+            "hard_n": 2114,
+            "hard_accuracy": 81.83538315988646
+          },
+          "group_ce": 0.44712716341018677,
+          "repairs_vs_token_only": 57,
+          "regressions_vs_token_only": 74
+        }
+      ],
+      "mean_hard_correct": 1727.0,
+      "mean_group_ce": 0.45019733905792236
+    }
+  ],
+  "selected": {
+    "config": "token_attention",
+    "repeats": [
+      {
+        "seed": 20261027,
+        "metrics": {
+          "correct": 4373,
+          "n": 4755,
+          "accuracy": 91.96635120925342,
+          "hard_correct": 1732,
+          "hard_n": 2114,
+          "hard_accuracy": 81.92999053926206
+        },
+        "group_ce": 0.44703513383865356,
+        "repairs_vs_token_only": 0,
+        "regressions_vs_token_only": 0
+      },
+      {
+        "seed": 20261028,
+        "metrics": {
+          "correct": 4388,
+          "n": 4755,
+          "accuracy": 92.28180862250262,
+          "hard_correct": 1747,
+          "hard_n": 2114,
+          "hard_accuracy": 82.63954588457901
+        },
+        "group_ce": 0.4354518949985504,
+        "repairs_vs_token_only": 0,
+        "regressions_vs_token_only": 0
+      }
+    ],
+    "mean_hard_correct": 1739.5,
+    "mean_group_ce": 0.441243514418602
+  },
+  "model_fit_calls": 24,
+  "vocabulary_fits": 24,
+  "numeric_normalizer_fits": 24,
+  "max_asset_bytes": 1401527,
+  "max_export_error": 2.1457672119140625e-06,
+  "seconds": 3246.7812042000005,
+  "cost_probe": {
+    "first_planned_early_fit_seconds": 196.96973050000088,
+    "epochs_executed": 9,
+    "selected_epoch": 5,
+    "numpy_preprocessing_forward_467_training_heldout_seconds": 10.614483999990625,
+    "probe_indices_sha256": "84a683b5137519e767b2d285b4a79257304e85b12a48a9a1b6f3365babf9c785",
+    "accuracy_computed": false,
+    "inference_threshold_seconds": 25.0,
+    "inference_budget_risk": false,
+    "family_runtime_cap_seconds": 7200.0,
+    "interpretation": "Local running-process train-input resource probe only; not official fresh prediction-plus-scoring timing"
+  },
+  "data_files_read": [
+    "candidates/gsm8k_train.jsonl",
+    "candidates/gsm8k_train.npz",
+    "gsm8k_train.jsonl",
+    "manifest.json"
+  ],
+  "validation_evaluations": 0,
+  "test_access": false,
+  "full_model_fitted": false,
+  "interpretation": "Matched exploratory training-only repeated-fold comparison; no independent generalization claim"
+}

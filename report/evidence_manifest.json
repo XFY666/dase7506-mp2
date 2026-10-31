@@ -1,0 +1,564 @@
+{
+  "sources": [
+    {
+      "id": "E_FINAL_SELECTION",
+      "path": "code/runs/optimization_final_selection/selection.json",
+      "sha256": "56450bc5beffbaaf2ef628a651d541620563fde9d8fae77c586e5105d79196f3",
+      "description": "Fixed final selection, recorded before final testing",
+      "verification": "programmatic hash and local evidence consistency checks",
+      "human_verified": false,
+      "human_review": "pending"
+    },
+    {
+      "id": "E_FINAL_ANALYSIS",
+      "path": "code/runs/optimization_final_analysis/report_analysis.json",
+      "sha256": "d316a38146501ff36209e0dc31f016dd28d766711e38bbe1cda3c6bf90de6861",
+      "description": "Narrative projection of saved diagnostics and final resource evidence",
+      "verification": "programmatic hash and local evidence consistency checks",
+      "human_verified": false,
+      "human_review": "pending"
+    },
+    {
+      "id": "E_RAW_ANALYSIS",
+      "path": "code/runs/optimization_final_analysis/summary.json",
+      "sha256": "154d56171e073449f14a5b1812228dfcd09870bd75cdfdca87c41886cc239614",
+      "description": "Selected validation predictions, matched comparisons and illustrative cases",
+      "verification": "programmatic hash and local evidence consistency checks",
+      "human_verified": false,
+      "human_review": "pending"
+    },
+    {
+      "id": "E_ANALYSIS_REVIEW",
+      "path": "code/runs/optimization_final_analysis/report_analysis_enrichment.json",
+      "sha256": "0c0d358e0973c005d3f3ef2305d6e3f249581a64efae561139513caebc0855ba",
+      "description": "Source-checked illustrative examples and evidence-linked interpretation",
+      "verification": "programmatic hash and local evidence consistency checks",
+      "human_verified": false,
+      "human_review": "pending"
+    },
+    {
+      "id": "E_EXAMPLE_REVIEW",
+      "path": "code/runs/optimization_final_analysis/example_source_review.json",
+      "sha256": "a8532edf3c8789a31e825db0bc648d0056bd8b1ceb7bfa55930f199a4444a882",
+      "description": "Parsed-answer and mathematical review of the two illustrative cases",
+      "verification": "programmatic hash and local evidence consistency checks",
+      "human_verified": false,
+      "human_review": "pending"
+    },
+    {
+      "id": "E_FINAL_TEST",
+      "path": "code/runs/optimization_evaluation/test_score.json",
+      "sha256": "6d254fff18db12aa7ae87ea41bbb869f3b83441d048c93a0b4b7d7792b106a1c",
+      "description": "Official final frozen test score",
+      "verification": "programmatic hash and local evidence consistency checks",
+      "human_verified": false,
+      "human_review": "pending"
+    },
+    {
+      "id": "E_FINAL_RESOURCES",
+      "path": "code/runs/optimization_evaluation/test_resources.json",
+      "sha256": "da56fc61a65ee251554132c97cbb173e5bf4afbb11fbbc8a5a5e2d8474728727",
+      "description": "Complete fresh-process test evaluation time and asset inventory",
+      "verification": "programmatic hash and local evidence consistency checks",
+      "human_verified": false,
+      "human_review": "pending"
+    },
+    {
+      "id": "E_FINAL_CONFIG",
+      "path": "code/runs/optimized_bundle/config.json",
+      "sha256": "f0c0b6b87e019df5114c091dfbdc17419b46c19475daf49451f0796da8031433",
+      "description": "Selected deployed configuration",
+      "verification": "programmatic hash and local evidence consistency checks",
+      "human_verified": false,
+      "human_review": "pending"
+    },
+    {
+      "id": "E_REPRODUCTION",
+      "path": "code/runs/optimization_reproduction_verification/verification.json",
+      "sha256": "400edd4cb1569f3979cb0a9e2e2160dcc7bc15c8f21147f584e7dbe500d05d03",
+      "description": "Independent full refit and exact learned-array/prediction comparison",
+      "verification": "programmatic hash and local evidence consistency checks",
+      "human_verified": false,
+      "human_review": "pending"
+    },
+    {
+      "id": "E_REPRODUCTION_RUN",
+      "path": "code/runs/optimized_reproduction_work/summary.json",
+      "sha256": "279f8ab4b4ebd084ec2e2aa4e32c7e6deb3ea5c5f48ff6ab0dfb387135d27ae5",
+      "description": "Independent ten-learner refit execution record",
+      "verification": "programmatic hash and local evidence consistency checks",
+      "human_verified": false,
+      "human_review": "pending"
+    },
+    {
+      "id": "E_FREEZE",
+      "path": "code/runs/optimized_freeze.json",
+      "sha256": "f24f46b8483d98f72560451d52253207edb9a32474eb43141abc4f3df864c516",
+      "description": "Complete selected deployment source and asset freeze",
+      "verification": "programmatic hash and local evidence consistency checks",
+      "human_verified": false,
+      "human_review": "pending"
+    },
+    {
+      "id": "E_FINAL_AUDIT",
+      "path": "code/runs/optimization_final_analysis/final_audit.json",
+      "sha256": "b025257804444e01dff76b2ddaa0b76bc35f7daf32349f2a9ee05138d94a5914",
+      "description": "Independent aggregate result and freeze chronology audit",
+      "verification": "programmatic hash and local evidence consistency checks",
+      "human_verified": false,
+      "human_review": "pending"
+    },
+    {
+      "id": "E_SELECTION_POLICY",
+      "path": "docs/optimization_selection_policy.md",
+      "sha256": "0e633381d6bd0675d6d706ed70d61bbabb3f71901f91472be79f85977bbfdcfd",
+      "description": "Selection policy fixed before new fusion and validation results",
+      "verification": "programmatic hash and local evidence consistency checks",
+      "human_verified": false,
+      "human_review": "pending"
+    },
+    {
+      "id": "E_REQUIREMENTS",
+      "path": "code/requirements.txt",
+      "sha256": "5c12d85e7c08038d1dd9ffbf8119d12ce808885230a47e2bf65dcd9f114659d5",
+      "description": "Pinned inference dependency",
+      "verification": "programmatic hash and local evidence consistency checks",
+      "human_verified": false,
+      "human_review": "pending"
+    },
+    {
+      "id": "E_TRAIN_REQUIREMENTS",
+      "path": "code/requirements-train.txt",
+      "sha256": "300a199acd9a6c4073b4470e6e7bd348dfc4e51e0b480ae1adae362f15198d32",
+      "description": "Pinned numeric training dependencies",
+      "verification": "programmatic hash and local evidence consistency checks",
+      "human_verified": false,
+      "human_review": "pending"
+    },
+    {
+      "id": "E_SEQUENCE_REQUIREMENTS",
+      "path": "code/requirements-sequence.txt",
+      "sha256": "f862b6c572617ab2917b8636926b87e48b9c49d0f4ea6046c9d31461b44d156a",
+      "description": "Pinned scratch sequence training dependency",
+      "verification": "programmatic hash and local evidence consistency checks",
+      "human_verified": false,
+      "human_review": "pending"
+    },
+    {
+      "id": "E_TRAIN_COMMAND",
+      "path": "code/train_optimized.py",
+      "sha256": "5f655d91ba5200d7df4c485d5f81302cb060114d8d3384386142cee45fa1a323",
+      "description": "Portable selected-recipe refitting entry point",
+      "verification": "programmatic hash and local evidence consistency checks",
+      "human_verified": false,
+      "human_review": "pending"
+    },
+    {
+      "id": "E_HISTORICAL_SCORE",
+      "path": "code/runs/evaluation/final-test-score.json",
+      "sha256": "49046e6599ee016083829dd42a85500734aa7e17a2f9aee3b80508e867e2ad79",
+      "description": "Historical frozen D score; not used for current selection",
+      "verification": "programmatic hash and local evidence consistency checks",
+      "human_verified": false,
+      "human_review": "pending"
+    },
+    {
+      "id": "E_HISTORICAL_INVENTORY",
+      "path": "code/runs/research_inventory.json",
+      "sha256": "d4ed1189b3be7fca96702cee58d80f31641b926a9a6cd6b627980a8c0ae6afd6",
+      "description": "Initial research workload inventory",
+      "verification": "programmatic hash and local evidence consistency checks",
+      "human_verified": false,
+      "human_review": "pending"
+    },
+    {
+      "id": "E_REFINEMENT_INVENTORY",
+      "path": "code/runs/refinement_inventory.json",
+      "sha256": "739405a0c4b063a4e5fe481d8d9e40836a875ec80baed274ce140056932ef6ea",
+      "description": "Earlier refinement workload inventory",
+      "verification": "programmatic hash and local evidence consistency checks",
+      "human_verified": false,
+      "human_review": "pending"
+    },
+    {
+      "id": "E_GENERALIZATION_INVENTORY",
+      "path": "code/runs/generalization_inventory.json",
+      "sha256": "add8c60da0d8a4181ff852bff9f8267b981193d76096d89e9d0265c9390a0975",
+      "description": "Earlier generalization workload inventory",
+      "verification": "programmatic hash and local evidence consistency checks",
+      "human_verified": false,
+      "human_review": "pending"
+    },
+    {
+      "id": "E_OPTIMIZATION_RESULTS",
+      "path": "docs/optimization_results.md",
+      "sha256": "c0d7b024fa0460dcab21ca355a3a8c4a50bbf2eeb22a2cddb074578efb79bdb5",
+      "description": "Detailed current experiment ledger and disposition",
+      "verification": "programmatic hash and local evidence consistency checks",
+      "human_verified": false,
+      "human_review": "pending"
+    },
+    {
+      "id": "E_EXTENDED_PROTOCOL",
+      "path": "docs/extended_protocol.md",
+      "sha256": "39d518cd52d21aca101b2844321c235b74fd4990ed971821e46dc12b932c9570",
+      "description": "Earlier adaptive-search protocol and context",
+      "verification": "programmatic hash and local evidence consistency checks",
+      "human_verified": false,
+      "human_review": "pending"
+    },
+    {
+      "id": "E_PROVENANCE",
+      "path": "docs/provenance.md",
+      "sha256": "304ff0fabb500c1351026dc30125a67397888855805a2f4601fa3216d5cf6335",
+      "description": "Course materials, reused libraries and substantive assistance disclosure",
+      "verification": "programmatic hash and local evidence consistency checks",
+      "human_verified": false,
+      "human_review": "pending"
+    },
+    {
+      "id": "E_DATA_MANIFEST",
+      "path": "code/data/manifest.json",
+      "sha256": "8b3721d458e48c87eab3a28f660e663981b10617b6e7321123c6ff30b1fbe825",
+      "description": "Supplied split sizes and exact data hashes",
+      "verification": "programmatic hash and local evidence consistency checks",
+      "human_verified": false,
+      "human_review": "pending"
+    },
+    {
+      "id": "E_GUIDE",
+      "path": "guide/GUIDE.md",
+      "sha256": "7b4ab87265040f407854cdfb9860887f722008d24e03fffe311f99c2f2065130",
+      "description": "Course task, constraints, assessment and attribution",
+      "verification": "programmatic hash and local evidence consistency checks",
+      "human_verified": false,
+      "human_review": "pending"
+    },
+    {
+      "id": "E_README",
+      "path": "code/README.md",
+      "sha256": "4c4218d68818d850fbad2fe38d2b1f3d2b80b7646720f21d2356fe3c0e020bc2",
+      "description": "Official input/evaluation contract and split construction",
+      "verification": "programmatic hash and local evidence consistency checks",
+      "human_verified": false,
+      "human_review": "pending"
+    },
+    {
+      "id": "E_PROTOCOL",
+      "path": "docs/optimization_protocol.md",
+      "sha256": "8c548bb40a97dd53f6d79ea6d3cfa59feb6861264ced196e04d1e0502003deb1",
+      "description": "Prospective renewed-search protocol and prior-history disclosure",
+      "verification": "programmatic hash and local evidence consistency checks",
+      "human_verified": false,
+      "human_review": "pending"
+    },
+    {
+      "id": "E_CORE_METHOD",
+      "path": "code/optimization_core_refit.py",
+      "sha256": "24559a8fd703ee4e2bae0f5f048719cb3a66a2a7929a8c767f44e6b5e49589d9",
+      "description": "Fixed selected-branch implementation",
+      "verification": "programmatic hash and local evidence consistency checks",
+      "human_verified": false,
+      "human_review": "pending"
+    },
+    {
+      "id": "E_SEQUENCE_METHOD",
+      "path": "code/optimization_sequence_refit.py",
+      "sha256": "97478985f98501e992e24554550789b07587f17c1cbbff0f5fdec87d4d8a418b",
+      "description": "Sequence refit and NumPy scoring",
+      "verification": "programmatic hash and local evidence consistency checks",
+      "human_verified": false,
+      "human_review": "pending"
+    },
+    {
+      "id": "E_SKILLS",
+      "path": "docs/optimization_report_reference.json",
+      "sha256": "2c84eabb67250dbf8aa29bfeaa80ed6004b13b14f3e8932e46940aef6d237f6d",
+      "description": "Current arXiv reference metadata",
+      "verification": "programmatic hash and local evidence consistency checks",
+      "human_verified": false,
+      "human_review": "pending"
+    },
+    {
+      "id": "E_CROSS",
+      "path": "code/runs/optimization_interactions/summary.json",
+      "sha256": "52d4a783a22578559f13d6a2f7d6255ba7eff7246a2acc9d00a080c406554130",
+      "description": "optimization_interactions completed training-only results",
+      "verification": "programmatic hash and local evidence consistency checks",
+      "human_verified": false,
+      "human_review": "pending"
+    },
+    {
+      "id": "E_CROSS_P",
+      "path": "code/runs/optimization_interactions/protocol.json",
+      "sha256": "2ba26fbd2b93bd7131f167ca9b36c79f4bc0cd84e9de8e905f4336c59e480f3a",
+      "description": "optimization_interactions prospective recipe",
+      "verification": "programmatic hash and local evidence consistency checks",
+      "human_verified": false,
+      "human_review": "pending"
+    },
+    {
+      "id": "E_STOP",
+      "path": "code/runs/optimization_stopping/summary.json",
+      "sha256": "d2953d8d5331acfd6871f312e5b726e7dbe4b83bee5b67ba346ad686c4774b9f",
+      "description": "optimization_stopping completed training-only results",
+      "verification": "programmatic hash and local evidence consistency checks",
+      "human_verified": false,
+      "human_review": "pending"
+    },
+    {
+      "id": "E_STOP_P",
+      "path": "code/runs/optimization_stopping/protocol.json",
+      "sha256": "ad77778e4672e06eefd6b9df18ba10c22d8f72c14634a260c34f58845be17607",
+      "description": "optimization_stopping prospective recipe",
+      "verification": "programmatic hash and local evidence consistency checks",
+      "human_verified": false,
+      "human_review": "pending"
+    },
+    {
+      "id": "E_SUBSET",
+      "path": "code/runs/optimization_subset/summary.json",
+      "sha256": "8fd2b4362833f1e7696a406cf5d2f084394fe92ec72c4f55e9090a2bc336b1be",
+      "description": "optimization_subset completed training-only results",
+      "verification": "programmatic hash and local evidence consistency checks",
+      "human_verified": false,
+      "human_review": "pending"
+    },
+    {
+      "id": "E_SUBSET_P",
+      "path": "code/runs/optimization_subset/protocol.json",
+      "sha256": "6915d442db4fb0ea1c8fd6ec36102b6aba42f7d3f4a11bee6c528d38f4f095c3",
+      "description": "optimization_subset prospective recipe",
+      "verification": "programmatic hash and local evidence consistency checks",
+      "human_verified": false,
+      "human_review": "pending"
+    },
+    {
+      "id": "E_REG",
+      "path": "code/runs/optimization_regularization/summary.json",
+      "sha256": "23c07e6d7fdad47a4271153be34597433078017dc541cabf9caf39ce07bc6c94",
+      "description": "optimization_regularization completed training-only results",
+      "verification": "programmatic hash and local evidence consistency checks",
+      "human_verified": false,
+      "human_review": "pending"
+    },
+    {
+      "id": "E_REG_P",
+      "path": "code/runs/optimization_regularization/protocol.json",
+      "sha256": "5950c346fa6b496acbc397f376cf776e6fb29cd30f9b1659465071cc07adb140",
+      "description": "optimization_regularization prospective recipe",
+      "verification": "programmatic hash and local evidence consistency checks",
+      "human_verified": false,
+      "human_review": "pending"
+    },
+    {
+      "id": "E_PROCESS",
+      "path": "code/runs/optimization_process/summary.json",
+      "sha256": "c953ae61c5a4db99646ca2c434e4cec1e5bc79f8438a0ee4050ec4438300aec6",
+      "description": "optimization_process completed training-only results",
+      "verification": "programmatic hash and local evidence consistency checks",
+      "human_verified": false,
+      "human_review": "pending"
+    },
+    {
+      "id": "E_PROCESS_P",
+      "path": "code/runs/optimization_process/protocol.json",
+      "sha256": "73c55648e8b301092dd904bd7d60b1cb38e8a509f830a59bb7ebad285d63c029",
+      "description": "optimization_process prospective recipe",
+      "verification": "programmatic hash and local evidence consistency checks",
+      "human_verified": false,
+      "human_review": "pending"
+    },
+    {
+      "id": "E_TOKEN",
+      "path": "code/runs/optimization_sequence_aux/summary.json",
+      "sha256": "04367c2e509971f6580d22178c229b3ece73bff3a6004ed318bae40017cb1260",
+      "description": "optimization_sequence_aux completed training-only results",
+      "verification": "programmatic hash and local evidence consistency checks",
+      "human_verified": false,
+      "human_review": "pending"
+    },
+    {
+      "id": "E_TOKEN_P",
+      "path": "code/runs/optimization_sequence_aux/protocol.json",
+      "sha256": "26611452fe92ac8687d40998da1de644c63ea4b0c77f31fcc50b93ff67a73186",
+      "description": "optimization_sequence_aux prospective recipe",
+      "verification": "programmatic hash and local evidence consistency checks",
+      "human_verified": false,
+      "human_review": "pending"
+    },
+    {
+      "id": "E_CORRUPT",
+      "path": "code/runs/optimization_reference_augmentation/summary.json",
+      "sha256": "7ea85ff47984fc2af637c454426b52ed46be1c2a3f2cadfa6ef04fdcd47b85b9",
+      "description": "optimization_reference_augmentation completed training-only results",
+      "verification": "programmatic hash and local evidence consistency checks",
+      "human_verified": false,
+      "human_review": "pending"
+    },
+    {
+      "id": "E_CORRUPT_P",
+      "path": "code/runs/optimization_reference_augmentation/protocol.json",
+      "sha256": "482932bd4831311732c365cbd1010afab53f8f32b9b612dfcc95cd55a81002df",
+      "description": "optimization_reference_augmentation prospective recipe",
+      "verification": "programmatic hash and local evidence consistency checks",
+      "human_verified": false,
+      "human_review": "pending"
+    },
+    {
+      "id": "E_ATTENTION",
+      "path": "code/runs/optimization_transformer/summary.json",
+      "sha256": "123d6a9af2ad8f7515f4bd5bdf07e31c9b83d75d2bd8286d883e0b3fc014bf06",
+      "description": "optimization_transformer completed training-only results",
+      "verification": "programmatic hash and local evidence consistency checks",
+      "human_verified": false,
+      "human_review": "pending"
+    },
+    {
+      "id": "E_ATTENTION_P",
+      "path": "code/runs/optimization_transformer/protocol.json",
+      "sha256": "891bd9cc8f1cb28e6f363f0c4c36e0773b1eb3a3856996083c4b6ebbef0f891d",
+      "description": "optimization_transformer prospective recipe",
+      "verification": "programmatic hash and local evidence consistency checks",
+      "human_verified": false,
+      "human_review": "pending"
+    },
+    {
+      "id": "E_GRAPH",
+      "path": "code/runs/optimization_graph/summary.json",
+      "sha256": "e9ec3f541c7b615696c3747e438246bbd3246215920690129beaa28730d08a28",
+      "description": "optimization_graph completed training-only results",
+      "verification": "programmatic hash and local evidence consistency checks",
+      "human_verified": false,
+      "human_review": "pending"
+    },
+    {
+      "id": "E_GRAPH_P",
+      "path": "code/runs/optimization_graph/protocol.json",
+      "sha256": "23707310e747f9c39bd941be8af8aad0ef3a3d9da0403035eb965e57124d6628",
+      "description": "optimization_graph prospective recipe",
+      "verification": "programmatic hash and local evidence consistency checks",
+      "human_verified": false,
+      "human_review": "pending"
+    },
+    {
+      "id": "E_CALIB",
+      "path": "code/runs/optimization_calibration/summary.json",
+      "sha256": "d5aacd88c4a5c1304793c1a56fae1c4d021d32aaf97634249dd608b28dabc7b1",
+      "description": "optimization_calibration completed training-only results",
+      "verification": "programmatic hash and local evidence consistency checks",
+      "human_verified": false,
+      "human_review": "pending"
+    },
+    {
+      "id": "E_CALIB_P",
+      "path": "code/runs/optimization_calibration/protocol.json",
+      "sha256": "6ea1266a6238dbdd82f2f7a51f7268e81ad90073ee79ad44d41c77c0e9896902",
+      "description": "optimization_calibration prospective recipe",
+      "verification": "programmatic hash and local evidence consistency checks",
+      "human_verified": false,
+      "human_review": "pending"
+    },
+    {
+      "id": "E_SEQUENCE",
+      "path": "code/runs/optimization_sequence/summary.json",
+      "sha256": "0fda72ec591e2dcce66c154e8c67055b976649f40b96264b8f57dd32152d0faf",
+      "description": "optimization_sequence completed training-only results",
+      "verification": "programmatic hash and local evidence consistency checks",
+      "human_verified": false,
+      "human_review": "pending"
+    },
+    {
+      "id": "E_SEQUENCE_P",
+      "path": "code/runs/optimization_sequence/protocol.json",
+      "sha256": "44272822dd889151ff5ac3c1f99cd7060f6e41222254b907e130731a4be52fb6",
+      "description": "optimization_sequence prospective recipe",
+      "verification": "programmatic hash and local evidence consistency checks",
+      "human_verified": false,
+      "human_review": "pending"
+    },
+    {
+      "id": "E_FUSION",
+      "path": "code/runs/optimization_fusion/summary.json",
+      "sha256": "e0b92d9e7450564e317174bf05f82b0b872af1edbd4416716bfd3accd046c771",
+      "description": "optimization_fusion completed training-only results",
+      "verification": "programmatic hash and local evidence consistency checks",
+      "human_verified": false,
+      "human_review": "pending"
+    },
+    {
+      "id": "E_FUSION_P",
+      "path": "code/runs/optimization_fusion/protocol.json",
+      "sha256": "b8ae5be822b55fd86d7c23387982589b652ffb3c086221ffb794693bf6e5c474",
+      "description": "optimization_fusion prospective recipe",
+      "verification": "programmatic hash and local evidence consistency checks",
+      "human_verified": false,
+      "human_review": "pending"
+    },
+    {
+      "id": "E_COMPONENT_1",
+      "path": "code/runs/optimized_bundle/branches/Anoise_5/manifest.json",
+      "sha256": "541ef601fcbb7648ee7d5e0c65f154f61d7fbc0423e3f71f9d6b0f3c11eb987d",
+      "description": "Selected component manifest",
+      "verification": "programmatic hash and local evidence consistency checks",
+      "human_verified": false,
+      "human_review": "pending"
+    },
+    {
+      "id": "E_COMPONENT_2",
+      "path": "code/runs/optimized_bundle/branches/K/manifest.json",
+      "sha256": "1009802094d0854be189decc53fceb3545a7ae1965838717e980b89ff45a8580",
+      "description": "Selected component manifest",
+      "verification": "programmatic hash and local evidence consistency checks",
+      "human_verified": false,
+      "human_review": "pending"
+    },
+    {
+      "id": "E_COMPONENT_3",
+      "path": "code/runs/optimized_bundle/branches/Qcross/manifest.json",
+      "sha256": "cb7fbed7af9f42111cc8339cf73922aa9be360ac0209acd9f328abd5d88f78aa",
+      "description": "Selected component manifest",
+      "verification": "programmatic hash and local evidence consistency checks",
+      "human_verified": false,
+      "human_review": "pending"
+    },
+    {
+      "id": "E_COMPONENT_4",
+      "path": "code/runs/optimized_bundle/branches/P/manifest.json",
+      "sha256": "49681c7f742214237a6d9d420ff247fa790d56eb1d47814e8e7edb8244923ed0",
+      "description": "Selected component manifest",
+      "verification": "programmatic hash and local evidence consistency checks",
+      "human_verified": false,
+      "human_review": "pending"
+    },
+    {
+      "id": "E_COMPONENT_5",
+      "path": "code/runs/optimized_bundle/branches/Ccross/manifest.json",
+      "sha256": "6d80039781ff8b004c1001e0e0fb534881b92d997cc10f7d34c885fc28972f35",
+      "description": "Selected component manifest",
+      "verification": "programmatic hash and local evidence consistency checks",
+      "human_verified": false,
+      "human_review": "pending"
+    },
+    {
+      "id": "E_COMPONENT_6",
+      "path": "code/runs/optimized_bundle/branches/roles_cnn/manifest.json",
+      "sha256": "9c5fcecc9ed89585546717951548203393d8f519ca00663e191e506e20b2858f",
+      "description": "Selected component manifest",
+      "verification": "programmatic hash and local evidence consistency checks",
+      "human_verified": false,
+      "human_review": "pending"
+    },
+    {
+      "id": "E_REPORT_CONTENT_EN",
+      "path": "docs/report_content_en.json",
+      "sha256": "ed85513fcd3effb11208b9b9600b48cd0bf9c8921db4b9d35979a162101154ec",
+      "description": "Report text, structured tables and evidence references",
+      "verification": "programmatic hash and local evidence consistency checks",
+      "human_verified": false,
+      "human_review": "pending"
+    }
+  ],
+  "human_review": "pending",
+  "submission_ready": false
+}

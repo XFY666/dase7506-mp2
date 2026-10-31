@@ -1,0 +1,45 @@
+{
+  "format": "mp2-core-branch-v1",
+  "branch": "Q_D1D2",
+  "members": [
+    {
+      "file": "member0_seed20261015.npz",
+      "family": "interaction",
+      "seed": 20261015,
+      "score_scale": 1.7808310096439979,
+      "sha256": "842a2a73985e292c7383b76833ede98f93cb7748dd035cd34b8d03d492f0a640",
+      "uncompressed_bytes": 300501
+    }
+  ],
+  "ensemble_scale": 1.0,
+  "aggregation": "mean",
+  "source_sha256": {
+    "optimization_core_refit.py": "a717dffc6f9da14272fc8fe8634824ee09055aaafd9111fcd1aaa390c445aca2",
+    "optimization_interactions.py": "1378cc8835231aa67818aace096648dea96162eb2750dff25d94ee3a19afc83a",
+    "optimization_regularization.py": "891982e02d180fb8e49f157e1e37717d2e601e882abcde60f246eb30968c6f0c",
+    "optimization_subset.py": "b0824473d2bb26b5460dcb9ada29bfd4db24f21315d799c7a86994edb3eb35b6",
+    "optimization_trees.py": "24645d819c71299fd5ba1dbb2103f5abdde207a83ed76a4765034ba94bb3a01d",
+    "answer_group_model.py": "da2aea23e58310cbae6bb9b324d9443c6876bff54ab27af513d7cfde5073386d",
+    "answer_group_experiment.py": "ef46af67bc4549cb0318a0a4bad313e19306ab79686afaf66bfba6d1594e89ea",
+    "kernel_rank.py": "d8b2fd826096fcbd5cdee9f7986c83c62d4cc7ae01379df4e55e1ac0a990ec69",
+    "conditional_pair.py": "e53f381710da79d8ad67a5fc5d36f6a2113ed3bb72f329ab51691988c52cf22a",
+    "conditional_pair_experiment.py": "9b3986c3592928190ffd1dd6d8e69b186183ce298e8d671adbedc6215897203a",
+    "condition_features.py": "3070f63f38a1c230fb60bed63da38bbbbf660009d47416f6f8c67550d8f2eb7f",
+    "condition_model.py": "bd92915169ee5fec651f8c39c2395528002a83eb47440de86a412ec3ba144dbf",
+    "condition_experiment.py": "144967e27cbb382248386f27df36cfa8e918b0a148a1189d90181a7e4baafe2a",
+    "quantitative_model.py": "10e70d35755b8a815ab885e1bf5126581c46d476c170d0618f9e68f4bb462237",
+    "quantitative_features.py": "515a02dd0f7028765312a00fd19fc88507dd04d17755b505f3a4821aca8b3ccb",
+    "cross_candidate_features.py": "5624fa2cccacf2651968936e51d2b73b18cca7983afe1bcf33beccffe9f4d3da",
+    "text_features.py": "96eb0ee4d7e1a526b054db2b9fd5979997327ff0359f5de7baae89b557ab38c7",
+    "tree_model.py": "8168266c7593b2e62b6e3123cffcd1304cc23a99d816fa65b3f03b15bed1e4d9",
+    "common.py": "aecd10f7ff2e9e82ac5673d34d576e122caac51d2caaa7c7a8aa05906da51f6c",
+    "selection.py": "8b1f6ce4e7c1e445cbc0f6414a979722879d9fef9aa56073ebe052ac09563e64",
+    "advanced_neural.py": "b841c26706a649083fc70897adbbf9976cf590cfb7cc351393e1eff51b64291a",
+    "experiment_utils.py": "7f6dda4550acc7c6d3cc6429e46cc8978304ea7062118876ae763030ed2daa39"
+  },
+  "protocol_sha256": "03b5b0988477c1719ff505f2485398b5a1577771f74308763afb3b4f6f55f4ea",
+  "training_ids_sha256": "2fb2e5fbc470fe9e3baebea66f53f38d0155ab3419432730868c325f252d874f",
+  "normalization": "member scale -> uniform float64 mean -> subset-only ensemble scale",
+  "model_fit_calls": 1,
+  "learned_transform_fits": 1
+}

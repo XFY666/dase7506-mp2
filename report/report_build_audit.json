@@ -1,0 +1,12 @@
+{
+  "status": "passed",
+  "language": "en",
+  "pages": 9,
+  "maximum_pages": 10,
+  "pdf_sha256": "a18839e0f8d59626d3eaa984ce3de46d06a229eaec3c6c05fa020e93e78258fc",
+  "content_sha256": "ed85513fcd3effb11208b9b9600b48cd0bf9c8921db4b9d35979a162101154ec",
+  "source_docx_sha256": "401f85ee083f52ff5310ccdf6466309ea6b7bdf931f3c684a013a4b860a28954",
+  "renderer": "Microsoft Word 16",
+  "visual_review": "passed",
+  "created_utc": "2026-10-31T15:13:45.861782+00:00"
+}

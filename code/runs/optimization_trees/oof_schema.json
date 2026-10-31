@@ -1,0 +1,31 @@
+{
+  "raw_and_normalized_shape": [
+    2,
+    4755,
+    4,
+    7
+  ],
+  "axes": [
+    "repeat",
+    "question",
+    "candidate",
+    "configuration"
+  ],
+  "choices_and_correct_axes": [
+    "repeat",
+    "question",
+    "configuration"
+  ],
+  "folds_axes": [
+    "repeat",
+    "question"
+  ],
+  "scales_axes": [
+    "repeat",
+    "fold",
+    "configuration"
+  ],
+  "label_scope": "train only",
+  "ids_role": "alignment only",
+  "score_normalization": "scale fitted without outer-heldout questions"
+}

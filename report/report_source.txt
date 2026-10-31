@@ -1,0 +1,259 @@
+Selecting Mathematical Answers from Large Language Models through Candidate Comparison
+
+DASE7506 Mini project 2 Experimental Report
+
+1 Research question and principal results
+
+This project studies how to select a correct answer from four language-model solutions to the same mathematical question. Differences between solutions provide two kinds of evidence: how much support an answer receives, and how different solutions use the quantities in the question. The method combines supplied semantic representations, numerical features and reasoning text, with a focus on whether comparisons across candidates improve answer-selection accuracy. Official evaluation uses the parsed final number.
+
+The final method combines six scoring branches containing ten learners. It answers 392 of 467 test questions correctly, achieving 83.94% accuracy with 9.028 MiB of additional uncompressed inference assets. Complete prediction and independent scoring take 15.806 seconds on the local CPU with four threads. The method and checkpoint were frozen before this test evaluation.
+
+Evaluation set | Correct / total | Accuracy
+
+Validation: all questions | 750 / 798 | 93.98%
+
+Validation: answer disagreements | 307 / 355 | 86.48%
+
+Test: answer disagreements | 392 / 467 | 83.94%
+
+Full validation includes easier questions; the disagreement subset and test require distinguishing different valid answers.
+
+The most consistent gains come from representing numerical relationships. Adding inclusion relationships between derived numbers and consistency across answer groups improves both tree scorers under both training partitions. Candidate-subset augmentation and numeric-role tokenization also improve their respective matched controls. Reference-solution auxiliary supervision, candidate-set attention and equation-graph propagation produce inconsistent gains or lower accuracy, showing that the value of added structure requires a specific comparison.
+
+Experiments compare methods with questions kept in groups, select a final method from a fixed set of fusion candidates, and examine reliability through score-margin strata and concrete errors. The report presents the model, evaluation methods, design comparisons, final selection and computational cost in that order. Reuse of development data is described in the experimental methods.
+
+2 Answer grouping and model design
+
+The inputs are the question, four candidate texts and a supplied 1,024-dimensional embedding for each candidate. Each branch recomputes candidate scores and puts them on a common scale using statistics fitted on training data, before combining them with the weights in the table. The answer-group network uses five fixed seeds, with equal averaging of its five members within the branch.
+
+Scoring component | Weight | Learners
+
+Answer-group network with noise and EMA | 0.093750 | 5
+
+Nonlinear kernel comparison | 0.046875 | 1
+
+Quantity / PLS comparison tree | 0.046875 | 1
+
+Conditional pair network | 0.375000 | 1
+
+Condition / PLS comparison tree | 0.187500 | 1
+
+Numeric-role trace CNN | 0.250000 | 1
+
+The six weights sum exactly to one. All ten learners are retained; individual seeds are not selected by their validation scores.
+
+Let s_j denote the weighted score of candidate j, and G(a) the set of candidates whose parsed and normalized answer equals a. The method averages scores within each group, selects the highest-scoring answer group, and returns a candidate index from that group according to a fixed rule. Repeated answers therefore share one comparison unit; invalid parses follow the established rule.
+
+S(a) = (1/|G(a)|) sum_{j in G(a)} s_j;  selected answer = argmax_a S(a).
+
+The answer-group network aggregates within-group features and then compares correct and incorrect groups. Its training loss is log(1 + exp(u_wrong - u_correct)), averaged first over valid pairs within a question and then over questions. The hidden width is 128; each of five fixed seeds is trained for 40 epochs with Gaussian input noise of standard deviation 0.05. Exponential moving averaging (EMA) uses decay 0.99 after epoch 5.
+
+The kernel-comparison branch uses a PCA64 projection fitted on training data and RBF support-vector comparison. The two tree branches combine PLS8, quantity or conditional features, and numerical relationships across candidates. The conditional pairwise network uses PCA64 and a 64-unit hidden layer and is trained for 27 epochs; reversing a candidate pair reverses the sign of its comparison score.
+
+The numeric-role CNN retains the beginning and end of the question and distinguishes question values, derived values, the current candidate answer and competing candidate answers. All role information is determined from the inputs. The model combines tokens with dense features and trains with answer-group cross entropy. Full training uses five epochs, obtained by rounding the median epoch count from six internal stopping selections; all trainable sequence-model parameters are randomly initialized.
+
+L_CE(q) = log[sum_{valid a} exp(S_q(a))] - S_q(a_correct).
+
+3 Data splits and experimental methods
+
+Split | Questions | Purpose
+
+Training | 4,755; 2,114 disagreements | Learning and grouped development comparisons
+
+Validation | 798; 355 disagreements | Development and limited final selection
+
+Test | 467; all disagreements | Evaluation of the frozen method
+
+Each question has four candidates and at least one correct parsed final answer. Question identifiers are used only for alignment.
+
+The main comparisons use two three-fold partitions of all training questions, with random seeds 20261027 and 20261028 and assignment rule fold[permutation(N)] = arange(N) modulo 3. All four candidates of a question remain in the same fold. Vocabularies, normalization, projections, score scales and stopping decisions are fitted within the corresponding training boundaries before out-of-fold (OOF) predictions are generated.
+
+Models with early stopping first select an epoch count on an internal training split and then refit the outer model; fixed-epoch experiments follow their registered configurations. The primary metric is the correct count on 2,114 disagreement questions, supplemented by answer-group cross entropy (CE) and corrected and newly introduced errors in paired comparisons. Both partitions are reported separately. They concern the same questions and cannot be pooled into 4,228 independent samples.
+
+Training uses only course-provided inputs and permitted reference information, with no external examples or additional pretrained weights. Auxiliary supervision derived from reference solutions is used only in training. Inference computes from the supplied candidate texts and arrays, without reading reference files or looking up stored predictions; the course parser and independent scorer remain unchanged.
+
+Validation has supported multiple development decisions. The representation-and-text ensemble baseline D scores 754/798 on full validation and 311/355 on disagreement questions; earlier aggregate test scores were also known, and historical OOF analyses included five-fold and three-fold designs. Each new comparison in this report was registered before its corresponding results, with a separate limit of at most two new checkpoints for final validation. These experiments are therefore exploratory comparisons informed by existing development evidence.
+
+The final method was determined by the predeclared selection rule, after which the implementation and checkpoint were frozen and one new complete test evaluation was run. That test result is retained as the final reported value, without using it to tune the method or revert to another one. Question-level resampling of saved predictions describes differences between those predictions and excludes uncertainty from retraining and adaptive search.
+
+4 Effective changes and matched evidence
+
+Comparison | Control R1 / R2 | Treatment R1 / R2 | Correct change | Mean CE change
+
+Group network: cross-candidate quantities | 1755 / 1759 | 1770 / 1755 | +15 / -4 | -0.0042
+
+Quantity / PLS tree: cross-candidate quantities | 1732 / 1728 | 1746 / 1748 | +14 / +20 | -0.0088
+
+Condition / PLS tree: cross-candidate quantities | 1723 / 1709 | 1737 / 1727 | +14 / +18 | -0.0109
+
+Group network: 14 to 40 epochs | 1749 / 1750 | 1768 / 1746 | +19 / -4 | +0.0027
+
+EMA at the same 40-epoch budget | 1768 / 1746 | 1769 / 1759 | +1 / +13 | -0.0061
+
+Candidate-subset augmentation | 1755 / 1759 | 1767 / 1763 | +12 / +4 | -0.0041
+
+Question suffix and numeric-role CNN | 1722 / 1743 | 1733 / 1750 | +11 / +7 | -0.0081
+
+R1 and R2 each contain the same 2,114 disagreement questions under different fitting partitions. Positive count changes and negative CE changes favor the variant. Each row is a matched comparison; architectures and seed counts differ across rows.
+
+Numerical features across candidates help both tree scorers: the quantity tree answers 14 and 20 more questions correctly in the two repeats, and the conditional tree answers 14 and 18 more correctly. The features describe directed inclusion relationships among derived values and consistency across answer groups, excluding question values and explicit final-answer markers. The answer-group network changes by +15 and -4, indicating that the benefit of the same feature set depends on the receiving model.
+
+Candidate-subset augmentation removes one eligible candidate with probability 0.5 while retaining valid correct and incorrect answers, then recomputes answer groups, support information and aggregate features. Initialization, random sampling and optimizer updates are matched so that the comparison focuses on the changed candidate view. Gains of 12 and 4 correct answers support varying candidate-support patterns during training.
+
+Longer training and weight averaging have different effects. Increasing training directly from 14 to 40 epochs changes correct counts by +19 and -4; adding EMA within the same 40-epoch budget changes them by +1 and +13. The final answer-group branch combines input noise, EMA and fixed-seed averaging, retaining the different models produced by these training strategies.
+
+The numeric-role CNN answers 11 and 7 more questions correctly under the two partitions. The control retaining only the question ending scores 1714 and 1740, compared with 1733 and 1750 after adding numeric roles. The gain therefore involves the representation of numerical roles and cannot be attributed entirely to retaining the question ending.
+
+5 Comparisons of additional designs
+
+Comparison | Control R1 / R2 | Treatment R1 / R2 | Correct change | Mean CE change
+
+Reference coverage, auxiliary weight 0.3 | 1764 / 1762 | 1765 / 1759 | +1 / -3 | -0.0001
+
+Token-membership auxiliary | 1752 / 1744 | 1745 / 1750 | -7 / +6 | +0.0021
+
+Pure-text reference corruption | 1296 / 1327 | 1313 / 1324 | +17 / -3 | -0.0039
+
+Candidate-set attention | 1732 / 1747 | 1724 / 1730 | -8 / -17 | +0.0090
+
+Equation-graph message passing | 1745 / 1763 | 1732 / 1762 | -13 / -1 | -0.0003
+
+Support-pattern versus global calibration | 1760 / 1770 | 1767 / 1768 | +7 / -2 | +0.0035
+
+Formatting normalization | 1714 / 1740 | 1727 / 1742 | +13 / +2 | -0.0022
+
+Counts are out of 2,114 per repeat. Reference corruption uses its own digit-preserving pure-text control; its result is not a comparison against the stronger joint CNN.
+
+Reference-value coverage and token membership describe whether a solution contains values from the reference solution. They provide weak supervision, with questions lacking reference evidence masked out; candidate final-answer labels remain unchanged. Neither the coverage auxiliary task nor the token auxiliary task in the table improves accuracy consistently across both partitions.
+
+The reference-perturbation experiment increases one arithmetically valid annotated result by 1 while retaining visible numbers. Its auxiliary task distinguishes original reference text from perturbed text, without changing the final-answer labels of actual candidates. Gains against the text-only control are +17 and -3. Reference-annotation style and repeated numbers may provide shortcuts, so this result describes the effect of this perturbation task under the current settings.
+
+Candidate-set attention adds an interaction layer after token pooling. Relative to the token-attention model without this layer, it answers 8 and 17 fewer questions correctly. Equation-graph propagation answers 13 and 1 fewer correctly than an MLP using the same node information, despite a slight decrease in mean CE. Better loss and better final selection do not always coincide.
+
+Learning fusion weights by support pattern changes correct counts by +7 and -2 relative to global weights; deterministic format normalization adds 13 and 2 correct answers relative to its head-and-tail input control. The former gives inconsistent gains, while the latter supports reducing specific formatting differences. These experiments test particular calibration and normalization schemes and do not establish the effects of all calibration methods or random data augmentation.
+
+6 Fusion rules and final selection
+
+Training-screen recipe | R1 correct | R2 correct | Mean CE
+
+Reference fusion F | 1759 | 1770 | 0.4051
+
+Reference fusion G | 1762 | 1767 | 0.4153
+
+Subset and cross-candidate fusion | 1783 | 1777 | 0.3973
+
+Comparative verifier | 1775 | 1782 | 0.4106
+
+Each repeat contains 2,114 disagreement questions. F and G denote fixed comparator recipes; the final two rows are the distinct resource-qualified finalists.
+
+Fusion search is restricted to 48 pre-fixed recipes. Ranking first uses mean disagreement accuracy over the two OOF repeats, followed by mean CE, the number of active branches and menu order; neither repeat may have fewer correct answers than reference recipe F. Recipes producing identical parsed-answer predictions occupy only one candidate slot. These rules screen for stable candidates.
+
+After full training, candidates first pass a resource check on a fixed fixture of 467 training questions: uncompressed assets must not exceed 16 MiB, and prediction plus scoring must take no more than 25 seconds. Accuracy on this training fixture does not enter selection. At most two distinct checkpoints proceed to validation, each evaluated once and required to answer at least 294/355 disagreement questions correctly.
+
+Deployment index = mean repeated training-OOF correct count + validation-disagreement correct count.
+
+Candidate | Validation correct | Index | Decision
+
+Embedding/text ensemble (D) | 311 / 355 | 2038.5 | Reference
+
+Subset and cross-candidate fusion | 304 / 355 | 2084.0 | Eligible
+
+Comparative verifier | 307 / 355 | 2085.5 | Selected
+
+All three candidates meet the resource conditions. The validation guard is an engineering tolerance, not a statistical non-inferiority test.
+
+The final method has selection index 1778.5 + 307 = 2085.5, above 1780 + 304 = 2084.0 for subset cross-candidate fusion and 1727.5 + 311 = 2038.5 for D. The final method answers four fewer validation disagreement questions correctly than D, but is selected by the predetermined rule combining training OOF and validation evidence. This index is a selection criterion, not an accuracy or a calibrated probability.
+
+The 48 recipes and earlier development create related selection decisions. In question-level bootstrap resampling of fitted predictions, both results for the same question are kept together; the resulting intervals are conditional on the current training and search outcomes. They describe differences between candidates but cannot alone establish a statistically significant advantage for the final method.
+
+7 Reliability and error cases
+
+Validation comparator | Correct / 355 | Accuracy
+
+Vote baseline | 245 | 69.01%
+
+Embedding/text ensemble (D) | 311 | 87.61%
+
+Subset and cross-candidate fusion | 304 | 85.63%
+
+Comparative verifier | 307 | 86.48%
+
+The comparative verifier repairs 72 vote-baseline errors and introduces 10. Relative to D it repairs 10 and introduces 14.
+
+Score-margin quartile | Correct / total | Accuracy
+
+Lowest | 56 / 89 | 62.92%
+
+Second | 79 / 89 | 88.76%
+
+Third | 85 / 89 | 95.51%
+
+Highest | 87 / 88 | 98.86%
+
+Strata describe the selected checkpoint on reused validation data. The lowest-margin quartile contains 33 of the 48 disagreement errors.
+
+Larger-margin groups are more accurate on validation, and the lowest-margin group contains 33 of the 48 disagreement errors. This stratification can indicate which choices deserve closer review, but neither the margin nor the softmax of combined scores has been calibrated as a probability of correctness. All 443 easier validation questions are answered correctly, so full-validation accuracy of 93.98% should be interpreted alongside disagreement accuracy of 86.48%.
+
+One high-margin error concerns route interpretation. Andy walks 50 metres from home to school, returns home and then visits a market, travelling 140 metres in total. The correct equation, 50 + 50 + x = 140, gives 40 metres; the selected solution uses 50 + 2x = 140 and obtains 45 metres, treating the return leg as the unknown segment. Three texts state 40, but two lack a recognizable final-answer marker, giving official parses [None, 45, 40, None]. Each valid answer group has one candidate, and the error involves both scenario interpretation and answer parsing.
+
+Another example shows how the model handles a tie. Among 96 flowers, 9 are green, 27 are red and 48 are blue, leaving 96 - 9 - 27 - 48 = 12 yellow flowers. Two candidates incorrectly calculate 0, while the other two obtain 12. The voting baseline selects 0 in the 2-2 tie, whereas the final method selects 12. This example illustrates discrimination between equally supported answers.
+
+These two questions were selected as the largest-margin error and the largest-margin correct choice among voting-baseline errors, respectively, to illustrate different failure and correction mechanisms. Selection by this rule does not represent error frequencies in a random sample; official numerical scoring also cannot establish that every reasoning step in the selected solution is correct.
+
+8 Computational cost and reproduction
+
+Resource | Measured value
+
+Fresh prediction process | 15.537 s
+
+Fresh independent scoring process | 0.269 s
+
+Complete wall time | 15.806 s
+
+Uncompressed inference assets | 9,466,445 bytes (9.028 MiB)
+
+Stored files, including archive overhead | 9,477,679 bytes (9.039 MiB)
+
+Local CPU and thread limit | AMD Ryzen 5 7600; four threads
+
+The course limits are 30 seconds and 16 MiB of additional uncompressed assets. Timing includes process startup, loading and preprocessing. Local results do not certify timing on the reference Xeon Platinum 8457C.
+
+Computation category | Learner fits
+
+Training-only comparisons | 692
+
+Complete-training finalists: seven unique branches | 13
+
+Independent selected-checkpoint reproduction | 10
+
+Fixed fusion readouts and final selection | 0
+
+Earlier indexed research / separate reproduction | 741 / 3
+
+The fixed fusion menu contains 48 readouts and permits two new validation checkpoints. Counts distinguish learner fits from transforms and evaluations; 34 confirmed invalid baseline fits are excluded from the 692 valid comparisons. Concurrent stage times are not total project elapsed time.
+
+Independent retraining with the fixed recipe reproduces all ten model assets and 91 parameter or statistical arrays exactly, with identical vocabularies and score scales. Recomputed scores and candidate selections also match on 32 training questions. This check verifies computational reproducibility of the recipe.
+
+Inference uses Python 3.12.14 and NumPy 2.5.3; training additionally uses SciPy 1.18.1, scikit-learn 1.9.1 and CPU PyTorch 2.14.1. From code/, install the dependencies in requirements.txt, retrieve the course data with fetch_provided_data.py, and run python freeze_selected.py --verify to check frozen files. The README provides installation commands for training dependencies and CPU Torch.
+
+Reproduce prediction and scoring with python measure_selected.py --output-dir runs/reproduction_evaluation. Retrain independently with python train_optimized.py --recipe configs/selected_recipe.json --output runs/reproduced_model --work-dir runs/reproduced_work. Use new output directories; the recipe fixes weights, seeds and epoch rules, and retraining does not read validation or test data.
+
+9 Discussion and conclusions
+
+The experiments support comparing numerical relationships across candidates. Consistent gains from cross-candidate features in two tree models, improvements from candidate-subset augmentation in both repeats, and matched results for the numeric-role CNN provide evidence at the levels of features, training views and text representations, respectively. The final fusion reaches 83.94% on 467 test questions, using 9.028 MiB of assets for a complete local evaluation lasting 15.806 seconds.
+
+Interpretation depends on the development process. Validation was reused, historical aggregate test scores were known, and both training partitions reused the same questions. The result of 392/467 is therefore a benchmark measurement of the current frozen method; generalization requires evaluation on a new question bank. Matched comparisons in this report explain the effects of specific designs, without treating the final test difference as evidence of statistical significance.
+
+Reference-value supervision has not produced consistent improvements, possibly because it is not equivalent to reasoning correctness: different valid solutions can pass through different intermediate values, while incorrect solutions can contain correct values. Future work can test more direct step supervision under a new evaluation boundary and determine whether its gains justify the extra cost.
+
+Resource records show that the method meets time and asset budgets under local conditions; eligibility on the course reference Xeon Platinum 8457C remains subject to reference-machine evaluation. Margin analysis provides a way to rank error risk; this project has not deployed abstention or probability-calibration rules.
+
+The course provided the questions, candidate solutions, fixed representations, numerical parser, independent scorer and prediction interface. No external training data or additional pretrained weights were used. The course data and code retain their original licenses and attribution.
+
+AI tools provided explanations of principles and substantive implementation assistance for technically demanding parts, including answer grouping and comparisons between candidates, numerical relationship features across candidates, and the numeric-role convolutional network. AI assistance also covered training and evaluation tools, experiment execution, debugging and code review.
+
+AI assisted in drafting, organizing and summarizing the README and report based on the implementation code and recorded experimental results, including the organization of method descriptions, experimental tables, and discussion of results and limitations. AI also assisted in translating the English report from the Chinese master and checking the content, numerical values and equations across the two versions.
+
+Reference material: DASE7506 Mini-project 2 guide and running instructions, protocol dase7506-mp2-open-hard-verifier-v5. https://github.com/xudongwu-0/DASE7506-MP2. The repository evidence manifest links experimental protocols, configurations, scores and resource records.
+
+Kassis, T., Agarwal, V., He, Y., Patel, D., and Brueckner, A. M. (2026). Scientific Agent Skills: A Library of Procedural Knowledge for Research Agents. arXiv:2609.00065. https://doi.org/10.48550/arXiv.2609.00065.

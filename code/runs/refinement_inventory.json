@@ -1,0 +1,763 @@
+{
+  "schema_version": 1,
+  "scope": "Refinement study; independent of historical 333-fit research inventory",
+  "metadata_only": true,
+  "test_data_or_scores_read": false,
+  "official_reference": {
+    "validation_hard_correct": 311,
+    "validation_hard_n": 355,
+    "test_correct": 388,
+    "test_n": 467,
+    "provenance": "Previously frozen official results; supplied project context, not read for this inventory",
+    "changed": false
+  },
+  "fit_definition": "A fresh learner optimization/refit counts once; learned projections and vocabularies are counted separately. Reused predictions, staged readouts, aggregation configurations, epochs and optimizer evaluations are not fits.",
+  "normalizer_policy": "Fitting-side means/scales are part of each fit and are not separately added to transform totals. PCA, PLS and vocabularies are explicitly listed.",
+  "validation_policy": "Each completed model family evaluates its one training-selected recipe; the fixed precision repair reports one corrected recipe separately. Fusion validation requires its declared gate.",
+  "families": [
+    {
+      "family": "refinement_baselines",
+      "label": "Fixed recipe comparators",
+      "status": "completed",
+      "training_scope": "fixed recipes on shared three-fold training OOF; no selection",
+      "selected_training_hard_correct": 1716,
+      "training_hard_n": 2114,
+      "validation_hard_correct": null,
+      "validation_hard_n": null,
+      "validation_evaluations": 0,
+      "fit_calls": 9,
+      "transform_fit_calls": {},
+      "wall_seconds": 16.320734399952926,
+      "wall_scope": "Recorded study elapsed time; not CPU-seconds",
+      "training_configurations": 3,
+      "source": "runs/refinement_baselines/summary.json",
+      "source_sha256": {
+        "runs/refinement_baselines/summary.json": "a36c244875c7ca37a18af625e000571fabbe66f6db77cea6bff5b7618c78a045",
+        "runs/refinement_baselines/protocol.json": "22cd840d419e8b65f98db24deef9ee312efae6bc18bbcfb37abb2f3f5f506857"
+      },
+      "command": [
+        "python refinement_baselines.py"
+      ],
+      "conclusion": "Matched-fold comparator: frozen three-head recipe 1716/2114; compact two-head recipe 1730/2114. Fixed epochs differ from nested stopping used by new neural studies.",
+      "other_training_metrics": {
+        "three_head": {
+          "correct": 4357,
+          "n": 4755,
+          "accuracy": 91.6298633017876,
+          "hard_correct": 1716,
+          "hard_n": 2114,
+          "hard_accuracy": 81.17313150425733
+        },
+        "compact": {
+          "correct": 4371,
+          "n": 4755,
+          "accuracy": 91.9242902208202,
+          "hard_correct": 1730,
+          "hard_n": 2114,
+          "hard_accuracy": 81.83538315988646
+        }
+      },
+      "fit_accounting": "Three fixed member recipes × three folds; the two fusion readouts reuse these nine models."
+    },
+    {
+      "family": "answer_group_experiments",
+      "label": "Answer-group objectives",
+      "status": "completed",
+      "training_scope": "pooled three-fold training OOF",
+      "selected_training_hard_correct": 1761,
+      "training_hard_n": 2114,
+      "validation_hard_correct": 306,
+      "validation_hard_n": 355,
+      "validation_evaluations": 1,
+      "fit_calls": 73,
+      "transform_fit_calls": {},
+      "wall_seconds": 55.240530300012324,
+      "wall_scope": "Training screen and full refit; later selected validation stage was not timed in metadata",
+      "training_configurations": 12,
+      "source": "runs/answer_group_experiments/summary.json",
+      "source_sha256": {
+        "runs/answer_group_experiments/summary.json": "0c4811735e3990ccfa94f7ea77233b364b3a4b35e2bef5473ac27476fad60244",
+        "runs/answer_group_experiments/protocol.json": "cdcd45866d7d3c2eade30a2f381e2961249d3e672891bbad91fed9b193abb117",
+        "runs/answer_group_experiments/validation.json": "19fb660d446d458a898e1cd98b399fb9e0ec7694db0285be563c9295100817cc",
+        "runs/answer_group_experiments/selected_config.json": "f1f6941554971382a4a60f35a0ac0906d4ee0e733fe3e0389710a4d1592881a2"
+      },
+      "command": [
+        "python answer_group_experiment.py --screen-only",
+        "python answer_group_experiment.py --validate-selected"
+      ],
+      "conclusion": "Pooled group features with pairwise loss and dropout selected on training OOF; validation 306/355 does not reach the frozen 311/355.",
+      "selected_recipe": {
+        "configuration": {
+          "representation": "group",
+          "objective": "pairwise",
+          "dropout": 0.2,
+          "hidden": 128,
+          "l2": 0.01
+        },
+        "epochs": 14,
+        "training_scale": 1.6055212020874023,
+        "selected_from": "config_07",
+        "train_oof_metrics": {
+          "correct": 4402,
+          "n": 4755,
+          "accuracy": 92.57623554153523,
+          "hard_correct": 1761,
+          "hard_n": 2114,
+          "hard_accuracy": 83.30179754020813
+        },
+        "oof_group_ce": 0.4080018103122711,
+        "asset_file_bytes": 658524
+      },
+      "fit_accounting": "12 configurations × 3 folds × (inner stopping + outer refit), plus 1 full refit at median selected epoch.",
+      "status_resolution": "Separate completed validation.json supersedes the summary's earlier pending flag."
+    },
+    {
+      "family": "kernel_rank",
+      "label": "Pair-comparison RBF kernels",
+      "status": "completed",
+      "training_scope": "pooled three-fold training OOF",
+      "selected_training_hard_correct": 1757,
+      "training_hard_n": 2114,
+      "validation_hard_correct": 296,
+      "validation_hard_n": 355,
+      "validation_evaluations": 1,
+      "fit_calls": 73,
+      "transform_fit_calls": {
+        "PCA": 4
+      },
+      "wall_seconds": 218.41804000001866,
+      "wall_scope": "Recorded study elapsed time; not CPU-seconds",
+      "training_configurations": 24,
+      "source": "runs/kernel_rank/summary.json",
+      "source_sha256": {
+        "runs/kernel_rank/summary.json": "4ed4f49fe65480bc720d0eebad1b97c31c671d3a2bbf2e4cca3b54a384f3ec21",
+        "runs/kernel_rank/protocol.json": "9a2f8aa859ca6411e4958af4a88efe3866746759730a76664188e37f11651f38",
+        "runs/kernel_rank/validation_result.json": "f5c940b91de8c4b306f2c1a4222f3e5d1c6c2b1a5fc8012713442c65ceb0fdc8",
+        "runs/kernel_rank/training_selection.json": "ebacc3b30fa5272311f1686077b81e8321d5d3de444105665583d7033065c616",
+        "runs/kernel_rank/internal_results.json": "2b040d54584a2a69a3b77ed00ad9a49628c8a6499102bb1946864c3a3fda61ec"
+      },
+      "command": [
+        "python kernel_rank.py"
+      ],
+      "conclusion": "PCA64 + text75 pair-difference RBF selected by training OOF. Its 296/355 validation result is recorded; later source selection between kernel families also uses training OOF only.",
+      "selected_recipe": "pca64_text75_pair_delta_g1_C3",
+      "fit_accounting": "24 fixed configurations × 3 outer folds + 1 selected full refit; no early-stopping fits.",
+      "fit_seconds": 92.93825020035729,
+      "asset_bytes": 3317059,
+      "transform_accounting": "Each outer fold shares its fitted transforms across applicable configurations; one selected full-training transform is added."
+    },
+    {
+      "family": "supervised_kernel",
+      "label": "Supervised-projection kernels",
+      "status": "completed",
+      "training_scope": "pooled three-fold training OOF",
+      "selected_training_hard_correct": 1752,
+      "training_hard_n": 2114,
+      "validation_hard_correct": 309,
+      "validation_hard_n": 355,
+      "validation_evaluations": 1,
+      "fit_calls": 28,
+      "transform_fit_calls": {
+        "PCA": 4,
+        "PLS": 7
+      },
+      "wall_seconds": 70.91775670001516,
+      "wall_scope": "Recorded study elapsed time; not CPU-seconds",
+      "training_configurations": 9,
+      "source": "runs/supervised_kernel/summary.json",
+      "source_sha256": {
+        "runs/supervised_kernel/summary.json": "d64738e859c99136bc4f2cb8ab16d2c2646a0465320d702c412bf39dfdfa8bde",
+        "runs/supervised_kernel/protocol.json": "11d028a0e9bbe36172811404edfe440eeb597308ddff27d316724f39768de762",
+        "runs/supervised_kernel/validation_result.json": "e6fdcacc9b345ced3d25a4699228bb36d4e216a202ab2436b2f0a0180ead4c5b",
+        "runs/supervised_kernel/training_selection.json": "ef84c539b78e538268726602e84ddbfdac3cef2950e62c7ad4e60f39b3d50d96",
+        "runs/supervised_kernel/transform_records.json": "e76d844583305dda33a468c447cc88cb892690468f7c576f9e10bdeb78d6c25b",
+        "runs/supervised_kernel/internal_results.json": "782048a19667660abb2d2b162e40b228f737b4a306cf6550ac4e680338729ff5"
+      },
+      "command": [
+        "python supervised_kernel.py"
+      ],
+      "conclusion": "1752 training OOF correct trails the original kernel's 1757. The six-scorer fusion therefore retained the original kernel despite this study's higher individual validation score.",
+      "selected_recipe": "pca64_pls8_text75_pair_delta_g0.25_C3",
+      "fit_accounting": "9 fixed configurations × 3 outer folds + 1 selected full refit; no early-stopping fits.",
+      "fit_seconds": 27.55985490011517,
+      "asset_bytes": 3127577,
+      "transform_accounting": "Each outer fold shares its fitted transforms across applicable configurations; one selected full-training transform is added."
+    },
+    {
+      "family": "quantitative_experiments",
+      "label": "Quantity features and PLS",
+      "status": "completed",
+      "training_scope": "pooled three-fold training OOF",
+      "selected_training_hard_correct": 1724,
+      "training_hard_n": 2114,
+      "validation_hard_correct": 297,
+      "validation_hard_n": 355,
+      "validation_evaluations": 1,
+      "fit_calls": 37,
+      "transform_fit_calls": {
+        "PLS": 7
+      },
+      "wall_seconds": 122.11341799999354,
+      "wall_scope": "Recorded study elapsed time; not CPU-seconds",
+      "training_configurations": 36,
+      "source": "runs/quantitative_experiments/summary.json",
+      "source_sha256": {
+        "runs/quantitative_experiments/summary.json": "5367f9a5644871afae6c02d44f3d7ceadc1e7ba5005299e1712a1be179e0ff13",
+        "runs/quantitative_experiments/protocol.json": "f734ede12924bae978e002b462f894c71660c442c65aea784535954d4fabd417",
+        "runs/quantitative_experiments/selected_training_recipe.json": "9d94dfecfd8ccc5ad696eb6f1e236d6ebe5ca931675a772422be0f9e8be28f37",
+        "runs/quantitative_experiments/selected_config.json": "be860f36fab20af7678c05c1bee0a6d992f683ca4c55446d134f8bc32cc2c780",
+        "runs/quantitative_experiments/transform_records.json": "b70a5a4259aab694f4f9474227627e687c9627c7229c30ab25b7e54df5be1e7b",
+        "runs/quantitative_experiments/fold_records.json": "d1a36b5ec78eb5cba94a9a0589b90efa490c9646d2a6855d76f4fc31fecec35a"
+      },
+      "command": [
+        "python quantitative_experiment.py"
+      ],
+      "conclusion": "Initial selected PLS8/HGBT300 achieved 297/355. A later numerical centering defect was repaired with the same recipe; this original result is retained as historical evidence, not an alternative eligible model.",
+      "training_stage_evaluation_rows": 108,
+      "selected_recipe": {
+        "key": "pls8__hgb__300",
+        "design": "pls8",
+        "learner": "hgb",
+        "stage": 300,
+        "features": 91,
+        "metrics": {
+          "correct": 4365,
+          "n": 4755,
+          "accuracy": 91.7981072555205,
+          "hard_correct": 1724,
+          "hard_n": 2114,
+          "hard_accuracy": 81.5515610217597
+        },
+        "normalized_pair_loss": 0.3446569645789135
+      },
+      "fit_accounting": "6 feature designs × 2 learners × 3 folds = 36 fits; 100/200/300-tree readouts reuse each fitted 300-tree model. Add 1 selected full refit, not 108 staged readouts.",
+      "transform_accounting": "PLS8 and PLS16 shared across applicable designs/learners within each of three folds, plus selected full-fit PLS8: 7."
+    },
+    {
+      "family": "quantitative_experiments/precision_repair",
+      "label": "PLS centering repair",
+      "status": "completed",
+      "training_scope": "fixed repaired recipe on shared three-fold training OOF; no new search",
+      "selected_training_hard_correct": 1727,
+      "training_hard_n": 2114,
+      "validation_hard_correct": 295,
+      "validation_hard_n": 355,
+      "validation_evaluations": 1,
+      "fit_calls": 4,
+      "transform_fit_calls": {
+        "PLS": 4
+      },
+      "wall_seconds": 29.69930729997577,
+      "wall_scope": "Recorded study elapsed time; not CPU-seconds",
+      "training_configurations": 1,
+      "source": "runs/quantitative_experiments/precision_repair/summary.json",
+      "source_sha256": {
+        "runs/quantitative_experiments/precision_repair/summary.json": "0e93da97cc5067435d72f725ab44f8ec6a38b127c932953de4b16ed013434af9",
+        "runs/quantitative_experiments/precision_repair/protocol.json": "3b4aa02ee8590db0371c4a839ea3ebc860ca887111e4c8d515893d0d2cc1c825",
+        "runs/quantitative_experiments/precision_repair/selected_config.json": "1371729367e54e85f5d47ecde6e5084d7c6960076f71886970ce2f793df7a776",
+        "runs/quantitative_experiments/precision_repair/fold_records.json": "68c862cc71c629b528a37ee029e5e9e14906e85cfa6db6c8c6fc479a3ae237e6"
+      },
+      "command": [
+        "python -m runs.quantitative_experiments.repair_precision"
+      ],
+      "conclusion": "Float64 centering before float32 conversion fixes the permutation threshold issue. Repaired OOF 1727 and validation 295 supersede 1724/297 for use in new fusion; no rollback selected from validation.",
+      "fit_accounting": "3 outer-fold refits + 1 full refit of the already selected recipe; 4 matching PLS fits."
+    },
+    {
+      "family": "group_aggregation",
+      "label": "Soft answer-group aggregation",
+      "status": "completed",
+      "training_scope": "fixed 20% holdout of existing five-fold training OOF; 438 hard questions",
+      "selected_training_hard_correct": 364,
+      "training_hard_n": 438,
+      "validation_hard_correct": 310,
+      "validation_hard_n": 355,
+      "validation_evaluations": 1,
+      "fit_calls": 0,
+      "transform_fit_calls": {},
+      "wall_seconds": 14.958905500010587,
+      "wall_scope": "Sum of separately recorded training selection and selected validation stages",
+      "training_configurations": 57,
+      "source": "runs/group_aggregation/summary.json",
+      "source_sha256": {
+        "runs/group_aggregation/summary.json": "43c701081b9a2fed175bd96257ab305fd23ee888a032f78eb8685f826344630b",
+        "runs/group_aggregation/protocol.json": "ccd0b40e64b97e836935b962895dcd914df35a7c3d25d4002eded1f6ab5ffbae",
+        "runs/group_aggregation/validation.json": "54f9db8c4d766f1cf3c8d8df31d9d8a3f487eed8c46b0fc9e9d05a9892d1a998",
+        "runs/group_aggregation/selected_config.json": "c47db3e2db433e6ba4496f5d6d9423c1baddf43f5e3d8b8deba4112f61dd7553"
+      },
+      "command": [
+        "python group_aggregation.py",
+        "python group_aggregation.py --validate-selected"
+      ],
+      "conclusion": "Soft logmeanexp at temperature 0.5 improves the internal selection slice 359→364, but all-OOF 1748→1745 and validation 310/355 do not support deployment. Overlapping base-training folds make the internal slice a tuning diagnostic.",
+      "descriptive_all_oof": {
+        "correct": 4386,
+        "n": 4755,
+        "accuracy": 92.2397476340694,
+        "hard_correct": 1745,
+        "hard_n": 2114,
+        "hard_accuracy": 82.5449385052034
+      },
+      "selected_recipe": {
+        "aggregation": "logmeanexp",
+        "order": "fuse_then_group",
+        "temperature": 0.5,
+        "support_coefficient": 0.0,
+        "aliases": [
+          {
+            "aggregation": "logmeanexp",
+            "support_coefficient": 0.0
+          }
+        ],
+        "name": "aggregation_04"
+      },
+      "fit_accounting": "57 deduplicated aggregation configurations; existing OOF and full-training heads reused, 0 model fits."
+    },
+    {
+      "family": "refinement_fusion",
+      "label": "Six-scorer finite fusion",
+      "status": "completed",
+      "training_scope": "pooled three-fold training OOF",
+      "selected_training_hard_correct": 1778,
+      "training_hard_n": 2114,
+      "validation_hard_correct": 303,
+      "validation_hard_n": 355,
+      "validation_evaluations": 1,
+      "fit_calls": 0,
+      "transform_fit_calls": {},
+      "wall_seconds": 15.072272500023246,
+      "wall_scope": "Training selection only; selected validation stage has no separately recorded elapsed time",
+      "training_configurations": 153,
+      "source": "runs/refinement_fusion/summary.json",
+      "source_sha256": {
+        "runs/refinement_fusion/summary.json": "53ec41d1f21f472dcd975969c6fd58e930a5acd5e44c758a557a7b38c8803edc",
+        "runs/refinement_fusion/protocol.json": "16797a28c295a0a0f09a4bb77ce73c99c4af532679686d9f60d773610a602d28",
+        "runs/refinement_fusion/validation.json": "0fec0e932fb0178a7621862ad394d8d30fff3ff2169a8160e1cfd445e64f04a2",
+        "runs/refinement_fusion/selected_config.json": "f1ea4aa109ebe7703b70b20067d3fc9cebaf470cbb0395e9ec2ba83f2535d101",
+        "runs/refinement_fusion/paired_folds.json": "f6dc6b6101f7c2370b6bf6e42f039b90032185af08c3cf846e637d51667fae49"
+      },
+      "command": [
+        "python refinement_fusion.py --quantitative-dir runs/quantitative_experiments/precision_repair --kernel-dir runs/kernel_rank",
+        "python refinement_fusion.py --quantitative-dir runs/quantitative_experiments/precision_repair --kernel-dir runs/kernel_rank --validate-selected"
+      ],
+      "conclusion": "Group 1/2 + original kernel 1/4 + repaired PLS 1/4 reaches 1778/2114 and improves every matched training fold. Its single validation score 303/355 fails the predeclared 311/355 gate; frozen deployment retained.",
+      "selected_recipe": {
+        "weights": [
+          0.0,
+          0.0,
+          0.0,
+          0.5,
+          0.25,
+          0.25
+        ],
+        "hard_correct": 1778,
+        "hard_n": 2114,
+        "correct": 4419,
+        "n": 4755,
+        "active_heads": 3,
+        "group_ce": 0.3994476448528632,
+        "names": [
+          "nonlinear",
+          "residual",
+          "text",
+          "answer_group",
+          "kernel",
+          "projected_text"
+        ],
+        "aggregation": "mean",
+        "consensus_bonus": 0,
+        "quantitative_dir": "runs/quantitative_experiments/precision_repair",
+        "selection_completed_before_validation": true,
+        "kernel_dir": "runs/kernel_rank",
+        "source_evidence_sha256": "23c215f843db2363dc9c713b811e197e726d934be00d678e2b3f9fe8b77283b0"
+      },
+      "paired_folds": {
+        "compact": [
+          {
+            "fold": 0,
+            "n": 708,
+            "selected_correct": 606,
+            "baseline_correct": 584,
+            "repaired": 40,
+            "regressed": 18
+          },
+          {
+            "fold": 1,
+            "n": 714,
+            "selected_correct": 611,
+            "baseline_correct": 588,
+            "repaired": 37,
+            "regressed": 14
+          },
+          {
+            "fold": 2,
+            "n": 692,
+            "selected_correct": 561,
+            "baseline_correct": 558,
+            "repaired": 31,
+            "regressed": 28
+          }
+        ],
+        "three_head": [
+          {
+            "fold": 0,
+            "n": 708,
+            "selected_correct": 606,
+            "baseline_correct": 582,
+            "repaired": 46,
+            "regressed": 22
+          },
+          {
+            "fold": 1,
+            "n": 714,
+            "selected_correct": 611,
+            "baseline_correct": 584,
+            "repaired": 45,
+            "regressed": 18
+          },
+          {
+            "fold": 2,
+            "n": 692,
+            "selected_correct": 561,
+            "baseline_correct": 550,
+            "repaired": 36,
+            "regressed": 25
+          }
+        ]
+      },
+      "fit_accounting": "153 unique equal-subset/quarter-simplex weights reuse six existing OOF scorers; 0 fits."
+    },
+    {
+      "family": "optimizer_experiments",
+      "label": "Full-batch L-BFGS",
+      "status": "completed",
+      "training_scope": "pooled three-fold training OOF",
+      "selected_training_hard_correct": 1750,
+      "training_hard_n": 2114,
+      "validation_hard_correct": 305,
+      "validation_hard_n": 355,
+      "validation_evaluations": 1,
+      "fit_calls": 37,
+      "transform_fit_calls": {},
+      "wall_seconds": 99.85364659997867,
+      "wall_scope": "Recorded study elapsed time; not CPU-seconds",
+      "training_configurations": 6,
+      "source": "runs/optimizer_experiments/summary.json",
+      "source_sha256": {
+        "runs/optimizer_experiments/summary.json": "8b643a559b239f0171632b14785c77c93852d85f8189b457478ef528817f9b50",
+        "runs/optimizer_experiments/protocol.json": "4f0a75abf6abcdbff53ce5de6d4b0b59ca632707d1ed52b66ff6c6a70a91828d",
+        "runs/optimizer_experiments/validation_result.json": "edfeae57e51274093dadf2cd70df776198ec07e6c54e4eac528c9daa3cdfe146",
+        "runs/optimizer_experiments/training_selection.json": "8e3ad29ab7e0833c587c74ef09fd2cb99419e5876bd20ca55004ea6d3a7999e9",
+        "runs/optimizer_experiments/internal_results.json": "271d62a57b44590a5f77eb49c7d6c5e5e3b0428031beefcb04f0d6f1bbe5c7fc"
+      },
+      "command": [
+        "python optimizer_experiment.py"
+      ],
+      "conclusion": "Selected L-BFGS hidden64/L2=0.03 yields 1750/2114 versus the previous candidate Adam baseline's 1752; these differ in capacity and regularization. The matched hidden128/L2=0.01 L-BFGS configuration yields 1740 versus Adam's 1752. Selected validation is 305/355. Recorded budget exits do not claim numerical convergence.",
+      "selected_recipe": {
+        "representation": "candidate",
+        "objective": "ce",
+        "dropout": 0.0,
+        "hidden": 64,
+        "l2": 0.03,
+        "key": "candidate_h64_l20.03_lbfgs"
+      },
+      "matched_configuration_metrics": {
+        "correct": 4381,
+        "n": 4755,
+        "accuracy": 92.13459516298633,
+        "hard_correct": 1740,
+        "hard_n": 2114,
+        "hard_accuracy": 82.30842005676443
+      },
+      "optimizer_iterations": 1664,
+      "function_evaluations": 1775,
+      "fit_seconds": 80.51611599995522,
+      "fit_accounting": "6 configurations × 3 folds × (inner stopping + outer refit) + 1 full refit. Optimizer iterations/function evaluations are not additional model fits."
+    },
+    {
+      "family": "sequence_experiments",
+      "label": "Convolutional token models",
+      "status": "completed",
+      "training_scope": "pooled three-fold training OOF",
+      "selected_training_hard_correct": 1751,
+      "training_hard_n": 2114,
+      "validation_hard_correct": 305,
+      "validation_hard_n": 355,
+      "validation_evaluations": 1,
+      "fit_calls": 14,
+      "transform_fit_calls": {
+        "vocabulary": 14
+      },
+      "wall_seconds": 178.98033669998404,
+      "wall_scope": "Recorded study elapsed time; not CPU-seconds",
+      "training_configurations": 2,
+      "source": "runs/sequence_experiments/summary.json",
+      "source_sha256": {
+        "runs/sequence_experiments/summary.json": "2ddf96d20bb4282b7ba0c8903df29315258eea1a30bf73ebe808c2a098c55072",
+        "runs/sequence_experiments/protocol.json": "3eacb591f9c3838f7c4713a63a4efe0507b09b2d39d1692d350a2088cc0c1a40",
+        "runs/sequence_experiments/training_selection.json": "bb2ba40846c5220746b900b3c99ff735b1a784db8bc56912383fdd15a6067ff3",
+        "runs/sequence_experiments/selected_config.json": "351ba749844fd394106747d47f3dc9975f7c4665985663c03d7919f008c51b28",
+        "runs/sequence_experiments/fold_records.json": "cbb7b4cb1f66687e919c4210ef47a70da2fcceaf202f182c5b4ce2a60002b9b2"
+      },
+      "command": [
+        "python sequence_experiment.py"
+      ],
+      "conclusion": "Randomly initialized token convolutions test local textual order without external weights. Recipe and final epoch are selected on training only; one selected validation result is reported.",
+      "selected_recipe": {
+        "name": "joint_cnn",
+        "metrics": {
+          "correct": 4392,
+          "n": 4755,
+          "accuracy": 92.36593059936908,
+          "hard_correct": 1751,
+          "hard_n": 2114,
+          "hard_accuracy": 82.82876064333018
+        },
+        "normalized_group_loss": 0.4363061487674713
+      },
+      "fit_accounting": "2 recipes × 3 folds × (inner stopping + outer refit), then selected full-training inner stopping + full refit: 14 fits.",
+      "transform_accounting": "A separate fitting-side vocabulary is rebuilt for each early fit and refit; numeric normalizers are also local to each fit."
+    },
+    {
+      "family": "late_fusion",
+      "label": "Final bounded fusion",
+      "status": "completed",
+      "training_scope": "pooled three-fold training OOF",
+      "selected_training_hard_correct": 1778,
+      "training_hard_n": 2114,
+      "validation_hard_correct": null,
+      "validation_hard_n": null,
+      "validation_evaluations": 0,
+      "fit_calls": 0,
+      "transform_fit_calls": {},
+      "wall_seconds": 2.4145742999971844,
+      "wall_scope": "Recorded training selection stage; validation, if permitted, recorded separately",
+      "training_configurations": 15,
+      "source": "runs/late_fusion/summary.json",
+      "source_sha256": {
+        "runs/late_fusion/summary.json": "6eadfce74a90a85c7026d2c2095c77501daab1c4a752109b2be79482d72690cf",
+        "runs/late_fusion/protocol.json": "109501f8c4e243735bd88d5e3e65c5de8e70aa2f68f9f494cbc32f89349e6280",
+        "runs/late_fusion/selected_config.json": "a544db4c2f3de73ce4df6794c6bb2f6fe230d2acb3a461a86ae38a82e5564d7a",
+        "runs/late_fusion/paired_folds.json": "d7017085e931a97d5523d6e60fff92a4bac3a93fc10124467e7cea2284c051d2",
+        "runs/late_fusion/training_diagnostics.json": "e0b6b90b003d1933cc4d7fc3d4f6730423e8549c82da9ee6890317defe5120da"
+      },
+      "command": [
+        "python late_fusion.py",
+        "python late_fusion.py --validate-selected (only if training gate passes)"
+      ],
+      "conclusion": "Only a winner gaining at least 10 pooled training hard questions over F and improving every fold is eligible for one validation evaluation. The selected weights remain F/O/C=1/0/0, 1778/2114; pooled gain and all fold gains are zero. Training gate failed; no new fusion validation evaluation.",
+      "training_gate": {
+        "passed": false,
+        "pooled_gain": 0,
+        "required_pooled_gain": 10,
+        "fold_gains": [
+          0,
+          0,
+          0
+        ],
+        "required_every_fold_positive": true,
+        "reference_hard_correct": 1778,
+        "interpretation": "Prespecified search-budget gate, not a significance test"
+      },
+      "selected_recipe": {
+        "weights": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "hard_correct": 1778,
+        "hard_n": 2114,
+        "correct": 4419,
+        "n": 4755,
+        "active_heads": 1,
+        "group_ce": 0.3994476448528632,
+        "head_names": [
+          "F",
+          "O",
+          "C"
+        ],
+        "source_evidence_sha256": "bf8aa7d2b30a42c28173208d7e45fbd6bd6330a2abfa905cb1ca542b29c04763",
+        "training_gate": {
+          "passed": false,
+          "pooled_gain": 0,
+          "required_pooled_gain": 10,
+          "fold_gains": [
+            0,
+            0,
+            0
+          ],
+          "required_every_fold_positive": true,
+          "reference_hard_correct": 1778,
+          "interpretation": "Prespecified search-budget gate, not a significance test"
+        },
+        "selection_before_validation": true
+      },
+      "fit_accounting": "15 quarter-simplex weights over the fixed F/O/C training-selected scorers; no new model fit.",
+      "training_complementarity": {
+        "pairwise": [
+          {
+            "reference": "F",
+            "added": "O",
+            "reference_correct": 1778,
+            "added_correct": 1750,
+            "both_wrong": 293,
+            "oracle_correct": 1821,
+            "repaired": 43,
+            "regressed": 71,
+            "paired_folds": [
+              {
+                "fold": 0,
+                "hard_n": 708,
+                "correct": 599,
+                "reference_correct": 606,
+                "repaired": 16,
+                "regressed": 23,
+                "gain": -7
+              },
+              {
+                "fold": 1,
+                "hard_n": 714,
+                "correct": 601,
+                "reference_correct": 611,
+                "repaired": 14,
+                "regressed": 24,
+                "gain": -10
+              },
+              {
+                "fold": 2,
+                "hard_n": 692,
+                "correct": 550,
+                "reference_correct": 561,
+                "repaired": 13,
+                "regressed": 24,
+                "gain": -11
+              }
+            ]
+          },
+          {
+            "reference": "F",
+            "added": "C",
+            "reference_correct": 1778,
+            "added_correct": 1751,
+            "both_wrong": 288,
+            "oracle_correct": 1826,
+            "repaired": 48,
+            "regressed": 75,
+            "paired_folds": [
+              {
+                "fold": 0,
+                "hard_n": 708,
+                "correct": 604,
+                "reference_correct": 606,
+                "repaired": 20,
+                "regressed": 22,
+                "gain": -2
+              },
+              {
+                "fold": 1,
+                "hard_n": 714,
+                "correct": 595,
+                "reference_correct": 611,
+                "repaired": 12,
+                "regressed": 28,
+                "gain": -16
+              },
+              {
+                "fold": 2,
+                "hard_n": 692,
+                "correct": 552,
+                "reference_correct": 561,
+                "repaired": 16,
+                "regressed": 25,
+                "gain": -9
+              }
+            ]
+          },
+          {
+            "reference": "O",
+            "added": "C",
+            "reference_correct": 1750,
+            "added_correct": 1751,
+            "both_wrong": 310,
+            "oracle_correct": 1804,
+            "repaired": 54,
+            "regressed": 53,
+            "paired_folds": [
+              {
+                "fold": 0,
+                "hard_n": 708,
+                "correct": 604,
+                "reference_correct": 599,
+                "repaired": 24,
+                "regressed": 19,
+                "gain": 5
+              },
+              {
+                "fold": 1,
+                "hard_n": 714,
+                "correct": 595,
+                "reference_correct": 601,
+                "repaired": 10,
+                "regressed": 16,
+                "gain": -6
+              },
+              {
+                "fold": 2,
+                "hard_n": 692,
+                "correct": 552,
+                "reference_correct": 550,
+                "repaired": 20,
+                "regressed": 18,
+                "gain": 2
+              }
+            ]
+          }
+        ],
+        "selected_vs_F": [
+          {
+            "fold": 0,
+            "hard_n": 708,
+            "correct": 606,
+            "reference_correct": 606,
+            "repaired": 0,
+            "regressed": 0,
+            "gain": 0
+          },
+          {
+            "fold": 1,
+            "hard_n": 714,
+            "correct": 611,
+            "reference_correct": 611,
+            "repaired": 0,
+            "regressed": 0,
+            "gain": 0
+          },
+          {
+            "fold": 2,
+            "hard_n": 692,
+            "correct": 561,
+            "reference_correct": 561,
+            "repaired": 0,
+            "regressed": 0,
+            "gain": 0
+          }
+        ],
+        "caveat": "Training OOF complementarity after base-recipe selection; oracle counts are descriptive upper bounds, not deployable accuracy"
+      }
+    }
+  ],
+  "totals": {
+    "completed_fit_calls": 275,
+    "transform_fit_calls": {
+      "PCA": 8,
+      "PLS": 18,
+      "vocabulary": 14
+    },
+    "recorded_wall_seconds": 823.9895222999621,
+    "validation_evaluations": 9,
+    "completed_families": 11,
+    "pending": [],
+    "wall_caveat": "Sum of recorded family stage wall times; excludes unrecorded later stages, installation, audits and reruns; concurrent execution means this is not elapsed project time or CPU-seconds."
+  }
+}

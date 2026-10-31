@@ -1,0 +1,49 @@
+{
+  "task": "E3 two bounded randomly initialized token/set-attention models",
+  "configs": [
+    {
+      "name": "token_attention",
+      "candidate_set_attention": false
+    },
+    {
+      "name": "token_set_attention",
+      "candidate_set_attention": true
+    }
+  ],
+  "fold_seeds": [
+    20261027,
+    20261028
+  ],
+  "folds": 3,
+  "fold_assignment": "fold[default_rng(seed).permutation(N)] = arange(N)%3",
+  "inner_split": "85/15 outer-fitting question IDs with seed outer_seed+100+fold",
+  "inputs": "unchanged E1 headtail_roles322 tokens and1099 numerical embedding+text inputs",
+  "token_block": {
+    "width": 32,
+    "heads": 4,
+    "layers": 1,
+    "ff_width": 64,
+    "activation": "ReLU",
+    "normalization": "post-residual LayerNorm eps1e-5",
+    "dropout": 0.0
+  },
+  "position": "fixed standard sinusoidal token positions; embedding multiplied by sqrt32; no candidate positions",
+  "pooling": "valid-token maximum and mean, concat1099numeric, tanh64",
+  "candidate_block": "second variant only: width64/heads4/FF128/layer1 with valid-candidate keys, no candidate positional encoding; all-invalid keys fall back to all four",
+  "training": "all models random initialization, seed7506; AdamW lr.001/weight_decay.001; gradientclip5; hard fitting questions only",
+  "batching": "effective batch64, gradient accumulation over8-question microbatches; weight each micro loss by its question fraction",
+  "objective": "mean answer-group-mean cross entropy",
+  "stopping": "inner groupCE, max24epochs/patience4/minimprovement1e-4; fresh refit for selected epochs",
+  "transforms": "fit vocabulary/normalization only on applicable inner/outer-fitting inputs, never heldout; roles contain no references",
+  "score_scale": "valid outer-fit centered score standard deviation",
+  "planned_fits": 24,
+  "family_runtime_cap_seconds": 7200.0,
+  "first_fit_probe": "After first planned early-fit, export and time NumPy preprocessing+forward on first467 outer-held TRAIN inputs; no label access or accuracy during probe. If >25seconds, record inference-budget risk and stop family before remaining fits; no architecture change.",
+  "probe_scope": "local CPU timing under current load, not official reference-machine qualification; prediction preprocessing+forward only, not fresh-process loading/scoring",
+  "runtime_stop_interpretation": "computational/resource limit only, no conclusion that model accuracy cannot improve",
+  "selection": "mean hard correct over two repeats, then mean normalized groupCE, then token-only",
+  "repeated_questions": "2114 unique hard questions reused, not4228 independent samples; post-selection exploratory evidence",
+  "threads": 4,
+  "full_refit_validation_test": false,
+  "numpy_export": "mandatory mathematical attention/LayerNorm replay and permutation checks; no torch dependency at inference"
+}

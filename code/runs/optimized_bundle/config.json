@@ -1,0 +1,41 @@
+{
+  "format": "mp2-integrated-verifier-v1",
+  "components": [
+    {
+      "adapter": "core",
+      "manifest": "branches/Anoise_5/manifest.json",
+      "manifest_sha256": "541ef601fcbb7648ee7d5e0c65f154f61d7fbc0423e3f71f9d6b0f3c11eb987d",
+      "weight": 0.09375
+    },
+    {
+      "adapter": "core",
+      "manifest": "branches/K/manifest.json",
+      "manifest_sha256": "1009802094d0854be189decc53fceb3545a7ae1965838717e980b89ff45a8580",
+      "weight": 0.046875
+    },
+    {
+      "adapter": "core",
+      "manifest": "branches/Qcross/manifest.json",
+      "manifest_sha256": "cb7fbed7af9f42111cc8339cf73922aa9be360ac0209acd9f328abd5d88f78aa",
+      "weight": 0.046875
+    },
+    {
+      "adapter": "core",
+      "manifest": "branches/P/manifest.json",
+      "manifest_sha256": "49681c7f742214237a6d9d420ff247fa790d56eb1d47814e8e7edb8244923ed0",
+      "weight": 0.375
+    },
+    {
+      "adapter": "core",
+      "manifest": "branches/Ccross/manifest.json",
+      "manifest_sha256": "6d80039781ff8b004c1001e0e0fb534881b92d997cc10f7d34c885fc28972f35",
+      "weight": 0.1875
+    },
+    {
+      "adapter": "sequence",
+      "manifest": "branches/roles_cnn/manifest.json",
+      "manifest_sha256": "9c5fcecc9ed89585546717951548203393d8f519ca00663e191e506e20b2858f",
+      "weight": 0.25
+    }
+  ]
+}
