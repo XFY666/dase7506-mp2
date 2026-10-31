@@ -1,0 +1,290 @@
+{
+  "status": "complete",
+  "selected_name": "G_noise_cross__roles_cnn_0.25",
+  "validation": {
+    "full": {
+      "correct": 750,
+      "n": 798,
+      "accuracy": 93.98496240601504
+    },
+    "hard": {
+      "correct": 307,
+      "n": 355,
+      "accuracy": 86.47887323943661
+    }
+  },
+  "baselines": [
+    {
+      "name": "Majority vote",
+      "full": {
+        "correct": 688,
+        "n": 798,
+        "accuracy": 86.21553884711778
+      },
+      "hard": {
+        "correct": 245,
+        "n": 355,
+        "accuracy": 69.01408450704226
+      }
+    },
+    {
+      "name": "Historical D",
+      "full": {
+        "correct": 754,
+        "n": 798,
+        "accuracy": 94.48621553884712
+      },
+      "hard": {
+        "correct": 311,
+        "n": 355,
+        "accuracy": 87.60563380281691
+      }
+    },
+    {
+      "name": "F_subset_cross",
+      "full": {
+        "correct": 747,
+        "n": 798,
+        "accuracy": 93.60902255639097
+      },
+      "hard": {
+        "correct": 304,
+        "n": 355,
+        "accuracy": 85.63380281690141
+      }
+    },
+    {
+      "name": "G_noise_cross__roles_cnn_0.25",
+      "full": {
+        "correct": 750,
+        "n": 798,
+        "accuracy": 93.98496240601504
+      },
+      "hard": {
+        "correct": 307,
+        "n": 355,
+        "accuracy": 86.47887323943661
+      }
+    }
+  ],
+  "strata": [
+    {
+      "name": "Margin quartile 1",
+      "kind": "margin_quartile",
+      "definition": "Ascending answer-group score gap; difficult validation only",
+      "correct": 56,
+      "n": 89,
+      "accuracy": 62.92134831460674,
+      "minimum_margin": 0.006536791155108745,
+      "maximum_margin": 0.9012592636148059
+    },
+    {
+      "name": "Margin quartile 2",
+      "kind": "margin_quartile",
+      "definition": "Ascending answer-group score gap; difficult validation only",
+      "correct": 79,
+      "n": 89,
+      "accuracy": 88.76404494382022,
+      "minimum_margin": 0.905676668709102,
+      "maximum_margin": 1.8824165927598067
+    },
+    {
+      "name": "Margin quartile 3",
+      "kind": "margin_quartile",
+      "definition": "Ascending answer-group score gap; difficult validation only",
+      "correct": 85,
+      "n": 89,
+      "accuracy": 95.50561797752809,
+      "minimum_margin": 1.884848056921304,
+      "maximum_margin": 3.0701412003728072
+    },
+    {
+      "name": "Margin quartile 4",
+      "kind": "margin_quartile",
+      "definition": "Ascending answer-group score gap; difficult validation only",
+      "correct": 87,
+      "n": 88,
+      "accuracy": 98.86363636363636,
+      "minimum_margin": 3.0723002189110216,
+      "maximum_margin": 7.038497856859664
+    },
+    {
+      "name": "2 distinct answers",
+      "kind": "answer_count",
+      "definition": "Difficult validation only",
+      "correct": 205,
+      "n": 227,
+      "accuracy": 90.30837004405286
+    },
+    {
+      "name": "3 distinct answers",
+      "kind": "answer_count",
+      "definition": "Difficult validation only",
+      "correct": 87,
+      "n": 108,
+      "accuracy": 80.55555555555556
+    },
+    {
+      "name": "4 distinct answers",
+      "kind": "answer_count",
+      "definition": "Difficult validation only",
+      "correct": 15,
+      "n": 20,
+      "accuracy": 75.0
+    },
+    {
+      "name": "Selected support 1",
+      "kind": "selected_support",
+      "definition": "Difficult validation only",
+      "correct": 73,
+      "n": 92,
+      "accuracy": 79.34782608695652
+    },
+    {
+      "name": "Selected support 2",
+      "kind": "selected_support",
+      "definition": "Difficult validation only",
+      "correct": 105,
+      "n": 121,
+      "accuracy": 86.77685950413223
+    },
+    {
+      "name": "Selected support 3",
+      "kind": "selected_support",
+      "definition": "Difficult validation only",
+      "correct": 129,
+      "n": 142,
+      "accuracy": 90.84507042253522
+    }
+  ],
+  "examples": [
+    {
+      "title": "High-margin incorrect choice",
+      "id": "gsm8k:fd23d86676d457a5edd2ad70cc5accd6b3e3c36e975e3b85316a5e7990357a36",
+      "index": 444,
+      "question": "Andy walks 50 meters from his house to school. After school, he comes back to the house and goes to the market. If he walks 140 meters in total, how many meters is the distance between the house and the market?",
+      "selected_index": 1,
+      "selected_answer": "45",
+      "correct_index": 2,
+      "reference_answer": "40",
+      "selected_text": "We are told:\n\n- Andy walks **50 meters** from his house to school.\n- Then he **returns** to the house and goes to the **market**.\n- The **total distance** he walks is **140 meters**.\n\nLet the distance between the house and the market be $ x $ meters.\n\n- Andy walks **50 meters** to school.\n- Then he walks **x meters** back home.\n- Then he walks **x meters** to the market.\n\nSo the total distance is:\n\n$$\n50 + x + x = 50 + 2x = 140\n$$\n\nSolving for $ x $:\n\n$$\n2x = 140 - 50 = 90\n$$\n$$\nx = \\frac{90}{2} = 45\n$$\n\n### Final Answer:\n\n$$\n\\boxed{45}\n$$",
+      "correct_text": "We are told that:\n\n- Andy walks **50 meters** from his house to school.\n- Then he **returns** to the house and walks **140 meters** in total.\n\nLet’s denote the distance between the house and the market as $ x $ meters.\n\nSo, the total distance walked is:\n\n$$\n50 + x + 50 = 140\n$$\n\n$$\nx = 140 - 50 - 50 = 40\n$$\n\n### Final Answer:\n\n$$\n\\boxed{40}\n$$",
+      "reference_text": "He walks 50m from home to school and walks 50m again from school to house, so he walks 50m + 50m = <<50+50=100>>100 meters\nIf the total distance is 140m, the distance between the house and the market is 140m - 100m = <<140-100=40>>40 meters.\n#### 40",
+      "margin": 3.6797054635295066,
+      "explanation": "The return from school to home is another 50 m, so 50+50+x=140 gives x=40. The selected trace instead sets the return leg to x and solves 50+2x=140, obtaining 45. Its algebra is consistent with the wrong equation; the error is assigning the route quantities. Three traces state 40, but two lack a recognized final-answer marker; official parses are None, 45, 40, None. The valid comparison is therefore one candidate per answer group. A large score margin does not certify semantic correctness.",
+      "evidence_ids": [
+        "VALIDATION_INPUTS",
+        "VALIDATION_REFERENCES",
+        "SELECTION"
+      ],
+      "candidate_answers": [
+        null,
+        "45",
+        "40",
+        null
+      ],
+      "source_review": "All four candidate texts and the aligned reference checked against saved validation inputs"
+    },
+    {
+      "title": "Correct choice after an incorrect tied-plurality baseline",
+      "id": "gsm8k:eb1fbf0cbd85808aad3b8deda1374acf76a5cbb9327fc93e661b01da20249712",
+      "index": 229,
+      "question": "In a school garden, there are flowers in different colors. In total there are 96 flowers of four colors: green, red, blue, and yellow. There are 9 green flowers and three times more red flowers. Blue flowers make up to 50% of the total flower count. How many yellow flowers are there?",
+      "selected_index": 2,
+      "selected_answer": "12",
+      "correct_index": 2,
+      "reference_answer": "12",
+      "selected_text": "We are given:\n\n- Total number of flowers: $96$\n- Number of **green** flowers: $9$\n- Number of **red** flowers: $3 \\times 9 = 27$\n- Blue flowers make up **50%** of the total.\n- We are to find the number of **yellow** flowers.\n\n### Step 1: Find the number of blue flowers\n\nSince blue flowers make up **50%** of the total:\n\n$$\n\\text{Number of blue flowers} = 0.5 \\times 96 = 48\n$$\n\n### Step 2: Add up all the flower types\n\n$$\n\\text{Green} + \\text{Red} + \\text{Blue} + \\text{Yellow} = 9 + 27 + 48 + \\text{Yellow} = 96\n$$\n\n$$\n\\text{Yellow} = 96 - (9 + 27 + 48) = 96 - 84 = 12\n$$\n\n### ✅ Final Answer:\n\n$$\n\\boxed{12}\n$$",
+      "correct_text": "We are given:\n\n- Total number of flowers: $96$\n- Number of **green** flowers: $9$\n- Number of **red** flowers: $3 \\times 9 = 27$\n- Blue flowers make up **50%** of the total.\n- We are to find the number of **yellow** flowers.\n\n### Step 1: Find the number of blue flowers\n\nSince blue flowers make up **50%** of the total:\n\n$$\n\\text{Number of blue flowers} = 0.5 \\times 96 = 48\n$$\n\n### Step 2: Add up all the flower types\n\n$$\n\\text{Green} + \\text{Red} + \\text{Blue} + \\text{Yellow} = 9 + 27 + 48 + \\text{Yellow} = 96\n$$\n\n$$\n\\text{Yellow} = 96 - (9 + 27 + 48) = 96 - 84 = 12\n$$\n\n### ✅ Final Answer:\n\n$$\n\\boxed{12}\n$$",
+      "reference_text": "There are 3 * 9 = <<3*9=27>>27 red flowers.\n50/100 * 96 = <<50/100*96=48>>48 flowers are blue.\nKnowing that, there are 96 - 48 - 27 - 9 = <<96-48-27-9=12>>12 yellow flowers in a school's garden.\n#### 12",
+      "margin": 4.607337460668074,
+      "explanation": "The four candidate answers are 0, 0, 12 and 12: a tied plurality, not an incorrect strict majority. All use 27 red and 48 blue flowers. The first two incorrectly evaluate 96-9-27-48 as 0; the selected third candidate obtains 12, matching the fourth and the reference. The baseline resolves the tie to 0; the learned scores select the correct answer group.",
+      "evidence_ids": [
+        "VALIDATION_INPUTS",
+        "VALIDATION_REFERENCES",
+        "SELECTION"
+      ],
+      "candidate_answers": [
+        "0",
+        "0",
+        "12",
+        "12"
+      ],
+      "source_review": "All four candidate texts and the aligned reference checked against saved validation inputs"
+    }
+  ],
+  "paired_comparisons": [
+    {
+      "reference": "Majority vote",
+      "repairs": 72,
+      "regressions": 10
+    },
+    {
+      "reference": "Historical D",
+      "repairs": 10,
+      "regressions": 14
+    },
+    {
+      "reference": "F_subset_cross",
+      "repairs": 6,
+      "regressions": 3
+    },
+    {
+      "reference": "G_noise_cross__roles_cnn_0.25",
+      "repairs": 0,
+      "regressions": 0
+    }
+  ],
+  "reliability": {
+    "scope": "Descriptive selected-validation analysis, not a new held-out confirmation",
+    "score_confidence": "Softmax of normalized answer-group scores; not a fitted probability calibration",
+    "hard_mean_confidence": 0.8033944961472497,
+    "hard_correct": 307,
+    "hard_n": 355
+  },
+  "explanations": [
+    {
+      "text": "Score-margin strata describe validation error concentration after model selection; they do not authorize an abstention rule or further tuning.",
+      "evidence_ids": [
+        "SELECTION",
+        "VALIDATION_INPUTS",
+        "VALIDATION_REFERENCES"
+      ]
+    }
+  ],
+  "evidence": {
+    "SELECTION": {
+      "path": "runs\\optimization_final_selection\\selection.json",
+      "sha256": "56450bc5beffbaaf2ef628a651d541620563fde9d8fae77c586e5105d79196f3"
+    },
+    "ANALYSIS_CODE": {
+      "path": "analyze_optimized.py",
+      "sha256": "02d9b2c2ba52d162fd612174119306d25d1c09be4ae134f73a6b4bae562ada9d"
+    },
+    "VALIDATION_INPUTS": {
+      "path": "data/candidates/gsm8k_validation.jsonl",
+      "sha256": "f2ca7c7c7effa91e6a2e99c597ae13b9369d776f0c08d68622e8671b8229045a"
+    },
+    "VALIDATION_REFERENCES": {
+      "path": "data/gsm8k_validation.jsonl",
+      "sha256": "ae1522df02497e780909e208ffb4101788e97b4a5eabf883c56bb7fe40d13025"
+    },
+    "HISTORICAL_D": {
+      "path": "runs\\evaluation\\final-validation-predictions.json",
+      "sha256": "2af595566c7d8a90818fe510356f0e56f38730cbcd22ba02e324e500869712c2"
+    },
+    "FINALIST_1": {
+      "path": "runs\\optimization_final_selection\\candidate1\\validation_predictions.json",
+      "sha256": "415d2ee500d1a1fca3f3eb948ed7f962c618868f72d36ea9f3c80e2a8d1b9952"
+    },
+    "FINALIST_2": {
+      "path": "runs\\optimization_final_selection\\candidate2\\validation_predictions.json",
+      "sha256": "ca6b6061ddeb4e1d85550bd412d1278012b2b3c9f4011571e7299444ede5c95c"
+    }
+  },
+  "human_review": "pending",
+  "test_inputs_read": false,
+  "model_changes": false,
+  "new_model_fits": 0,
+  "example_selection": "Highest-margin error, and highest-margin correct selection where the vote baseline is wrong; illustrative post-selection cases, not random samples"
+}

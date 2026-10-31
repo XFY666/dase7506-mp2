@@ -1,0 +1,17 @@
+{
+  "normalized": "[2,4755,4,5] three fixed seed-normalized member mean",
+  "raw": "[2,4755,4,5] descriptive mean of unnormalized member scores",
+  "raw_members_normalized_members": "[2,4755,4,5,3]",
+  "config_names": [
+    "control_allq",
+    "coverage01_allq",
+    "coverage03_allq",
+    "coverage01_hardq",
+    "coverage_weight"
+  ],
+  "choices_group_losses": "[2,4755,5]",
+  "score_scales": "[2,3,5,3]",
+  "folds": "[2,4755]",
+  "labels_valid": "[4755,4] bool",
+  "hard_ids": "[4755]"
+}

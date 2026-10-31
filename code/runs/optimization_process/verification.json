@@ -1,0 +1,16 @@
+{
+  "status": "passed",
+  "model_fit_calls": 0,
+  "asset_replays": 90,
+  "three_member_ensemble_replays": 30,
+  "partitions_checked": 6,
+  "fit_only_auxiliary_target_hashes_checked": 90,
+  "source_hashes_checked": 10,
+  "max_member_error": 0.0,
+  "max_ensemble_error": 0.0,
+  "auxiliary_head_perturbation_max_error": 0.0,
+  "raw_training_reference_reads": 0,
+  "validation_reads": 0,
+  "test_reads": 0,
+  "interpretation": "Training-only saved-score replay; auxiliary head cannot alter inference score; not a new generalization evaluation"
+}

@@ -1,0 +1,578 @@
+[
+  {
+    "repeat": 0,
+    "fold": 0,
+    "seed": 7506,
+    "noise": 0.0,
+    "epochs": 40,
+    "steps": 480,
+    "fit_seconds": 2.483652199996868,
+    "fit_questions": 1429,
+    "assets": [
+      {
+        "recipe": "epoch14",
+        "path": "repeat0_fold0\\epoch14_seed7506.npz",
+        "sha256": "39dd1d0ef7f94943da9d6b5864d6f34ae1eada3ad57d98e143b96dd5682d5670",
+        "scale": 1.556555151939392
+      },
+      {
+        "recipe": "epoch40",
+        "path": "repeat0_fold0\\epoch40_seed7506.npz",
+        "sha256": "eac1f5dcf9d2dbe4139f0ab2bd339f653e9fd9124c5569a082a94158b576f152",
+        "scale": 2.0215516090393066
+      },
+      {
+        "recipe": "epoch40_ema",
+        "path": "repeat0_fold0\\epoch40_ema_seed7506.npz",
+        "sha256": "7d3a509cca149b1407d7710c999b70dccc0d20918f4f728919589db836d91a97",
+        "scale": 1.9181525707244873
+      }
+    ]
+  },
+  {
+    "repeat": 0,
+    "fold": 0,
+    "seed": 7506,
+    "noise": 0.05,
+    "epochs": 40,
+    "steps": 480,
+    "fit_seconds": 6.08921890000056,
+    "fit_questions": 1429,
+    "assets": [
+      {
+        "recipe": "epoch40_ema_noise",
+        "path": "repeat0_fold0\\epoch40_ema_noise_seed7506.npz",
+        "sha256": "4fdbfeb20782b98a23c1ad4d28e37c8ce587aa2fd007efb4283173723ad4bac6",
+        "scale": 1.91818368434906
+      }
+    ]
+  },
+  {
+    "repeat": 0,
+    "fold": 0,
+    "seed": 17001,
+    "noise": 0.0,
+    "epochs": 40,
+    "steps": 480,
+    "fit_seconds": 1.8595789000100922,
+    "fit_questions": 1429,
+    "assets": [
+      {
+        "recipe": "epoch14",
+        "path": "repeat0_fold0\\epoch14_seed17001.npz",
+        "sha256": "3289fe981158815a4b9e1773344c8f78cfe151f4d12cfff21c56157deca40039",
+        "scale": 1.4858591556549072
+      },
+      {
+        "recipe": "epoch40",
+        "path": "repeat0_fold0\\epoch40_seed17001.npz",
+        "sha256": "6e953ecb3c57c91bb0d48cafd53d1de40b29b7b0f3824f0a210606f69a821dc5",
+        "scale": 1.900579810142517
+      },
+      {
+        "recipe": "epoch40_ema",
+        "path": "repeat0_fold0\\epoch40_ema_seed17001.npz",
+        "sha256": "71f9e1a0b602489f0501e607561b5e3d1d4ef62abd762b1d80885e2d0997a595",
+        "scale": 1.9043463468551636
+      }
+    ]
+  },
+  {
+    "repeat": 0,
+    "fold": 0,
+    "seed": 17001,
+    "noise": 0.05,
+    "epochs": 40,
+    "steps": 480,
+    "fit_seconds": 5.9065074999962235,
+    "fit_questions": 1429,
+    "assets": [
+      {
+        "recipe": "epoch40_ema_noise",
+        "path": "repeat0_fold0\\epoch40_ema_noise_seed17001.npz",
+        "sha256": "2fffa6aea8469057612ae604c324b42b6664df65f1dbf3f761b2caf4e8486075",
+        "scale": 1.8996068239212036
+      }
+    ]
+  },
+  {
+    "repeat": 0,
+    "fold": 1,
+    "seed": 7506,
+    "noise": 0.0,
+    "epochs": 40,
+    "steps": 440,
+    "fit_seconds": 1.9138252999982797,
+    "fit_questions": 1389,
+    "assets": [
+      {
+        "recipe": "epoch14",
+        "path": "repeat0_fold1\\epoch14_seed7506.npz",
+        "sha256": "2c6433642dda4a0691f783ff41868dd1da18bbec10a02b234b7d487485af6cce",
+        "scale": 1.5412447452545166
+      },
+      {
+        "recipe": "epoch40",
+        "path": "repeat0_fold1\\epoch40_seed7506.npz",
+        "sha256": "aad45815ea42d920b6ec8ec19d7d9f4761407a8aa0d77b30add1116bcb8ef55c",
+        "scale": 1.9361000061035156
+      },
+      {
+        "recipe": "epoch40_ema",
+        "path": "repeat0_fold1\\epoch40_ema_seed7506.npz",
+        "sha256": "9949543504b2d8ac8ef5cfe2a14fe35f88e1756fdcadb74df36c4c159d5bac5e",
+        "scale": 1.8799234628677368
+      }
+    ]
+  },
+  {
+    "repeat": 0,
+    "fold": 1,
+    "seed": 7506,
+    "noise": 0.05,
+    "epochs": 40,
+    "steps": 440,
+    "fit_seconds": 5.658999599996605,
+    "fit_questions": 1389,
+    "assets": [
+      {
+        "recipe": "epoch40_ema_noise",
+        "path": "repeat0_fold1\\epoch40_ema_noise_seed7506.npz",
+        "sha256": "0992c7453b2710921add4c694c35ac4fc8ae0d726aae0df3c0456831e35687ce",
+        "scale": 1.8746861219406128
+      }
+    ]
+  },
+  {
+    "repeat": 0,
+    "fold": 1,
+    "seed": 17001,
+    "noise": 0.0,
+    "epochs": 40,
+    "steps": 440,
+    "fit_seconds": 2.002458700007992,
+    "fit_questions": 1389,
+    "assets": [
+      {
+        "recipe": "epoch14",
+        "path": "repeat0_fold1\\epoch14_seed17001.npz",
+        "sha256": "f601ee09c1b8ac6035b5707ce0a0e11c5840e1d3f0c424c891d929175375e3fb",
+        "scale": 1.6031774282455444
+      },
+      {
+        "recipe": "epoch40",
+        "path": "repeat0_fold1\\epoch40_seed17001.npz",
+        "sha256": "5716b15d2c24e6a15642f265a1cf97abd402b2ddd4a87f6a5a5bad2cfd77b798",
+        "scale": 1.9850666522979736
+      },
+      {
+        "recipe": "epoch40_ema",
+        "path": "repeat0_fold1\\epoch40_ema_seed17001.npz",
+        "sha256": "3b863fe35d86bd487c7b9873305f9492d73421519ade37d6fe708fa704a61256",
+        "scale": 1.892122507095337
+      }
+    ]
+  },
+  {
+    "repeat": 0,
+    "fold": 1,
+    "seed": 17001,
+    "noise": 0.05,
+    "epochs": 40,
+    "steps": 440,
+    "fit_seconds": 5.686638999992283,
+    "fit_questions": 1389,
+    "assets": [
+      {
+        "recipe": "epoch40_ema_noise",
+        "path": "repeat0_fold1\\epoch40_ema_noise_seed17001.npz",
+        "sha256": "99aeacb18d535cb2ac6f560f8f65256c0b85610c4a979ecf50187955c08f9214",
+        "scale": 1.8892998695373535
+      }
+    ]
+  },
+  {
+    "repeat": 0,
+    "fold": 2,
+    "seed": 7506,
+    "noise": 0.0,
+    "epochs": 40,
+    "steps": 480,
+    "fit_seconds": 2.343465099998866,
+    "fit_questions": 1410,
+    "assets": [
+      {
+        "recipe": "epoch14",
+        "path": "repeat0_fold2\\epoch14_seed7506.npz",
+        "sha256": "903bdd2bad929cb3831062128462b66144be3cbda79b0f4e0277dba286aa6092",
+        "scale": 1.3474822044372559
+      },
+      {
+        "recipe": "epoch40",
+        "path": "repeat0_fold2\\epoch40_seed7506.npz",
+        "sha256": "6ea4ad52f7564a765c6bb512b8968ae34a8c996e2dc6d042675adf0964a9a294",
+        "scale": 1.7832881212234497
+      },
+      {
+        "recipe": "epoch40_ema",
+        "path": "repeat0_fold2\\epoch40_ema_seed7506.npz",
+        "sha256": "07eda4cfe02c26404b58ec1cca95ea50082fbd46f76c45fac7c1e2cde3c13390",
+        "scale": 1.711049199104309
+      }
+    ]
+  },
+  {
+    "repeat": 0,
+    "fold": 2,
+    "seed": 7506,
+    "noise": 0.05,
+    "epochs": 40,
+    "steps": 480,
+    "fit_seconds": 5.866325599999982,
+    "fit_questions": 1410,
+    "assets": [
+      {
+        "recipe": "epoch40_ema_noise",
+        "path": "repeat0_fold2\\epoch40_ema_noise_seed7506.npz",
+        "sha256": "d839fe2fb6e048f88741f5e1255864007139c9586f377ef715b7995fd6aec71f",
+        "scale": 1.7097638845443726
+      }
+    ]
+  },
+  {
+    "repeat": 0,
+    "fold": 2,
+    "seed": 17001,
+    "noise": 0.0,
+    "epochs": 40,
+    "steps": 480,
+    "fit_seconds": 2.013134799999534,
+    "fit_questions": 1410,
+    "assets": [
+      {
+        "recipe": "epoch14",
+        "path": "repeat0_fold2\\epoch14_seed17001.npz",
+        "sha256": "e6c49ae97c3862403a53bcd4607f3cc6ec3d1d3e561f24f462a2cb5b51d35cb2",
+        "scale": 1.4071332216262817
+      },
+      {
+        "recipe": "epoch40",
+        "path": "repeat0_fold2\\epoch40_seed17001.npz",
+        "sha256": "05d08e775b1e724dce4507497de41743bd4ee5686c7bae04f1087fe72a86e7d2",
+        "scale": 1.697170376777649
+      },
+      {
+        "recipe": "epoch40_ema",
+        "path": "repeat0_fold2\\epoch40_ema_seed17001.npz",
+        "sha256": "2684835f4c1bff0a6fae3bb97f343566c5612e5ca8ec59f431a1f1c786c01490",
+        "scale": 1.6778961420059204
+      }
+    ]
+  },
+  {
+    "repeat": 0,
+    "fold": 2,
+    "seed": 17001,
+    "noise": 0.05,
+    "epochs": 40,
+    "steps": 480,
+    "fit_seconds": 6.09839459999057,
+    "fit_questions": 1410,
+    "assets": [
+      {
+        "recipe": "epoch40_ema_noise",
+        "path": "repeat0_fold2\\epoch40_ema_noise_seed17001.npz",
+        "sha256": "662bb705ba061c3d4e6226c5cd911baa8ad8faab1f71f7f7b22ba408e71051d5",
+        "scale": 1.6759483814239502
+      }
+    ]
+  },
+  {
+    "repeat": 1,
+    "fold": 0,
+    "seed": 7506,
+    "noise": 0.0,
+    "epochs": 40,
+    "steps": 480,
+    "fit_seconds": 1.9504891999968095,
+    "fit_questions": 1432,
+    "assets": [
+      {
+        "recipe": "epoch14",
+        "path": "repeat1_fold0\\epoch14_seed7506.npz",
+        "sha256": "6943b936288606f709cd1bc8fb16f2e22c80cd2f61f821bee82b7bf7fcf68089",
+        "scale": 1.6207597255706787
+      },
+      {
+        "recipe": "epoch40",
+        "path": "repeat1_fold0\\epoch40_seed7506.npz",
+        "sha256": "e3ad9b8d95c8db1ca79cc66cd4ab7d60bfe7abb3c795e6bc10c51e2e3c6ee9ff",
+        "scale": 1.949041485786438
+      },
+      {
+        "recipe": "epoch40_ema",
+        "path": "repeat1_fold0\\epoch40_ema_seed7506.npz",
+        "sha256": "7b66835d2187913517cc43eb8f121ccbb5618fd11d4039acc86ef3dd1d2f7d27",
+        "scale": 1.9351869821548462
+      }
+    ]
+  },
+  {
+    "repeat": 1,
+    "fold": 0,
+    "seed": 7506,
+    "noise": 0.05,
+    "epochs": 40,
+    "steps": 480,
+    "fit_seconds": 5.834814200003166,
+    "fit_questions": 1432,
+    "assets": [
+      {
+        "recipe": "epoch40_ema_noise",
+        "path": "repeat1_fold0\\epoch40_ema_noise_seed7506.npz",
+        "sha256": "23ec83a9dc2044ff9b3e2ea285ae45b990dd2de2c9226ed8d9c4c0fe838dab93",
+        "scale": 1.9261287450790405
+      }
+    ]
+  },
+  {
+    "repeat": 1,
+    "fold": 0,
+    "seed": 17001,
+    "noise": 0.0,
+    "epochs": 40,
+    "steps": 480,
+    "fit_seconds": 1.9721443000016734,
+    "fit_questions": 1432,
+    "assets": [
+      {
+        "recipe": "epoch14",
+        "path": "repeat1_fold0\\epoch14_seed17001.npz",
+        "sha256": "f2202f3e776c2e9cf73fd8e31fbc68beadf523db0da052488fc1aa711a0326cb",
+        "scale": 1.5662389993667603
+      },
+      {
+        "recipe": "epoch40",
+        "path": "repeat1_fold0\\epoch40_seed17001.npz",
+        "sha256": "f830dde6bc4ffb2c1a47938e55fc4b81806d8582c4279ce792fce381c880974c",
+        "scale": 1.941109538078308
+      },
+      {
+        "recipe": "epoch40_ema",
+        "path": "repeat1_fold0\\epoch40_ema_seed17001.npz",
+        "sha256": "5961c3936d17e9ddd1a75f3e02736f5e87748ef7989f27b3160bf24ac63198ec",
+        "scale": 1.9373981952667236
+      }
+    ]
+  },
+  {
+    "repeat": 1,
+    "fold": 0,
+    "seed": 17001,
+    "noise": 0.05,
+    "epochs": 40,
+    "steps": 480,
+    "fit_seconds": 6.397466700000223,
+    "fit_questions": 1432,
+    "assets": [
+      {
+        "recipe": "epoch40_ema_noise",
+        "path": "repeat1_fold0\\epoch40_ema_noise_seed17001.npz",
+        "sha256": "d3cdf8044e887de345d1a83979acd09fc69a283ff2046a0261795f6036c9a208",
+        "scale": 1.9328877925872803
+      }
+    ]
+  },
+  {
+    "repeat": 1,
+    "fold": 1,
+    "seed": 7506,
+    "noise": 0.0,
+    "epochs": 40,
+    "steps": 480,
+    "fit_seconds": 2.0728679000021657,
+    "fit_questions": 1411,
+    "assets": [
+      {
+        "recipe": "epoch14",
+        "path": "repeat1_fold1\\epoch14_seed7506.npz",
+        "sha256": "d059e1e2990628a7f7872de17ade02f63b17269e3519e9a9dab07a59a6db9987",
+        "scale": 1.5464107990264893
+      },
+      {
+        "recipe": "epoch40",
+        "path": "repeat1_fold1\\epoch40_seed7506.npz",
+        "sha256": "fad7d0bfca6652504251b2fa1161535876a51729028b33780254d8030ac7d60a",
+        "scale": 1.772071123123169
+      },
+      {
+        "recipe": "epoch40_ema",
+        "path": "repeat1_fold1\\epoch40_ema_seed7506.npz",
+        "sha256": "27c9d5076d3d1e2428f81296a1e26eb38f01ac1813d8d008cc6823b8253c1489",
+        "scale": 1.8039911985397339
+      }
+    ]
+  },
+  {
+    "repeat": 1,
+    "fold": 1,
+    "seed": 7506,
+    "noise": 0.05,
+    "epochs": 40,
+    "steps": 480,
+    "fit_seconds": 5.837875999990501,
+    "fit_questions": 1411,
+    "assets": [
+      {
+        "recipe": "epoch40_ema_noise",
+        "path": "repeat1_fold1\\epoch40_ema_noise_seed7506.npz",
+        "sha256": "46c689e103cb839db8890bc0b2741a0fa568fc889d48650e1092d1b869d4349b",
+        "scale": 1.7877057790756226
+      }
+    ]
+  },
+  {
+    "repeat": 1,
+    "fold": 1,
+    "seed": 17001,
+    "noise": 0.0,
+    "epochs": 40,
+    "steps": 480,
+    "fit_seconds": 2.1553327000001445,
+    "fit_questions": 1411,
+    "assets": [
+      {
+        "recipe": "epoch14",
+        "path": "repeat1_fold1\\epoch14_seed17001.npz",
+        "sha256": "e0a78a55ad21ff840327caeebd3e4ca735df7926fb3ec788cad7e5398cb5294a",
+        "scale": 1.437285304069519
+      },
+      {
+        "recipe": "epoch40",
+        "path": "repeat1_fold1\\epoch40_seed17001.npz",
+        "sha256": "9c2ccc5851bbfaa61d5c921fc110a800cf24e3126f2b3901d547819bed0188d5",
+        "scale": 1.8078343868255615
+      },
+      {
+        "recipe": "epoch40_ema",
+        "path": "repeat1_fold1\\epoch40_ema_seed17001.npz",
+        "sha256": "d0ef637bb9241592e6a993d60a9c7742bedea6d66c550620ec87d5a2b1ef72d5",
+        "scale": 1.7476357221603394
+      }
+    ]
+  },
+  {
+    "repeat": 1,
+    "fold": 1,
+    "seed": 17001,
+    "noise": 0.05,
+    "epochs": 40,
+    "steps": 480,
+    "fit_seconds": 6.208877700002631,
+    "fit_questions": 1411,
+    "assets": [
+      {
+        "recipe": "epoch40_ema_noise",
+        "path": "repeat1_fold1\\epoch40_ema_noise_seed17001.npz",
+        "sha256": "bdeafbceb80d5b7d9b828d9a2d723a0a4b6a82544249faddf33f9992896bae25",
+        "scale": 1.7413402795791626
+      }
+    ]
+  },
+  {
+    "repeat": 1,
+    "fold": 2,
+    "seed": 7506,
+    "noise": 0.0,
+    "epochs": 40,
+    "steps": 440,
+    "fit_seconds": 1.7544878000044264,
+    "fit_questions": 1385,
+    "assets": [
+      {
+        "recipe": "epoch14",
+        "path": "repeat1_fold2\\epoch14_seed7506.npz",
+        "sha256": "c6dd108b534b1bb946280fbecf402c59648928a9dc3d2a2e4d284b978349614b",
+        "scale": 1.6078850030899048
+      },
+      {
+        "recipe": "epoch40",
+        "path": "repeat1_fold2\\epoch40_seed7506.npz",
+        "sha256": "9738149235d7c179e0293076e3e0e0a0a0c8f45936239e32d57275798df5bc0e",
+        "scale": 1.8688699007034302
+      },
+      {
+        "recipe": "epoch40_ema",
+        "path": "repeat1_fold2\\epoch40_ema_seed7506.npz",
+        "sha256": "3fff6f86c755355ced57ca2b6fdc7571dda2ffe2693f783a7f41a5bad632ad99",
+        "scale": 1.8940459489822388
+      }
+    ]
+  },
+  {
+    "repeat": 1,
+    "fold": 2,
+    "seed": 7506,
+    "noise": 0.05,
+    "epochs": 40,
+    "steps": 440,
+    "fit_seconds": 5.692793900001561,
+    "fit_questions": 1385,
+    "assets": [
+      {
+        "recipe": "epoch40_ema_noise",
+        "path": "repeat1_fold2\\epoch40_ema_noise_seed7506.npz",
+        "sha256": "363c63f1c77e74d381ea60612b93c59705777b3ce460612785f788dbad9d52af",
+        "scale": 1.887612223625183
+      }
+    ]
+  },
+  {
+    "repeat": 1,
+    "fold": 2,
+    "seed": 17001,
+    "noise": 0.0,
+    "epochs": 40,
+    "steps": 440,
+    "fit_seconds": 1.8361979999899631,
+    "fit_questions": 1385,
+    "assets": [
+      {
+        "recipe": "epoch14",
+        "path": "repeat1_fold2\\epoch14_seed17001.npz",
+        "sha256": "7ef91b705c7e6c7dac45227e46ae0b73644ec62767953ae963ef2f5435864b97",
+        "scale": 1.5780030488967896
+      },
+      {
+        "recipe": "epoch40",
+        "path": "repeat1_fold2\\epoch40_seed17001.npz",
+        "sha256": "08e84c38a8f7a4bb6624c2a8d89cdc8d453aa366197ad311d54ca32d0fe7ebaa",
+        "scale": 1.9110935926437378
+      },
+      {
+        "recipe": "epoch40_ema",
+        "path": "repeat1_fold2\\epoch40_ema_seed17001.npz",
+        "sha256": "9c5d4ef8fc93dd166f1513229781167a47f826d902455e2bd03cc560afc7db60",
+        "scale": 1.9002007246017456
+      }
+    ]
+  },
+  {
+    "repeat": 1,
+    "fold": 2,
+    "seed": 17001,
+    "noise": 0.05,
+    "epochs": 40,
+    "steps": 440,
+    "fit_seconds": 6.101329800003441,
+    "fit_questions": 1385,
+    "assets": [
+      {
+        "recipe": "epoch40_ema_noise",
+        "path": "repeat1_fold2\\epoch40_ema_noise_seed17001.npz",
+        "sha256": "3563b4d66c9ade7c54d2a834f154b5aa055428572edfa1dc1bce3244dd7b254a",
+        "scale": 1.8922576904296875
+      }
+    ]
+  }
+]

@@ -1,0 +1,392 @@
+{
+  "purpose": "B3 cross-fitted score-scale estimation and separate B4 genuinely nested support-pattern fusion",
+  "outer_fold_seeds": [
+    20261027,
+    20261028
+  ],
+  "outer_folds": 3,
+  "inner_fold_seed": "20261029 + 100*repeat + outer_fold",
+  "inner_fold_mapping": "inner[default_rng(seed).permutation(len(outer_fit))]=arange(len(outer_fit))%3; relative to sorted outerfit indices",
+  "transform_seed": "20261101 + 1000*repeat + 100*outer_fold + inner_fold",
+  "recipes": {
+    "heads_D": [
+      {
+        "name": "nonlinear",
+        "kind": "nonlinear",
+        "file": "seed_7506.npz",
+        "weight": 0.3333333333333333,
+        "scale": 1.110068678855896,
+        "training": {
+          "seed": 7506,
+          "hidden": 64,
+          "l2": 0.01,
+          "epochs": 5,
+          "objective": "pairwise"
+        }
+      },
+      {
+        "name": "advanced",
+        "kind": "residual",
+        "file": "residual.npz",
+        "weight": 0.3333333333333333,
+        "scale": 1.0948938131332397,
+        "training": {
+          "seed": 7506,
+          "hidden": 128,
+          "l2": 0.01,
+          "epochs": 5,
+          "objective": "listwise"
+        }
+      },
+      {
+        "name": "text",
+        "kind": "trees",
+        "file": "text.npz",
+        "weight": 0.3333333333333333,
+        "scale": 1.6705745566533514,
+        "training": {
+          "seed": 20261013,
+          "rounds": 200,
+          "leaves": 31,
+          "l2": 10
+        }
+      }
+    ],
+    "five_base_recipes": {
+      "A": {
+        "representation": "group",
+        "objective": "pairwise",
+        "dropout": 0.2,
+        "hidden": 128,
+        "l2": 0.01,
+        "epochs": 14
+      },
+      "K": {
+        "pca": 64,
+        "C": 3.0,
+        "gamma_multiplier": 1.0,
+        "objective": "pair_delta"
+      },
+      "Q": {
+        "PLS": 8,
+        "HGBT_leaves": 15,
+        "rounds": 300
+      },
+      "P": {
+        "pca": 64,
+        "hidden": 64,
+        "l2": 0.03,
+        "epochs": 27
+      },
+      "C": {
+        "PLS": 8,
+        "HGBT_leaves": 31,
+        "rounds": 300,
+        "feature_design": "condition_pls8"
+      }
+    }
+  },
+  "head_order": [
+    "d_pair",
+    "d_list",
+    "d_text",
+    "A",
+    "K",
+    "Q",
+    "P",
+    "C"
+  ],
+  "source_models": [
+    "D",
+    "T",
+    "F",
+    "G"
+  ],
+  "method_order": [
+    "D",
+    "T",
+    "F",
+    "G",
+    "D_crossfit_scale",
+    "T_crossfit_scale",
+    "F_crossfit_scale",
+    "G_crossfit_scale",
+    "global_fusion",
+    "pattern_shrink_fusion"
+  ],
+  "planned_model_fits": 144,
+  "planned_outer_new_fits": 0,
+  "reused_outer_model_fits": 48,
+  "planned_PCA_fits": 36,
+  "planned_PLS_fits": 36,
+  "B3": "For each head independently: std of all4-candidate-centered innerOOF raw scores over valid candidate positions in outerfit, float64, floor1e-6. Apply these scales to saved outer-model raw scores, keeping fixedD/T/F/G weights. No fittedlabels in scale calculation; fitting references only train inner models.",
+  "B4": {
+    "source_scores": "D/T/F/G mixtures of innerOOF heads normalized by each corresponding inner-fitting in-sample scale. Outer evaluation uses original A2 outer-fitting normalized scores.",
+    "weights": [
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.25,
+        0.75
+      ],
+      [
+        0.0,
+        0.0,
+        0.5,
+        0.5
+      ],
+      [
+        0.0,
+        0.0,
+        0.75,
+        0.25
+      ],
+      [
+        0.0,
+        0.0,
+        1.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.25,
+        0.0,
+        0.75
+      ],
+      [
+        0.0,
+        0.25,
+        0.25,
+        0.5
+      ],
+      [
+        0.0,
+        0.25,
+        0.5,
+        0.25
+      ],
+      [
+        0.0,
+        0.25,
+        0.75,
+        0.0
+      ],
+      [
+        0.0,
+        0.5,
+        0.0,
+        0.5
+      ],
+      [
+        0.0,
+        0.5,
+        0.25,
+        0.25
+      ],
+      [
+        0.0,
+        0.5,
+        0.5,
+        0.0
+      ],
+      [
+        0.0,
+        0.75,
+        0.0,
+        0.25
+      ],
+      [
+        0.0,
+        0.75,
+        0.25,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.25,
+        0.0,
+        0.0,
+        0.75
+      ],
+      [
+        0.25,
+        0.0,
+        0.25,
+        0.5
+      ],
+      [
+        0.25,
+        0.0,
+        0.5,
+        0.25
+      ],
+      [
+        0.25,
+        0.0,
+        0.75,
+        0.0
+      ],
+      [
+        0.25,
+        0.25,
+        0.0,
+        0.5
+      ],
+      [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      [
+        0.25,
+        0.25,
+        0.5,
+        0.0
+      ],
+      [
+        0.25,
+        0.5,
+        0.0,
+        0.25
+      ],
+      [
+        0.25,
+        0.5,
+        0.25,
+        0.0
+      ],
+      [
+        0.25,
+        0.75,
+        0.0,
+        0.0
+      ],
+      [
+        0.5,
+        0.0,
+        0.0,
+        0.5
+      ],
+      [
+        0.5,
+        0.0,
+        0.25,
+        0.25
+      ],
+      [
+        0.5,
+        0.0,
+        0.5,
+        0.0
+      ],
+      [
+        0.5,
+        0.25,
+        0.0,
+        0.25
+      ],
+      [
+        0.5,
+        0.25,
+        0.25,
+        0.0
+      ],
+      [
+        0.5,
+        0.5,
+        0.0,
+        0.0
+      ],
+      [
+        0.75,
+        0.0,
+        0.0,
+        0.25
+      ],
+      [
+        0.75,
+        0.0,
+        0.25,
+        0.0
+      ],
+      [
+        0.75,
+        0.25,
+        0.0,
+        0.0
+      ],
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "global_order": [
+      "more hard correct",
+      "lower hard group CE",
+      "fewer active sources",
+      "earlier grid row"
+    ],
+    "patterns": [
+      "3:1",
+      "2:2",
+      "2:1:1",
+      "all_single"
+    ],
+    "all_single_definition": "At least2 valid parsed answer groups, each with one candidate; may have2/3/4 valid candidates",
+    "other_patterns": "fallbackglobal; e.g2:1 withoneinvalid, unanimous, orno valid answer",
+    "minimum_pattern_hard_questions": 80,
+    "shrinkage": "effective=.5global+.5patternselected; below80usesglobal",
+    "policy_freeze": "Save all inner choices and B3 scales before producing outer-method scores"
+  },
+  "separation": "B3 scales are NEVER used in B4 source weight selection or B4 outer prediction; a combined scheme would require a separately nested construction",
+  "selection": "No final recipe promotion; compare all fixed B3scales vsownbaseline and B4global vsfixedF/patternvsglobal",
+  "boundaries": "All8fresh inner learners/transforms see only innerfit. Outerheldlabels never choose scales/weights. Same questions repeated, no doubled independent samplesize.",
+  "threads": 4,
+  "validation_access": false,
+  "test_access": false,
+  "source_sha256": {
+    "advanced_neural.py": "b841c26706a649083fc70897adbbf9976cf590cfb7cc351393e1eff51b64291a",
+    "answer_group_experiment.py": "ef46af67bc4549cb0318a0a4bad313e19306ab79686afaf66bfba6d1594e89ea",
+    "answer_group_model.py": "da2aea23e58310cbae6bb9b324d9443c6876bff54ab27af513d7cfde5073386d",
+    "common.py": "aecd10f7ff2e9e82ac5673d34d576e122caac51d2caaa7c7a8aa05906da51f6c",
+    "condition_experiment.py": "144967e27cbb382248386f27df36cfa8e918b0a148a1189d90181a7e4baafe2a",
+    "condition_features.py": "3070f63f38a1c230fb60bed63da38bbbbf660009d47416f6f8c67550d8f2eb7f",
+    "condition_model.py": "bd92915169ee5fec651f8c39c2395528002a83eb47440de86a412ec3ba144dbf",
+    "conditional_pair.py": "e53f381710da79d8ad67a5fc5d36f6a2113ed3bb72f329ab51691988c52cf22a",
+    "conditional_pair_experiment.py": "9b3986c3592928190ffd1dd6d8e69b186183ce298e8d671adbedc6215897203a",
+    "ensemble.py": "4a9623d2251a30b48759ea5296a4c43bdc029eb925a44d5c946e3ed7b800aeff",
+    "experiment_utils.py": "7f6dda4550acc7c6d3cc6429e46cc8978304ea7062118876ae763030ed2daa39",
+    "finalize_validation.py": "c1ddb6997043cf3838c2b4ff448a01768a19d1a7faa5f68d14c85ad149f85020",
+    "kernel_rank.py": "d8b2fd826096fcbd5cdee9f7986c83c62d4cc7ae01379df4e55e1ac0a990ec69",
+    "nonlinear_experiment.py": "669ec30dec91e5c6677205fcc915408930710f9fe4a8ddc7f92156d2d359b0de",
+    "optimization_baselines.py": "dbb5df677b4677e6d7faf85f553fd322bce2b900226fd604d15196205882840f",
+    "optimization_calibration.py": "ca6f2843240e46759901671c3fe2c78cb830457ae6139d9680d5ca058fba693d",
+    "quantitative_model.py": "10e70d35755b8a815ab885e1bf5126581c46d476c170d0618f9e68f4bb462237",
+    "selection.py": "8b1f6ce4e7c1e445cbc0f6414a979722879d9fef9aa56073ebe052ac09563e64",
+    "selective_routing.py": "636a55fb9f77b0e60c311dd471bffb5b3d3e206a0593d99dd12885a68129a4cc",
+    "submission.py": "f9f0985a4afe20616e33c4df12fad0528730580bf56ee89b8204bd4c277d81d4",
+    "text_features.py": "96eb0ee4d7e1a526b054db2b9fd5979997327ff0359f5de7baae89b557ab38c7",
+    "train_selected.py": "54a3ced073cb2cec1eef21071dd65998a7f3d881cee28d480cf699a1264da507",
+    "tree_model.py": "8168266c7593b2e62b6e3123cffcd1304cc23a99d816fa65b3f03b15bed1e4d9"
+  },
+  "outer_evidence_sha256": {
+    "protocol.json": "44572fdf24e3785ee522eec653eb9b8cc574fe668f35f5a67931848b5d358950",
+    "oof_logits.npz": "c704c3bd11c6b6101eefad00aca96b0c14d7952269621a2b243df38c1b6a41c0",
+    "fit_records.json": "e6eee62ef9d53cae49c8ef97e03669dcadbe46306100dc82de56ac20cbd27365",
+    "verification.json": "27635b78bd4e732ffcf875cd7e55523ed1e84ad2751b4559b156e539115ccfcf"
+  }
+}

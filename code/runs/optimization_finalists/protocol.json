@@ -1,0 +1,199 @@
+{
+  "purpose": "Resource qualification of at most two fixed-menu finalists; no validation/test",
+  "selection_policy_sha256": "0e633381d6bd0675d6d706ed70d61bbabb3f71901f91472be79f85977bbfdcfd",
+  "fusion_protocol_sha256": "b8ae5be822b55fd86d7c23387982589b652ffb3c086221ffb794693bf6e5c474",
+  "source_sha256": {
+    "advanced_neural.py": "b841c26706a649083fc70897adbbf9976cf590cfb7cc351393e1eff51b64291a",
+    "answer_group_experiment.py": "ef46af67bc4549cb0318a0a4bad313e19306ab79686afaf66bfba6d1594e89ea",
+    "answer_group_model.py": "da2aea23e58310cbae6bb9b324d9443c6876bff54ab27af513d7cfde5073386d",
+    "common.py": "aecd10f7ff2e9e82ac5673d34d576e122caac51d2caaa7c7a8aa05906da51f6c",
+    "condition_experiment.py": "144967e27cbb382248386f27df36cfa8e918b0a148a1189d90181a7e4baafe2a",
+    "condition_features.py": "3070f63f38a1c230fb60bed63da38bbbbf660009d47416f6f8c67550d8f2eb7f",
+    "condition_model.py": "bd92915169ee5fec651f8c39c2395528002a83eb47440de86a412ec3ba144dbf",
+    "conditional_pair.py": "e53f381710da79d8ad67a5fc5d36f6a2113ed3bb72f329ab51691988c52cf22a",
+    "conditional_pair_experiment.py": "9b3986c3592928190ffd1dd6d8e69b186183ce298e8d671adbedc6215897203a",
+    "cross_candidate_features.py": "5624fa2cccacf2651968936e51d2b73b18cca7983afe1bcf33beccffe9f4d3da",
+    "equation_graph_model.py": "6f16f7394c63efd9cd20d143ead2740834c6f14f5b7e1860f48cece84e6d73c8",
+    "experiment_utils.py": "7f6dda4550acc7c6d3cc6429e46cc8978304ea7062118876ae763030ed2daa39",
+    "kernel_rank.py": "d8b2fd826096fcbd5cdee9f7986c83c62d4cc7ae01379df4e55e1ac0a990ec69",
+    "optimization_core_refit.py": "24559a8fd703ee4e2bae0f5f048719cb3a66a2a7929a8c767f44e6b5e49589d9",
+    "optimization_finalists.py": "93ec73c6d36344ea9675cfb3bd04ac968ab6f034d2bbe5b227ae9e9432510ac5",
+    "optimization_graph.py": "e032e9731bf09d1889c84510dd2f6e9cddd7acc4e2f467beaac7485c38e1473b",
+    "optimization_interactions.py": "1378cc8835231aa67818aace096648dea96162eb2750dff25d94ee3a19afc83a",
+    "optimization_reference_augmentation.py": "461ce5e37257a3e86adc870c7c1b61b550c752ef6a45c82cb29b4a7507849a03",
+    "optimization_regularization.py": "891982e02d180fb8e49f157e1e37717d2e601e882abcde60f246eb30968c6f0c",
+    "optimization_sequence.py": "0bfdd61832f6b6d78c8936ca19215b5d09a02c05bc623a81930327d7e763d5fd",
+    "optimization_sequence_aux.py": "c9a656e767a9f0b1abdf32d451f6779effb2fdefeaf4f3ca9a450aeb50dfdf15",
+    "optimization_sequence_model.py": "20451c98236cdb9a270da5ef6b5ed496444fdc6e219db760948b4077ce8dea13",
+    "optimization_sequence_refit.py": "97478985f98501e992e24554550789b07587f17c1cbbff0f5fdec87d4d8a418b",
+    "optimization_structure_refit.py": "56b682356f6376c5ef6dd2ee0e07219bfe797583ae8c263ec5959a568efe1605",
+    "optimization_subset.py": "b0824473d2bb26b5460dcb9ada29bfd4db24f21315d799c7a86994edb3eb35b6",
+    "optimization_transformer.py": "f7ccdcf648579fb8545245a3c41200d378e40687792ea1bfd11e787921aa23f0",
+    "optimization_transformer_model.py": "d710f88244842b1931ce6ffcee3732817d1f4f4a21af9345dbaf76d9051b9500",
+    "optimization_trees.py": "24645d819c71299fd5ba1dbb2103f5abdde207a83ed76a4765034ba94bb3a01d",
+    "optimized_selection.py": "e48b36979a8661be623e7959e3420c24ff563753576d868b50721eb09a55564a",
+    "predict.py": "e7a627fbdc9ef8d4ab3189a6fa5ac02d56ae703ccd1a81507aea0bd66e042162",
+    "quantitative_features.py": "515a02dd0f7028765312a00fd19fc88507dd04d17755b505f3a4821aca8b3ccb",
+    "quantitative_model.py": "10e70d35755b8a815ab885e1bf5126581c46d476c170d0618f9e68f4bb462237",
+    "score_predictions.py": "fe12b809b82117aea722e5dfef7a55a88950a7cf50c49ec2ea007ea847959960",
+    "selection.py": "8b1f6ce4e7c1e445cbc0f6414a979722879d9fef9aa56073ebe052ac09563e64",
+    "sequence_experiment.py": "fd1277bb265ae56e6e436bb2575d7f720d256f0dc0f3a2132cd2ebb95d1c7150",
+    "sequence_model.py": "ef0ff6104e875338e9c6b3032cb8cd670f1e412064a0a2e4c924984b60ce4b07",
+    "text_features.py": "96eb0ee4d7e1a526b054db2b9fd5979997327ff0359f5de7baae89b557ab38c7",
+    "tree_model.py": "8168266c7593b2e62b6e3123cffcd1304cc23a99d816fa65b3f03b15bed1e4d9"
+  },
+  "branch_mapping": {
+    "A": [
+      "core",
+      "A",
+      "venv"
+    ],
+    "K": [
+      "core",
+      "K",
+      "venv"
+    ],
+    "Q": [
+      "core",
+      "Q",
+      "venv"
+    ],
+    "P": [
+      "core",
+      "P",
+      "venv"
+    ],
+    "C": [
+      "core",
+      "C",
+      "venv"
+    ],
+    "A14_5": [
+      "core",
+      "A5_epoch14",
+      "venv"
+    ],
+    "Aema_5": [
+      "core",
+      "A5_ema40",
+      "venv"
+    ],
+    "Anoise_5": [
+      "core",
+      "A5_noise_ema40",
+      "venv"
+    ],
+    "Across_3": [
+      "core",
+      "A_D1D2",
+      "venv"
+    ],
+    "Qcross": [
+      "core",
+      "Q_D1D2",
+      "venv"
+    ],
+    "Ccross": [
+      "core",
+      "C_D1D2",
+      "venv"
+    ],
+    "Asubset_3": [
+      "core",
+      "drop_one_half",
+      "venv"
+    ],
+    "roles_cnn": [
+      "sequence",
+      "headtail_roles",
+      "sequenceenv"
+    ],
+    "allq_cnn": [
+      "sequence",
+      "control_allq",
+      "sequenceenv"
+    ],
+    "aux_cnn": [
+      "sequence",
+      "token_aux01",
+      "sequenceenv"
+    ],
+    "token_attention": [
+      "sequence",
+      "token_attention",
+      "sequenceenv"
+    ],
+    "set_attention": [
+      "sequence",
+      "token_set_attention",
+      "sequenceenv"
+    ],
+    "digit_cnn": [
+      "sequence",
+      "digit_text_control",
+      "sequenceenv"
+    ],
+    "corruption_cnn": [
+      "sequence",
+      "reference_corruption01",
+      "sequenceenv"
+    ],
+    "node_mlp": [
+      "structure",
+      "node_mlp",
+      "sequenceenv"
+    ],
+    "equation_gcn": [
+      "structure",
+      "equation_gcn",
+      "sequenceenv"
+    ],
+    "cross_tree": [
+      "structure",
+      "cross_tree",
+      "venv"
+    ]
+  },
+  "refit_cache": "Immutable runs/optimization_finalists/refits/<fusion-branch>; reuse only completed verified assets",
+  "packing": "Only relative branch manifest and its referenced NPZ assets, plus integrated config.json",
+  "size_rule": "Sum NPZ ZIP member uncompressed sizes and every non-NPZ file byte in the entire checkpoint",
+  "maximum_uncompressed_bytes": 16777216,
+  "fixture": "First467 official training questions in original order, unmodified embeddings and references; generated audit manifest in project .local",
+  "timing": "One fresh checkenv prediction process plus one fresh independent scorer process, measured together by parent perf_counter",
+  "maximum_combined_seconds": 25.0,
+  "process_timeout_seconds": 120,
+  "timing_gate": "All registered managed training studies must be complete before any resource timing; no concurrent refit subprocess",
+  "resource_failure": "Oversize, measured combined time>25s, or resource-process timeout makes recipe ineligible; no recipe changes or timing retries",
+  "implementation_failure": "Nonzero subprocess exit, replay/source/hash/manifest failure stops the entire run for documented repair; do not skip a recipe",
+  "outputs": "Ranked resource assessments, exact prevalidation shortlist and source/config/asset hashes; zero validation/test evaluations",
+  "fit_count": "Count completed new full-training learner fits; reused completed branch cache is separately recorded",
+  "created_utc": "2026-10-26T09:52:44.187563+00:00",
+  "repair": {
+    "reason": "Logging-only duplicate seconds fix; recover already-trained P; resume exact fixed ranking without repeating timing",
+    "created_utc": "2026-10-26T10:17:11.016501+00:00",
+    "old_protocol_sha256": "b8fdac580e4f4fe2090d6faf3f8924b56b4909c6599269a69731d98c37593c48",
+    "core_compatibility_sha256": "f9154be96ce8b0e58fbe81112d772cb8b18516a3406efc426c60c66a3148a9d8",
+    "driver_archive_hashes": {
+      "optimization_finalists_before.py": "c921305050f793d2a536ad9cdd676a37d9be65452aeeb583da720f79677d53ff",
+      "driver_protocol_before.json": "b8fdac580e4f4fe2090d6faf3f8924b56b4909c6599269a69731d98c37593c48",
+      "driver_failed_summary.json": "bc3ab41544025828f21b0e6500d435a1e8aa2abf3a2d6908b5577e71af4e52c6",
+      "driver_run_started_before.json": "2549d26051b41e88cdbb071ff246d28897b607e047fadf44c8f33b08ff8f430f",
+      "driver_progress_before.json": "fa83c1ffcb036aff2c3a081071e10782310a649b67b631182f8ff86a5c8589ca",
+      "driver_branch_records_before.json": "72a46113cf3542303f44103a3f5b71657b318de0d4e1b399365c5ffdc07e1221",
+      "driver_resource_assessments_before.json": "1f60cc6e06bb1e906bf402d20bfa9ec7b1e28d7c2f9b19aa2ec5e530fd4facb4"
+    },
+    "reported_model_fits_before_failure": 10,
+    "recovered_completed_model_fits": 1,
+    "actual_completed_fits_before_resume": 11,
+    "fusion_summary_sha256": "e0b92d9e7450564e317174bf05f82b0b872af1edbd4416716bfd3accd046c771",
+    "resource_assessments_sha256": "1f60cc6e06bb1e906bf402d20bfa9ec7b1e28d7c2f9b19aa2ec5e530fd4facb4",
+    "resource_evidence_sha256": {
+      "resource_checks/F_subset_cross/prediction.log": "500373e8e2a86617bd9676ebb39d2573048fd4406abc988f54ff6ec13c3d1807",
+      "resource_checks/F_subset_cross/predictions.json": "e5f1abb1c188dd5edf38e42094fcc703ab5bc819558458e6423984e33f3bbccc",
+      "resource_checks/F_subset_cross/resource.json": "0b02ce15df8ff78689635a5b42daf4e525e627da1fb6afb1a8d4c422c74d0df3",
+      "resource_checks/F_subset_cross/score.json": "dd4ed090fe9656170c70391c506f649ed8a92042d823e6e34bfac94570823335",
+      "resource_checks/F_subset_cross/scoring.log": "dd4ed090fe9656170c70391c506f649ed8a92042d823e6e34bfac94570823335"
+    },
+    "no_prior_resource_timing_repeated": true
+  }
+}

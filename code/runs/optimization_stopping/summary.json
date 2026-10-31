@@ -1,0 +1,412 @@
+{
+  "status": "complete",
+  "results": [
+    {
+      "repeat": 0,
+      "fold_seed": 20261027,
+      "results": {
+        "D_fixed5": {
+          "correct": 4370,
+          "n": 4755,
+          "accuracy": 91.90325972660357,
+          "hard_correct": 1729,
+          "hard_n": 2114,
+          "hard_accuracy": 81.78807947019867,
+          "group_ce": 0.47451375005104646,
+          "paired_vs_fixed5": [
+            {
+              "fold": null,
+              "n": 2114,
+              "candidate_correct": 1729,
+              "reference_correct": 1729,
+              "repairs": 0,
+              "regressions": 0,
+              "gain": 0
+            },
+            {
+              "fold": 0,
+              "n": 685,
+              "candidate_correct": 553,
+              "reference_correct": 553,
+              "repairs": 0,
+              "regressions": 0,
+              "gain": 0
+            },
+            {
+              "fold": 1,
+              "n": 725,
+              "candidate_correct": 591,
+              "reference_correct": 591,
+              "repairs": 0,
+              "regressions": 0,
+              "gain": 0
+            },
+            {
+              "fold": 2,
+              "n": 704,
+              "candidate_correct": 585,
+              "reference_correct": 585,
+              "repairs": 0,
+              "regressions": 0,
+              "gain": 0
+            }
+          ]
+        },
+        "D_first": {
+          "correct": 4376,
+          "n": 4755,
+          "accuracy": 92.02944269190326,
+          "hard_correct": 1735,
+          "hard_n": 2114,
+          "hard_accuracy": 82.07190160832545,
+          "group_ce": 0.4717684737219991,
+          "paired_vs_fixed5": [
+            {
+              "fold": null,
+              "n": 2114,
+              "candidate_correct": 1735,
+              "reference_correct": 1729,
+              "repairs": 39,
+              "regressions": 33,
+              "gain": 6
+            },
+            {
+              "fold": 0,
+              "n": 685,
+              "candidate_correct": 557,
+              "reference_correct": 553,
+              "repairs": 12,
+              "regressions": 8,
+              "gain": 4
+            },
+            {
+              "fold": 1,
+              "n": 725,
+              "candidate_correct": 598,
+              "reference_correct": 591,
+              "repairs": 9,
+              "regressions": 2,
+              "gain": 7
+            },
+            {
+              "fold": 2,
+              "n": 704,
+              "candidate_correct": 580,
+              "reference_correct": 585,
+              "repairs": 18,
+              "regressions": 23,
+              "gain": -5
+            }
+          ]
+        },
+        "D_median3": {
+          "correct": 4379,
+          "n": 4755,
+          "accuracy": 92.0925341745531,
+          "hard_correct": 1738,
+          "hard_n": 2114,
+          "hard_accuracy": 82.21381267738883,
+          "group_ce": 0.47070252999303525,
+          "paired_vs_fixed5": [
+            {
+              "fold": null,
+              "n": 2114,
+              "candidate_correct": 1738,
+              "reference_correct": 1729,
+              "repairs": 32,
+              "regressions": 23,
+              "gain": 9
+            },
+            {
+              "fold": 0,
+              "n": 685,
+              "candidate_correct": 556,
+              "reference_correct": 553,
+              "repairs": 13,
+              "regressions": 10,
+              "gain": 3
+            },
+            {
+              "fold": 1,
+              "n": 725,
+              "candidate_correct": 594,
+              "reference_correct": 591,
+              "repairs": 9,
+              "regressions": 6,
+              "gain": 3
+            },
+            {
+              "fold": 2,
+              "n": 704,
+              "candidate_correct": 588,
+              "reference_correct": 585,
+              "repairs": 10,
+              "regressions": 7,
+              "gain": 3
+            }
+          ]
+        },
+        "D_rounded_mean3": {
+          "correct": 4374,
+          "n": 4755,
+          "accuracy": 91.98738170347002,
+          "hard_correct": 1733,
+          "hard_n": 2114,
+          "hard_accuracy": 81.97729422894986,
+          "group_ce": 0.47122849549205376,
+          "paired_vs_fixed5": [
+            {
+              "fold": null,
+              "n": 2114,
+              "candidate_correct": 1733,
+              "reference_correct": 1729,
+              "repairs": 29,
+              "regressions": 25,
+              "gain": 4
+            },
+            {
+              "fold": 0,
+              "n": 685,
+              "candidate_correct": 551,
+              "reference_correct": 553,
+              "repairs": 10,
+              "regressions": 12,
+              "gain": -2
+            },
+            {
+              "fold": 1,
+              "n": 725,
+              "candidate_correct": 594,
+              "reference_correct": 591,
+              "repairs": 9,
+              "regressions": 6,
+              "gain": 3
+            },
+            {
+              "fold": 2,
+              "n": 704,
+              "candidate_correct": 588,
+              "reference_correct": 585,
+              "repairs": 10,
+              "regressions": 7,
+              "gain": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "repeat": 1,
+      "fold_seed": 20261028,
+      "results": {
+        "D_fixed5": {
+          "correct": 4367,
+          "n": 4755,
+          "accuracy": 91.84016824395374,
+          "hard_correct": 1726,
+          "hard_n": 2114,
+          "hard_accuracy": 81.64616840113528,
+          "group_ce": 0.46756066120828854,
+          "paired_vs_fixed5": [
+            {
+              "fold": null,
+              "n": 2114,
+              "candidate_correct": 1726,
+              "reference_correct": 1726,
+              "repairs": 0,
+              "regressions": 0,
+              "gain": 0
+            },
+            {
+              "fold": 0,
+              "n": 682,
+              "candidate_correct": 554,
+              "reference_correct": 554,
+              "repairs": 0,
+              "regressions": 0,
+              "gain": 0
+            },
+            {
+              "fold": 1,
+              "n": 703,
+              "candidate_correct": 570,
+              "reference_correct": 570,
+              "repairs": 0,
+              "regressions": 0,
+              "gain": 0
+            },
+            {
+              "fold": 2,
+              "n": 729,
+              "candidate_correct": 602,
+              "reference_correct": 602,
+              "repairs": 0,
+              "regressions": 0,
+              "gain": 0
+            }
+          ]
+        },
+        "D_first": {
+          "correct": 4376,
+          "n": 4755,
+          "accuracy": 92.02944269190326,
+          "hard_correct": 1735,
+          "hard_n": 2114,
+          "hard_accuracy": 82.07190160832545,
+          "group_ce": 0.46753937264972634,
+          "paired_vs_fixed5": [
+            {
+              "fold": null,
+              "n": 2114,
+              "candidate_correct": 1735,
+              "reference_correct": 1726,
+              "repairs": 21,
+              "regressions": 12,
+              "gain": 9
+            },
+            {
+              "fold": 0,
+              "n": 682,
+              "candidate_correct": 559,
+              "reference_correct": 554,
+              "repairs": 8,
+              "regressions": 3,
+              "gain": 5
+            },
+            {
+              "fold": 1,
+              "n": 703,
+              "candidate_correct": 570,
+              "reference_correct": 570,
+              "repairs": 0,
+              "regressions": 0,
+              "gain": 0
+            },
+            {
+              "fold": 2,
+              "n": 729,
+              "candidate_correct": 606,
+              "reference_correct": 602,
+              "repairs": 13,
+              "regressions": 9,
+              "gain": 4
+            }
+          ]
+        },
+        "D_median3": {
+          "correct": 4375,
+          "n": 4755,
+          "accuracy": 92.00841219768665,
+          "hard_correct": 1734,
+          "hard_n": 2114,
+          "hard_accuracy": 82.02459791863765,
+          "group_ce": 0.46757137723361025,
+          "paired_vs_fixed5": [
+            {
+              "fold": null,
+              "n": 2114,
+              "candidate_correct": 1734,
+              "reference_correct": 1726,
+              "repairs": 43,
+              "regressions": 35,
+              "gain": 8
+            },
+            {
+              "fold": 0,
+              "n": 682,
+              "candidate_correct": 559,
+              "reference_correct": 554,
+              "repairs": 8,
+              "regressions": 3,
+              "gain": 5
+            },
+            {
+              "fold": 1,
+              "n": 703,
+              "candidate_correct": 570,
+              "reference_correct": 570,
+              "repairs": 17,
+              "regressions": 17,
+              "gain": 0
+            },
+            {
+              "fold": 2,
+              "n": 729,
+              "candidate_correct": 605,
+              "reference_correct": 602,
+              "repairs": 18,
+              "regressions": 15,
+              "gain": 3
+            }
+          ]
+        },
+        "D_rounded_mean3": {
+          "correct": 4375,
+          "n": 4755,
+          "accuracy": 92.00841219768665,
+          "hard_correct": 1734,
+          "hard_n": 2114,
+          "hard_accuracy": 82.02459791863765,
+          "group_ce": 0.46757137723361025,
+          "paired_vs_fixed5": [
+            {
+              "fold": null,
+              "n": 2114,
+              "candidate_correct": 1734,
+              "reference_correct": 1726,
+              "repairs": 43,
+              "regressions": 35,
+              "gain": 8
+            },
+            {
+              "fold": 0,
+              "n": 682,
+              "candidate_correct": 559,
+              "reference_correct": 554,
+              "repairs": 8,
+              "regressions": 3,
+              "gain": 5
+            },
+            {
+              "fold": 1,
+              "n": 703,
+              "candidate_correct": 570,
+              "reference_correct": 570,
+              "repairs": 17,
+              "regressions": 17,
+              "gain": 0
+            },
+            {
+              "fold": 2,
+              "n": 729,
+              "candidate_correct": 605,
+              "reference_correct": 602,
+              "repairs": 18,
+              "regressions": 15,
+              "gain": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "model_fit_calls": 56,
+  "inner_fits": 36,
+  "outer_refits": 20,
+  "outer_policy_readouts": 36,
+  "cached_refit_readouts": 16,
+  "maximum_planned_fits": 72,
+  "resolved_fit_slots": 72,
+  "text_model_new_fits": 0,
+  "seconds": 39.90387049999845,
+  "source_hashes_unchanged": true,
+  "validation_accessed": false,
+  "test_accessed": false,
+  "data_files_read": [
+    "candidates/gsm8k_train.jsonl",
+    "candidates/gsm8k_train.npz",
+    "gsm8k_train.jsonl",
+    "manifest.json"
+  ],
+  "caveat": "Fixed repeated-training-OOF comparisons; no final model promotion or independent test of historical model search"
+}

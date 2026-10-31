@@ -1,0 +1,41 @@
+{
+  "fold_seeds": [
+    20261027,
+    20261028
+  ],
+  "seeds": [
+    7506,
+    17001
+  ],
+  "recipes": [
+    "epoch14",
+    "epoch40",
+    "epoch40_ema",
+    "epoch40_ema_noise"
+  ],
+  "configuration": {
+    "representation": "group",
+    "objective": "pairwise",
+    "dropout": 0.2,
+    "hidden": 128,
+    "l2": 0.01
+  },
+  "experiments": "A3 EMA and longer training, F2 Gaussian input noise",
+  "epochs": 40,
+  "retained_epoch": 14,
+  "ema_decay": 0.99,
+  "ema_after_epoch": 5,
+  "input_noise_standard_deviation": 0.05,
+  "design": "Each clean trajectory supplies 14/40/EMA readouts; separate noisy trajectory supplies EMA. No epoch chosen from held-out scores.",
+  "model_fit_calls": 24,
+  "raw_score_readouts": 48,
+  "within_recipe_all_fixed_seeds_averaged": true,
+  "boundaries": "All fit statistics/scales use outer fitting questions; only train data loaded. Same fixed repeated folds as A2.",
+  "caveat": "Two repeats reuse questions; OOF selection is exploratory. A3 stopping-fold aggregation is not tested by this fixed-length EMA comparison.",
+  "source_sha256": {
+    "optimization_regularization.py": "891982e02d180fb8e49f157e1e37717d2e601e882abcde60f246eb30968c6f0c",
+    "answer_group_experiment.py": "ef46af67bc4549cb0318a0a4bad313e19306ab79686afaf66bfba6d1594e89ea",
+    "text_features.py": "96eb0ee4d7e1a526b054db2b9fd5979997327ff0359f5de7baae89b557ab38c7",
+    "selection.py": "8b1f6ce4e7c1e445cbc0f6414a979722879d9fef9aa56073ebe052ac09563e64"
+  }
+}

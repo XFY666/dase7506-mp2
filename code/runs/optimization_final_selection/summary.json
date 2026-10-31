@@ -1,0 +1,8 @@
+{
+  "status": "complete",
+  "new_validation_evaluations": 2,
+  "selected_name": "G_noise_cross__roles_cnn_0.25",
+  "validation_hard_correct": 307,
+  "model_fit_calls": 0,
+  "test_access": false
+}

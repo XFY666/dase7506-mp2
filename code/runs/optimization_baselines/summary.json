@@ -1,0 +1,857 @@
+{
+  "status": "complete",
+  "repeats": [
+    {
+      "repeat": 0,
+      "fold_seed": 20261027,
+      "results": {
+        "D": {
+          "correct": 4370,
+          "n": 4755,
+          "accuracy": 91.90325972660357,
+          "hard_correct": 1729,
+          "hard_n": 2114,
+          "hard_accuracy": 81.78807947019867,
+          "group_ce": 0.47451375005104646,
+          "folds": [
+            {
+              "fold": 0,
+              "hard_n": 685,
+              "hard_correct": 553,
+              "group_ce": 0.4794246633747352
+            },
+            {
+              "fold": 1,
+              "hard_n": 725,
+              "hard_correct": 591,
+              "group_ce": 0.4760839701979355
+            },
+            {
+              "fold": 2,
+              "hard_n": 704,
+              "hard_correct": 585,
+              "group_ce": 0.4681183164811297
+            }
+          ]
+        },
+        "T": {
+          "correct": 4378,
+          "n": 4755,
+          "accuracy": 92.07150368033649,
+          "hard_correct": 1737,
+          "hard_n": 2114,
+          "hard_accuracy": 82.16650898770104,
+          "group_ce": 0.4584066302429837,
+          "folds": [
+            {
+              "fold": 0,
+              "hard_n": 685,
+              "hard_correct": 550,
+              "group_ce": 0.47245220188358295
+            },
+            {
+              "fold": 1,
+              "hard_n": 725,
+              "hard_correct": 592,
+              "group_ce": 0.4552440633146288
+            },
+            {
+              "fold": 2,
+              "hard_n": 704,
+              "hard_correct": 595,
+              "group_ce": 0.44799703429020954
+            }
+          ]
+        },
+        "F": {
+          "correct": 4400,
+          "n": 4755,
+          "accuracy": 92.534174553102,
+          "hard_correct": 1759,
+          "hard_n": 2114,
+          "hard_accuracy": 83.20719016083254,
+          "group_ce": 0.4084326188965393,
+          "folds": [
+            {
+              "fold": 0,
+              "hard_n": 685,
+              "hard_correct": 570,
+              "group_ce": 0.41662945374594607
+            },
+            {
+              "fold": 1,
+              "hard_n": 725,
+              "hard_correct": 608,
+              "group_ce": 0.4039155165653018
+            },
+            {
+              "fold": 2,
+              "hard_n": 704,
+              "hard_correct": 581,
+              "group_ce": 0.4051088508827659
+            }
+          ]
+        },
+        "G": {
+          "correct": 4403,
+          "n": 4755,
+          "accuracy": 92.59726603575183,
+          "hard_correct": 1762,
+          "hard_n": 2114,
+          "hard_accuracy": 83.34910122989592,
+          "group_ce": 0.4174324292324565,
+          "folds": [
+            {
+              "fold": 0,
+              "hard_n": 685,
+              "hard_correct": 568,
+              "group_ce": 0.43473805164045853
+            },
+            {
+              "fold": 1,
+              "hard_n": 725,
+              "hard_correct": 603,
+              "group_ce": 0.413514827609333
+            },
+            {
+              "fold": 2,
+              "hard_n": 704,
+              "hard_correct": 591,
+              "group_ce": 0.4046283238734837
+            }
+          ]
+        }
+      }
+    },
+    {
+      "repeat": 1,
+      "fold_seed": 20261028,
+      "results": {
+        "D": {
+          "correct": 4367,
+          "n": 4755,
+          "accuracy": 91.84016824395374,
+          "hard_correct": 1726,
+          "hard_n": 2114,
+          "hard_accuracy": 81.64616840113528,
+          "group_ce": 0.46756066120828854,
+          "folds": [
+            {
+              "fold": 0,
+              "hard_n": 682,
+              "hard_correct": 554,
+              "group_ce": 0.4783881806798154
+            },
+            {
+              "fold": 1,
+              "hard_n": 703,
+              "hard_correct": 570,
+              "group_ce": 0.4709040221959078
+            },
+            {
+              "fold": 2,
+              "hard_n": 729,
+              "hard_correct": 602,
+              "group_ce": 0.4542070932331476
+            }
+          ]
+        },
+        "T": {
+          "correct": 4395,
+          "n": 4755,
+          "accuracy": 92.42902208201893,
+          "hard_correct": 1754,
+          "hard_n": 2114,
+          "hard_accuracy": 82.97067171239357,
+          "group_ce": 0.45291617023697867,
+          "folds": [
+            {
+              "fold": 0,
+              "hard_n": 682,
+              "hard_correct": 567,
+              "group_ce": 0.46552975762048154
+            },
+            {
+              "fold": 1,
+              "hard_n": 703,
+              "hard_correct": 579,
+              "group_ce": 0.45021899676009514
+            },
+            {
+              "fold": 2,
+              "hard_n": 729,
+              "hard_correct": 608,
+              "group_ce": 0.4437167825260047
+            }
+          ]
+        },
+        "F": {
+          "correct": 4411,
+          "n": 4755,
+          "accuracy": 92.76550998948476,
+          "hard_correct": 1770,
+          "hard_n": 2114,
+          "hard_accuracy": 83.72753074739829,
+          "group_ce": 0.4018245560047556,
+          "folds": [
+            {
+              "fold": 0,
+              "hard_n": 682,
+              "hard_correct": 562,
+              "group_ce": 0.42486131305538
+            },
+            {
+              "fold": 1,
+              "hard_n": 703,
+              "hard_correct": 593,
+              "group_ce": 0.3928074727314496
+            },
+            {
+              "fold": 2,
+              "hard_n": 729,
+              "hard_correct": 615,
+              "group_ce": 0.3889685083128602
+            }
+          ]
+        },
+        "G": {
+          "correct": 4408,
+          "n": 4755,
+          "accuracy": 92.70241850683492,
+          "hard_correct": 1767,
+          "hard_n": 2114,
+          "hard_accuracy": 83.58561967833491,
+          "group_ce": 0.41312193353107657,
+          "folds": [
+            {
+              "fold": 0,
+              "hard_n": 682,
+              "hard_correct": 566,
+              "group_ce": 0.4346897152078503
+            },
+            {
+              "fold": 1,
+              "hard_n": 703,
+              "hard_correct": 591,
+              "group_ce": 0.40346558590817855
+            },
+            {
+              "fold": 2,
+              "hard_n": 729,
+              "hard_correct": 610,
+              "group_ce": 0.4022566184080827
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "paired_comparisons": [
+    {
+      "repeat": 0,
+      "candidate": "T",
+      "reference": "D",
+      "paired": [
+        {
+          "fold": null,
+          "n": 2114,
+          "candidate_correct": 1737,
+          "reference_correct": 1729,
+          "repairs": 65,
+          "regressions": 57,
+          "gain": 8
+        },
+        {
+          "fold": 0,
+          "n": 685,
+          "candidate_correct": 550,
+          "reference_correct": 553,
+          "repairs": 17,
+          "regressions": 20,
+          "gain": -3
+        },
+        {
+          "fold": 1,
+          "n": 725,
+          "candidate_correct": 592,
+          "reference_correct": 591,
+          "repairs": 20,
+          "regressions": 19,
+          "gain": 1
+        },
+        {
+          "fold": 2,
+          "n": 704,
+          "candidate_correct": 595,
+          "reference_correct": 585,
+          "repairs": 28,
+          "regressions": 18,
+          "gain": 10
+        }
+      ],
+      "group_ce_difference": -0.01610711980806273
+    },
+    {
+      "repeat": 0,
+      "candidate": "F",
+      "reference": "D",
+      "paired": [
+        {
+          "fold": null,
+          "n": 2114,
+          "candidate_correct": 1759,
+          "reference_correct": 1729,
+          "repairs": 116,
+          "regressions": 86,
+          "gain": 30
+        },
+        {
+          "fold": 0,
+          "n": 685,
+          "candidate_correct": 570,
+          "reference_correct": 553,
+          "repairs": 39,
+          "regressions": 22,
+          "gain": 17
+        },
+        {
+          "fold": 1,
+          "n": 725,
+          "candidate_correct": 608,
+          "reference_correct": 591,
+          "repairs": 43,
+          "regressions": 26,
+          "gain": 17
+        },
+        {
+          "fold": 2,
+          "n": 704,
+          "candidate_correct": 581,
+          "reference_correct": 585,
+          "repairs": 34,
+          "regressions": 38,
+          "gain": -4
+        }
+      ],
+      "group_ce_difference": -0.06608113115450714
+    },
+    {
+      "repeat": 0,
+      "candidate": "G",
+      "reference": "D",
+      "paired": [
+        {
+          "fold": null,
+          "n": 2114,
+          "candidate_correct": 1762,
+          "reference_correct": 1729,
+          "repairs": 126,
+          "regressions": 93,
+          "gain": 33
+        },
+        {
+          "fold": 0,
+          "n": 685,
+          "candidate_correct": 568,
+          "reference_correct": 553,
+          "repairs": 44,
+          "regressions": 29,
+          "gain": 15
+        },
+        {
+          "fold": 1,
+          "n": 725,
+          "candidate_correct": 603,
+          "reference_correct": 591,
+          "repairs": 44,
+          "regressions": 32,
+          "gain": 12
+        },
+        {
+          "fold": 2,
+          "n": 704,
+          "candidate_correct": 591,
+          "reference_correct": 585,
+          "repairs": 38,
+          "regressions": 32,
+          "gain": 6
+        }
+      ],
+      "group_ce_difference": -0.057081320818589965
+    },
+    {
+      "repeat": 0,
+      "candidate": "F",
+      "reference": "T",
+      "paired": [
+        {
+          "fold": null,
+          "n": 2114,
+          "candidate_correct": 1759,
+          "reference_correct": 1737,
+          "repairs": 99,
+          "regressions": 77,
+          "gain": 22
+        },
+        {
+          "fold": 0,
+          "n": 685,
+          "candidate_correct": 570,
+          "reference_correct": 550,
+          "repairs": 34,
+          "regressions": 14,
+          "gain": 20
+        },
+        {
+          "fold": 1,
+          "n": 725,
+          "candidate_correct": 608,
+          "reference_correct": 592,
+          "repairs": 39,
+          "regressions": 23,
+          "gain": 16
+        },
+        {
+          "fold": 2,
+          "n": 704,
+          "candidate_correct": 581,
+          "reference_correct": 595,
+          "repairs": 26,
+          "regressions": 40,
+          "gain": -14
+        }
+      ],
+      "group_ce_difference": -0.049974011346444414
+    },
+    {
+      "repeat": 0,
+      "candidate": "G",
+      "reference": "T",
+      "paired": [
+        {
+          "fold": null,
+          "n": 2114,
+          "candidate_correct": 1762,
+          "reference_correct": 1737,
+          "repairs": 98,
+          "regressions": 73,
+          "gain": 25
+        },
+        {
+          "fold": 0,
+          "n": 685,
+          "candidate_correct": 568,
+          "reference_correct": 550,
+          "repairs": 36,
+          "regressions": 18,
+          "gain": 18
+        },
+        {
+          "fold": 1,
+          "n": 725,
+          "candidate_correct": 603,
+          "reference_correct": 592,
+          "repairs": 35,
+          "regressions": 24,
+          "gain": 11
+        },
+        {
+          "fold": 2,
+          "n": 704,
+          "candidate_correct": 591,
+          "reference_correct": 595,
+          "repairs": 27,
+          "regressions": 31,
+          "gain": -4
+        }
+      ],
+      "group_ce_difference": -0.040974201010527234
+    },
+    {
+      "repeat": 0,
+      "candidate": "G",
+      "reference": "F",
+      "paired": [
+        {
+          "fold": null,
+          "n": 2114,
+          "candidate_correct": 1762,
+          "reference_correct": 1759,
+          "repairs": 36,
+          "regressions": 33,
+          "gain": 3
+        },
+        {
+          "fold": 0,
+          "n": 685,
+          "candidate_correct": 568,
+          "reference_correct": 570,
+          "repairs": 13,
+          "regressions": 15,
+          "gain": -2
+        },
+        {
+          "fold": 1,
+          "n": 725,
+          "candidate_correct": 603,
+          "reference_correct": 608,
+          "repairs": 8,
+          "regressions": 13,
+          "gain": -5
+        },
+        {
+          "fold": 2,
+          "n": 704,
+          "candidate_correct": 591,
+          "reference_correct": 581,
+          "repairs": 15,
+          "regressions": 5,
+          "gain": 10
+        }
+      ],
+      "group_ce_difference": 0.00899981033591718
+    },
+    {
+      "repeat": 1,
+      "candidate": "T",
+      "reference": "D",
+      "paired": [
+        {
+          "fold": null,
+          "n": 2114,
+          "candidate_correct": 1754,
+          "reference_correct": 1726,
+          "repairs": 80,
+          "regressions": 52,
+          "gain": 28
+        },
+        {
+          "fold": 0,
+          "n": 682,
+          "candidate_correct": 567,
+          "reference_correct": 554,
+          "repairs": 30,
+          "regressions": 17,
+          "gain": 13
+        },
+        {
+          "fold": 1,
+          "n": 703,
+          "candidate_correct": 579,
+          "reference_correct": 570,
+          "repairs": 27,
+          "regressions": 18,
+          "gain": 9
+        },
+        {
+          "fold": 2,
+          "n": 729,
+          "candidate_correct": 608,
+          "reference_correct": 602,
+          "repairs": 23,
+          "regressions": 17,
+          "gain": 6
+        }
+      ],
+      "group_ce_difference": -0.014644490971309876
+    },
+    {
+      "repeat": 1,
+      "candidate": "F",
+      "reference": "D",
+      "paired": [
+        {
+          "fold": null,
+          "n": 2114,
+          "candidate_correct": 1770,
+          "reference_correct": 1726,
+          "repairs": 119,
+          "regressions": 75,
+          "gain": 44
+        },
+        {
+          "fold": 0,
+          "n": 682,
+          "candidate_correct": 562,
+          "reference_correct": 554,
+          "repairs": 35,
+          "regressions": 27,
+          "gain": 8
+        },
+        {
+          "fold": 1,
+          "n": 703,
+          "candidate_correct": 593,
+          "reference_correct": 570,
+          "repairs": 44,
+          "regressions": 21,
+          "gain": 23
+        },
+        {
+          "fold": 2,
+          "n": 729,
+          "candidate_correct": 615,
+          "reference_correct": 602,
+          "repairs": 40,
+          "regressions": 27,
+          "gain": 13
+        }
+      ],
+      "group_ce_difference": -0.06573610520353296
+    },
+    {
+      "repeat": 1,
+      "candidate": "G",
+      "reference": "D",
+      "paired": [
+        {
+          "fold": null,
+          "n": 2114,
+          "candidate_correct": 1767,
+          "reference_correct": 1726,
+          "repairs": 130,
+          "regressions": 89,
+          "gain": 41
+        },
+        {
+          "fold": 0,
+          "n": 682,
+          "candidate_correct": 566,
+          "reference_correct": 554,
+          "repairs": 43,
+          "regressions": 31,
+          "gain": 12
+        },
+        {
+          "fold": 1,
+          "n": 703,
+          "candidate_correct": 591,
+          "reference_correct": 570,
+          "repairs": 47,
+          "regressions": 26,
+          "gain": 21
+        },
+        {
+          "fold": 2,
+          "n": 729,
+          "candidate_correct": 610,
+          "reference_correct": 602,
+          "repairs": 40,
+          "regressions": 32,
+          "gain": 8
+        }
+      ],
+      "group_ce_difference": -0.05443872767721197
+    },
+    {
+      "repeat": 1,
+      "candidate": "F",
+      "reference": "T",
+      "paired": [
+        {
+          "fold": null,
+          "n": 2114,
+          "candidate_correct": 1770,
+          "reference_correct": 1754,
+          "repairs": 90,
+          "regressions": 74,
+          "gain": 16
+        },
+        {
+          "fold": 0,
+          "n": 682,
+          "candidate_correct": 562,
+          "reference_correct": 567,
+          "repairs": 23,
+          "regressions": 28,
+          "gain": -5
+        },
+        {
+          "fold": 1,
+          "n": 703,
+          "candidate_correct": 593,
+          "reference_correct": 579,
+          "repairs": 36,
+          "regressions": 22,
+          "gain": 14
+        },
+        {
+          "fold": 2,
+          "n": 729,
+          "candidate_correct": 615,
+          "reference_correct": 608,
+          "repairs": 31,
+          "regressions": 24,
+          "gain": 7
+        }
+      ],
+      "group_ce_difference": -0.05109161423222308
+    },
+    {
+      "repeat": 1,
+      "candidate": "G",
+      "reference": "T",
+      "paired": [
+        {
+          "fold": null,
+          "n": 2114,
+          "candidate_correct": 1767,
+          "reference_correct": 1754,
+          "repairs": 99,
+          "regressions": 86,
+          "gain": 13
+        },
+        {
+          "fold": 0,
+          "n": 682,
+          "candidate_correct": 566,
+          "reference_correct": 567,
+          "repairs": 28,
+          "regressions": 29,
+          "gain": -1
+        },
+        {
+          "fold": 1,
+          "n": 703,
+          "candidate_correct": 591,
+          "reference_correct": 579,
+          "repairs": 40,
+          "regressions": 28,
+          "gain": 12
+        },
+        {
+          "fold": 2,
+          "n": 729,
+          "candidate_correct": 610,
+          "reference_correct": 608,
+          "repairs": 31,
+          "regressions": 29,
+          "gain": 2
+        }
+      ],
+      "group_ce_difference": -0.0397942367059021
+    },
+    {
+      "repeat": 1,
+      "candidate": "G",
+      "reference": "F",
+      "paired": [
+        {
+          "fold": null,
+          "n": 2114,
+          "candidate_correct": 1767,
+          "reference_correct": 1770,
+          "repairs": 28,
+          "regressions": 31,
+          "gain": -3
+        },
+        {
+          "fold": 0,
+          "n": 682,
+          "candidate_correct": 566,
+          "reference_correct": 562,
+          "repairs": 11,
+          "regressions": 7,
+          "gain": 4
+        },
+        {
+          "fold": 1,
+          "n": 703,
+          "candidate_correct": 591,
+          "reference_correct": 593,
+          "repairs": 10,
+          "regressions": 12,
+          "gain": -2
+        },
+        {
+          "fold": 2,
+          "n": 729,
+          "candidate_correct": 610,
+          "reference_correct": 615,
+          "repairs": 7,
+          "regressions": 12,
+          "gain": -5
+        }
+      ],
+      "group_ce_difference": 0.011297377526320984
+    }
+  ],
+  "model_fit_calls": 48,
+  "PCA_fit_calls": 12,
+  "PLS_fit_calls": 12,
+  "training_questions": 4755,
+  "hard_questions": 2114,
+  "fold_seeds": [
+    20261027,
+    20261028
+  ],
+  "models": [
+    "D",
+    "T",
+    "F",
+    "G"
+  ],
+  "validation_accessed": false,
+  "test_accessed": false,
+  "data_files_read": [
+    "candidates/gsm8k_train.jsonl",
+    "candidates/gsm8k_train.npz",
+    "gsm8k_train.jsonl",
+    "manifest.json"
+  ],
+  "source_hashes_unchanged": true,
+  "seconds": 198.83896930000628,
+  "preserved_invalid_attempt": {
+    "status": "invalid_interrupted",
+    "reason": "Boolean label dtype supplied to helper whose stable_center casts to input dtype; PLS target became constant. Detected from training warning before OOF metrics or choices were computed.",
+    "completed_fit_records": 34,
+    "additional_fit_in_progress_at_interrupt": "not counted as completed; completion unavailable",
+    "last_progress": {
+      "stage": "fitting",
+      "completed_fits": 34,
+      "planned_fits": 48,
+      "detail": "repeat1_fold1: fitted d_list",
+      "elapsed_seconds": 90.92109950000304,
+      "updated_utc": "2026-10-26T08:20:30.043936+00:00"
+    },
+    "repair": "Cast labels to float32 before routing.prepare, assert centered eligible labels are nonconstant and PLS exports nonzero; restart all 48 fits with same seeds/configurations.",
+    "validation_access": false,
+    "test_access": false
+  },
+  "asset_bytes": {
+    "D": [
+      1182089,
+      1182089,
+      1182089,
+      1182089,
+      1182089,
+      1182089
+    ],
+    "T": [
+      639236,
+      639236,
+      639236,
+      639236,
+      639236,
+      639236
+    ],
+    "F": [
+      3404377,
+      3371665,
+      3386329,
+      3378433,
+      3431449,
+      3344593
+    ],
+    "G": [
+      4664509,
+      4631797,
+      4646461,
+      4638565,
+      4691581,
+      4604725
+    ]
+  },
+  "asset_scope": "Per outer partition sum of uncompressed NPZ members, excluding config; not a final full-training deployment size",
+  "caveat": "Historically chosen fixed recipes; repetitions reuse the same questions. Descriptive stability evidence, not independent duplicated sample size or unbiased search evaluation. No model promotion."
+}

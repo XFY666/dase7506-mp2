@@ -1,0 +1,229 @@
+{
+  "recipes": [
+    {
+      "recipe": "epoch14",
+      "repeats": [
+        {
+          "metrics": {
+            "correct": 4390,
+            "n": 4755,
+            "accuracy": 92.32386961093586,
+            "hard_correct": 1749,
+            "hard_n": 2114,
+            "hard_accuracy": 82.7341532639546
+          },
+          "group_ce": 0.41600037028406006,
+          "repairs": 0,
+          "regressions": 0,
+          "fold_correct": [
+            569,
+            608,
+            572
+          ]
+        },
+        {
+          "metrics": {
+            "correct": 4391,
+            "n": 4755,
+            "accuracy": 92.34490010515248,
+            "hard_correct": 1750,
+            "hard_n": 2114,
+            "hard_accuracy": 82.78145695364239
+          },
+          "group_ce": 0.40867257064047724,
+          "repairs": 0,
+          "regressions": 0,
+          "fold_correct": [
+            555,
+            589,
+            606
+          ]
+        }
+      ],
+      "mean_hard_correct": 1749.5,
+      "mean_group_ce": 0.4123364704622686
+    },
+    {
+      "recipe": "epoch40",
+      "repeats": [
+        {
+          "metrics": {
+            "correct": 4409,
+            "n": 4755,
+            "accuracy": 92.72344900105153,
+            "hard_correct": 1768,
+            "hard_n": 2114,
+            "hard_accuracy": 83.6329233680227
+          },
+          "group_ce": 0.4140444510370752,
+          "repairs": 49,
+          "regressions": 30,
+          "fold_correct": [
+            570,
+            607,
+            591
+          ]
+        },
+        {
+          "metrics": {
+            "correct": 4387,
+            "n": 4755,
+            "accuracy": 92.26077812828602,
+            "hard_correct": 1746,
+            "hard_n": 2114,
+            "hard_accuracy": 82.5922421948912
+          },
+          "group_ce": 0.4160785994100309,
+          "repairs": 46,
+          "regressions": 50,
+          "fold_correct": [
+            557,
+            585,
+            604
+          ]
+        }
+      ],
+      "mean_hard_correct": 1757.0,
+      "mean_group_ce": 0.41506152522355305
+    },
+    {
+      "recipe": "epoch40_ema",
+      "repeats": [
+        {
+          "metrics": {
+            "correct": 4410,
+            "n": 4755,
+            "accuracy": 92.74447949526814,
+            "hard_correct": 1769,
+            "hard_n": 2114,
+            "hard_accuracy": 83.6802270577105
+          },
+          "group_ce": 0.410810789092041,
+          "repairs": 41,
+          "regressions": 21,
+          "fold_correct": [
+            572,
+            605,
+            592
+          ]
+        },
+        {
+          "metrics": {
+            "correct": 4400,
+            "n": 4755,
+            "accuracy": 92.534174553102,
+            "hard_correct": 1759,
+            "hard_n": 2114,
+            "hard_accuracy": 83.20719016083254
+          },
+          "group_ce": 0.40707135566267383,
+          "repairs": 37,
+          "regressions": 28,
+          "fold_correct": [
+            562,
+            588,
+            609
+          ]
+        }
+      ],
+      "mean_hard_correct": 1764.0,
+      "mean_group_ce": 0.40894107237735744
+    },
+    {
+      "recipe": "epoch40_ema_noise",
+      "repeats": [
+        {
+          "metrics": {
+            "correct": 4413,
+            "n": 4755,
+            "accuracy": 92.80757097791799,
+            "hard_correct": 1772,
+            "hard_n": 2114,
+            "hard_accuracy": 83.8221381267739
+          },
+          "group_ce": 0.4107001914655987,
+          "repairs": 44,
+          "regressions": 21,
+          "fold_correct": [
+            574,
+            607,
+            591
+          ]
+        },
+        {
+          "metrics": {
+            "correct": 4401,
+            "n": 4755,
+            "accuracy": 92.55520504731861,
+            "hard_correct": 1760,
+            "hard_n": 2114,
+            "hard_accuracy": 83.25449385052033
+          },
+          "group_ce": 0.40723248401473233,
+          "repairs": 37,
+          "regressions": 27,
+          "fold_correct": [
+            560,
+            591,
+            609
+          ]
+        }
+      ],
+      "mean_hard_correct": 1766.0,
+      "mean_group_ce": 0.40896633774016555
+    }
+  ],
+  "selected": {
+    "recipe": "epoch40_ema_noise",
+    "repeats": [
+      {
+        "metrics": {
+          "correct": 4413,
+          "n": 4755,
+          "accuracy": 92.80757097791799,
+          "hard_correct": 1772,
+          "hard_n": 2114,
+          "hard_accuracy": 83.8221381267739
+        },
+        "group_ce": 0.4107001914655987,
+        "repairs": 44,
+        "regressions": 21,
+        "fold_correct": [
+          574,
+          607,
+          591
+        ]
+      },
+      {
+        "metrics": {
+          "correct": 4401,
+          "n": 4755,
+          "accuracy": 92.55520504731861,
+          "hard_correct": 1760,
+          "hard_n": 2114,
+          "hard_accuracy": 83.25449385052033
+        },
+        "group_ce": 0.40723248401473233,
+        "repairs": 37,
+        "regressions": 27,
+        "fold_correct": [
+          560,
+          591,
+          609
+        ]
+      }
+    ],
+    "mean_hard_correct": 1766.0,
+    "mean_group_ce": 0.40896633774016555
+  },
+  "model_fit_calls": 24,
+  "readouts": 48,
+  "seeds": [
+    7506,
+    17001
+  ],
+  "elapsed_seconds": 108.34529890000704,
+  "validation_evaluations": 0,
+  "test_access": false,
+  "caveat": "Fixed training-side repetitions, no independent significance claim; no full-training model fit or validation."
+}

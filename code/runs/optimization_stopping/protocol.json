@@ -1,0 +1,107 @@
+{
+  "purpose": "A3 matched first/median/rounded-mean stopping aggregation for the two deployed D neural heads",
+  "methods": [
+    "D_fixed5",
+    "D_first",
+    "D_median3",
+    "D_rounded_mean3"
+  ],
+  "policies": [
+    "first",
+    "median3",
+    "rounded_mean3"
+  ],
+  "outer_fold_seeds": [
+    20261027,
+    20261028
+  ],
+  "outer_folds": 3,
+  "inner_splits": 3,
+  "split_seed": "outer_fold_seed + 1000*outer_fold + [1,2,3]",
+  "split_rule": "Permute all sorted outer-fitting question indices; first floor(.85*N) fit, remainder stop; then restrict supervision to hard questions",
+  "neural_recipes": [
+    {
+      "name": "nonlinear",
+      "kind": "nonlinear",
+      "file": "seed_7506.npz",
+      "weight": 0.3333333333333333,
+      "scale": 1.110068678855896,
+      "training": {
+        "seed": 7506,
+        "hidden": 64,
+        "l2": 0.01,
+        "epochs": 5,
+        "objective": "pairwise"
+      }
+    },
+    {
+      "name": "advanced",
+      "kind": "residual",
+      "file": "residual.npz",
+      "weight": 0.3333333333333333,
+      "scale": 1.0948938131332397,
+      "training": {
+        "seed": 7506,
+        "hidden": 128,
+        "l2": 0.01,
+        "epochs": 5,
+        "objective": "listwise"
+      }
+    }
+  ],
+  "fixed_initialization_seed": 7506,
+  "stopping": {
+    "max_epochs": 100,
+    "pair_patience": 8,
+    "list_patience": 10,
+    "min_improvement": 1e-06,
+    "loss": "Original head heldout objective loss; loss excludes regularization, as in original helpers",
+    "normalizer": "All inner-fitting questions only, including easy; no stopping/outer-held question statistics",
+    "aggregation": "first split best epoch; integer median of3; max(1,floor(mean(best_epochs)+.5))",
+    "max_epoch_difference": "Pair original search used max80; this registered bounded study uses requested max100, retaining original patience8"
+  },
+  "refit": "Fresh fixed-seed fit on all outer-fitting questions at each policy epoch; original pair/list supervision and transforms",
+  "refit_cache": "Within one outer partition and one head only, identical epoch requests reuse exactly one fresh refit; no cross-head/cross-fold or A2 neural reuse",
+  "cost": {
+    "inner_trajectory_fits": 36,
+    "maximum_outer_refits": 36,
+    "maximum_total_fits": 72,
+    "outer_policy_readouts": 36,
+    "cached_refits_counted_as_new_fits": false,
+    "text_model_new_fits": 0
+  },
+  "fusion": "Reuse A2 outer text raw scores and its fitting-only scale; original float32 equal thirds D fusion, mean answer-group aggregation",
+  "inference": "Original NumPy head assets plus score_scale; policy manifests identify logical asset paths and fixed external A2 text asset",
+  "evidence": "All method comparisons descriptive training OOF; repeated questions not independent, no validation/test or final promotion",
+  "source_sha256": {
+    "advanced_neural.py": "b841c26706a649083fc70897adbbf9976cf590cfb7cc351393e1eff51b64291a",
+    "answer_group_experiment.py": "ef46af67bc4549cb0318a0a4bad313e19306ab79686afaf66bfba6d1594e89ea",
+    "answer_group_model.py": "da2aea23e58310cbae6bb9b324d9443c6876bff54ab27af513d7cfde5073386d",
+    "common.py": "aecd10f7ff2e9e82ac5673d34d576e122caac51d2caaa7c7a8aa05906da51f6c",
+    "condition_experiment.py": "144967e27cbb382248386f27df36cfa8e918b0a148a1189d90181a7e4baafe2a",
+    "condition_features.py": "3070f63f38a1c230fb60bed63da38bbbbf660009d47416f6f8c67550d8f2eb7f",
+    "condition_model.py": "bd92915169ee5fec651f8c39c2395528002a83eb47440de86a412ec3ba144dbf",
+    "conditional_pair.py": "e53f381710da79d8ad67a5fc5d36f6a2113ed3bb72f329ab51691988c52cf22a",
+    "conditional_pair_experiment.py": "9b3986c3592928190ffd1dd6d8e69b186183ce298e8d671adbedc6215897203a",
+    "ensemble.py": "4a9623d2251a30b48759ea5296a4c43bdc029eb925a44d5c946e3ed7b800aeff",
+    "experiment_utils.py": "7f6dda4550acc7c6d3cc6429e46cc8978304ea7062118876ae763030ed2daa39",
+    "finalize_validation.py": "c1ddb6997043cf3838c2b4ff448a01768a19d1a7faa5f68d14c85ad149f85020",
+    "kernel_rank.py": "d8b2fd826096fcbd5cdee9f7986c83c62d4cc7ae01379df4e55e1ac0a990ec69",
+    "nonlinear_experiment.py": "669ec30dec91e5c6677205fcc915408930710f9fe4a8ddc7f92156d2d359b0de",
+    "optimization_baselines.py": "dbb5df677b4677e6d7faf85f553fd322bce2b900226fd604d15196205882840f",
+    "optimization_stopping.py": "002e2d78b267e5a883d906968988294e4bbc8bdee68cd026ce04af4553abaeb0",
+    "quantitative_model.py": "10e70d35755b8a815ab885e1bf5126581c46d476c170d0618f9e68f4bb462237",
+    "selection.py": "8b1f6ce4e7c1e445cbc0f6414a979722879d9fef9aa56073ebe052ac09563e64",
+    "selective_routing.py": "636a55fb9f77b0e60c311dd471bffb5b3d3e206a0593d99dd12885a68129a4cc",
+    "submission.py": "f9f0985a4afe20616e33c4df12fad0528730580bf56ee89b8204bd4c277d81d4",
+    "text_features.py": "96eb0ee4d7e1a526b054db2b9fd5979997327ff0359f5de7baae89b557ab38c7",
+    "train_selected.py": "54a3ced073cb2cec1eef21071dd65998a7f3d881cee28d480cf699a1264da507",
+    "tree_model.py": "8168266c7593b2e62b6e3123cffcd1304cc23a99d816fa65b3f03b15bed1e4d9"
+  },
+  "baseline_evidence_sha256": {
+    "protocol.json": "44572fdf24e3785ee522eec653eb9b8cc574fe668f35f5a67931848b5d358950",
+    "oof_logits.npz": "c704c3bd11c6b6101eefad00aca96b0c14d7952269621a2b243df38c1b6a41c0",
+    "fit_records.json": "e6eee62ef9d53cae49c8ef97e03669dcadbe46306100dc82de56ac20cbd27365",
+    "verification.json": "27635b78bd4e732ffcf875cd7e55523ed1e84ad2751b4559b156e539115ccfcf"
+  }
+}

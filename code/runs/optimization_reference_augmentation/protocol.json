@@ -1,0 +1,40 @@
+{
+  "task": "C4 pure-text matched control for training-reference corruption auxiliary",
+  "configs": [
+    {
+      "name": "digit_text_control",
+      "auxiliary_weight": 0.0
+    },
+    {
+      "name": "reference_corruption01",
+      "auxiliary_weight": 0.1
+    }
+  ],
+  "fold_seeds": [
+    20261027,
+    20261028
+  ],
+  "folds": 3,
+  "fold_assignment": "fold[default_rng(seed).permutation(N)]=arange(N)%3",
+  "inner_split": "85/15 outer-fitting questions, seed outer_seed+100+fold",
+  "real_labels": "unchanged official final-answer correctness for actual candidate groups; no real candidate relabeled",
+  "corruption": "scan reference <<expr=result>> in order; first literal RHS whose bounded arithmetic LHS agrees within1e-6 relative tolerance and whose +1 exact Fraction change is visible after truncation; change only RHS inside that annotation",
+  "corruption_rejection": "unparseable, inconsistent, out-of-range or invisible annotations skipped; no qualifying visible pair means unobserved, no auxiliary gradient; final encoded identical pairs masked",
+  "meaning": "original versus one process-corrupted reference, NOT final-answer correctness; reference final answer is unchanged",
+  "tokenizer": "both arms use identical fixed digit expansion with number boundaries/digit0..9/decimal/comma tokens; numeric values remain distinguishable; question first32+last32 if>64, bodyfirst128+gap+last128 if>256, total322",
+  "vocabulary": "max4096; fit on actual candidates plus both reference pair versions only from applicable inner/outer fitting questions; identical corpus policy both arms; no heldout reference in fitting vocabulary",
+  "inputs": "pure text only; no1024provided embeddings, no75numeric features, no reference-derived inference features or artificial reference/corruption prefix",
+  "model": "original pure-text WordCNN embedding32,Conv3/5each32,ReLU,mean/maxpool,tanh64,scalar; separate auxiliary scalar on shared64hidden, discarded at export",
+  "loss": "question-balanced answer-group CE on hard questions + lambda * mean paired original1/corrupt0 BCE over observed questions",
+  "batches": "both arms all-fitting-question batches64; same optimizer steps and auxiliary forward; zero weight is a fresh matched control",
+  "training": "seed7506/shuffle7507; AdamW lr.001 weight_decay.001; gradientclip5; max24epochs/patience4/minchange1e-4; stop on inner MAIN groupCE only; fresh outer refit",
+  "weakness": "native reference annotation style and duplicate result literals may allow local consistency shortcuts; improvement would not prove reasoning verification or transfer to other corruption mechanisms",
+  "comparison": "interpret auxiliary versus matched new digit-text control only; differences from old joint/number-masked CNN cannot be assigned solely to augmentation",
+  "planned_fits": 24,
+  "family_runtime_cap_seconds": 7200.0,
+  "selection": "mean hard correct over repeated OOF then mean normalized groupCE thenzero auxiliary",
+  "same_questions_repeated": true,
+  "threads": 4,
+  "no_validation_test_full_refit": true,
+  "inference": "NumPy-only existing convolution forward plus input-only digit tokenizer; no reference access"
+}

@@ -1,0 +1,81 @@
+{
+  "configs": [
+    {
+      "name": "control_allq",
+      "auxiliary": 0.0,
+      "hard_aux_only": false,
+      "coverage_weight": false
+    },
+    {
+      "name": "coverage01_allq",
+      "auxiliary": 0.1,
+      "hard_aux_only": false,
+      "coverage_weight": false
+    },
+    {
+      "name": "coverage03_allq",
+      "auxiliary": 0.3,
+      "hard_aux_only": false,
+      "coverage_weight": false
+    },
+    {
+      "name": "coverage01_hardq",
+      "auxiliary": 0.1,
+      "hard_aux_only": true,
+      "coverage_weight": false
+    },
+    {
+      "name": "coverage_weight",
+      "auxiliary": 0.0,
+      "hard_aux_only": false,
+      "coverage_weight": true
+    }
+  ],
+  "fold_seeds": [
+    20261027,
+    20261028
+  ],
+  "member_seeds": [
+    7506,
+    17001,
+    17002
+  ],
+  "planned_fits": 90,
+  "fold_mapping": "fold[rng.permutation(all4755)] = arange(N)%3",
+  "feature_width": 1252,
+  "architecture": "original pooled answer-group features; tanh128 + linear skip; auxiliary sigmoid linear head on same dropout hidden activations",
+  "epochs": 14,
+  "batch_questions": 128,
+  "dropout": 0.2,
+  "l2": 0.01,
+  "optimizer": "Adam .001 beta .9/.999 epsilon1e-8",
+  "target": "Distinct canonical numeric literal RHS from all training-reference <<expr=RHS>> annotations except the last annotation; candidate lexical numeric presence coverage, then mean within answer group. Empty/unsupported reference intermediate set is unobserved.",
+  "numeric_extraction": "Signed decimal/integer/fraction literal tokens; comma removal through official parser; simple LaTex fractions normalized; percent literals retain their written numeric value. No expression execution. Full candidate including final answer/headings is used, so overlap is only a weak proxy.",
+  "main_loss": "Mean question-normalized valid correct/incorrect group pair logistic over hard questions in each minibatch; official final-answer labels unchanged",
+  "auxiliary_loss": "lambda*.5 sigmoid squared-error, average within valid groups then equally across observed questions. hard_aux_only masks unanimous questions. lambda*L2 applies only to auxiliary output weights; ordinary L2 on mainW1/W2/skip.",
+  "coverage_weight": "C3 only: hard-question main-loss weight .5+.5*correctgroup meancoverage if observed else1; normalize weights within batch; no auxiliary loss",
+  "matched_control": "All configurations use identical all-question minibatch orders and dropout for a seed; easy questions contribute no pair term. More optimizer steps than historical hard-only A, so use the new lambda0 control for causal ablation.",
+  "input_boundary": "No reference-derived quantity, target or mask enters features or inference assets other than learned weights. Only outer-fitting target slices enter losses. Outer-held labels used solely for final OOF reporting.",
+  "normalization": "All outer-fitting valid group features; member score scale from outer-fitting valid candidate scores only; average all3 normalized members without seed selection",
+  "selection": "none in this script; report every fixed config/repeat. Same questions repeated, no doubled independent sample size.",
+  "validation_access": false,
+  "test_access": false,
+  "threads": 4,
+  "source_sha256": {
+    "advanced_neural.py": "b841c26706a649083fc70897adbbf9976cf590cfb7cc351393e1eff51b64291a",
+    "answer_group_experiment.py": "ef46af67bc4549cb0318a0a4bad313e19306ab79686afaf66bfba6d1594e89ea",
+    "answer_group_model.py": "da2aea23e58310cbae6bb9b324d9443c6876bff54ab27af513d7cfde5073386d",
+    "common.py": "aecd10f7ff2e9e82ac5673d34d576e122caac51d2caaa7c7a8aa05906da51f6c",
+    "experiment_utils.py": "7f6dda4550acc7c6d3cc6429e46cc8978304ea7062118876ae763030ed2daa39",
+    "optimization_process.py": "7ac69a91f8d8eab8c5b3b83f87c2649e25632ed328d8d4d63860d84c7ceee2af",
+    "optimization_process_model.py": "84a2634740530ebf3ccec77c5463ece6a97f450a1149d435c5d82de090c89c90",
+    "selection.py": "8b1f6ce4e7c1e445cbc0f6414a979722879d9fef9aa56073ebe052ac09563e64",
+    "text_features.py": "96eb0ee4d7e1a526b054db2b9fd5979997327ff0359f5de7baae89b557ab38c7",
+    "../docs/optimization_protocol.md": "8c548bb40a97dd53f6d79ea6d3cfa59feb6861264ced196e04d1e0502003deb1"
+  },
+  "environment": {
+    "python": "3.12.14",
+    "numpy": "2.5.3",
+    "platform": "Windows-11-10.0.26300-SP0"
+  }
+}

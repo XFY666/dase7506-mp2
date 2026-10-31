@@ -1,0 +1,166 @@
+{
+  "schema": "mp2-optimization-report-v1",
+  "human_review": "pending",
+  "student_identity": null,
+  "evidence": {
+    "E_FINAL_SELECTION": {
+      "path": "../optimization_final_selection/selection.json",
+      "sha256": "56450bc5beffbaaf2ef628a651d541620563fde9d8fae77c586e5105d79196f3",
+      "description": "Fixed final selection, recorded before final testing"
+    },
+    "E_FINAL_ANALYSIS": {
+      "path": "report_analysis.json",
+      "sha256": "d316a38146501ff36209e0dc31f016dd28d766711e38bbe1cda3c6bf90de6861",
+      "description": "Narrative projection of saved diagnostics and final resource evidence"
+    },
+    "E_RAW_ANALYSIS": {
+      "path": "summary.json",
+      "sha256": "154d56171e073449f14a5b1812228dfcd09870bd75cdfdca87c41886cc239614",
+      "description": "Selected validation predictions, matched comparisons and illustrative cases"
+    },
+    "E_ANALYSIS_REVIEW": {
+      "path": "report_analysis_enrichment.json",
+      "sha256": "0c0d358e0973c005d3f3ef2305d6e3f249581a64efae561139513caebc0855ba",
+      "description": "Source-checked illustrative examples and evidence-linked interpretation"
+    },
+    "E_EXAMPLE_REVIEW": {
+      "path": "example_source_review.json",
+      "sha256": "a8532edf3c8789a31e825db0bc648d0056bd8b1ceb7bfa55930f199a4444a882",
+      "description": "Parsed-answer and mathematical review of the two illustrative cases"
+    },
+    "E_FINAL_TEST": {
+      "path": "../optimization_evaluation/test_score.json",
+      "sha256": "6d254fff18db12aa7ae87ea41bbb869f3b83441d048c93a0b4b7d7792b106a1c",
+      "description": "Official final frozen test score"
+    },
+    "E_FINAL_RESOURCES": {
+      "path": "../optimization_evaluation/test_resources.json",
+      "sha256": "da56fc61a65ee251554132c97cbb173e5bf4afbb11fbbc8a5a5e2d8474728727",
+      "description": "Complete fresh-process test evaluation time and asset inventory"
+    },
+    "E_FINAL_CONFIG": {
+      "path": "../optimized_bundle/config.json",
+      "sha256": "f0c0b6b87e019df5114c091dfbdc17419b46c19475daf49451f0796da8031433",
+      "description": "Selected deployed configuration"
+    },
+    "E_REPRODUCTION": {
+      "path": "../optimization_reproduction_verification/verification.json",
+      "sha256": "400edd4cb1569f3979cb0a9e2e2160dcc7bc15c8f21147f584e7dbe500d05d03",
+      "description": "Independent full refit and exact learned-array/prediction comparison"
+    },
+    "E_REPRODUCTION_RUN": {
+      "path": "../optimized_reproduction_work/summary.json",
+      "sha256": "279f8ab4b4ebd084ec2e2aa4e32c7e6deb3ea5c5f48ff6ab0dfb387135d27ae5",
+      "description": "Independent ten-learner refit execution record"
+    },
+    "E_FREEZE": {
+      "path": "../optimized_freeze.json",
+      "sha256": "f24f46b8483d98f72560451d52253207edb9a32474eb43141abc4f3df864c516",
+      "description": "Complete selected deployment source and asset freeze"
+    },
+    "E_FINAL_AUDIT": {
+      "path": "final_audit.json",
+      "sha256": "b025257804444e01dff76b2ddaa0b76bc35f7daf32349f2a9ee05138d94a5914",
+      "description": "Independent aggregate result and freeze chronology audit"
+    },
+    "E_SELECTION_POLICY": {
+      "path": "../../../docs/optimization_selection_policy.md",
+      "sha256": "0e633381d6bd0675d6d706ed70d61bbabb3f71901f91472be79f85977bbfdcfd",
+      "description": "Selection policy fixed before new fusion and validation results"
+    },
+    "E_REQUIREMENTS": {
+      "path": "../../requirements.txt",
+      "sha256": "5c12d85e7c08038d1dd9ffbf8119d12ce808885230a47e2bf65dcd9f114659d5",
+      "description": "Pinned inference dependency"
+    },
+    "E_TRAIN_REQUIREMENTS": {
+      "path": "../../requirements-train.txt",
+      "sha256": "300a199acd9a6c4073b4470e6e7bd348dfc4e51e0b480ae1adae362f15198d32",
+      "description": "Pinned numeric training dependencies"
+    },
+    "E_SEQUENCE_REQUIREMENTS": {
+      "path": "../../requirements-sequence.txt",
+      "sha256": "f862b6c572617ab2917b8636926b87e48b9c49d0f4ea6046c9d31461b44d156a",
+      "description": "Pinned scratch sequence training dependency"
+    },
+    "E_TRAIN_COMMAND": {
+      "path": "../../train_optimized.py",
+      "sha256": "5f655d91ba5200d7df4c485d5f81302cb060114d8d3384386142cee45fa1a323",
+      "description": "Portable selected-recipe refitting entry point"
+    },
+    "E_HISTORICAL_SCORE": {
+      "path": "../evaluation/final-test-score.json",
+      "sha256": "49046e6599ee016083829dd42a85500734aa7e17a2f9aee3b80508e867e2ad79",
+      "description": "Historical frozen D score; not used for current selection"
+    },
+    "E_HISTORICAL_INVENTORY": {
+      "path": "../research_inventory.json",
+      "sha256": "d4ed1189b3be7fca96702cee58d80f31641b926a9a6cd6b627980a8c0ae6afd6",
+      "description": "Initial research workload inventory"
+    },
+    "E_REFINEMENT_INVENTORY": {
+      "path": "../refinement_inventory.json",
+      "sha256": "739405a0c4b063a4e5fe481d8d9e40836a875ec80baed274ce140056932ef6ea",
+      "description": "Earlier refinement workload inventory"
+    },
+    "E_GENERALIZATION_INVENTORY": {
+      "path": "../generalization_inventory.json",
+      "sha256": "add8c60da0d8a4181ff852bff9f8267b981193d76096d89e9d0265c9390a0975",
+      "description": "Earlier generalization workload inventory"
+    },
+    "E_OPTIMIZATION_RESULTS": {
+      "path": "../../../docs/optimization_results.md",
+      "sha256": "c0d7b024fa0460dcab21ca355a3a8c4a50bbf2eeb22a2cddb074578efb79bdb5",
+      "description": "Detailed current experiment ledger and disposition"
+    },
+    "E_EXTENDED_PROTOCOL": {
+      "path": "../../../docs/extended_protocol.md",
+      "sha256": "39d518cd52d21aca101b2844321c235b74fd4990ed971821e46dc12b932c9570",
+      "description": "Earlier adaptive-search protocol and context"
+    },
+    "E_PROVENANCE": {
+      "path": "../../../docs/provenance.md",
+      "sha256": "304ff0fabb500c1351026dc30125a67397888855805a2f4601fa3216d5cf6335",
+      "description": "Course materials, reused libraries and substantive assistance disclosure"
+    },
+    "E_DATA_MANIFEST": {
+      "path": "../../data/manifest.json",
+      "sha256": "8b3721d458e48c87eab3a28f660e663981b10617b6e7321123c6ff30b1fbe825",
+      "description": "Supplied split sizes and exact data hashes"
+    }
+  },
+  "final": {
+    "name": {
+      "evidence": "E_FINAL_SELECTION",
+      "pointer": "/selected/name"
+    },
+    "validation_full": {
+      "evidence": "E_FINAL_ANALYSIS",
+      "pointer": "/validation/full"
+    },
+    "validation_hard": {
+      "evidence": "E_FINAL_ANALYSIS",
+      "pointer": "/validation/hard"
+    },
+    "test": {
+      "evidence": "E_FINAL_TEST",
+      "pointer": ""
+    },
+    "resources": {
+      "evidence": "E_FINAL_ANALYSIS",
+      "pointer": "/resources"
+    },
+    "config": {
+      "evidence": "E_FINAL_CONFIG",
+      "pointer": ""
+    },
+    "selection": {
+      "evidence": "E_FINAL_SELECTION",
+      "pointer": ""
+    }
+  },
+  "analysis": {
+    "evidence": "E_FINAL_ANALYSIS",
+    "pointer": ""
+  }
+}

@@ -1,0 +1,446 @@
+[
+  {
+    "repeat": 0,
+    "fold": 0,
+    "config": "digit_text_control",
+    "auxiliary_weight": 0.0,
+    "selected_epochs": 4,
+    "early_fit_seconds": 171.08497120000538,
+    "refit_seconds": 96.22823490000155,
+    "inner_vocabulary": {
+      "fit_questions": 2694,
+      "fit_indices_sha256": "8fca9e4582b8b8494d51c6f21ba15df57f9c54561e7b1e8018897f0698546827",
+      "vocabulary_size": 4096,
+      "fit_augmented_observed": 2656,
+      "fit_pairs_identical_after_encoding": 0,
+      "seconds": 1.1833851999981562
+    },
+    "outer_vocabulary": {
+      "fit_questions": 3170,
+      "fit_indices_sha256": "d66036ea22df6fed7bde03ead964874bd223c56e3fa6863fd0b21108c3be0682",
+      "vocabulary_size": 4096,
+      "fit_augmented_observed": 3126,
+      "fit_pairs_identical_after_encoding": 0,
+      "seconds": 1.2074477000132902
+    },
+    "score_scale": 0.926433265209198,
+    "asset_bytes": 823053,
+    "asset_sha256": "d63b12fb732800b45b111fb2a3e233d3003c07a8eca19533a0be570bb5946338",
+    "export_error": 2.205371856689453e-06,
+    "metrics": {
+      "correct": 1313,
+      "n": 1585,
+      "accuracy": 82.8391167192429,
+      "hard_correct": 413,
+      "hard_n": 685,
+      "hard_accuracy": 60.29197080291971
+    }
+  },
+  {
+    "repeat": 0,
+    "fold": 0,
+    "config": "reference_corruption01",
+    "auxiliary_weight": 0.1,
+    "selected_epochs": 4,
+    "early_fit_seconds": 160.6083318000019,
+    "refit_seconds": 63.62245670000266,
+    "inner_vocabulary": {
+      "fit_questions": 2694,
+      "fit_indices_sha256": "8fca9e4582b8b8494d51c6f21ba15df57f9c54561e7b1e8018897f0698546827",
+      "vocabulary_size": 4096,
+      "fit_augmented_observed": 2656,
+      "fit_pairs_identical_after_encoding": 0,
+      "seconds": 1.2048832000000402
+    },
+    "outer_vocabulary": {
+      "fit_questions": 3170,
+      "fit_indices_sha256": "d66036ea22df6fed7bde03ead964874bd223c56e3fa6863fd0b21108c3be0682",
+      "vocabulary_size": 4096,
+      "fit_augmented_observed": 3126,
+      "fit_pairs_identical_after_encoding": 0,
+      "seconds": 1.1635155999974813
+    },
+    "score_scale": 0.9221975207328796,
+    "asset_bytes": 823053,
+    "asset_sha256": "7d82c7512e731672082ba26641dda343b21cbc3183e02ccbe7358ae56e8fe3ee",
+    "export_error": 1.3560056686401367e-06,
+    "metrics": {
+      "correct": 1312,
+      "n": 1585,
+      "accuracy": 82.77602523659307,
+      "hard_correct": 412,
+      "hard_n": 685,
+      "hard_accuracy": 60.14598540145985
+    }
+  },
+  {
+    "repeat": 0,
+    "fold": 1,
+    "config": "digit_text_control",
+    "auxiliary_weight": 0.0,
+    "selected_epochs": 4,
+    "early_fit_seconds": 92.55799089999346,
+    "refit_seconds": 51.83338059998641,
+    "inner_vocabulary": {
+      "fit_questions": 2694,
+      "fit_indices_sha256": "4adfda1d27afcdf0699af3cd370abafa6160ce3e6e8d27a14c447c35c0dbfad2",
+      "vocabulary_size": 4096,
+      "fit_augmented_observed": 2659,
+      "fit_pairs_identical_after_encoding": 0,
+      "seconds": 1.1660174999997253
+    },
+    "outer_vocabulary": {
+      "fit_questions": 3170,
+      "fit_indices_sha256": "e628d33c87300cf8e01a9d4568103fa9b4f6248375baad59948edec49802fa72",
+      "vocabulary_size": 4096,
+      "fit_augmented_observed": 3131,
+      "fit_pairs_identical_after_encoding": 0,
+      "seconds": 1.2788049999944633
+    },
+    "score_scale": 0.8748506903648376,
+    "asset_bytes": 823053,
+    "asset_sha256": "23259a82ad602090080d2f5c52428076141c113516e6d2ae0f5b6f3e66060fd6",
+    "export_error": 1.5795230865478516e-06,
+    "metrics": {
+      "correct": 1296,
+      "n": 1585,
+      "accuracy": 81.76656151419557,
+      "hard_correct": 436,
+      "hard_n": 725,
+      "hard_accuracy": 60.13793103448276
+    }
+  },
+  {
+    "repeat": 0,
+    "fold": 1,
+    "config": "reference_corruption01",
+    "auxiliary_weight": 0.1,
+    "selected_epochs": 4,
+    "early_fit_seconds": 110.27588770000148,
+    "refit_seconds": 61.88072889999603,
+    "inner_vocabulary": {
+      "fit_questions": 2694,
+      "fit_indices_sha256": "4adfda1d27afcdf0699af3cd370abafa6160ce3e6e8d27a14c447c35c0dbfad2",
+      "vocabulary_size": 4096,
+      "fit_augmented_observed": 2659,
+      "fit_pairs_identical_after_encoding": 0,
+      "seconds": 1.1638770999998087
+    },
+    "outer_vocabulary": {
+      "fit_questions": 3170,
+      "fit_indices_sha256": "e628d33c87300cf8e01a9d4568103fa9b4f6248375baad59948edec49802fa72",
+      "vocabulary_size": 4096,
+      "fit_augmented_observed": 3131,
+      "fit_pairs_identical_after_encoding": 0,
+      "seconds": 1.196122599998489
+    },
+    "score_scale": 0.8680868148803711,
+    "asset_bytes": 823053,
+    "asset_sha256": "355918a36c6b32217f0deb805ca93787f68fb5b36fc2adb2f5674d13f3b3d4f4",
+    "export_error": 1.6689300537109375e-06,
+    "metrics": {
+      "correct": 1306,
+      "n": 1585,
+      "accuracy": 82.39747634069401,
+      "hard_correct": 446,
+      "hard_n": 725,
+      "hard_accuracy": 61.51724137931035
+    }
+  },
+  {
+    "repeat": 0,
+    "fold": 2,
+    "config": "digit_text_control",
+    "auxiliary_weight": 0.0,
+    "selected_epochs": 4,
+    "early_fit_seconds": 197.30144540000765,
+    "refit_seconds": 71.01902780000819,
+    "inner_vocabulary": {
+      "fit_questions": 2694,
+      "fit_indices_sha256": "b161175abc44395dc8de2c4b385f3b3b490fbeee6a0ac8db5979b4f5db1d8905",
+      "vocabulary_size": 4096,
+      "fit_augmented_observed": 2663,
+      "fit_pairs_identical_after_encoding": 0,
+      "seconds": 1.1632659000024432
+    },
+    "outer_vocabulary": {
+      "fit_questions": 3170,
+      "fit_indices_sha256": "25195b6a454b5542113987318d853aa1f9bd323c03dea61da8c02b57cadfe2fd",
+      "vocabulary_size": 4096,
+      "fit_augmented_observed": 3135,
+      "fit_pairs_identical_after_encoding": 0,
+      "seconds": 1.152311900004861
+    },
+    "score_scale": 0.879113495349884,
+    "asset_bytes": 823053,
+    "asset_sha256": "be9d9e7fc3aebcd9983173b210f78d682ebde7c7b426ad0a06eadfa3f62a255b",
+    "export_error": 1.519918441772461e-06,
+    "metrics": {
+      "correct": 1328,
+      "n": 1585,
+      "accuracy": 83.78548895899054,
+      "hard_correct": 447,
+      "hard_n": 704,
+      "hard_accuracy": 63.49431818181818
+    }
+  },
+  {
+    "repeat": 0,
+    "fold": 2,
+    "config": "reference_corruption01",
+    "auxiliary_weight": 0.1,
+    "selected_epochs": 4,
+    "early_fit_seconds": 87.87131529999897,
+    "refit_seconds": 58.52206949998799,
+    "inner_vocabulary": {
+      "fit_questions": 2694,
+      "fit_indices_sha256": "b161175abc44395dc8de2c4b385f3b3b490fbeee6a0ac8db5979b4f5db1d8905",
+      "vocabulary_size": 4096,
+      "fit_augmented_observed": 2663,
+      "fit_pairs_identical_after_encoding": 0,
+      "seconds": 1.1917050000047311
+    },
+    "outer_vocabulary": {
+      "fit_questions": 3170,
+      "fit_indices_sha256": "25195b6a454b5542113987318d853aa1f9bd323c03dea61da8c02b57cadfe2fd",
+      "vocabulary_size": 4096,
+      "fit_augmented_observed": 3135,
+      "fit_pairs_identical_after_encoding": 0,
+      "seconds": 1.2190637000021525
+    },
+    "score_scale": 0.8608022928237915,
+    "asset_bytes": 823053,
+    "asset_sha256": "55d390e0761fc7df478a8e21994d04adf73c9f9f03af435cb5e413c7dfb190f7",
+    "export_error": 1.3709068298339844e-06,
+    "metrics": {
+      "correct": 1336,
+      "n": 1585,
+      "accuracy": 84.29022082018928,
+      "hard_correct": 455,
+      "hard_n": 704,
+      "hard_accuracy": 64.63068181818183
+    }
+  },
+  {
+    "repeat": 1,
+    "fold": 0,
+    "config": "digit_text_control",
+    "auxiliary_weight": 0.0,
+    "selected_epochs": 3,
+    "early_fit_seconds": 84.70704690000275,
+    "refit_seconds": 39.32459249999374,
+    "inner_vocabulary": {
+      "fit_questions": 2694,
+      "fit_indices_sha256": "532bf5697380fc80a3fda7ce816c986d179776f0c279f01671171a9c64622fb0",
+      "vocabulary_size": 4096,
+      "fit_augmented_observed": 2656,
+      "fit_pairs_identical_after_encoding": 0,
+      "seconds": 1.2020200999977533
+    },
+    "outer_vocabulary": {
+      "fit_questions": 3170,
+      "fit_indices_sha256": "a8ee8fa9ae29917af0582e6e65935b74f20b55b5b5f131df8d1afa8560903957",
+      "vocabulary_size": 4096,
+      "fit_augmented_observed": 3126,
+      "fit_pairs_identical_after_encoding": 0,
+      "seconds": 1.2681106999953045
+    },
+    "score_scale": 0.6372172832489014,
+    "asset_bytes": 823053,
+    "asset_sha256": "7d629dad6366ac2a63b6af55ec5e46c245809eea574976b1226450bba99db4c4",
+    "export_error": 9.5367431640625e-07,
+    "metrics": {
+      "correct": 1332,
+      "n": 1585,
+      "accuracy": 84.03785488958991,
+      "hard_correct": 429,
+      "hard_n": 682,
+      "hard_accuracy": 62.903225806451616
+    }
+  },
+  {
+    "repeat": 1,
+    "fold": 0,
+    "config": "reference_corruption01",
+    "auxiliary_weight": 0.1,
+    "selected_epochs": 3,
+    "early_fit_seconds": 89.88902329999837,
+    "refit_seconds": 45.99667770000815,
+    "inner_vocabulary": {
+      "fit_questions": 2694,
+      "fit_indices_sha256": "532bf5697380fc80a3fda7ce816c986d179776f0c279f01671171a9c64622fb0",
+      "vocabulary_size": 4096,
+      "fit_augmented_observed": 2656,
+      "fit_pairs_identical_after_encoding": 0,
+      "seconds": 1.2377791000035359
+    },
+    "outer_vocabulary": {
+      "fit_questions": 3170,
+      "fit_indices_sha256": "a8ee8fa9ae29917af0582e6e65935b74f20b55b5b5f131df8d1afa8560903957",
+      "vocabulary_size": 4096,
+      "fit_augmented_observed": 3126,
+      "fit_pairs_identical_after_encoding": 0,
+      "seconds": 1.2119872000039322
+    },
+    "score_scale": 0.6255600452423096,
+    "asset_bytes": 823053,
+    "asset_sha256": "183f5e9f821323d10318a4cb207f8e4fa2afd5767c07441df3834d064928e3a8",
+    "export_error": 1.1026859283447266e-06,
+    "metrics": {
+      "correct": 1328,
+      "n": 1585,
+      "accuracy": 83.78548895899054,
+      "hard_correct": 425,
+      "hard_n": 682,
+      "hard_accuracy": 62.316715542522
+    }
+  },
+  {
+    "repeat": 1,
+    "fold": 1,
+    "config": "digit_text_control",
+    "auxiliary_weight": 0.0,
+    "selected_epochs": 4,
+    "early_fit_seconds": 124.31672180000169,
+    "refit_seconds": 100.79329390000203,
+    "inner_vocabulary": {
+      "fit_questions": 2694,
+      "fit_indices_sha256": "c4ddbaf880288412abd83ba7da45717471eeba08f2c37c6883f33dd1d977f9e5",
+      "vocabulary_size": 4096,
+      "fit_augmented_observed": 2660,
+      "fit_pairs_identical_after_encoding": 0,
+      "seconds": 1.1731184999953257
+    },
+    "outer_vocabulary": {
+      "fit_questions": 3170,
+      "fit_indices_sha256": "1daca56f2d4ec54ff150958257a1691d935486cf764232468038003d8a4914a7",
+      "vocabulary_size": 4096,
+      "fit_augmented_observed": 3132,
+      "fit_pairs_identical_after_encoding": 0,
+      "seconds": 1.20212360000005
+    },
+    "score_scale": 0.8497926592826843,
+    "asset_bytes": 823053,
+    "asset_sha256": "9caae53395b2ac75ddc2269b4e196ad2ba51dad4bd0bf2ad609c044ab9c416a1",
+    "export_error": 1.7881393432617188e-06,
+    "metrics": {
+      "correct": 1330,
+      "n": 1585,
+      "accuracy": 83.91167192429022,
+      "hard_correct": 448,
+      "hard_n": 703,
+      "hard_accuracy": 63.726884779516354
+    }
+  },
+  {
+    "repeat": 1,
+    "fold": 1,
+    "config": "reference_corruption01",
+    "auxiliary_weight": 0.1,
+    "selected_epochs": 4,
+    "early_fit_seconds": 72.15974400000414,
+    "refit_seconds": 46.52535739999439,
+    "inner_vocabulary": {
+      "fit_questions": 2694,
+      "fit_indices_sha256": "c4ddbaf880288412abd83ba7da45717471eeba08f2c37c6883f33dd1d977f9e5",
+      "vocabulary_size": 4096,
+      "fit_augmented_observed": 2660,
+      "fit_pairs_identical_after_encoding": 0,
+      "seconds": 1.2446931000013137
+    },
+    "outer_vocabulary": {
+      "fit_questions": 3170,
+      "fit_indices_sha256": "1daca56f2d4ec54ff150958257a1691d935486cf764232468038003d8a4914a7",
+      "vocabulary_size": 4096,
+      "fit_augmented_observed": 3132,
+      "fit_pairs_identical_after_encoding": 0,
+      "seconds": 1.0206984999967972
+    },
+    "score_scale": 0.8462855219841003,
+    "asset_bytes": 823053,
+    "asset_sha256": "0dc98ea66c61eb71ef5118d5f8293cd0723fd9a7fee34079357944fa873c883f",
+    "export_error": 1.430511474609375e-06,
+    "metrics": {
+      "correct": 1328,
+      "n": 1585,
+      "accuracy": 83.78548895899054,
+      "hard_correct": 446,
+      "hard_n": 703,
+      "hard_accuracy": 63.44238975817923
+    }
+  },
+  {
+    "repeat": 1,
+    "fold": 2,
+    "config": "digit_text_control",
+    "auxiliary_weight": 0.0,
+    "selected_epochs": 4,
+    "early_fit_seconds": 52.33091770000465,
+    "refit_seconds": 27.729622099999688,
+    "inner_vocabulary": {
+      "fit_questions": 2694,
+      "fit_indices_sha256": "32871c089dd0527cbfec6e687280ce62e1a456f1a96f0632f9d07de111e2bed8",
+      "vocabulary_size": 4096,
+      "fit_augmented_observed": 2663,
+      "fit_pairs_identical_after_encoding": 0,
+      "seconds": 0.911958800003049
+    },
+    "outer_vocabulary": {
+      "fit_questions": 3170,
+      "fit_indices_sha256": "5c2feafbd934481fb09d9250996bf4ff1ed0240c2926071d4b14f4a593152984",
+      "vocabulary_size": 4096,
+      "fit_augmented_observed": 3134,
+      "fit_pairs_identical_after_encoding": 0,
+      "seconds": 0.7545408000005409
+    },
+    "score_scale": 0.9077988862991333,
+    "asset_bytes": 823053,
+    "asset_sha256": "7eb818f120035cbe3edaf7ce4801b6fa56b0d84235bbd985a172e4f9ce6cfd4d",
+    "export_error": 1.9073486328125e-06,
+    "metrics": {
+      "correct": 1306,
+      "n": 1585,
+      "accuracy": 82.39747634069401,
+      "hard_correct": 450,
+      "hard_n": 729,
+      "hard_accuracy": 61.72839506172839
+    }
+  },
+  {
+    "repeat": 1,
+    "fold": 2,
+    "config": "reference_corruption01",
+    "auxiliary_weight": 0.1,
+    "selected_epochs": 4,
+    "early_fit_seconds": 42.08665060000203,
+    "refit_seconds": 20.683200300001772,
+    "inner_vocabulary": {
+      "fit_questions": 2694,
+      "fit_indices_sha256": "32871c089dd0527cbfec6e687280ce62e1a456f1a96f0632f9d07de111e2bed8",
+      "vocabulary_size": 4096,
+      "fit_augmented_observed": 2663,
+      "fit_pairs_identical_after_encoding": 0,
+      "seconds": 0.6772493000025861
+    },
+    "outer_vocabulary": {
+      "fit_questions": 3170,
+      "fit_indices_sha256": "5c2feafbd934481fb09d9250996bf4ff1ed0240c2926071d4b14f4a593152984",
+      "vocabulary_size": 4096,
+      "fit_augmented_observed": 3134,
+      "fit_pairs_identical_after_encoding": 0,
+      "seconds": 0.6631454000016674
+    },
+    "score_scale": 0.8993021845817566,
+    "asset_bytes": 823053,
+    "asset_sha256": "53b189d3c83c953cddef86ffd229daaae604ed9b016f2a40745ab90d1639007a",
+    "export_error": 1.9073486328125e-06,
+    "metrics": {
+      "correct": 1309,
+      "n": 1585,
+      "accuracy": 82.58675078864354,
+      "hard_correct": 453,
+      "hard_n": 729,
+      "hard_accuracy": 62.139917695473244
+    }
+  }
+]

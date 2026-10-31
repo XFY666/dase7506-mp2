@@ -1,0 +1,23 @@
+{
+  "raw_normalized_shape": [
+    2,
+    4755,
+    4,
+    2
+  ],
+  "axes": [
+    "repeat",
+    "question",
+    "candidate",
+    "arm"
+  ],
+  "member_axes": [
+    "repeat",
+    "question",
+    "candidate",
+    "arm",
+    "seed"
+  ],
+  "raw_definition": "mean of three member-scale-normalized scores",
+  "label_scope": "train only"
+}

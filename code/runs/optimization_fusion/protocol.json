@@ -1,0 +1,763 @@
+{
+  "menu": [
+    {
+      "name": "F",
+      "weights": {
+        "A": 0.5,
+        "K": 0.25,
+        "Q": 0.25
+      },
+      "anchor": "F",
+      "support": null,
+      "support_weight": 0.0
+    },
+    {
+      "name": "G",
+      "weights": {
+        "A": 0.125,
+        "K": 0.0625,
+        "Q": 0.0625,
+        "P": 0.5,
+        "C": 0.25
+      },
+      "anchor": "G",
+      "support": null,
+      "support_weight": 0.0
+    },
+    {
+      "name": "F_bag14_cross",
+      "weights": {
+        "A14_5": 0.5,
+        "K": 0.25,
+        "Qcross": 0.25
+      },
+      "anchor": "F_bag14_cross",
+      "support": null,
+      "support_weight": 0.0
+    },
+    {
+      "name": "F_ema_cross",
+      "weights": {
+        "Aema_5": 0.5,
+        "K": 0.25,
+        "Qcross": 0.25
+      },
+      "anchor": "F_ema_cross",
+      "support": null,
+      "support_weight": 0.0
+    },
+    {
+      "name": "F_noise_cross",
+      "weights": {
+        "Anoise_5": 0.5,
+        "K": 0.25,
+        "Qcross": 0.25
+      },
+      "anchor": "F_noise_cross",
+      "support": null,
+      "support_weight": 0.0
+    },
+    {
+      "name": "F_group_cross",
+      "weights": {
+        "Across_3": 0.5,
+        "K": 0.25,
+        "Qcross": 0.25
+      },
+      "anchor": "F_group_cross",
+      "support": null,
+      "support_weight": 0.0
+    },
+    {
+      "name": "G_noise_cross",
+      "weights": {
+        "Anoise_5": 0.125,
+        "K": 0.0625,
+        "Qcross": 0.0625,
+        "P": 0.5,
+        "Ccross": 0.25
+      },
+      "anchor": "G_noise_cross",
+      "support": null,
+      "support_weight": 0.0
+    },
+    {
+      "name": "F_subset_cross",
+      "weights": {
+        "Asubset_3": 0.5,
+        "K": 0.25,
+        "Qcross": 0.25
+      },
+      "anchor": "F_subset_cross",
+      "support": null,
+      "support_weight": 0.0
+    },
+    {
+      "name": "F_noise_cross__roles_cnn_0.1",
+      "weights": {
+        "Anoise_5": 0.45,
+        "K": 0.225,
+        "Qcross": 0.225,
+        "roles_cnn": 0.1
+      },
+      "anchor": "F_noise_cross",
+      "support": "roles_cnn",
+      "support_weight": 0.1
+    },
+    {
+      "name": "F_noise_cross__roles_cnn_0.25",
+      "weights": {
+        "Anoise_5": 0.375,
+        "K": 0.1875,
+        "Qcross": 0.1875,
+        "roles_cnn": 0.25
+      },
+      "anchor": "F_noise_cross",
+      "support": "roles_cnn",
+      "support_weight": 0.25
+    },
+    {
+      "name": "F_noise_cross__allq_cnn_0.1",
+      "weights": {
+        "Anoise_5": 0.45,
+        "K": 0.225,
+        "Qcross": 0.225,
+        "allq_cnn": 0.1
+      },
+      "anchor": "F_noise_cross",
+      "support": "allq_cnn",
+      "support_weight": 0.1
+    },
+    {
+      "name": "F_noise_cross__allq_cnn_0.25",
+      "weights": {
+        "Anoise_5": 0.375,
+        "K": 0.1875,
+        "Qcross": 0.1875,
+        "allq_cnn": 0.25
+      },
+      "anchor": "F_noise_cross",
+      "support": "allq_cnn",
+      "support_weight": 0.25
+    },
+    {
+      "name": "F_noise_cross__aux_cnn_0.1",
+      "weights": {
+        "Anoise_5": 0.45,
+        "K": 0.225,
+        "Qcross": 0.225,
+        "aux_cnn": 0.1
+      },
+      "anchor": "F_noise_cross",
+      "support": "aux_cnn",
+      "support_weight": 0.1
+    },
+    {
+      "name": "F_noise_cross__aux_cnn_0.25",
+      "weights": {
+        "Anoise_5": 0.375,
+        "K": 0.1875,
+        "Qcross": 0.1875,
+        "aux_cnn": 0.25
+      },
+      "anchor": "F_noise_cross",
+      "support": "aux_cnn",
+      "support_weight": 0.25
+    },
+    {
+      "name": "F_noise_cross__token_attention_0.1",
+      "weights": {
+        "Anoise_5": 0.45,
+        "K": 0.225,
+        "Qcross": 0.225,
+        "token_attention": 0.1
+      },
+      "anchor": "F_noise_cross",
+      "support": "token_attention",
+      "support_weight": 0.1
+    },
+    {
+      "name": "F_noise_cross__token_attention_0.25",
+      "weights": {
+        "Anoise_5": 0.375,
+        "K": 0.1875,
+        "Qcross": 0.1875,
+        "token_attention": 0.25
+      },
+      "anchor": "F_noise_cross",
+      "support": "token_attention",
+      "support_weight": 0.25
+    },
+    {
+      "name": "F_noise_cross__set_attention_0.1",
+      "weights": {
+        "Anoise_5": 0.45,
+        "K": 0.225,
+        "Qcross": 0.225,
+        "set_attention": 0.1
+      },
+      "anchor": "F_noise_cross",
+      "support": "set_attention",
+      "support_weight": 0.1
+    },
+    {
+      "name": "F_noise_cross__set_attention_0.25",
+      "weights": {
+        "Anoise_5": 0.375,
+        "K": 0.1875,
+        "Qcross": 0.1875,
+        "set_attention": 0.25
+      },
+      "anchor": "F_noise_cross",
+      "support": "set_attention",
+      "support_weight": 0.25
+    },
+    {
+      "name": "F_noise_cross__node_mlp_0.1",
+      "weights": {
+        "Anoise_5": 0.45,
+        "K": 0.225,
+        "Qcross": 0.225,
+        "node_mlp": 0.1
+      },
+      "anchor": "F_noise_cross",
+      "support": "node_mlp",
+      "support_weight": 0.1
+    },
+    {
+      "name": "F_noise_cross__node_mlp_0.25",
+      "weights": {
+        "Anoise_5": 0.375,
+        "K": 0.1875,
+        "Qcross": 0.1875,
+        "node_mlp": 0.25
+      },
+      "anchor": "F_noise_cross",
+      "support": "node_mlp",
+      "support_weight": 0.25
+    },
+    {
+      "name": "F_noise_cross__equation_gcn_0.1",
+      "weights": {
+        "Anoise_5": 0.45,
+        "K": 0.225,
+        "Qcross": 0.225,
+        "equation_gcn": 0.1
+      },
+      "anchor": "F_noise_cross",
+      "support": "equation_gcn",
+      "support_weight": 0.1
+    },
+    {
+      "name": "F_noise_cross__equation_gcn_0.25",
+      "weights": {
+        "Anoise_5": 0.375,
+        "K": 0.1875,
+        "Qcross": 0.1875,
+        "equation_gcn": 0.25
+      },
+      "anchor": "F_noise_cross",
+      "support": "equation_gcn",
+      "support_weight": 0.25
+    },
+    {
+      "name": "F_noise_cross__digit_cnn_0.1",
+      "weights": {
+        "Anoise_5": 0.45,
+        "K": 0.225,
+        "Qcross": 0.225,
+        "digit_cnn": 0.1
+      },
+      "anchor": "F_noise_cross",
+      "support": "digit_cnn",
+      "support_weight": 0.1
+    },
+    {
+      "name": "F_noise_cross__digit_cnn_0.25",
+      "weights": {
+        "Anoise_5": 0.375,
+        "K": 0.1875,
+        "Qcross": 0.1875,
+        "digit_cnn": 0.25
+      },
+      "anchor": "F_noise_cross",
+      "support": "digit_cnn",
+      "support_weight": 0.25
+    },
+    {
+      "name": "F_noise_cross__corruption_cnn_0.1",
+      "weights": {
+        "Anoise_5": 0.45,
+        "K": 0.225,
+        "Qcross": 0.225,
+        "corruption_cnn": 0.1
+      },
+      "anchor": "F_noise_cross",
+      "support": "corruption_cnn",
+      "support_weight": 0.1
+    },
+    {
+      "name": "F_noise_cross__corruption_cnn_0.25",
+      "weights": {
+        "Anoise_5": 0.375,
+        "K": 0.1875,
+        "Qcross": 0.1875,
+        "corruption_cnn": 0.25
+      },
+      "anchor": "F_noise_cross",
+      "support": "corruption_cnn",
+      "support_weight": 0.25
+    },
+    {
+      "name": "F_noise_cross__cross_tree_0.1",
+      "weights": {
+        "Anoise_5": 0.45,
+        "K": 0.225,
+        "Qcross": 0.225,
+        "cross_tree": 0.1
+      },
+      "anchor": "F_noise_cross",
+      "support": "cross_tree",
+      "support_weight": 0.1
+    },
+    {
+      "name": "F_noise_cross__cross_tree_0.25",
+      "weights": {
+        "Anoise_5": 0.375,
+        "K": 0.1875,
+        "Qcross": 0.1875,
+        "cross_tree": 0.25
+      },
+      "anchor": "F_noise_cross",
+      "support": "cross_tree",
+      "support_weight": 0.25
+    },
+    {
+      "name": "G_noise_cross__roles_cnn_0.1",
+      "weights": {
+        "Anoise_5": 0.1125,
+        "K": 0.05625,
+        "Qcross": 0.05625,
+        "P": 0.45,
+        "Ccross": 0.225,
+        "roles_cnn": 0.1
+      },
+      "anchor": "G_noise_cross",
+      "support": "roles_cnn",
+      "support_weight": 0.1
+    },
+    {
+      "name": "G_noise_cross__roles_cnn_0.25",
+      "weights": {
+        "Anoise_5": 0.09375,
+        "K": 0.046875,
+        "Qcross": 0.046875,
+        "P": 0.375,
+        "Ccross": 0.1875,
+        "roles_cnn": 0.25
+      },
+      "anchor": "G_noise_cross",
+      "support": "roles_cnn",
+      "support_weight": 0.25
+    },
+    {
+      "name": "G_noise_cross__allq_cnn_0.1",
+      "weights": {
+        "Anoise_5": 0.1125,
+        "K": 0.05625,
+        "Qcross": 0.05625,
+        "P": 0.45,
+        "Ccross": 0.225,
+        "allq_cnn": 0.1
+      },
+      "anchor": "G_noise_cross",
+      "support": "allq_cnn",
+      "support_weight": 0.1
+    },
+    {
+      "name": "G_noise_cross__allq_cnn_0.25",
+      "weights": {
+        "Anoise_5": 0.09375,
+        "K": 0.046875,
+        "Qcross": 0.046875,
+        "P": 0.375,
+        "Ccross": 0.1875,
+        "allq_cnn": 0.25
+      },
+      "anchor": "G_noise_cross",
+      "support": "allq_cnn",
+      "support_weight": 0.25
+    },
+    {
+      "name": "G_noise_cross__aux_cnn_0.1",
+      "weights": {
+        "Anoise_5": 0.1125,
+        "K": 0.05625,
+        "Qcross": 0.05625,
+        "P": 0.45,
+        "Ccross": 0.225,
+        "aux_cnn": 0.1
+      },
+      "anchor": "G_noise_cross",
+      "support": "aux_cnn",
+      "support_weight": 0.1
+    },
+    {
+      "name": "G_noise_cross__aux_cnn_0.25",
+      "weights": {
+        "Anoise_5": 0.09375,
+        "K": 0.046875,
+        "Qcross": 0.046875,
+        "P": 0.375,
+        "Ccross": 0.1875,
+        "aux_cnn": 0.25
+      },
+      "anchor": "G_noise_cross",
+      "support": "aux_cnn",
+      "support_weight": 0.25
+    },
+    {
+      "name": "G_noise_cross__token_attention_0.1",
+      "weights": {
+        "Anoise_5": 0.1125,
+        "K": 0.05625,
+        "Qcross": 0.05625,
+        "P": 0.45,
+        "Ccross": 0.225,
+        "token_attention": 0.1
+      },
+      "anchor": "G_noise_cross",
+      "support": "token_attention",
+      "support_weight": 0.1
+    },
+    {
+      "name": "G_noise_cross__token_attention_0.25",
+      "weights": {
+        "Anoise_5": 0.09375,
+        "K": 0.046875,
+        "Qcross": 0.046875,
+        "P": 0.375,
+        "Ccross": 0.1875,
+        "token_attention": 0.25
+      },
+      "anchor": "G_noise_cross",
+      "support": "token_attention",
+      "support_weight": 0.25
+    },
+    {
+      "name": "G_noise_cross__set_attention_0.1",
+      "weights": {
+        "Anoise_5": 0.1125,
+        "K": 0.05625,
+        "Qcross": 0.05625,
+        "P": 0.45,
+        "Ccross": 0.225,
+        "set_attention": 0.1
+      },
+      "anchor": "G_noise_cross",
+      "support": "set_attention",
+      "support_weight": 0.1
+    },
+    {
+      "name": "G_noise_cross__set_attention_0.25",
+      "weights": {
+        "Anoise_5": 0.09375,
+        "K": 0.046875,
+        "Qcross": 0.046875,
+        "P": 0.375,
+        "Ccross": 0.1875,
+        "set_attention": 0.25
+      },
+      "anchor": "G_noise_cross",
+      "support": "set_attention",
+      "support_weight": 0.25
+    },
+    {
+      "name": "G_noise_cross__node_mlp_0.1",
+      "weights": {
+        "Anoise_5": 0.1125,
+        "K": 0.05625,
+        "Qcross": 0.05625,
+        "P": 0.45,
+        "Ccross": 0.225,
+        "node_mlp": 0.1
+      },
+      "anchor": "G_noise_cross",
+      "support": "node_mlp",
+      "support_weight": 0.1
+    },
+    {
+      "name": "G_noise_cross__node_mlp_0.25",
+      "weights": {
+        "Anoise_5": 0.09375,
+        "K": 0.046875,
+        "Qcross": 0.046875,
+        "P": 0.375,
+        "Ccross": 0.1875,
+        "node_mlp": 0.25
+      },
+      "anchor": "G_noise_cross",
+      "support": "node_mlp",
+      "support_weight": 0.25
+    },
+    {
+      "name": "G_noise_cross__equation_gcn_0.1",
+      "weights": {
+        "Anoise_5": 0.1125,
+        "K": 0.05625,
+        "Qcross": 0.05625,
+        "P": 0.45,
+        "Ccross": 0.225,
+        "equation_gcn": 0.1
+      },
+      "anchor": "G_noise_cross",
+      "support": "equation_gcn",
+      "support_weight": 0.1
+    },
+    {
+      "name": "G_noise_cross__equation_gcn_0.25",
+      "weights": {
+        "Anoise_5": 0.09375,
+        "K": 0.046875,
+        "Qcross": 0.046875,
+        "P": 0.375,
+        "Ccross": 0.1875,
+        "equation_gcn": 0.25
+      },
+      "anchor": "G_noise_cross",
+      "support": "equation_gcn",
+      "support_weight": 0.25
+    },
+    {
+      "name": "G_noise_cross__digit_cnn_0.1",
+      "weights": {
+        "Anoise_5": 0.1125,
+        "K": 0.05625,
+        "Qcross": 0.05625,
+        "P": 0.45,
+        "Ccross": 0.225,
+        "digit_cnn": 0.1
+      },
+      "anchor": "G_noise_cross",
+      "support": "digit_cnn",
+      "support_weight": 0.1
+    },
+    {
+      "name": "G_noise_cross__digit_cnn_0.25",
+      "weights": {
+        "Anoise_5": 0.09375,
+        "K": 0.046875,
+        "Qcross": 0.046875,
+        "P": 0.375,
+        "Ccross": 0.1875,
+        "digit_cnn": 0.25
+      },
+      "anchor": "G_noise_cross",
+      "support": "digit_cnn",
+      "support_weight": 0.25
+    },
+    {
+      "name": "G_noise_cross__corruption_cnn_0.1",
+      "weights": {
+        "Anoise_5": 0.1125,
+        "K": 0.05625,
+        "Qcross": 0.05625,
+        "P": 0.45,
+        "Ccross": 0.225,
+        "corruption_cnn": 0.1
+      },
+      "anchor": "G_noise_cross",
+      "support": "corruption_cnn",
+      "support_weight": 0.1
+    },
+    {
+      "name": "G_noise_cross__corruption_cnn_0.25",
+      "weights": {
+        "Anoise_5": 0.09375,
+        "K": 0.046875,
+        "Qcross": 0.046875,
+        "P": 0.375,
+        "Ccross": 0.1875,
+        "corruption_cnn": 0.25
+      },
+      "anchor": "G_noise_cross",
+      "support": "corruption_cnn",
+      "support_weight": 0.25
+    },
+    {
+      "name": "G_noise_cross__cross_tree_0.1",
+      "weights": {
+        "Anoise_5": 0.1125,
+        "K": 0.05625,
+        "Qcross": 0.05625,
+        "P": 0.45,
+        "Ccross": 0.225,
+        "cross_tree": 0.1
+      },
+      "anchor": "G_noise_cross",
+      "support": "cross_tree",
+      "support_weight": 0.1
+    },
+    {
+      "name": "G_noise_cross__cross_tree_0.25",
+      "weights": {
+        "Anoise_5": 0.09375,
+        "K": 0.046875,
+        "Qcross": 0.046875,
+        "P": 0.375,
+        "Ccross": 0.1875,
+        "cross_tree": 0.25
+      },
+      "anchor": "G_noise_cross",
+      "support": "cross_tree",
+      "support_weight": 0.25
+    }
+  ],
+  "branches": {
+    "A": [
+      "optimization_baselines",
+      "head_names",
+      "A"
+    ],
+    "K": [
+      "optimization_baselines",
+      "head_names",
+      "K"
+    ],
+    "Q": [
+      "optimization_baselines",
+      "head_names",
+      "Q"
+    ],
+    "P": [
+      "optimization_baselines",
+      "head_names",
+      "P"
+    ],
+    "C": [
+      "optimization_baselines",
+      "head_names",
+      "C"
+    ],
+    "A14_5": [
+      "optimization_bagging",
+      "config_names",
+      "epoch14_bag5"
+    ],
+    "Aema_5": [
+      "optimization_bagging",
+      "config_names",
+      "epoch40_ema_bag5"
+    ],
+    "Anoise_5": [
+      "optimization_bagging",
+      "config_names",
+      "epoch40_ema_noise_bag5"
+    ],
+    "Across_3": [
+      "optimization_interactions",
+      "config_names",
+      "A_D1D2"
+    ],
+    "Qcross": [
+      "optimization_interactions",
+      "config_names",
+      "Q_D1D2"
+    ],
+    "Ccross": [
+      "optimization_interactions",
+      "config_names",
+      "C_D1D2"
+    ],
+    "Asubset_3": [
+      "optimization_subset",
+      "configuration_names",
+      "drop_one_half"
+    ],
+    "roles_cnn": [
+      "optimization_sequence",
+      "recipes",
+      "headtail_roles"
+    ],
+    "allq_cnn": [
+      "optimization_sequence_aux",
+      "configs",
+      "control_allq"
+    ],
+    "aux_cnn": [
+      "optimization_sequence_aux",
+      "configs",
+      "token_aux01"
+    ],
+    "token_attention": [
+      "optimization_transformer",
+      "configs",
+      "token_attention"
+    ],
+    "set_attention": [
+      "optimization_transformer",
+      "configs",
+      "token_set_attention"
+    ],
+    "node_mlp": [
+      "optimization_graph",
+      "configuration_names",
+      "node_mlp"
+    ],
+    "equation_gcn": [
+      "optimization_graph",
+      "configuration_names",
+      "equation_gcn"
+    ],
+    "digit_cnn": [
+      "optimization_reference_augmentation",
+      "configs",
+      "digit_text_control"
+    ],
+    "corruption_cnn": [
+      "optimization_reference_augmentation",
+      "configs",
+      "reference_corruption01"
+    ],
+    "cross_tree": [
+      "optimization_trees",
+      "configuration_names",
+      "weighted_D1_D2"
+    ]
+  },
+  "fold_seeds": [
+    20261027,
+    20261028
+  ],
+  "number_of_recipes": 48,
+  "score_convention": "Use source normalized OOF directly, cast to float64; no pooled rescaling or fitting fusion coefficients",
+  "membership": "Ten support branches fixed before observing any joint fusion outcomes, including matched controls and weak individual treatments",
+  "primary": "Mean hard correct across2repeats; next lower mean group CE; then fewer positive-weight branch components; then menu order",
+  "screen_filter": "Each repeat hard-correct >= historicalF on that repeat; descriptive consistency filter, not a significance test",
+  "duplicates": "Identical parsed-answer group choices over both repeats share one shortlist position; all menu rows still reported",
+  "shortlist": "Rank remaining distinct choices for full-training resource assessment; at most2 resource-eligible finalists proceed to new validation",
+  "resource_rule": "Before any new validation, full refit/probe in ranked order; reject >16MiB uncompressed assets or >25s local fresh prediction+score on467 train inputs, reserving5s of the30s reference allowance. ReferenceCPU remains eligibility authority.",
+  "resource_scope": "Resource failure permits next ranked fixed recipe, never new weights or model tuning",
+  "bootstrap": "5000 question-cluster resamples of the two-repeat average paired outcome; conditional on fixed searched predictions, excludes training/search uncertainty; no acceptance test",
+  "statistical_scope": "Historical and present screening use these train labels. This finite search is exploratory; two repeats are not independent datasets. No cross-OOF meta fitting is called nested.",
+  "validation": "None in this program; prospective final deployment selection rule must precede the atmost2 validation evaluations",
+  "test": "No test access, no promotion, no score-based rollback",
+  "source_sha256": {
+    "optimization_fusion.py": "a69a2ee6aef4dec256833baecefd798cdf54e78ea4822a5b822a86042afc88fd",
+    "selection.py": "8b1f6ce4e7c1e445cbc0f6414a979722879d9fef9aa56073ebe052ac09563e64",
+    "answer_group_model.py": "da2aea23e58310cbae6bb9b324d9443c6876bff54ab27af513d7cfde5073386d",
+    "experiment_utils.py": "7f6dda4550acc7c6d3cc6429e46cc8978304ea7062118876ae763030ed2daa39"
+  },
+  "input_protocol_sha256": {
+    "optimization_bagging": "1f42b44754691fd305620674c3ef9bd1ed7da4757f4c984ccc7f5dda2c0df48e",
+    "optimization_baselines": "44572fdf24e3785ee522eec653eb9b8cc574fe668f35f5a67931848b5d358950",
+    "optimization_graph": "23707310e747f9c39bd941be8af8aad0ef3a3d9da0403035eb965e57124d6628",
+    "optimization_interactions": "2ba26fbd2b93bd7131f167ca9b36c79f4bc0cd84e9de8e905f4336c59e480f3a",
+    "optimization_reference_augmentation": "482932bd4831311732c365cbd1010afab53f8f32b9b612dfcc95cd55a81002df",
+    "optimization_sequence": "44272822dd889151ff5ac3c1f99cd7060f6e41222254b907e130731a4be52fb6",
+    "optimization_sequence_aux": "26611452fe92ac8687d40998da1de644c63ea4b0c77f31fcc50b93ff67a73186",
+    "optimization_subset": "6915d442db4fb0ea1c8fd6ec36102b6aba42f7d3f4a11bee6c528d38f4f095c3",
+    "optimization_transformer": "891bd9cc8f1cb28e6f363f0c4c36e0773b1eb3a3856996083c4b6ebbef0f891d",
+    "optimization_trees": "909fb7b170cd9165e5f402839eadce59d31b6c2f4190cefa5f97d614cb1a38ab"
+  }
+}

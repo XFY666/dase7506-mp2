@@ -1,0 +1,16 @@
+{
+  "raw_normalized": "[2,N,4,6] float64;group configs arefixed3normalizedseedmean",
+  "config_order": [
+    "A_base",
+    "A_D1D2",
+    "Q_base",
+    "Q_D1D2",
+    "C_base",
+    "C_D1D2"
+  ],
+  "group_raw_normalized_members": "[2,N,4,2,3] float32;3seeds inprotocolorder",
+  "choices_group_losses": "[2,N,6]",
+  "labels_valid": "[N,4]",
+  "folds": "[2,N]",
+  "scale_location": "individual assets andfit_records"
+}

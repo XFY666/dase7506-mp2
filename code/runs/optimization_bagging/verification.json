@@ -1,0 +1,744 @@
+{
+  "status": "passed",
+  "new_fits": 0,
+  "fresh_trajectories_verified": 36,
+  "fresh_readout_assets": 54,
+  "reused_readout_assets": 36,
+  "total_readout_replays": 90,
+  "five_distinct_seed_adapter_replays": 18,
+  "all12_bag_columns_exact": true,
+  "normalizers_match_A2": true,
+  "max_raw_replay_error": 0.0,
+  "source_hashes_unchanged": true,
+  "validation_access": false,
+  "test_access": false,
+  "raw_training_references_read": false,
+  "data_files_read": [
+    "candidates/gsm8k_train.jsonl",
+    "candidates/gsm8k_train.npz",
+    "manifest.json"
+  ],
+  "seconds": 1.5463691999902949,
+  "replays": [
+    {
+      "repeat": 0,
+      "fold": 0,
+      "recipe": "epoch14",
+      "seed": 7506,
+      "max_raw_error": 0.0,
+      "fresh": false
+    },
+    {
+      "repeat": 0,
+      "fold": 0,
+      "recipe": "epoch14",
+      "seed": 17001,
+      "max_raw_error": 0.0,
+      "fresh": false
+    },
+    {
+      "repeat": 0,
+      "fold": 0,
+      "recipe": "epoch14",
+      "seed": 17002,
+      "max_raw_error": 0.0,
+      "fresh": true
+    },
+    {
+      "repeat": 0,
+      "fold": 0,
+      "recipe": "epoch14",
+      "seed": 17003,
+      "max_raw_error": 0.0,
+      "fresh": true
+    },
+    {
+      "repeat": 0,
+      "fold": 0,
+      "recipe": "epoch14",
+      "seed": 17004,
+      "max_raw_error": 0.0,
+      "fresh": true
+    },
+    {
+      "repeat": 0,
+      "fold": 0,
+      "recipe": "epoch40_ema",
+      "seed": 7506,
+      "max_raw_error": 0.0,
+      "fresh": false
+    },
+    {
+      "repeat": 0,
+      "fold": 0,
+      "recipe": "epoch40_ema",
+      "seed": 17001,
+      "max_raw_error": 0.0,
+      "fresh": false
+    },
+    {
+      "repeat": 0,
+      "fold": 0,
+      "recipe": "epoch40_ema",
+      "seed": 17002,
+      "max_raw_error": 0.0,
+      "fresh": true
+    },
+    {
+      "repeat": 0,
+      "fold": 0,
+      "recipe": "epoch40_ema",
+      "seed": 17003,
+      "max_raw_error": 0.0,
+      "fresh": true
+    },
+    {
+      "repeat": 0,
+      "fold": 0,
+      "recipe": "epoch40_ema",
+      "seed": 17004,
+      "max_raw_error": 0.0,
+      "fresh": true
+    },
+    {
+      "repeat": 0,
+      "fold": 0,
+      "recipe": "epoch40_ema_noise",
+      "seed": 7506,
+      "max_raw_error": 0.0,
+      "fresh": false
+    },
+    {
+      "repeat": 0,
+      "fold": 0,
+      "recipe": "epoch40_ema_noise",
+      "seed": 17001,
+      "max_raw_error": 0.0,
+      "fresh": false
+    },
+    {
+      "repeat": 0,
+      "fold": 0,
+      "recipe": "epoch40_ema_noise",
+      "seed": 17002,
+      "max_raw_error": 0.0,
+      "fresh": true
+    },
+    {
+      "repeat": 0,
+      "fold": 0,
+      "recipe": "epoch40_ema_noise",
+      "seed": 17003,
+      "max_raw_error": 0.0,
+      "fresh": true
+    },
+    {
+      "repeat": 0,
+      "fold": 0,
+      "recipe": "epoch40_ema_noise",
+      "seed": 17004,
+      "max_raw_error": 0.0,
+      "fresh": true
+    },
+    {
+      "repeat": 0,
+      "fold": 1,
+      "recipe": "epoch14",
+      "seed": 7506,
+      "max_raw_error": 0.0,
+      "fresh": false
+    },
+    {
+      "repeat": 0,
+      "fold": 1,
+      "recipe": "epoch14",
+      "seed": 17001,
+      "max_raw_error": 0.0,
+      "fresh": false
+    },
+    {
+      "repeat": 0,
+      "fold": 1,
+      "recipe": "epoch14",
+      "seed": 17002,
+      "max_raw_error": 0.0,
+      "fresh": true
+    },
+    {
+      "repeat": 0,
+      "fold": 1,
+      "recipe": "epoch14",
+      "seed": 17003,
+      "max_raw_error": 0.0,
+      "fresh": true
+    },
+    {
+      "repeat": 0,
+      "fold": 1,
+      "recipe": "epoch14",
+      "seed": 17004,
+      "max_raw_error": 0.0,
+      "fresh": true
+    },
+    {
+      "repeat": 0,
+      "fold": 1,
+      "recipe": "epoch40_ema",
+      "seed": 7506,
+      "max_raw_error": 0.0,
+      "fresh": false
+    },
+    {
+      "repeat": 0,
+      "fold": 1,
+      "recipe": "epoch40_ema",
+      "seed": 17001,
+      "max_raw_error": 0.0,
+      "fresh": false
+    },
+    {
+      "repeat": 0,
+      "fold": 1,
+      "recipe": "epoch40_ema",
+      "seed": 17002,
+      "max_raw_error": 0.0,
+      "fresh": true
+    },
+    {
+      "repeat": 0,
+      "fold": 1,
+      "recipe": "epoch40_ema",
+      "seed": 17003,
+      "max_raw_error": 0.0,
+      "fresh": true
+    },
+    {
+      "repeat": 0,
+      "fold": 1,
+      "recipe": "epoch40_ema",
+      "seed": 17004,
+      "max_raw_error": 0.0,
+      "fresh": true
+    },
+    {
+      "repeat": 0,
+      "fold": 1,
+      "recipe": "epoch40_ema_noise",
+      "seed": 7506,
+      "max_raw_error": 0.0,
+      "fresh": false
+    },
+    {
+      "repeat": 0,
+      "fold": 1,
+      "recipe": "epoch40_ema_noise",
+      "seed": 17001,
+      "max_raw_error": 0.0,
+      "fresh": false
+    },
+    {
+      "repeat": 0,
+      "fold": 1,
+      "recipe": "epoch40_ema_noise",
+      "seed": 17002,
+      "max_raw_error": 0.0,
+      "fresh": true
+    },
+    {
+      "repeat": 0,
+      "fold": 1,
+      "recipe": "epoch40_ema_noise",
+      "seed": 17003,
+      "max_raw_error": 0.0,
+      "fresh": true
+    },
+    {
+      "repeat": 0,
+      "fold": 1,
+      "recipe": "epoch40_ema_noise",
+      "seed": 17004,
+      "max_raw_error": 0.0,
+      "fresh": true
+    },
+    {
+      "repeat": 0,
+      "fold": 2,
+      "recipe": "epoch14",
+      "seed": 7506,
+      "max_raw_error": 0.0,
+      "fresh": false
+    },
+    {
+      "repeat": 0,
+      "fold": 2,
+      "recipe": "epoch14",
+      "seed": 17001,
+      "max_raw_error": 0.0,
+      "fresh": false
+    },
+    {
+      "repeat": 0,
+      "fold": 2,
+      "recipe": "epoch14",
+      "seed": 17002,
+      "max_raw_error": 0.0,
+      "fresh": true
+    },
+    {
+      "repeat": 0,
+      "fold": 2,
+      "recipe": "epoch14",
+      "seed": 17003,
+      "max_raw_error": 0.0,
+      "fresh": true
+    },
+    {
+      "repeat": 0,
+      "fold": 2,
+      "recipe": "epoch14",
+      "seed": 17004,
+      "max_raw_error": 0.0,
+      "fresh": true
+    },
+    {
+      "repeat": 0,
+      "fold": 2,
+      "recipe": "epoch40_ema",
+      "seed": 7506,
+      "max_raw_error": 0.0,
+      "fresh": false
+    },
+    {
+      "repeat": 0,
+      "fold": 2,
+      "recipe": "epoch40_ema",
+      "seed": 17001,
+      "max_raw_error": 0.0,
+      "fresh": false
+    },
+    {
+      "repeat": 0,
+      "fold": 2,
+      "recipe": "epoch40_ema",
+      "seed": 17002,
+      "max_raw_error": 0.0,
+      "fresh": true
+    },
+    {
+      "repeat": 0,
+      "fold": 2,
+      "recipe": "epoch40_ema",
+      "seed": 17003,
+      "max_raw_error": 0.0,
+      "fresh": true
+    },
+    {
+      "repeat": 0,
+      "fold": 2,
+      "recipe": "epoch40_ema",
+      "seed": 17004,
+      "max_raw_error": 0.0,
+      "fresh": true
+    },
+    {
+      "repeat": 0,
+      "fold": 2,
+      "recipe": "epoch40_ema_noise",
+      "seed": 7506,
+      "max_raw_error": 0.0,
+      "fresh": false
+    },
+    {
+      "repeat": 0,
+      "fold": 2,
+      "recipe": "epoch40_ema_noise",
+      "seed": 17001,
+      "max_raw_error": 0.0,
+      "fresh": false
+    },
+    {
+      "repeat": 0,
+      "fold": 2,
+      "recipe": "epoch40_ema_noise",
+      "seed": 17002,
+      "max_raw_error": 0.0,
+      "fresh": true
+    },
+    {
+      "repeat": 0,
+      "fold": 2,
+      "recipe": "epoch40_ema_noise",
+      "seed": 17003,
+      "max_raw_error": 0.0,
+      "fresh": true
+    },
+    {
+      "repeat": 0,
+      "fold": 2,
+      "recipe": "epoch40_ema_noise",
+      "seed": 17004,
+      "max_raw_error": 0.0,
+      "fresh": true
+    },
+    {
+      "repeat": 1,
+      "fold": 0,
+      "recipe": "epoch14",
+      "seed": 7506,
+      "max_raw_error": 0.0,
+      "fresh": false
+    },
+    {
+      "repeat": 1,
+      "fold": 0,
+      "recipe": "epoch14",
+      "seed": 17001,
+      "max_raw_error": 0.0,
+      "fresh": false
+    },
+    {
+      "repeat": 1,
+      "fold": 0,
+      "recipe": "epoch14",
+      "seed": 17002,
+      "max_raw_error": 0.0,
+      "fresh": true
+    },
+    {
+      "repeat": 1,
+      "fold": 0,
+      "recipe": "epoch14",
+      "seed": 17003,
+      "max_raw_error": 0.0,
+      "fresh": true
+    },
+    {
+      "repeat": 1,
+      "fold": 0,
+      "recipe": "epoch14",
+      "seed": 17004,
+      "max_raw_error": 0.0,
+      "fresh": true
+    },
+    {
+      "repeat": 1,
+      "fold": 0,
+      "recipe": "epoch40_ema",
+      "seed": 7506,
+      "max_raw_error": 0.0,
+      "fresh": false
+    },
+    {
+      "repeat": 1,
+      "fold": 0,
+      "recipe": "epoch40_ema",
+      "seed": 17001,
+      "max_raw_error": 0.0,
+      "fresh": false
+    },
+    {
+      "repeat": 1,
+      "fold": 0,
+      "recipe": "epoch40_ema",
+      "seed": 17002,
+      "max_raw_error": 0.0,
+      "fresh": true
+    },
+    {
+      "repeat": 1,
+      "fold": 0,
+      "recipe": "epoch40_ema",
+      "seed": 17003,
+      "max_raw_error": 0.0,
+      "fresh": true
+    },
+    {
+      "repeat": 1,
+      "fold": 0,
+      "recipe": "epoch40_ema",
+      "seed": 17004,
+      "max_raw_error": 0.0,
+      "fresh": true
+    },
+    {
+      "repeat": 1,
+      "fold": 0,
+      "recipe": "epoch40_ema_noise",
+      "seed": 7506,
+      "max_raw_error": 0.0,
+      "fresh": false
+    },
+    {
+      "repeat": 1,
+      "fold": 0,
+      "recipe": "epoch40_ema_noise",
+      "seed": 17001,
+      "max_raw_error": 0.0,
+      "fresh": false
+    },
+    {
+      "repeat": 1,
+      "fold": 0,
+      "recipe": "epoch40_ema_noise",
+      "seed": 17002,
+      "max_raw_error": 0.0,
+      "fresh": true
+    },
+    {
+      "repeat": 1,
+      "fold": 0,
+      "recipe": "epoch40_ema_noise",
+      "seed": 17003,
+      "max_raw_error": 0.0,
+      "fresh": true
+    },
+    {
+      "repeat": 1,
+      "fold": 0,
+      "recipe": "epoch40_ema_noise",
+      "seed": 17004,
+      "max_raw_error": 0.0,
+      "fresh": true
+    },
+    {
+      "repeat": 1,
+      "fold": 1,
+      "recipe": "epoch14",
+      "seed": 7506,
+      "max_raw_error": 0.0,
+      "fresh": false
+    },
+    {
+      "repeat": 1,
+      "fold": 1,
+      "recipe": "epoch14",
+      "seed": 17001,
+      "max_raw_error": 0.0,
+      "fresh": false
+    },
+    {
+      "repeat": 1,
+      "fold": 1,
+      "recipe": "epoch14",
+      "seed": 17002,
+      "max_raw_error": 0.0,
+      "fresh": true
+    },
+    {
+      "repeat": 1,
+      "fold": 1,
+      "recipe": "epoch14",
+      "seed": 17003,
+      "max_raw_error": 0.0,
+      "fresh": true
+    },
+    {
+      "repeat": 1,
+      "fold": 1,
+      "recipe": "epoch14",
+      "seed": 17004,
+      "max_raw_error": 0.0,
+      "fresh": true
+    },
+    {
+      "repeat": 1,
+      "fold": 1,
+      "recipe": "epoch40_ema",
+      "seed": 7506,
+      "max_raw_error": 0.0,
+      "fresh": false
+    },
+    {
+      "repeat": 1,
+      "fold": 1,
+      "recipe": "epoch40_ema",
+      "seed": 17001,
+      "max_raw_error": 0.0,
+      "fresh": false
+    },
+    {
+      "repeat": 1,
+      "fold": 1,
+      "recipe": "epoch40_ema",
+      "seed": 17002,
+      "max_raw_error": 0.0,
+      "fresh": true
+    },
+    {
+      "repeat": 1,
+      "fold": 1,
+      "recipe": "epoch40_ema",
+      "seed": 17003,
+      "max_raw_error": 0.0,
+      "fresh": true
+    },
+    {
+      "repeat": 1,
+      "fold": 1,
+      "recipe": "epoch40_ema",
+      "seed": 17004,
+      "max_raw_error": 0.0,
+      "fresh": true
+    },
+    {
+      "repeat": 1,
+      "fold": 1,
+      "recipe": "epoch40_ema_noise",
+      "seed": 7506,
+      "max_raw_error": 0.0,
+      "fresh": false
+    },
+    {
+      "repeat": 1,
+      "fold": 1,
+      "recipe": "epoch40_ema_noise",
+      "seed": 17001,
+      "max_raw_error": 0.0,
+      "fresh": false
+    },
+    {
+      "repeat": 1,
+      "fold": 1,
+      "recipe": "epoch40_ema_noise",
+      "seed": 17002,
+      "max_raw_error": 0.0,
+      "fresh": true
+    },
+    {
+      "repeat": 1,
+      "fold": 1,
+      "recipe": "epoch40_ema_noise",
+      "seed": 17003,
+      "max_raw_error": 0.0,
+      "fresh": true
+    },
+    {
+      "repeat": 1,
+      "fold": 1,
+      "recipe": "epoch40_ema_noise",
+      "seed": 17004,
+      "max_raw_error": 0.0,
+      "fresh": true
+    },
+    {
+      "repeat": 1,
+      "fold": 2,
+      "recipe": "epoch14",
+      "seed": 7506,
+      "max_raw_error": 0.0,
+      "fresh": false
+    },
+    {
+      "repeat": 1,
+      "fold": 2,
+      "recipe": "epoch14",
+      "seed": 17001,
+      "max_raw_error": 0.0,
+      "fresh": false
+    },
+    {
+      "repeat": 1,
+      "fold": 2,
+      "recipe": "epoch14",
+      "seed": 17002,
+      "max_raw_error": 0.0,
+      "fresh": true
+    },
+    {
+      "repeat": 1,
+      "fold": 2,
+      "recipe": "epoch14",
+      "seed": 17003,
+      "max_raw_error": 0.0,
+      "fresh": true
+    },
+    {
+      "repeat": 1,
+      "fold": 2,
+      "recipe": "epoch14",
+      "seed": 17004,
+      "max_raw_error": 0.0,
+      "fresh": true
+    },
+    {
+      "repeat": 1,
+      "fold": 2,
+      "recipe": "epoch40_ema",
+      "seed": 7506,
+      "max_raw_error": 0.0,
+      "fresh": false
+    },
+    {
+      "repeat": 1,
+      "fold": 2,
+      "recipe": "epoch40_ema",
+      "seed": 17001,
+      "max_raw_error": 0.0,
+      "fresh": false
+    },
+    {
+      "repeat": 1,
+      "fold": 2,
+      "recipe": "epoch40_ema",
+      "seed": 17002,
+      "max_raw_error": 0.0,
+      "fresh": true
+    },
+    {
+      "repeat": 1,
+      "fold": 2,
+      "recipe": "epoch40_ema",
+      "seed": 17003,
+      "max_raw_error": 0.0,
+      "fresh": true
+    },
+    {
+      "repeat": 1,
+      "fold": 2,
+      "recipe": "epoch40_ema",
+      "seed": 17004,
+      "max_raw_error": 0.0,
+      "fresh": true
+    },
+    {
+      "repeat": 1,
+      "fold": 2,
+      "recipe": "epoch40_ema_noise",
+      "seed": 7506,
+      "max_raw_error": 0.0,
+      "fresh": false
+    },
+    {
+      "repeat": 1,
+      "fold": 2,
+      "recipe": "epoch40_ema_noise",
+      "seed": 17001,
+      "max_raw_error": 0.0,
+      "fresh": false
+    },
+    {
+      "repeat": 1,
+      "fold": 2,
+      "recipe": "epoch40_ema_noise",
+      "seed": 17002,
+      "max_raw_error": 0.0,
+      "fresh": true
+    },
+    {
+      "repeat": 1,
+      "fold": 2,
+      "recipe": "epoch40_ema_noise",
+      "seed": 17003,
+      "max_raw_error": 0.0,
+      "fresh": true
+    },
+    {
+      "repeat": 1,
+      "fold": 2,
+      "recipe": "epoch40_ema_noise",
+      "seed": 17004,
+      "max_raw_error": 0.0,
+      "fresh": true
+    }
+  ]
+}

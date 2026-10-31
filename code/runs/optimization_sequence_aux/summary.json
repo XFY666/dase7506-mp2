@@ -1,0 +1,128 @@
+{
+  "configs": [
+    {
+      "config": "control_allq",
+      "auxiliary_weight": 0.0,
+      "repeats": [
+        {
+          "seed": 20261027,
+          "metrics": {
+            "correct": 4393,
+            "n": 4755,
+            "accuracy": 92.3869610935857,
+            "hard_correct": 1752,
+            "hard_n": 2114,
+            "hard_accuracy": 82.87606433301798
+          },
+          "group_ce": 0.4351917505264282,
+          "repairs_vs_control": 0,
+          "regressions_vs_control": 0
+        },
+        {
+          "seed": 20261028,
+          "metrics": {
+            "correct": 4385,
+            "n": 4755,
+            "accuracy": 92.21871713985279,
+            "hard_correct": 1744,
+            "hard_n": 2114,
+            "hard_accuracy": 82.49763481551561
+          },
+          "group_ce": 0.43408963084220886,
+          "repairs_vs_control": 0,
+          "regressions_vs_control": 0
+        }
+      ],
+      "mean_hard_correct": 1748.0,
+      "mean_group_ce": 0.43464069068431854
+    },
+    {
+      "config": "token_aux01",
+      "auxiliary_weight": 0.1,
+      "repeats": [
+        {
+          "seed": 20261027,
+          "metrics": {
+            "correct": 4386,
+            "n": 4755,
+            "accuracy": 92.2397476340694,
+            "hard_correct": 1745,
+            "hard_n": 2114,
+            "hard_accuracy": 82.5449385052034
+          },
+          "group_ce": 0.43554630875587463,
+          "repairs_vs_control": 3,
+          "regressions_vs_control": 10
+        },
+        {
+          "seed": 20261028,
+          "metrics": {
+            "correct": 4391,
+            "n": 4755,
+            "accuracy": 92.34490010515248,
+            "hard_correct": 1750,
+            "hard_n": 2114,
+            "hard_accuracy": 82.78145695364239
+          },
+          "group_ce": 0.4379405379295349,
+          "repairs_vs_control": 32,
+          "regressions_vs_control": 26
+        }
+      ],
+      "mean_hard_correct": 1747.5,
+      "mean_group_ce": 0.4367434233427048
+    }
+  ],
+  "selected": {
+    "config": "control_allq",
+    "auxiliary_weight": 0.0,
+    "repeats": [
+      {
+        "seed": 20261027,
+        "metrics": {
+          "correct": 4393,
+          "n": 4755,
+          "accuracy": 92.3869610935857,
+          "hard_correct": 1752,
+          "hard_n": 2114,
+          "hard_accuracy": 82.87606433301798
+        },
+        "group_ce": 0.4351917505264282,
+        "repairs_vs_control": 0,
+        "regressions_vs_control": 0
+      },
+      {
+        "seed": 20261028,
+        "metrics": {
+          "correct": 4385,
+          "n": 4755,
+          "accuracy": 92.21871713985279,
+          "hard_correct": 1744,
+          "hard_n": 2114,
+          "hard_accuracy": 82.49763481551561
+        },
+        "group_ce": 0.43408963084220886,
+        "repairs_vs_control": 0,
+        "regressions_vs_control": 0
+      }
+    ],
+    "mean_hard_correct": 1748.0,
+    "mean_group_ce": 0.43464069068431854
+  },
+  "model_fit_calls": 24,
+  "vocabulary_fits": 24,
+  "numeric_normalizer_fits": 24,
+  "max_asset_bytes": 1277855,
+  "max_export_abs_error": 1.430511474609375e-06,
+  "seconds": 841.8646121999918,
+  "data_files_read": [
+    "candidates/gsm8k_train.jsonl",
+    "candidates/gsm8k_train.npz",
+    "gsm8k_train.jsonl",
+    "manifest.json"
+  ],
+  "validation_evaluations": 0,
+  "test_access": false,
+  "full_model_fitted": false,
+  "interpretation": "Weak token-membership supervision; all-question matched control differs from historical hard-only CNN. Same questions repeated, exploratory comparison only."
+}

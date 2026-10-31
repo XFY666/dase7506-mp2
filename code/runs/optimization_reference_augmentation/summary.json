@@ -1,0 +1,125 @@
+{
+  "configs": [
+    {
+      "config": "digit_text_control",
+      "auxiliary_weight": 0.0,
+      "repeats": [
+        {
+          "seed": 20261027,
+          "metrics": {
+            "correct": 3937,
+            "n": 4755,
+            "accuracy": 82.79705573080967,
+            "hard_correct": 1296,
+            "hard_n": 2114,
+            "hard_accuracy": 61.30558183538316
+          },
+          "group_ce": 0.7803819179534912,
+          "repairs_vs_control": 0,
+          "regressions_vs_control": 0
+        },
+        {
+          "seed": 20261028,
+          "metrics": {
+            "correct": 3968,
+            "n": 4755,
+            "accuracy": 83.4490010515247,
+            "hard_correct": 1327,
+            "hard_n": 2114,
+            "hard_accuracy": 62.77199621570483
+          },
+          "group_ce": 0.7876646518707275,
+          "repairs_vs_control": 0,
+          "regressions_vs_control": 0
+        }
+      ],
+      "mean_hard_correct": 1311.5,
+      "mean_group_ce": 0.7840232849121094
+    },
+    {
+      "config": "reference_corruption01",
+      "auxiliary_weight": 0.1,
+      "repeats": [
+        {
+          "seed": 20261027,
+          "metrics": {
+            "correct": 3954,
+            "n": 4755,
+            "accuracy": 83.15457413249212,
+            "hard_correct": 1313,
+            "hard_n": 2114,
+            "hard_accuracy": 62.10974456007568
+          },
+          "group_ce": 0.7800338864326477,
+          "repairs_vs_control": 128,
+          "regressions_vs_control": 111
+        },
+        {
+          "seed": 20261028,
+          "metrics": {
+            "correct": 3965,
+            "n": 4755,
+            "accuracy": 83.38590956887487,
+            "hard_correct": 1324,
+            "hard_n": 2114,
+            "hard_accuracy": 62.630085146641434
+          },
+          "group_ce": 0.7802057266235352,
+          "repairs_vs_control": 99,
+          "regressions_vs_control": 102
+        }
+      ],
+      "mean_hard_correct": 1318.5,
+      "mean_group_ce": 0.7801198065280914
+    }
+  ],
+  "selected": {
+    "config": "reference_corruption01",
+    "auxiliary_weight": 0.1,
+    "repeats": [
+      {
+        "seed": 20261027,
+        "metrics": {
+          "correct": 3954,
+          "n": 4755,
+          "accuracy": 83.15457413249212,
+          "hard_correct": 1313,
+          "hard_n": 2114,
+          "hard_accuracy": 62.10974456007568
+        },
+        "group_ce": 0.7800338864326477,
+        "repairs_vs_control": 128,
+        "regressions_vs_control": 111
+      },
+      {
+        "seed": 20261028,
+        "metrics": {
+          "correct": 3965,
+          "n": 4755,
+          "accuracy": 83.38590956887487,
+          "hard_correct": 1324,
+          "hard_n": 2114,
+          "hard_accuracy": 62.630085146641434
+        },
+        "group_ce": 0.7802057266235352,
+        "repairs_vs_control": 99,
+        "regressions_vs_control": 102
+      }
+    ],
+    "mean_hard_correct": 1318.5,
+    "mean_group_ce": 0.7801198065280914
+  },
+  "model_fit_calls": 24,
+  "vocabulary_fits": 24,
+  "max_asset_bytes": 823053,
+  "max_export_error": 2.205371856689453e-06,
+  "seconds": 2069.12250160001,
+  "data_files_read": [
+    "candidates/gsm8k_train.jsonl",
+    "gsm8k_train.jsonl"
+  ],
+  "validation_evaluations": 0,
+  "test_access": false,
+  "full_model_fitted": false,
+  "interpretation": "Matched digit-preserving pure-text auxiliary control; reference-domain style and duplicate-result shortcuts remain possible; no final candidate relabeling"
+}

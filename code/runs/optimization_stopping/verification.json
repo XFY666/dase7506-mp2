@@ -1,0 +1,159 @@
+{
+  "status": "passed",
+  "new_fits": 0,
+  "actual_training_fits": 56,
+  "inner_fits": 36,
+  "unique_outer_refits": 20,
+  "logical_outer_readouts": 36,
+  "reused_identical_epoch_readouts": 16,
+  "resolved_fit_slots": 72,
+  "inner_boundary_and_epoch_selection_checks": 36,
+  "outer_export_replays": 20,
+  "max_raw_error": 0.0,
+  "A2_text_scores_and_equal_thirds_fusion_exact": true,
+  "raw_training_references_read": false,
+  "validation_access": false,
+  "test_access": false,
+  "replays": [
+    {
+      "repeat": 0,
+      "fold": 0,
+      "head": 0,
+      "epochs": 3,
+      "max_raw_error": 0.0
+    },
+    {
+      "repeat": 0,
+      "fold": 0,
+      "head": 0,
+      "epochs": 6,
+      "max_raw_error": 0.0
+    },
+    {
+      "repeat": 0,
+      "fold": 0,
+      "head": 1,
+      "epochs": 9,
+      "max_raw_error": 0.0
+    },
+    {
+      "repeat": 0,
+      "fold": 0,
+      "head": 1,
+      "epochs": 10,
+      "max_raw_error": 0.0
+    },
+    {
+      "repeat": 0,
+      "fold": 1,
+      "head": 0,
+      "epochs": 6,
+      "max_raw_error": 0.0
+    },
+    {
+      "repeat": 0,
+      "fold": 1,
+      "head": 0,
+      "epochs": 7,
+      "max_raw_error": 0.0
+    },
+    {
+      "repeat": 0,
+      "fold": 1,
+      "head": 1,
+      "epochs": 7,
+      "max_raw_error": 0.0
+    },
+    {
+      "repeat": 0,
+      "fold": 2,
+      "head": 0,
+      "epochs": 6,
+      "max_raw_error": 0.0
+    },
+    {
+      "repeat": 0,
+      "fold": 2,
+      "head": 0,
+      "epochs": 5,
+      "max_raw_error": 0.0
+    },
+    {
+      "repeat": 0,
+      "fold": 2,
+      "head": 1,
+      "epochs": 10,
+      "max_raw_error": 0.0
+    },
+    {
+      "repeat": 0,
+      "fold": 2,
+      "head": 1,
+      "epochs": 7,
+      "max_raw_error": 0.0
+    },
+    {
+      "repeat": 1,
+      "fold": 0,
+      "head": 0,
+      "epochs": 5,
+      "max_raw_error": 0.0
+    },
+    {
+      "repeat": 1,
+      "fold": 0,
+      "head": 1,
+      "epochs": 7,
+      "max_raw_error": 0.0
+    },
+    {
+      "repeat": 1,
+      "fold": 1,
+      "head": 0,
+      "epochs": 5,
+      "max_raw_error": 0.0
+    },
+    {
+      "repeat": 1,
+      "fold": 1,
+      "head": 1,
+      "epochs": 5,
+      "max_raw_error": 0.0
+    },
+    {
+      "repeat": 1,
+      "fold": 1,
+      "head": 1,
+      "epochs": 6,
+      "max_raw_error": 0.0
+    },
+    {
+      "repeat": 1,
+      "fold": 2,
+      "head": 0,
+      "epochs": 5,
+      "max_raw_error": 0.0
+    },
+    {
+      "repeat": 1,
+      "fold": 2,
+      "head": 0,
+      "epochs": 8,
+      "max_raw_error": 0.0
+    },
+    {
+      "repeat": 1,
+      "fold": 2,
+      "head": 1,
+      "epochs": 3,
+      "max_raw_error": 0.0
+    },
+    {
+      "repeat": 1,
+      "fold": 2,
+      "head": 1,
+      "epochs": 9,
+      "max_raw_error": 0.0
+    }
+  ]
+}

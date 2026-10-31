@@ -1,0 +1,39 @@
+{
+  "task": "E2/C2 after repeated-OOF numeric-role CNN improvement; all training-only",
+  "configs": [
+    {
+      "name": "control_allq",
+      "auxiliary_weight": 0.0
+    },
+    {
+      "name": "token_aux01",
+      "auxiliary_weight": 0.1
+    }
+  ],
+  "fold_seeds": [
+    20261027,
+    20261028
+  ],
+  "folds": 3,
+  "fold_assignment": "fold[default_rng(seed).permutation(N)] = arange(N)%3",
+  "inner_split": "85/15 outer-fitting question IDs; seed outer_seed+100+fold",
+  "input_recipe": "unchanged headtail_roles from completed optimization_sequence study",
+  "vocabulary_statistics": "independently fitted inside inner-fit and outer-fit; no gold-derived features, masks or labels enter vocabulary, encoding, numeric inputs or transforms",
+  "gold_parser": "same as optimization_process.intermediate_values: <<...>> annotations, remove final annotation by position, canonicalize literal RHS after rightmost '='",
+  "weak_target": "binary membership of a visible candidate numeric token in usable gold intermediate values; a literal proxy, not proof of step correctness",
+  "usable_gold": "nonnegative parsed intermediate values excluding any question literal and true final reference value; empty set unobserved, never all-negative supervision",
+  "auxiliary_mask": "candidate positions only, valid parsed-answer candidates only; exclude question literals, true final value, and numeric token immediately preceded by +, -, or unicode minus; no question/padding/separator/gap labels",
+  "token_alignment": "exact headtail_roles token sequence and truncation; numeric roles derived only from inputs; original unsigned literal lexer retained",
+  "auxiliary_head": "linear64→1 on concatenated ReLU Conv3/Conv5 contextual token features; dropped at inference/export",
+  "loss": "main group-mean CE averaged across eligible questions in each batch + lambda * BCE averaged over masked tokens within each observed question then over observed questions",
+  "all_question_batches": "both lambda0 andlambda.1 use all outer-fitting questions; isolates auxiliary signal from extra steps/easy-question exposure; lambda0 is a fresh matched control, not cached E1 scores",
+  "optimizer": "AdamW lr.001 weight_decay.001, gradientclip5, batch64, fixedseed7506/shuffle7507",
+  "stopping": "max24epochs/patience4/minimprovement1e-4; main groupCE only on inner-held eligible questions; fresh outer refit",
+  "fitting_scope": "weak targets precomputed from supplied training references; only fitting IDs participate in auxiliary gradients; held-out weak targets never used for stopping or scoring",
+  "screen_order": "highest mean hard correct across two repeats, then lower mean normalized groupCE, thenlambda0",
+  "estimation_scope": "same2114 hard questions repeated; exploratory paired comparison, not4228 independent samples",
+  "planned_fits": 24,
+  "max_elapsed_seconds": 3600,
+  "no_validation_test_full_refit": true,
+  "threads": 4
+}

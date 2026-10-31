@@ -1,0 +1,123 @@
+{
+  "status": "passed",
+  "audited_utc": "2026-10-26T10:48:11.314939+00:00",
+  "audit_scope": "Read-only sources, checkpoints and saved aggregate evidence; zero fitting, zero validation/test processes; no test inputs, references, or per-question predictions inspected in this audit.",
+  "selected_name": "G_noise_cross__roles_cnn_0.25",
+  "official_test": {
+    "correct": 392,
+    "n": 467,
+    "accuracy_percent": 83.94004282655246
+  },
+  "comparison_to_historical_D": {
+    "correct": 388,
+    "n": 467,
+    "accuracy_percent": 83.08351177730192,
+    "gain_questions": 4,
+    "gain_percentage_points": 0.8565310492505354,
+    "interpretation": "Descriptive improvement on this fixed test set; no claim of statistical significance or universal improvement."
+  },
+  "validation": {
+    "full_correct": 750,
+    "full_n": 798,
+    "hard_correct": 307,
+    "hard_n": 355,
+    "prior_D_hard_correct": 311,
+    "interpretation": "The selected method is 4 hard-validation questions below historical D. Selection followed the predeclared OOF-plus-validation engineering index, not validation accuracy alone."
+  },
+  "selection": {
+    "index": 2085.5,
+    "index_is_accuracy": false,
+    "resource_eligible_new_contenders": 2,
+    "validation_guard_hard_correct": 294,
+    "test_based_rollback": false,
+    "repeat_dependence": "Both OOF repeats use the same 2114 hard questions; they are not 4228 independent observations.",
+    "search_scope": "The finite 48-recipe OOF screen is exploratory; prior D and F validation evidence and historical test exposure are disclosed."
+  },
+  "resources": {
+    "threads": 4,
+    "local_cpu": "AMD Ryzen 5 7600",
+    "prediction_seconds": 15.537090199999511,
+    "scoring_seconds": 0.26889419999497477,
+    "total_seconds": 15.80599209999491,
+    "loop_overhead_seconds": 7.700000423938036e-06,
+    "budget_seconds": 30,
+    "uncompressed_bytes": 9466445,
+    "uncompressed_MiB": 9.027905464172363,
+    "budget_bytes": 16777216,
+    "files_bytes": 9477679,
+    "local_within_limits": true,
+    "reference_cpu_not_measured": true,
+    "scope": "Both fresh official processes, including startup, imports, asset loading, preprocessing and scoring; official reference hardware remains the eligibility authority."
+  },
+  "fit_ledger": {
+    "development_by_family": {
+      "alternatives": 12,
+      "bagging": 36,
+      "baselines": 48,
+      "calibration": 144,
+      "graph": 24,
+      "interactions": 60,
+      "process": 90,
+      "reference_augmentation": 24,
+      "regularization": 24,
+      "sequence": 48,
+      "sequence_aux": 24,
+      "stopping": 56,
+      "subset": 36,
+      "transformer": 24,
+      "trees": 42
+    },
+    "valid_development_fits": 692,
+    "valid_finalist_fits": 13,
+    "valid_independent_reproduction_fits": 10,
+    "total_valid_new_fits": 715,
+    "excluded_invalid_recorded_fits": 34,
+    "total_recorded_new_fits_including_invalid": 749,
+    "notes": "Actual learner fits, not readout checkpoints, repeated cached epochs, calibration/PCA/PLS transforms or historical experiments. The recovered P learner counts once, without refitting; stopping uses 56 actual fits and 16 cached readout slots."
+  },
+  "reproduction": {
+    "learners": 10,
+    "npz_files_exact": 10,
+    "arrays_exact": 91,
+    "fresh_train_questions": 32,
+    "fresh_scores_exact": true,
+    "max_score_difference": 0.0,
+    "metadata_differences": "Timestamps, timing diagnostics and the documented P logging repair provenance only."
+  },
+  "chronology": {
+    "selected_utc": "2026-10-26T10:26:59.421786+00:00",
+    "frozen_utc": "2026-10-26T10:44:16.819008+00:00",
+    "test_started_utc": "2026-10-26T10:44:23.567965+00:00",
+    "order_passed": true,
+    "sole_new_test_attempt_record": "runs/optimization_evaluation/evaluation_started.json",
+    "test_successful_official_processes": 2
+  },
+  "source_review": {
+    "prevalidation_model_sources_unchanged": 38,
+    "frozen_source_count": 45,
+    "additional_bound_files": [
+      "submission.py",
+      "ensemble.py",
+      "freeze_selected.py",
+      "measure_selected.py",
+      "optimization_validate_finalists.py",
+      "train_optimized.py",
+      "verify_optimized_checkpoint.py"
+    ],
+    "submission_dispatch": "New format delegates unchanged to optimized_selection; historical configs delegate to ensemble; text_scores retained.",
+    "source_and_asset_freeze_verified_after_test": true,
+    "no_automatic_test_rollback_or_retry": true
+  },
+  "evidence_sha256": {
+    "runs/optimized_freeze.json": "f24f46b8483d98f72560451d52253207edb9a32474eb43141abc4f3df864c516",
+    "runs/optimization_final_selection/selection.json": "56450bc5beffbaaf2ef628a651d541620563fde9d8fae77c586e5105d79196f3",
+    "runs/optimization_final_selection/prevalidation_freeze.json": "1eda7e6526e6d54ab9d53ab77740f5b6ba35e8eb2899e14f7a4e146f5f122ead",
+    "runs/optimization_evaluation/evaluation_started.json": "6142490a55a1a38de17dd29abb8988ffe2514e2bdbb64a7e6263f7f53c403c92",
+    "runs/optimization_evaluation/test_score.json": "6d254fff18db12aa7ae87ea41bbb869f3b83441d048c93a0b4b7d7792b106a1c",
+    "runs/optimization_evaluation/test_resources.json": "da56fc61a65ee251554132c97cbb173e5bf4afbb11fbbc8a5a5e2d8474728727",
+    "runs/optimization_reproduction_verification/verification.json": "400edd4cb1569f3979cb0a9e2e2160dcc7bc15c8f21147f584e7dbe500d05d03",
+    "submission.py": "8e0f437ed7933ad2505fcfcdd660c9501cf65bf899f011845a0fcb3bbd1e97ca",
+    "freeze_selected.py": "5c946019aa57e5a8423340b5d8e1752eed31af3095c2ace048dccfabdf37831b",
+    "measure_selected.py": "a6b9f725ebe63f78d3284718984ba147a81c21bff3de6eda375501b9039a5e72"
+  }
+}

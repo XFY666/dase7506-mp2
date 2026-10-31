@@ -1,0 +1,35 @@
+{
+  "raw": "[repeat=2,question=4755,candidate=4,head=8] float64",
+  "normalized": "same shape; fitting-side scales",
+  "normalized_heads": "alias of normalized",
+  "head_names": [
+    "d_pair",
+    "d_list",
+    "d_text",
+    "A",
+    "K",
+    "Q",
+    "P",
+    "C"
+  ],
+  "model_names": [
+    "D",
+    "T",
+    "F",
+    "G"
+  ],
+  "mixture_scores": "[2,4755,4,4] float64",
+  "choices": "[2,4755,4] int8",
+  "group_losses": "[2,4755,4] float64; report hard subset CE",
+  "folds": "[2,4755] int8",
+  "score_scales": "[repeat=2,fold=3,head=8] float64",
+  "ids": "4755 alignment-only IDs",
+  "labels_valid": "[4755,4] bool",
+  "hard": "[4755] bool",
+  "mixture_formula": {
+    "D": "mean(d_pair,d_list,d_text)",
+    "T": "mean(d_pair,d_text)",
+    "F": ".5A+.25K+.25Q",
+    "G": ".25F+.5P+.25C"
+  }
+}

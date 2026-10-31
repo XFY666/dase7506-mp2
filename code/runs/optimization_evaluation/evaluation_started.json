@@ -1,0 +1,29 @@
+{
+  "started_utc": "2026-10-26T10:44:23.567965+00:00",
+  "freeze_sha256": "f24f46b8483d98f72560451d52253207edb9a32474eb43141abc4f3df864c516",
+  "selected_name": "G_noise_cross__roles_cnn_0.25",
+  "commands": [
+    [
+      "E:\\Edge\\7506\\MP2\\.local\\checkenv\\Scripts\\python.exe",
+      "E:\\Edge\\7506\\MP2\\repo\\code\\predict.py",
+      "--method",
+      "E:\\Edge\\7506\\MP2\\repo\\code\\submission.py",
+      "--checkpoint",
+      "E:\\Edge\\7506\\MP2\\repo\\code\\runs\\optimized_bundle",
+      "--split",
+      "test",
+      "--output",
+      "E:\\Edge\\7506\\MP2\\repo\\code\\runs\\optimization_evaluation\\test_predictions.json"
+    ],
+    [
+      "E:\\Edge\\7506\\MP2\\.local\\checkenv\\Scripts\\python.exe",
+      "E:\\Edge\\7506\\MP2\\repo\\code\\score_predictions.py",
+      "--split",
+      "test",
+      "--predictions",
+      "E:\\Edge\\7506\\MP2\\repo\\code\\runs\\optimization_evaluation\\test_predictions.json",
+      "--output",
+      "E:\\Edge\\7506\\MP2\\repo\\code\\runs\\optimization_evaluation\\test_score.json"
+    ]
+  ]
+}

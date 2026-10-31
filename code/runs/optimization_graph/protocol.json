@@ -1,0 +1,85 @@
+{
+  "created_utc": "2026-10-26T09:19:56.990711+00:00",
+  "scope": "E4 equation structure: same-node MLP control versus2-layer GCN",
+  "data_scope": [
+    "train"
+  ],
+  "validation_access": false,
+  "test_access": false,
+  "fold_seeds": [
+    20261027,
+    20261028
+  ],
+  "folds": 3,
+  "fold_assignment": "fold[default_rng(seed).permutation(N)]=arange(N)%3",
+  "inner_split": "85/15 whole outer-fitting questions, default_rng(20264000+100*repeat+fold), identical for both arms",
+  "arms": [
+    "node_mlp",
+    "equation_gcn"
+  ],
+  "planned_model_fits": 24,
+  "full_training_refits": 0,
+  "threads": 4,
+  "graph": {
+    "question_nodes": 8,
+    "equation_nodes": 32,
+    "maximum_nodes": 40,
+    "numeric_features": [
+      "question_node",
+      "equation_node",
+      "signed_log_value",
+      "integer_value",
+      "negative_value",
+      "matches_question_value",
+      "matches_my_answer",
+      "matches_rival_answer",
+      "arithmetic_checked",
+      "arithmetic_correct",
+      "arithmetic_relative_error",
+      "operation_count_log",
+      "relative_position",
+      "operation_add",
+      "operation_subtract",
+      "operation_multiply",
+      "operation_divide",
+      "operation_power",
+      "operation_other",
+      "question_operand_fraction",
+      "prior_result_operand_fraction"
+    ],
+    "equations": "Reuse existing bounded numeric _equations checker; preserve boxed results in equations, drop #### final text",
+    "dependencies": "Equation operands matching question values or earlier equation results; incoming row normalized with selfloops; no future edges",
+    "labels": "None used to construct nodes or edges; role flags use input final answers only",
+    "limitation": "numeric dependency proxies and a bounded equation parser; not semantic equivalence or a complete proof graph"
+  },
+  "architecture": {
+    "shared": "2node layers32D/ReLU, masked mean+max pool; concatenate1099numeric channels; tanh64 then scalar",
+    "control": "independent node MLP, no adjacency aggregation",
+    "treatment": "incoming adjacency aggregation before each of the same two linear layers",
+    "numeric": "1024providedembedding+75existing precision-stable text features; inner/outer fitting-side valid-candidate mean/std, clip[-8,8]",
+    "initialization": "all weights random; same seed7506 and parameter shapes in both arms; no external weights"
+  },
+  "optimizer": {
+    "name": "AdamW",
+    "lr": 0.001,
+    "weight_decay": 0.001,
+    "gradient_clip": 5.0,
+    "batch_questions": 64
+  },
+  "objective": "equal-question cross-entropy on official parsed-answer group mean scores",
+  "eligible": "correct and incorrect valid groups both present; normalizers may use easy fitting inputs but losses use eligible questions only",
+  "early_stop": {
+    "maximum_epochs": 24,
+    "patience": 4,
+    "minimum_improvement": 0.0001,
+    "criterion": "inner group CE"
+  },
+  "refit": "Fresh same-seed initialization at independently inner-selected epoch count; outer-fit normalizer rebuilt without outer-heldout inputs",
+  "normalizer_fits": 12,
+  "selection": "summed OOF hard correct across repeats, lower mean normalized group CE, no-edge control on tie",
+  "scale": "fitting-side std of all-four centered scores at valid candidate entries",
+  "numpy_export": "All outer-heldout predictions replayed in NumPy; OOF uses NumPy scores; max allowed error1e-4; answer differences recorded rather than hidden",
+  "cost_probe": "First complete outer partition, planned fits retained; report fitting and NumPy inference timing estimates, no scope expansion",
+  "adaptation": "Fixed two arms only. No additional parameters, validation/test or full-data checkpoint in this stage.",
+  "interpretation": "Two repeats reuse the same questions; OOF selection remains exploratory after historical search"
+}

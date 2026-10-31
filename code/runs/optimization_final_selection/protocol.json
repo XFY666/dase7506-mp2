@@ -1,0 +1,24 @@
+{
+  "policy_sha256": "0e633381d6bd0675d6d706ed70d61bbabb3f71901f91472be79f85977bbfdcfd",
+  "source_sha256": "a1313c06eba9717dcf373efd3303e883bbcd225749979ebfead3c872c646de32",
+  "maximum_new_validation_checkpoints": 2,
+  "minimum_hard_validation_correct": 294,
+  "index": "mean repeated hard OOF correct + hard validation correct",
+  "test_access": false,
+  "method_promotion": false,
+  "reference_d_sha256": {
+    "runs/model_bundle/config.json": "9d44ffd2b68acedacfcb2244fd890ef7c571d3020730e60a69bb970a3ed79f85",
+    "runs/model_bundle/residual.npz": "26a665051b621e17856f4b5fa7eb513828f814630a61aeb0d11544726eb8692b",
+    "runs/model_bundle/seed_7506.npz": "0b549c1490bee89b7294342d01ad32bd185ba1f8418552886050179d61687fca",
+    "runs/model_bundle/text.npz": "160875878aa9ccc735ec0ce6f17d42757eb1e120ef6710670f81938192d8fb36",
+    "runs/evaluation/final-validation-score.json": "c56d094cf6939c93bb97b4b3a56a735f7078c548201955d941dd835a61e9529e",
+    "runs/analysis_validation/summary.json": "e6541eeb599dc47464698117a9f5b2525ae85df7d85848a15b9e8a7d23742345",
+    "runs/evaluation/final-test-resources.json": "0b1b1f0f8f22fdb4b0e7fd2fbccef95b9309fea7fdf65f2d38035fcf151bbb6c",
+    "submission.py": "f9f0985a4afe20616e33c4df12fad0528730580bf56ee89b8204bd4c277d81d4",
+    "ensemble.py": "4a9623d2251a30b48759ea5296a4c43bdc029eb925a44d5c946e3ed7b800aeff",
+    "selection.py": "8b1f6ce4e7c1e445cbc0f6414a979722879d9fef9aa56073ebe052ac09563e64",
+    "text_features.py": "96eb0ee4d7e1a526b054db2b9fd5979997327ff0359f5de7baae89b557ab38c7",
+    "tree_model.py": "8168266c7593b2e62b6e3123cffcd1304cc23a99d816fa65b3f03b15bed1e4d9",
+    "common.py": "aecd10f7ff2e9e82ac5673d34d576e122caac51d2caaa7c7a8aa05906da51f6c"
+  }
+}

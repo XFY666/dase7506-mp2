@@ -1,0 +1,11 @@
+{
+  "name": "G_noise_cross__roles_cnn_0.25",
+  "weights": {
+    "Anoise_5": 0.09375,
+    "K": 0.046875,
+    "Qcross": 0.046875,
+    "P": 0.375,
+    "Ccross": 0.1875,
+    "roles_cnn": 0.25
+  }
+}

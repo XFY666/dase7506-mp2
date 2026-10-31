@@ -1,0 +1,9 @@
+{
+  "optimization_reference_augmentation.py": "461ce5e37257a3e86adc870c7c1b61b550c752ef6a45c82cb29b4a7507849a03",
+  "sequence_model.py": "ef0ff6104e875338e9c6b3032cb8cd670f1e412064a0a2e4c924984b60ce4b07",
+  "sequence_experiment.py": "fd1277bb265ae56e6e436bb2575d7f720d256f0dc0f3a2132cd2ebb95d1c7150",
+  "common.py": "aecd10f7ff2e9e82ac5673d34d576e122caac51d2caaa7c7a8aa05906da51f6c",
+  "experiment_utils.py": "7f6dda4550acc7c6d3cc6429e46cc8978304ea7062118876ae763030ed2daa39",
+  "selection.py": "8b1f6ce4e7c1e445cbc0f6414a979722879d9fef9aa56073ebe052ac09563e64",
+  "text_features.py": "96eb0ee4d7e1a526b054db2b9fd5979997327ff0359f5de7baae89b557ab38c7"
+}

@@ -1,0 +1,151 @@
+{
+  "verified_utc": "2026-10-26T10:25:26.793114+00:00",
+  "audit_source_sha256": "917da8d1b251b2a9cf399f965cb2b61dc880f6933b12f94884a6ad7399a7d5ae",
+  "new_model_fits": 0,
+  "validation_access": false,
+  "test_access": false,
+  "numpy_only_replay": true,
+  "source_input_protocol_hashes_verified": true,
+  "protocol_precedes_fit": true,
+  "sampled_input_graphs_and_stable_numeric_features_recomputed": 32,
+  "all_12_outer_assets_and24_fit_boundaries_verified": true,
+  "partitions": [
+    {
+      "repeat": 0,
+      "fold": 0,
+      "arm": "node_mlp",
+      "selected_epochs": 5,
+      "held_numpy_replay_max_error": 0.0,
+      "fitting_numpy_vs_native_scale_difference": 0.0,
+      "fitting_normalizer_and_split_hashes_verified": true,
+      "early_stopping_and_refit_lengths_verified": true
+    },
+    {
+      "repeat": 0,
+      "fold": 0,
+      "arm": "equation_gcn",
+      "selected_epochs": 5,
+      "held_numpy_replay_max_error": 0.0,
+      "fitting_numpy_vs_native_scale_difference": 0.0,
+      "fitting_normalizer_and_split_hashes_verified": true,
+      "early_stopping_and_refit_lengths_verified": true
+    },
+    {
+      "repeat": 0,
+      "fold": 1,
+      "arm": "node_mlp",
+      "selected_epochs": 7,
+      "held_numpy_replay_max_error": 0.0,
+      "fitting_numpy_vs_native_scale_difference": 0.0,
+      "fitting_normalizer_and_split_hashes_verified": true,
+      "early_stopping_and_refit_lengths_verified": true
+    },
+    {
+      "repeat": 0,
+      "fold": 1,
+      "arm": "equation_gcn",
+      "selected_epochs": 7,
+      "held_numpy_replay_max_error": 0.0,
+      "fitting_numpy_vs_native_scale_difference": 0.0,
+      "fitting_normalizer_and_split_hashes_verified": true,
+      "early_stopping_and_refit_lengths_verified": true
+    },
+    {
+      "repeat": 0,
+      "fold": 2,
+      "arm": "node_mlp",
+      "selected_epochs": 3,
+      "held_numpy_replay_max_error": 0.0,
+      "fitting_numpy_vs_native_scale_difference": 0.0,
+      "fitting_normalizer_and_split_hashes_verified": true,
+      "early_stopping_and_refit_lengths_verified": true
+    },
+    {
+      "repeat": 0,
+      "fold": 2,
+      "arm": "equation_gcn",
+      "selected_epochs": 3,
+      "held_numpy_replay_max_error": 0.0,
+      "fitting_numpy_vs_native_scale_difference": 0.0,
+      "fitting_normalizer_and_split_hashes_verified": true,
+      "early_stopping_and_refit_lengths_verified": true
+    },
+    {
+      "repeat": 1,
+      "fold": 0,
+      "arm": "node_mlp",
+      "selected_epochs": 9,
+      "held_numpy_replay_max_error": 0.0,
+      "fitting_numpy_vs_native_scale_difference": 0.0,
+      "fitting_normalizer_and_split_hashes_verified": true,
+      "early_stopping_and_refit_lengths_verified": true
+    },
+    {
+      "repeat": 1,
+      "fold": 0,
+      "arm": "equation_gcn",
+      "selected_epochs": 9,
+      "held_numpy_replay_max_error": 0.0,
+      "fitting_numpy_vs_native_scale_difference": 0.0,
+      "fitting_normalizer_and_split_hashes_verified": true,
+      "early_stopping_and_refit_lengths_verified": true
+    },
+    {
+      "repeat": 1,
+      "fold": 1,
+      "arm": "node_mlp",
+      "selected_epochs": 5,
+      "held_numpy_replay_max_error": 0.0,
+      "fitting_numpy_vs_native_scale_difference": 0.0,
+      "fitting_normalizer_and_split_hashes_verified": true,
+      "early_stopping_and_refit_lengths_verified": true
+    },
+    {
+      "repeat": 1,
+      "fold": 1,
+      "arm": "equation_gcn",
+      "selected_epochs": 6,
+      "held_numpy_replay_max_error": 0.0,
+      "fitting_numpy_vs_native_scale_difference": 0.0,
+      "fitting_normalizer_and_split_hashes_verified": true,
+      "early_stopping_and_refit_lengths_verified": true
+    },
+    {
+      "repeat": 1,
+      "fold": 2,
+      "arm": "node_mlp",
+      "selected_epochs": 3,
+      "held_numpy_replay_max_error": 0.0,
+      "fitting_numpy_vs_native_scale_difference": 0.0,
+      "fitting_normalizer_and_split_hashes_verified": true,
+      "early_stopping_and_refit_lengths_verified": true
+    },
+    {
+      "repeat": 1,
+      "fold": 2,
+      "arm": "equation_gcn",
+      "selected_epochs": 3,
+      "held_numpy_replay_max_error": 0.0,
+      "fitting_numpy_vs_native_scale_difference": 0.0,
+      "fitting_normalizer_and_split_hashes_verified": true,
+      "early_stopping_and_refit_lengths_verified": true
+    }
+  ],
+  "metrics": [
+    {
+      "arm": "node_mlp",
+      "hard_correct": [
+        1745,
+        1763
+      ]
+    },
+    {
+      "arm": "equation_gcn",
+      "hard_correct": [
+        1732,
+        1762
+      ]
+    }
+  ],
+  "elapsed_seconds": 7.218103700011852
+}

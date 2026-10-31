@@ -1,0 +1,235 @@
+{
+  "status": "passed",
+  "updated_utc": "2026-10-26T09:23:57.643102+00:00",
+  "independent_runtime": {
+    "numpy": "2.5.3",
+    "torch_imported": false,
+    "sklearn_imported": false
+  },
+  "source_hashes_match_registration": true,
+  "oof_shape": [
+    2,
+    4755,
+    4,
+    2
+  ],
+  "oof_finite_complete": true,
+  "recomputed_train_ids_labels_validity_and_folds_match": true,
+  "inner_outer_question_disjointness": true,
+  "early_stopping_recomputed_from_main_loss": true,
+  "asset_checks": [
+    {
+      "asset": "repeat0_fold0_control_allq.npz",
+      "sha256": "b4fb3f2cf49bcb16ab36244b4df09a9f41896fad69359dbc0278009a042ac2de",
+      "replayed_training_heldout_questions": 32,
+      "oof_score_error": 9.5367431640625e-07,
+      "permutation_error": 0.0,
+      "batch_error": 9.5367431640625e-07,
+      "answer_changes": 0,
+      "fit_only_vocabulary_and_normalizer_exact": true,
+      "no_auxiliary_head_exported": true
+    },
+    {
+      "asset": "repeat0_fold0_token_aux01.npz",
+      "sha256": "1ac02a7ecd1ee011bcab75e67f6db0c5ef6b8c44b98f65d3c450fc3fa567ce36",
+      "replayed_training_heldout_questions": 32,
+      "oof_score_error": 1.430511474609375e-06,
+      "permutation_error": 0.0,
+      "batch_error": 7.152557373046875e-07,
+      "answer_changes": 0,
+      "fit_only_vocabulary_and_normalizer_exact": true,
+      "no_auxiliary_head_exported": true
+    },
+    {
+      "asset": "repeat0_fold1_control_allq.npz",
+      "sha256": "aac888439ec3e889fd3f7bf6f1169c219534cb5118b20f3876eca88bea4b5d11",
+      "replayed_training_heldout_questions": 32,
+      "oof_score_error": 9.5367431640625e-07,
+      "permutation_error": 0.0,
+      "batch_error": 3.5762786865234375e-07,
+      "answer_changes": 0,
+      "fit_only_vocabulary_and_normalizer_exact": true,
+      "no_auxiliary_head_exported": true
+    },
+    {
+      "asset": "repeat0_fold1_token_aux01.npz",
+      "sha256": "b25c6c963069fdba0d7be44c236ff075ba5c514e25e3a1d3459f5b3b894219f4",
+      "replayed_training_heldout_questions": 32,
+      "oof_score_error": 9.5367431640625e-07,
+      "permutation_error": 0.0,
+      "batch_error": 7.152557373046875e-07,
+      "answer_changes": 0,
+      "fit_only_vocabulary_and_normalizer_exact": true,
+      "no_auxiliary_head_exported": true
+    },
+    {
+      "asset": "repeat0_fold2_control_allq.npz",
+      "sha256": "7a3638a6afbf9161bc8c51d3bb22b3df922d6bbfde16221c2b5b18ae0e8e272b",
+      "replayed_training_heldout_questions": 32,
+      "oof_score_error": 9.5367431640625e-07,
+      "permutation_error": 0.0,
+      "batch_error": 9.5367431640625e-07,
+      "answer_changes": 0,
+      "fit_only_vocabulary_and_normalizer_exact": true,
+      "no_auxiliary_head_exported": true
+    },
+    {
+      "asset": "repeat0_fold2_token_aux01.npz",
+      "sha256": "7e467742a16e2945c60d870e69828ab305c88e8694b9958916ccb0a0879082f8",
+      "replayed_training_heldout_questions": 32,
+      "oof_score_error": 9.5367431640625e-07,
+      "permutation_error": 0.0,
+      "batch_error": 9.5367431640625e-07,
+      "answer_changes": 0,
+      "fit_only_vocabulary_and_normalizer_exact": true,
+      "no_auxiliary_head_exported": true
+    },
+    {
+      "asset": "repeat1_fold0_control_allq.npz",
+      "sha256": "d348c30cf1447387d92a70fe7a6495fa77554d5e1770b78d3a40f18006c187ad",
+      "replayed_training_heldout_questions": 32,
+      "oof_score_error": 9.5367431640625e-07,
+      "permutation_error": 0.0,
+      "batch_error": 5.960464477539062e-07,
+      "answer_changes": 0,
+      "fit_only_vocabulary_and_normalizer_exact": true,
+      "no_auxiliary_head_exported": true
+    },
+    {
+      "asset": "repeat1_fold0_token_aux01.npz",
+      "sha256": "8968aba4c5f2741415348bced0e5c807b321d50bb57c55f26f5dac043a1c6f11",
+      "replayed_training_heldout_questions": 32,
+      "oof_score_error": 9.5367431640625e-07,
+      "permutation_error": 0.0,
+      "batch_error": 4.76837158203125e-07,
+      "answer_changes": 0,
+      "fit_only_vocabulary_and_normalizer_exact": true,
+      "no_auxiliary_head_exported": true
+    },
+    {
+      "asset": "repeat1_fold1_control_allq.npz",
+      "sha256": "44ff65b365e1ccfbd62ec3767eafff345421da315438c74e6b9ced8484e8c7bc",
+      "replayed_training_heldout_questions": 32,
+      "oof_score_error": 9.5367431640625e-07,
+      "permutation_error": 0.0,
+      "batch_error": 5.960464477539062e-07,
+      "answer_changes": 0,
+      "fit_only_vocabulary_and_normalizer_exact": true,
+      "no_auxiliary_head_exported": true
+    },
+    {
+      "asset": "repeat1_fold1_token_aux01.npz",
+      "sha256": "b3a5e42fd341294604a4bf56a55567a13aaed1ab43b7d7ea00bc93fb8e8e4f66",
+      "replayed_training_heldout_questions": 32,
+      "oof_score_error": 1.1920928955078125e-06,
+      "permutation_error": 0.0,
+      "batch_error": 7.152557373046875e-07,
+      "answer_changes": 0,
+      "fit_only_vocabulary_and_normalizer_exact": true,
+      "no_auxiliary_head_exported": true
+    },
+    {
+      "asset": "repeat1_fold2_control_allq.npz",
+      "sha256": "fb88136b7520ef634c7ee08fc672d259511543203c1393992625805293f014e4",
+      "replayed_training_heldout_questions": 32,
+      "oof_score_error": 9.5367431640625e-07,
+      "permutation_error": 0.0,
+      "batch_error": 5.960464477539062e-07,
+      "answer_changes": 0,
+      "fit_only_vocabulary_and_normalizer_exact": true,
+      "no_auxiliary_head_exported": true
+    },
+    {
+      "asset": "repeat1_fold2_token_aux01.npz",
+      "sha256": "be69d66ea5266e88110d17751effa2fe34c799a7943a1c21a352ea4140f14a30",
+      "replayed_training_heldout_questions": 32,
+      "oof_score_error": 1.430511474609375e-06,
+      "permutation_error": 0.0,
+      "batch_error": 4.76837158203125e-07,
+      "answer_changes": 0,
+      "fit_only_vocabulary_and_normalizer_exact": true,
+      "no_auxiliary_head_exported": true
+    }
+  ],
+  "recomputed_results": [
+    {
+      "config": "control_allq",
+      "repeats": [
+        {
+          "seed": 20261027,
+          "correct": 4393,
+          "n": 4755,
+          "accuracy": 92.3869610935857,
+          "hard_correct": 1752,
+          "hard_n": 2114,
+          "hard_accuracy": 82.87606433301798,
+          "group_ce": 0.43519176376500124,
+          "repairs": 0,
+          "regressions": 0
+        },
+        {
+          "seed": 20261028,
+          "correct": 4385,
+          "n": 4755,
+          "accuracy": 92.21871713985279,
+          "hard_correct": 1744,
+          "hard_n": 2114,
+          "hard_accuracy": 82.49763481551561,
+          "group_ce": 0.4340896379993163,
+          "repairs": 0,
+          "regressions": 0
+        }
+      ]
+    },
+    {
+      "config": "token_aux01",
+      "repeats": [
+        {
+          "seed": 20261027,
+          "correct": 4386,
+          "n": 4755,
+          "accuracy": 92.2397476340694,
+          "hard_correct": 1745,
+          "hard_n": 2114,
+          "hard_accuracy": 82.5449385052034,
+          "group_ce": 0.4355462877481719,
+          "repairs": 3,
+          "regressions": 10
+        },
+        {
+          "seed": 20261028,
+          "correct": 4391,
+          "n": 4755,
+          "accuracy": 92.34490010515248,
+          "hard_correct": 1750,
+          "hard_n": 2114,
+          "hard_accuracy": 82.78145695364239,
+          "group_ce": 0.43794051536457995,
+          "repairs": 32,
+          "regressions": 26
+        }
+      ]
+    }
+  ],
+  "selected": "control_allq",
+  "training_boundary_source_review": {
+    "gold_used_only_for_weak_training_targets": true,
+    "input_vocab_numeric_features_independent_of_reference_answers": true,
+    "auxiliary_gradients_only_on_fitting_ids": true,
+    "early_stopping_uses_main_loss_only": true,
+    "empty_usable_gold_unobserved": true,
+    "auxiliary_head_discarded": true,
+    "scope": "Reviewed frozen source plus exact reconstruction of all six outer-fold transforms; no retraining"
+  },
+  "train_data_access_during_audit": [
+    "candidates/gsm8k_train.jsonl",
+    "candidates/gsm8k_train.npz",
+    "gsm8k_train.jsonl",
+    "manifest.json"
+  ],
+  "new_fits": 0,
+  "validation_test_access": false,
+  "limitations": "Same 2114 hard questions repeated twice; token literal membership is weak supervision, not verified reasoning-step correctness.",
+  "auditor_sha256": "deb3b59f704872858c54db33830fd771d719de01830d8011b83510059feb3262",
+  "seconds": 35.332125899993116
+}

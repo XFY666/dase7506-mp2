@@ -1,0 +1,283 @@
+{
+  "status": "complete",
+  "selected_name": "G_noise_cross__roles_cnn_0.25",
+  "validation": {
+    "full": {
+      "correct": 750,
+      "n": 798,
+      "accuracy": 93.98496240601504
+    },
+    "hard": {
+      "correct": 307,
+      "n": 355,
+      "accuracy": 86.47887323943661
+    }
+  },
+  "history": [
+    {
+      "text": "Earlier development comprised 741 indexed research fits across three rounds (333, 275 and 133), with 400, 9 and 3 validation evaluation rows respectively. These are execution/readout counts, not independent hypotheses. Three separate historical reproduction fits verified an already selected checkpoint. Earlier OOF work included five-fold and three-fold designs; the renewed screen uses two three-fold assignments of the same 4,755 training questions.",
+      "evidence": [
+        "E_HISTORICAL_INVENTORY",
+        "E_REFINEMENT_INVENTORY",
+        "E_GENERALIZATION_INVENTORY",
+        "E_PROTOCOL"
+      ]
+    },
+    {
+      "text": "The historical D checkpoint had 754/798 full and 311/355 difficult validation answers correct, and earlier aggregate test results were already known. The new screen registered each comparison before observing its outcomes and limited the final stage to two newly evaluated validation checkpoints. This prospective boundary does not erase earlier validation selection or prior test exposure.",
+      "evidence": [
+        "E_FINAL_SELECTION",
+        "E_EXTENDED_PROTOCOL",
+        "E_SELECTION_POLICY"
+      ]
+    }
+  ],
+  "baselines": [
+    {
+      "name": "Majority vote",
+      "metric": {
+        "correct": 245,
+        "n": 355,
+        "accuracy": 69.01408450704226
+      }
+    },
+    {
+      "name": "Historical D",
+      "metric": {
+        "correct": 311,
+        "n": 355,
+        "accuracy": 87.60563380281691
+      }
+    },
+    {
+      "name": "F_subset_cross",
+      "metric": {
+        "correct": 304,
+        "n": 355,
+        "accuracy": 85.63380281690141
+      }
+    },
+    {
+      "name": "G_noise_cross__roles_cnn_0.25",
+      "metric": {
+        "correct": 307,
+        "n": 355,
+        "accuracy": 86.47887323943661
+      }
+    }
+  ],
+  "strata": [
+    {
+      "name": "Margin quartile 1",
+      "metric": {
+        "correct": 56,
+        "n": 89,
+        "accuracy": 62.92134831460674
+      }
+    },
+    {
+      "name": "Margin quartile 2",
+      "metric": {
+        "correct": 79,
+        "n": 89,
+        "accuracy": 88.76404494382022
+      }
+    },
+    {
+      "name": "Margin quartile 3",
+      "metric": {
+        "correct": 85,
+        "n": 89,
+        "accuracy": 95.50561797752809
+      }
+    },
+    {
+      "name": "Margin quartile 4",
+      "metric": {
+        "correct": 87,
+        "n": 88,
+        "accuracy": 98.86363636363636
+      }
+    }
+  ],
+  "selection_rows": [
+    {
+      "name": "Historical D",
+      "validation_hard": "311/355",
+      "resource_status": "Eligible",
+      "decision": "Index 2038.5"
+    },
+    {
+      "name": "F subset + cross features",
+      "validation_hard": "304/355",
+      "resource_status": "Eligible",
+      "decision": "Index 2084.0"
+    },
+    {
+      "name": "G noise + cross + role CNN",
+      "validation_hard": "307/355",
+      "resource_status": "Eligible",
+      "decision": "Selected; 2085.5"
+    }
+  ],
+  "selection_commentary": [
+    {
+      "text": "Both new checkpoints passed the predeclared 294/355 difficult-validation guard. G was selected by its index 1778.5+307=2085.5, exceeding F's 1780+304=2084 and D's 1727.5+311=2038.5. G therefore has four fewer correct validation answers than D; its selection reflects the registered combination of training OOF and validation evidence. The guard is an engineering tolerance, not a statistical non-inferiority test.",
+      "evidence": [
+        "E_FINAL_SELECTION",
+        "E_SELECTION_POLICY"
+      ]
+    }
+  ],
+  "reliability": [
+    {
+      "text": "Among the 355 disagreement questions, accuracy rises from 56/89 (62.92%) in the lowest score-margin quartile to 87/88 (98.86%) in the highest. The lowest quartile contains 33 of the 48 errors. This is useful descriptive error concentration; the margin and its softmax are not calibrated correctness probabilities. The remaining 443 easier validation questions are all correct, so full-set accuracy answers a less demanding question than disagreement accuracy.",
+      "evidence": [
+        "E_RAW_ANALYSIS"
+      ]
+    }
+  ],
+  "failure": [
+    {
+      "text": "Relative to the vote baseline, G repairs 72 difficult questions and loses 10, a net gain of 62. Relative to D it repairs 10 and loses 14. The two cases are the largest-margin error and largest-margin rescue from the vote baseline, chosen to illustrate distinct failure mechanisms. They are not random examples or proof that the model explicitly verifies every arithmetic step.",
+      "evidence": [
+        "E_RAW_ANALYSIS"
+      ]
+    }
+  ],
+  "limits": [
+    {
+      "text": "The reported improvements are exploratory: architecture choices, repeated-fold comparisons and the 48-entry fusion menu reuse development evidence. Each repeat contains the same 2,114 difficult training questions. Question-level bootstrap intervals for fixed predictions omit model-fitting and adaptive-search uncertainty. The final frozen test result is reported once for the selected method, within a project that already had aggregate test exposure.",
+      "evidence": [
+        "E_PROTOCOL",
+        "E_FUSION",
+        "E_SELECTION_POLICY",
+        "E_EXTENDED_PROTOCOL",
+        "E_FINAL_TEST"
+      ]
+    },
+    {
+      "text": "Weak reference-number supervision measures literal overlap, not step validity, and synthetic reference corruption tests a restricted training signal. Their null or inconsistent matched results do not rule out better process supervision. Local CPU timing and exact artifact replay establish execution and reproducibility on the recorded machine; they do not replace reference-machine timing or human scientific review.",
+      "evidence": [
+        "E_PROCESS",
+        "E_TOKEN",
+        "E_CORRUPT",
+        "E_FINAL_RESOURCES",
+        "E_REPRODUCTION"
+      ]
+    }
+  ],
+  "search_cost_rows": [
+    {
+      "stage": "Historical research, three rounds",
+      "model_fits": 741,
+      "cost_text": "333 + 275 + 133 fits; 412 validation rows"
+    },
+    {
+      "stage": "Independent reproduction",
+      "model_fits": 13,
+      "cost_text": "3 historical D + 10 final G verification fits"
+    },
+    {
+      "stage": "New training-only screens",
+      "model_fits": 692,
+      "cost_text": "15 families; 34 invalid fits excluded"
+    },
+    {
+      "stage": "Full-training finalists",
+      "model_fits": 13,
+      "cost_text": "7 branches; P recovered without refitting"
+    },
+    {
+      "stage": "Fusion and final selection",
+      "model_fits": 0,
+      "cost_text": "48 readouts; 2 new validation checkpoints"
+    }
+  ],
+  "examples": [
+    {
+      "question_excerpt": "Andy walks 50 meters from his house to school. After school, he comes back to the house and goes to the market. If he walks 140 meters in total, how many meters is the distance between the house and the market?",
+      "reference_answer": "40",
+      "selected_answer": "45",
+      "interpretation": "The return from school to home is another 50 m, so 50+50+x=140 gives x=40. The selected trace instead sets the return leg to x and solves 50+2x=140, obtaining 45. Its algebra is consistent with the wrong equation; the error is assigning the route quantities. Three traces state 40, but two lack a recognized final-answer marker; official parses are None, 45, 40, None. The valid comparison is therefore one candidate per answer group. A large score margin does not certify semantic correctness.",
+      "evidence": [
+        "E_RAW_ANALYSIS"
+      ],
+      "id": "gsm8k:fd23d86676d457a5edd2ad70cc5accd6b3e3c36e975e3b85316a5e7990357a36",
+      "title": "High-margin incorrect choice"
+    },
+    {
+      "question_excerpt": "In a school garden, there are flowers in different colors. In total there are 96 flowers of four colors: green, red, blue, and yellow. There are 9 green flowers and three times more red flowers. Blue flowers make up to 50% of the total flower count. How many yellow flowers are there?",
+      "reference_answer": "12",
+      "selected_answer": "12",
+      "interpretation": "The four candidate answers are 0, 0, 12 and 12: a tied plurality, not an incorrect strict majority. All use 27 red and 48 blue flowers. The first two incorrectly evaluate 96-9-27-48 as 0; the selected third candidate obtains 12, matching the fourth and the reference. The baseline resolves the tie to 0; the learned scores select the correct answer group.",
+      "evidence": [
+        "E_RAW_ANALYSIS"
+      ],
+      "id": "gsm8k:eb1fbf0cbd85808aad3b8deda1374acf76a5cbb9327fc93e661b01da20249712",
+      "title": "Correct choice after an incorrect tied-plurality baseline"
+    }
+  ],
+  "search_accounting_notes": [
+    "The 34 confirmed completed invalid baseline fits and one unconfirmed interrupted fit are excluded from 692 valid screen fits.",
+    "The token-auxiliary encoding failure occurred before any fit. P's final-fit logging recovery did not retrain its completed asset; its original fit duration is unavailable.",
+    "Independent reproduction counts 3 historical D fits and 10 final G fits. These verify frozen configurations and are separate from research/search counts.",
+    "Recorded stage wall times may overlap and must not be summed as project elapsed time or CPU-seconds."
+  ],
+  "source_review": {
+    "examples": [
+      {
+        "id": "gsm8k:fd23d86676d457a5edd2ad70cc5accd6b3e3c36e975e3b85316a5e7990357a36",
+        "index": 444,
+        "candidate_answers": [
+          null,
+          "45",
+          "40",
+          null
+        ],
+        "reference_answer": "40",
+        "selected_answer": "45",
+        "reasoning": "The return from school to home is another 50 m, so 50+50+x=140 gives x=40. The selected trace instead sets the return leg to x and solves 50+2x=140, obtaining 45. Its algebra is consistent with the wrong equation; the error is assigning the route quantities. Three traces state 40, but two lack a recognized final-answer marker; official parses are None, 45, 40, None. The valid comparison is therefore one candidate per answer group. A large score margin does not certify semantic correctness."
+      },
+      {
+        "id": "gsm8k:eb1fbf0cbd85808aad3b8deda1374acf76a5cbb9327fc93e661b01da20249712",
+        "index": 229,
+        "candidate_answers": [
+          "0",
+          "0",
+          "12",
+          "12"
+        ],
+        "reference_answer": "12",
+        "selected_answer": "12",
+        "reasoning": "The four candidate answers are 0, 0, 12 and 12: a tied plurality, not an incorrect strict majority. All use 27 red and 48 blue flowers. The first two incorrectly evaluate 96-9-27-48 as 0; the selected third candidate obtains 12, matching the fourth and the reference. The baseline resolves the tie to 0; the learned scores select the correct answer group."
+      }
+    ],
+    "screen_counts": {
+      "baselines": 48,
+      "trees": 42,
+      "process": 90,
+      "sequence": 48,
+      "regularization": 24,
+      "interactions": 60,
+      "alternatives": 12,
+      "sequence_aux": 24,
+      "calibration": 144,
+      "subset": 36,
+      "bagging": 36,
+      "reference_augmentation": 24,
+      "graph": 24,
+      "stopping": 56,
+      "transformer": 24
+    },
+    "new_screen_fits": 692,
+    "historical_research_fits": 741,
+    "historical_verification_fits": 3,
+    "finalist_full_fits": 13,
+    "freeze_unchanged": true,
+    "new_fits": 0,
+    "prediction_reruns": 0,
+    "test_inputs_read": false,
+    "human_review": "pending"
+  }
+}

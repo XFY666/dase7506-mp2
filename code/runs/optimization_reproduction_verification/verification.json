@@ -1,0 +1,169 @@
+{
+  "status": "passed",
+  "independent_model_fit_calls": 10,
+  "verification_new_fits": 0,
+  "branches": 6,
+  "assets_checked": 10,
+  "arrays_checked": 91,
+  "vocabulary_arrays_checked": 1,
+  "scale_arrays_checked": 17,
+  "all_arrays_exact": true,
+  "all_asset_file_bytes_exact": true,
+  "fresh_training_questions": 32,
+  "fresh_scores_exact": true,
+  "max_score_difference": 0.0,
+  "predictions_exact": true,
+  "source_hashes_checked": 39,
+  "source_hashes_unchanged": true,
+  "numpy_only": true,
+  "validation_access": false,
+  "test_access": false,
+  "raw_training_references_read": false,
+  "assets": [
+    {
+      "branch": "A5_noise_ema40",
+      "asset": "member0_seed7506.npz",
+      "arrays": 7,
+      "all_arrays_exact": true,
+      "file_bytes_exact": true,
+      "original_sha256": "30b9c7e6803667b7826c71e8aeff793a2dc408e03566c940809932ee4b948684",
+      "reproduced_sha256": "30b9c7e6803667b7826c71e8aeff793a2dc408e03566c940809932ee4b948684"
+    },
+    {
+      "branch": "A5_noise_ema40",
+      "asset": "member1_seed17001.npz",
+      "arrays": 7,
+      "all_arrays_exact": true,
+      "file_bytes_exact": true,
+      "original_sha256": "e1ba42f8fc0811fa3878424b26874807bbf92ad0e7264aa46d7639f6c38bac56",
+      "reproduced_sha256": "e1ba42f8fc0811fa3878424b26874807bbf92ad0e7264aa46d7639f6c38bac56"
+    },
+    {
+      "branch": "A5_noise_ema40",
+      "asset": "member2_seed17002.npz",
+      "arrays": 7,
+      "all_arrays_exact": true,
+      "file_bytes_exact": true,
+      "original_sha256": "fa674919b755b18d6f80d547651cb33d043e5ff6ea2e462fb1a1823d26c599e1",
+      "reproduced_sha256": "fa674919b755b18d6f80d547651cb33d043e5ff6ea2e462fb1a1823d26c599e1"
+    },
+    {
+      "branch": "A5_noise_ema40",
+      "asset": "member3_seed17003.npz",
+      "arrays": 7,
+      "all_arrays_exact": true,
+      "file_bytes_exact": true,
+      "original_sha256": "3f25b7d687ea428bd0a2cf22e52a0e7351211b1d0c3cacbe3d53be0e9a8a2150",
+      "reproduced_sha256": "3f25b7d687ea428bd0a2cf22e52a0e7351211b1d0c3cacbe3d53be0e9a8a2150"
+    },
+    {
+      "branch": "A5_noise_ema40",
+      "asset": "member4_seed17004.npz",
+      "arrays": 7,
+      "all_arrays_exact": true,
+      "file_bytes_exact": true,
+      "original_sha256": "0d9511f9e237024e99d2f286a2006ac46e37f07415a90146a0fbb78e13f6c964",
+      "reproduced_sha256": "0d9511f9e237024e99d2f286a2006ac46e37f07415a90146a0fbb78e13f6c964"
+    },
+    {
+      "branch": "K",
+      "asset": "member0_seed7506.npz",
+      "arrays": 11,
+      "all_arrays_exact": true,
+      "file_bytes_exact": true,
+      "original_sha256": "db7969a497f3f08f19183618b1f55da7efcb65f59669da83086a303d0291f05d",
+      "reproduced_sha256": "db7969a497f3f08f19183618b1f55da7efcb65f59669da83086a303d0291f05d"
+    },
+    {
+      "branch": "Q_D1D2",
+      "asset": "member0_seed20261015.npz",
+      "arrays": 10,
+      "all_arrays_exact": true,
+      "file_bytes_exact": true,
+      "original_sha256": "842a2a73985e292c7383b76833ede98f93cb7748dd035cd34b8d03d492f0a640",
+      "reproduced_sha256": "842a2a73985e292c7383b76833ede98f93cb7748dd035cd34b8d03d492f0a640"
+    },
+    {
+      "branch": "P",
+      "asset": "member0_seed7506.npz",
+      "arrays": 10,
+      "all_arrays_exact": true,
+      "file_bytes_exact": true,
+      "original_sha256": "6a7c9f2b97d832670bca6280e68fe8c11da23b6b8255f63a4be8b0846ae774a5",
+      "reproduced_sha256": "6a7c9f2b97d832670bca6280e68fe8c11da23b6b8255f63a4be8b0846ae774a5"
+    },
+    {
+      "branch": "C_D1D2",
+      "asset": "member0_seed20261015.npz",
+      "arrays": 10,
+      "all_arrays_exact": true,
+      "file_bytes_exact": true,
+      "original_sha256": "752a6964b465cf2163283fd10b8e1bba3a0caab9d4b70e4b83e46558a378081f",
+      "reproduced_sha256": "752a6964b465cf2163283fd10b8e1bba3a0caab9d4b70e4b83e46558a378081f"
+    },
+    {
+      "branch": "headtail_roles",
+      "asset": "model.npz",
+      "arrays": 15,
+      "all_arrays_exact": true,
+      "file_bytes_exact": true,
+      "original_sha256": "d544dc41496f5c4efbf863416a47dcbcc72ff365c38eb1bca4e43b046be8fa30",
+      "reproduced_sha256": "d544dc41496f5c4efbf863416a47dcbcc72ff365c38eb1bca4e43b046be8fa30"
+    }
+  ],
+  "metadata_differences": [
+    {
+      "branch": "A5_noise_ema40",
+      "manifest_identical": false,
+      "differing_top_level_fields": [
+        "protocol_sha256",
+        "source_sha256"
+      ]
+    },
+    {
+      "branch": "K",
+      "manifest_identical": false,
+      "differing_top_level_fields": [
+        "protocol_sha256",
+        "source_sha256"
+      ]
+    },
+    {
+      "branch": "Q_D1D2",
+      "manifest_identical": false,
+      "differing_top_level_fields": [
+        "protocol_sha256",
+        "source_sha256"
+      ]
+    },
+    {
+      "branch": "P",
+      "manifest_identical": false,
+      "differing_top_level_fields": [
+        "protocol_sha256",
+        "recovery",
+        "source_sha256"
+      ]
+    },
+    {
+      "branch": "C_D1D2",
+      "manifest_identical": false,
+      "differing_top_level_fields": [
+        "protocol_sha256"
+      ]
+    },
+    {
+      "branch": "headtail_roles",
+      "manifest_identical": false,
+      "differing_top_level_fields": [
+        "created_utc",
+        "fullfit_process_cpu_seconds",
+        "fullfit_wall_seconds",
+        "total_process_cpu_seconds",
+        "total_wall_seconds",
+        "transform"
+      ]
+    }
+  ],
+  "notes": "Manifest timestamps, timing/transform diagnostics and logging-repair provenance may differ; learned arrays and inference agree exactly."
+}

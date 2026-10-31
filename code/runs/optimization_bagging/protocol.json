@@ -1,0 +1,60 @@
+{
+  "purpose": "B1 fixed initialization averaging; no seed selected by score",
+  "seeds": [
+    7506,
+    17001,
+    17002,
+    17003,
+    17004
+  ],
+  "bag_sizes": [
+    1,
+    2,
+    3,
+    5
+  ],
+  "readouts": [
+    "epoch14",
+    "epoch40_ema",
+    "epoch40_ema_noise"
+  ],
+  "additional_seeds": [
+    17002,
+    17003,
+    17004
+  ],
+  "reused_seeds": [
+    7506,
+    17001
+  ],
+  "reused_directory": "optimization_regularization",
+  "fresh_trajectories": 36,
+  "new_readout_assets": 54,
+  "retained_but_not_compared": "clean epoch40",
+  "fold_seeds": [
+    20261027,
+    20261028
+  ],
+  "folds": 3,
+  "fit": "Same registered40epoch clean/noise trajectories, normalizers, dropout, optimizer and EMA as prior regularization study",
+  "supervision": "hard fitting questions only; normalization all fitting valid groups; held labels never enter fit",
+  "averaging": "Normalize each seed by its own fitting-side score scale then uniform average of first k fixed seeds",
+  "selection": "No seed cherry-picking. For later fusion use all5 seeds regardless of the highest individual or bag-size readout.",
+  "caveat": "Same training questions and already screened recipes; descriptive stability, not independent validation",
+  "validation_access": false,
+  "test_access": false,
+  "source_sha256": {
+    "optimization_bagging.py": "4dfb3f09d27fe1b726f41959a4427092c3aae0d697d2672e4b7734697477bf67",
+    "optimization_regularization.py": "891982e02d180fb8e49f157e1e37717d2e601e882abcde60f246eb30968c6f0c",
+    "answer_group_experiment.py": "ef46af67bc4549cb0318a0a4bad313e19306ab79686afaf66bfba6d1594e89ea",
+    "answer_group_model.py": "da2aea23e58310cbae6bb9b324d9443c6876bff54ab27af513d7cfde5073386d",
+    "text_features.py": "96eb0ee4d7e1a526b054db2b9fd5979997327ff0359f5de7baae89b557ab38c7",
+    "selection.py": "8b1f6ce4e7c1e445cbc0f6414a979722879d9fef9aa56073ebe052ac09563e64",
+    "experiment_utils.py": "7f6dda4550acc7c6d3cc6429e46cc8978304ea7062118876ae763030ed2daa39"
+  },
+  "reused_sha256": {
+    "protocol.json": "5950c346fa6b496acbc397f376cf776e6fb29cd30f9b1659465071cc07adb140",
+    "oof_logits.npz": "cec1a810825c4208c1b3432d61348b24a329a12e01ed5b5c23eae56992073fbb",
+    "fit_records.json": "4ac845bc66f6a655017e075e06c52fdbb5edd63b87277d3506bd9e98ec26b584"
+  }
+}

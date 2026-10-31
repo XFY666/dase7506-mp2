@@ -1,0 +1,16 @@
+{
+  "raw_normalized_shape": [
+    2,
+    4755,
+    4,
+    2
+  ],
+  "axes": [
+    "repeat",
+    "question",
+    "candidate",
+    "configuration"
+  ],
+  "label_scope": "train only",
+  "raw_source": "NumPy exported inference"
+}

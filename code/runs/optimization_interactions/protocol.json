@@ -1,0 +1,173 @@
+{
+  "purpose": "Transfer the previously useful D1+D2 candidate relations to stronger fixed learners, with matched base controls",
+  "configs": [
+    {
+      "name": "A_base",
+      "family": "A",
+      "with_cross": false,
+      "member_seeds": [
+        7506,
+        17001,
+        17002
+      ]
+    },
+    {
+      "name": "A_D1D2",
+      "family": "A",
+      "with_cross": true,
+      "member_seeds": [
+        7506,
+        17001,
+        17002
+      ]
+    },
+    {
+      "name": "Q_base",
+      "family": "Q",
+      "with_cross": false,
+      "leaves": 15
+    },
+    {
+      "name": "Q_D1D2",
+      "family": "Q",
+      "with_cross": true,
+      "leaves": 15
+    },
+    {
+      "name": "C_base",
+      "family": "C",
+      "with_cross": false,
+      "leaves": 31
+    },
+    {
+      "name": "C_D1D2",
+      "family": "C",
+      "with_cross": true,
+      "leaves": 31
+    }
+  ],
+  "fold_seeds": [
+    20261027,
+    20261028
+  ],
+  "fold_mapping": "fold[rng.permutation(allN)] = arange(N)%3",
+  "planned_model_fits": 60,
+  "group_fits": 36,
+  "tree_fits": 24,
+  "PLS_fits": 6,
+  "group_recipe": {
+    "hidden": 128,
+    "objective": "pairwise",
+    "dropout": 0.2,
+    "l2": 0.01,
+    "epochs": 14,
+    "batch_questions": 128,
+    "learning_rate": 0.001,
+    "seeds": [
+      7506,
+      17001,
+      17002
+    ],
+    "shuffle_dropout_seed": "initialization_seed+1",
+    "training_rows": "hard outer-fitting questions only",
+    "normalizer": "all valid answer groups from outer-fitting questions only",
+    "original_feature_input": "original extract_features75, identical to historical A; expanded input appends24 D1/D2 before groupmean/max/std"
+  },
+  "tree_recipe": {
+    "Q_leaves": 15,
+    "C_leaves": 31,
+    "rounds": 300,
+    "learning_rate": 0.05,
+    "l2": 10.0,
+    "min_samples_leaf": 30,
+    "seed": 20261015,
+    "early_stopping": false,
+    "training_rows": "valid candidates on hard outer-fitting questions; each question total weight4",
+    "PLS": "one PLS8 per outer fit, shared across Q/Q+/C/C+; float32 labels and repaired float64-centered embeddings/labels; fit eligible outer-training rows only",
+    "feature_order": "stablebase75,[condition54 forC],projected8,valid-centered projected8,[D1D2 appended24]"
+  },
+  "cross_feature_indices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23
+  ],
+  "cross_feature_names": [
+    "rival_answer_in_my_derivation",
+    "my_answer_in_rival_derivation",
+    "directed_derivation_advantage",
+    "directed_early_stop_warning",
+    "containment_asymmetry",
+    "reciprocal_containment",
+    "rival_answer_first_position",
+    "rival_answer_last_position",
+    "steps_after_rival_answer",
+    "rival_steps_after_my_answer",
+    "different_answer_group_count",
+    "derived_number_count",
+    "shared_intermediate_count",
+    "shared_intermediate_coverage",
+    "shared_intermediate_missing",
+    "my_intermediate_group_support_mean",
+    "my_intermediate_multigroup_fraction",
+    "my_intermediate_group_support_max",
+    "my_intermediate_exclusive_fraction",
+    "my_last_intermediate_group_support",
+    "shared_intermediate_tail_fraction",
+    "shared_prefix_fraction",
+    "other_groups_consensus_coverage",
+    "other_groups_consensus_count"
+  ],
+  "expected_feature_widths": {
+    "A_base": 1252,
+    "A_D1D2": 1324,
+    "Q_base": 91,
+    "Q_D1D2": 115,
+    "C_base": 145,
+    "C_D1D2": 169
+  },
+  "normalization": "Each scorer scaled by outer-fitting valid candidate scores only; groupmembers normalizedindividually thenfixed3seedaverage; all4candidatecentering, valid-positionstd",
+  "aggregation": "answer-group mean, zero consensus bonus",
+  "selection": "none; report all6configs, 2repeats and matchedwith/withoutD1D2 differences",
+  "statistical_scope": "Historically informed D1D2 hypothesis; repeated questions are not independent doubled sample size",
+  "validation_access": false,
+  "test_access": false,
+  "threads": 4,
+  "source_sha256": {
+    "optimization_interactions.py": "1378cc8835231aa67818aace096648dea96162eb2750dff25d94ee3a19afc83a",
+    "cross_candidate_features.py": "5624fa2cccacf2651968936e51d2b73b18cca7983afe1bcf33beccffe9f4d3da",
+    "answer_group_model.py": "da2aea23e58310cbae6bb9b324d9443c6876bff54ab27af513d7cfde5073386d",
+    "answer_group_experiment.py": "ef46af67bc4549cb0318a0a4bad313e19306ab79686afaf66bfba6d1594e89ea",
+    "condition_model.py": "bd92915169ee5fec651f8c39c2395528002a83eb47440de86a412ec3ba144dbf",
+    "condition_experiment.py": "144967e27cbb382248386f27df36cfa8e918b0a148a1189d90181a7e4baafe2a",
+    "condition_features.py": "3070f63f38a1c230fb60bed63da38bbbbf660009d47416f6f8c67550d8f2eb7f",
+    "quantitative_model.py": "10e70d35755b8a815ab885e1bf5126581c46d476c170d0618f9e68f4bb462237",
+    "quantitative_features.py": "515a02dd0f7028765312a00fd19fc88507dd04d17755b505f3a4821aca8b3ccb",
+    "text_features.py": "96eb0ee4d7e1a526b054db2b9fd5979997327ff0359f5de7baae89b557ab38c7",
+    "tree_model.py": "8168266c7593b2e62b6e3123cffcd1304cc23a99d816fa65b3f03b15bed1e4d9",
+    "common.py": "aecd10f7ff2e9e82ac5673d34d576e122caac51d2caaa7c7a8aa05906da51f6c",
+    "selection.py": "8b1f6ce4e7c1e445cbc0f6414a979722879d9fef9aa56073ebe052ac09563e64",
+    "advanced_neural.py": "b841c26706a649083fc70897adbbf9976cf590cfb7cc351393e1eff51b64291a",
+    "experiment_utils.py": "7f6dda4550acc7c6d3cc6429e46cc8978304ea7062118876ae763030ed2daa39"
+  }
+}

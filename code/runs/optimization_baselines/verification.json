@@ -1,0 +1,352 @@
+{
+  "status": "passed",
+  "model_fits": 0,
+  "training_only_prediction_replays": 48,
+  "assets_checked": 48,
+  "partitions_checked": 6,
+  "transforms_recorded": 24,
+  "source_hashes_checked": 23,
+  "max_raw_replay_error": 2.248201624865942e-14,
+  "replays": [
+    {
+      "repeat": 0,
+      "fold": 0,
+      "head": "d_pair",
+      "held_questions": 32,
+      "max_raw_error": 0.0
+    },
+    {
+      "repeat": 0,
+      "fold": 0,
+      "head": "d_list",
+      "held_questions": 32,
+      "max_raw_error": 0.0
+    },
+    {
+      "repeat": 0,
+      "fold": 0,
+      "head": "d_text",
+      "held_questions": 32,
+      "max_raw_error": 0.0
+    },
+    {
+      "repeat": 0,
+      "fold": 0,
+      "head": "A",
+      "held_questions": 32,
+      "max_raw_error": 0.0
+    },
+    {
+      "repeat": 0,
+      "fold": 0,
+      "head": "K",
+      "held_questions": 32,
+      "max_raw_error": 2.220446049250313e-15
+    },
+    {
+      "repeat": 0,
+      "fold": 0,
+      "head": "Q",
+      "held_questions": 32,
+      "max_raw_error": 0.0
+    },
+    {
+      "repeat": 0,
+      "fold": 0,
+      "head": "P",
+      "held_questions": 32,
+      "max_raw_error": 0.0
+    },
+    {
+      "repeat": 0,
+      "fold": 0,
+      "head": "C",
+      "held_questions": 32,
+      "max_raw_error": 0.0
+    },
+    {
+      "repeat": 0,
+      "fold": 1,
+      "head": "d_pair",
+      "held_questions": 32,
+      "max_raw_error": 0.0
+    },
+    {
+      "repeat": 0,
+      "fold": 1,
+      "head": "d_list",
+      "held_questions": 32,
+      "max_raw_error": 0.0
+    },
+    {
+      "repeat": 0,
+      "fold": 1,
+      "head": "d_text",
+      "held_questions": 32,
+      "max_raw_error": 0.0
+    },
+    {
+      "repeat": 0,
+      "fold": 1,
+      "head": "A",
+      "held_questions": 32,
+      "max_raw_error": 0.0
+    },
+    {
+      "repeat": 0,
+      "fold": 1,
+      "head": "K",
+      "held_questions": 32,
+      "max_raw_error": 1.85268467234323e-15
+    },
+    {
+      "repeat": 0,
+      "fold": 1,
+      "head": "Q",
+      "held_questions": 32,
+      "max_raw_error": 0.0
+    },
+    {
+      "repeat": 0,
+      "fold": 1,
+      "head": "P",
+      "held_questions": 32,
+      "max_raw_error": 0.0
+    },
+    {
+      "repeat": 0,
+      "fold": 1,
+      "head": "C",
+      "held_questions": 32,
+      "max_raw_error": 0.0
+    },
+    {
+      "repeat": 0,
+      "fold": 2,
+      "head": "d_pair",
+      "held_questions": 32,
+      "max_raw_error": 0.0
+    },
+    {
+      "repeat": 0,
+      "fold": 2,
+      "head": "d_list",
+      "held_questions": 32,
+      "max_raw_error": 0.0
+    },
+    {
+      "repeat": 0,
+      "fold": 2,
+      "head": "d_text",
+      "held_questions": 32,
+      "max_raw_error": 0.0
+    },
+    {
+      "repeat": 0,
+      "fold": 2,
+      "head": "A",
+      "held_questions": 32,
+      "max_raw_error": 0.0
+    },
+    {
+      "repeat": 0,
+      "fold": 2,
+      "head": "K",
+      "held_questions": 32,
+      "max_raw_error": 1.1102230246251565e-15
+    },
+    {
+      "repeat": 0,
+      "fold": 2,
+      "head": "Q",
+      "held_questions": 32,
+      "max_raw_error": 0.0
+    },
+    {
+      "repeat": 0,
+      "fold": 2,
+      "head": "P",
+      "held_questions": 32,
+      "max_raw_error": 0.0
+    },
+    {
+      "repeat": 0,
+      "fold": 2,
+      "head": "C",
+      "held_questions": 32,
+      "max_raw_error": 0.0
+    },
+    {
+      "repeat": 1,
+      "fold": 0,
+      "head": "d_pair",
+      "held_questions": 32,
+      "max_raw_error": 0.0
+    },
+    {
+      "repeat": 1,
+      "fold": 0,
+      "head": "d_list",
+      "held_questions": 32,
+      "max_raw_error": 0.0
+    },
+    {
+      "repeat": 1,
+      "fold": 0,
+      "head": "d_text",
+      "held_questions": 32,
+      "max_raw_error": 0.0
+    },
+    {
+      "repeat": 1,
+      "fold": 0,
+      "head": "A",
+      "held_questions": 32,
+      "max_raw_error": 0.0
+    },
+    {
+      "repeat": 1,
+      "fold": 0,
+      "head": "K",
+      "held_questions": 32,
+      "max_raw_error": 3.3306690738754696e-16
+    },
+    {
+      "repeat": 1,
+      "fold": 0,
+      "head": "Q",
+      "held_questions": 32,
+      "max_raw_error": 0.0
+    },
+    {
+      "repeat": 1,
+      "fold": 0,
+      "head": "P",
+      "held_questions": 32,
+      "max_raw_error": 0.0
+    },
+    {
+      "repeat": 1,
+      "fold": 0,
+      "head": "C",
+      "held_questions": 32,
+      "max_raw_error": 0.0
+    },
+    {
+      "repeat": 1,
+      "fold": 1,
+      "head": "d_pair",
+      "held_questions": 32,
+      "max_raw_error": 0.0
+    },
+    {
+      "repeat": 1,
+      "fold": 1,
+      "head": "d_list",
+      "held_questions": 32,
+      "max_raw_error": 0.0
+    },
+    {
+      "repeat": 1,
+      "fold": 1,
+      "head": "d_text",
+      "held_questions": 32,
+      "max_raw_error": 0.0
+    },
+    {
+      "repeat": 1,
+      "fold": 1,
+      "head": "A",
+      "held_questions": 32,
+      "max_raw_error": 0.0
+    },
+    {
+      "repeat": 1,
+      "fold": 1,
+      "head": "K",
+      "held_questions": 32,
+      "max_raw_error": 8.881784197001252e-16
+    },
+    {
+      "repeat": 1,
+      "fold": 1,
+      "head": "Q",
+      "held_questions": 32,
+      "max_raw_error": 0.0
+    },
+    {
+      "repeat": 1,
+      "fold": 1,
+      "head": "P",
+      "held_questions": 32,
+      "max_raw_error": 0.0
+    },
+    {
+      "repeat": 1,
+      "fold": 1,
+      "head": "C",
+      "held_questions": 32,
+      "max_raw_error": 0.0
+    },
+    {
+      "repeat": 1,
+      "fold": 2,
+      "head": "d_pair",
+      "held_questions": 32,
+      "max_raw_error": 0.0
+    },
+    {
+      "repeat": 1,
+      "fold": 2,
+      "head": "d_list",
+      "held_questions": 32,
+      "max_raw_error": 0.0
+    },
+    {
+      "repeat": 1,
+      "fold": 2,
+      "head": "d_text",
+      "held_questions": 32,
+      "max_raw_error": 0.0
+    },
+    {
+      "repeat": 1,
+      "fold": 2,
+      "head": "A",
+      "held_questions": 32,
+      "max_raw_error": 0.0
+    },
+    {
+      "repeat": 1,
+      "fold": 2,
+      "head": "K",
+      "held_questions": 32,
+      "max_raw_error": 2.248201624865942e-14
+    },
+    {
+      "repeat": 1,
+      "fold": 2,
+      "head": "Q",
+      "held_questions": 32,
+      "max_raw_error": 0.0
+    },
+    {
+      "repeat": 1,
+      "fold": 2,
+      "head": "P",
+      "held_questions": 32,
+      "max_raw_error": 0.0
+    },
+    {
+      "repeat": 1,
+      "fold": 2,
+      "head": "C",
+      "held_questions": 32,
+      "max_raw_error": 0.0
+    }
+  ],
+  "invalid_attempt_preserved_completed_fits": 34,
+  "original_invalid_source_hash_verified": true,
+  "validation_access": false,
+  "test_access": false
+}

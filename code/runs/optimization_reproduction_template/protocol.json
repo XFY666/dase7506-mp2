@@ -1,0 +1,23 @@
+{
+  "status": "prepared_not_run",
+  "source_sha256": "5f655d91ba5200d7df4c485d5f81302cb060114d8d3384386142cee45fa1a323",
+  "created_utc": "2026-10-26T10:29:28.648192+00:00",
+  "selected_recipe": {
+    "name": "G_noise_cross__roles_cnn_0.25",
+    "weights": {
+      "Anoise_5": 0.09375,
+      "K": 0.046875,
+      "Qcross": 0.046875,
+      "P": 0.375,
+      "Ccross": 0.1875,
+      "roles_cnn": 0.25
+    }
+  },
+  "planned_model_fits": 10,
+  "new_fits": 0,
+  "source_file_count": 39,
+  "validation_evaluations": 0,
+  "test_access": false,
+  "command": "python -B train_optimized.py --recipe runs/optimization_reproduction_template/selected_recipe.json --output runs/reproduced_optimized --work-dir runs/optimized_reproduction_work --core-python E:/Edge/7506/MP2/.local/venv/Scripts/python.exe --sequence-python E:/Edge/7506/MP2/.local/sequenceenv/Scripts/python.exe",
+  "metadata_prerequisite": "For roles_cnn: runs/optimization_sequence/{protocol.json,summary.json,fit_records.json,source_evidence.json} and docs/optimization_refit_protocol.md; no historical model assets required"
+}

@@ -1,0 +1,574 @@
+{
+  "status": "complete",
+  "configs": [
+    {
+      "name": "epoch14_bag1",
+      "recipe": "epoch14",
+      "seeds": [
+        7506
+      ],
+      "repeats": [
+        {
+          "metrics": {
+            "correct": 4389,
+            "n": 4755,
+            "accuracy": 92.30283911671924,
+            "hard_correct": 1748,
+            "hard_n": 2114,
+            "hard_accuracy": 82.6868495742668
+          },
+          "group_ce": 0.42319607831856115,
+          "repairs": 0,
+          "regressions": 0,
+          "fold_correct": [
+            576,
+            603,
+            569
+          ]
+        },
+        {
+          "metrics": {
+            "correct": 4401,
+            "n": 4755,
+            "accuracy": 92.55520504731861,
+            "hard_correct": 1760,
+            "hard_n": 2114,
+            "hard_accuracy": 83.25449385052033
+          },
+          "group_ce": 0.4110671613308101,
+          "repairs": 0,
+          "regressions": 0,
+          "fold_correct": [
+            560,
+            596,
+            604
+          ]
+        }
+      ]
+    },
+    {
+      "name": "epoch14_bag2",
+      "recipe": "epoch14",
+      "seeds": [
+        7506,
+        17001
+      ],
+      "repeats": [
+        {
+          "metrics": {
+            "correct": 4390,
+            "n": 4755,
+            "accuracy": 92.32386961093586,
+            "hard_correct": 1749,
+            "hard_n": 2114,
+            "hard_accuracy": 82.7341532639546
+          },
+          "group_ce": 0.41600037028406006,
+          "repairs": 34,
+          "regressions": 33,
+          "fold_correct": [
+            569,
+            608,
+            572
+          ]
+        },
+        {
+          "metrics": {
+            "correct": 4391,
+            "n": 4755,
+            "accuracy": 92.34490010515248,
+            "hard_correct": 1750,
+            "hard_n": 2114,
+            "hard_accuracy": 82.78145695364239
+          },
+          "group_ce": 0.40867257064047724,
+          "repairs": 12,
+          "regressions": 22,
+          "fold_correct": [
+            555,
+            589,
+            606
+          ]
+        }
+      ]
+    },
+    {
+      "name": "epoch14_bag3",
+      "recipe": "epoch14",
+      "seeds": [
+        7506,
+        17001,
+        17002
+      ],
+      "repeats": [
+        {
+          "metrics": {
+            "correct": 4396,
+            "n": 4755,
+            "accuracy": 92.45005257623554,
+            "hard_correct": 1755,
+            "hard_n": 2114,
+            "hard_accuracy": 83.01797540208136
+          },
+          "group_ce": 0.4116517451774664,
+          "repairs": 35,
+          "regressions": 28,
+          "fold_correct": [
+            568,
+            604,
+            583
+          ]
+        },
+        {
+          "metrics": {
+            "correct": 4400,
+            "n": 4755,
+            "accuracy": 92.534174553102,
+            "hard_correct": 1759,
+            "hard_n": 2114,
+            "hard_accuracy": 83.20719016083254
+          },
+          "group_ce": 0.40718826789462975,
+          "repairs": 24,
+          "regressions": 25,
+          "fold_correct": [
+            562,
+            590,
+            607
+          ]
+        }
+      ]
+    },
+    {
+      "name": "epoch14_bag5",
+      "recipe": "epoch14",
+      "seeds": [
+        7506,
+        17001,
+        17002,
+        17003,
+        17004
+      ],
+      "repeats": [
+        {
+          "metrics": {
+            "correct": 4405,
+            "n": 4755,
+            "accuracy": 92.63932702418506,
+            "hard_correct": 1764,
+            "hard_n": 2114,
+            "hard_accuracy": 83.44370860927152
+          },
+          "group_ce": 0.41094865053843666,
+          "repairs": 46,
+          "regressions": 30,
+          "fold_correct": [
+            566,
+            609,
+            589
+          ]
+        },
+        {
+          "metrics": {
+            "correct": 4390,
+            "n": 4755,
+            "accuracy": 92.32386961093586,
+            "hard_correct": 1749,
+            "hard_n": 2114,
+            "hard_accuracy": 82.7341532639546
+          },
+          "group_ce": 0.4062045545282612,
+          "repairs": 26,
+          "regressions": 37,
+          "fold_correct": [
+            559,
+            592,
+            598
+          ]
+        }
+      ]
+    },
+    {
+      "name": "epoch40_ema_bag1",
+      "recipe": "epoch40_ema",
+      "seeds": [
+        7506
+      ],
+      "repeats": [
+        {
+          "metrics": {
+            "correct": 4410,
+            "n": 4755,
+            "accuracy": 92.74447949526814,
+            "hard_correct": 1769,
+            "hard_n": 2114,
+            "hard_accuracy": 83.6802270577105
+          },
+          "group_ce": 0.41358473619047287,
+          "repairs": 0,
+          "regressions": 0,
+          "fold_correct": [
+            574,
+            605,
+            590
+          ]
+        },
+        {
+          "metrics": {
+            "correct": 4399,
+            "n": 4755,
+            "accuracy": 92.51314405888539,
+            "hard_correct": 1758,
+            "hard_n": 2114,
+            "hard_accuracy": 83.15988647114474
+          },
+          "group_ce": 0.40977944799197324,
+          "repairs": 0,
+          "regressions": 0,
+          "fold_correct": [
+            563,
+            588,
+            607
+          ]
+        }
+      ]
+    },
+    {
+      "name": "epoch40_ema_bag2",
+      "recipe": "epoch40_ema",
+      "seeds": [
+        7506,
+        17001
+      ],
+      "repeats": [
+        {
+          "metrics": {
+            "correct": 4410,
+            "n": 4755,
+            "accuracy": 92.74447949526814,
+            "hard_correct": 1769,
+            "hard_n": 2114,
+            "hard_accuracy": 83.6802270577105
+          },
+          "group_ce": 0.410810789092041,
+          "repairs": 14,
+          "regressions": 14,
+          "fold_correct": [
+            572,
+            605,
+            592
+          ]
+        },
+        {
+          "metrics": {
+            "correct": 4400,
+            "n": 4755,
+            "accuracy": 92.534174553102,
+            "hard_correct": 1759,
+            "hard_n": 2114,
+            "hard_accuracy": 83.20719016083254
+          },
+          "group_ce": 0.40707135566267383,
+          "repairs": 13,
+          "regressions": 12,
+          "fold_correct": [
+            562,
+            588,
+            609
+          ]
+        }
+      ]
+    },
+    {
+      "name": "epoch40_ema_bag3",
+      "recipe": "epoch40_ema",
+      "seeds": [
+        7506,
+        17001,
+        17002
+      ],
+      "repeats": [
+        {
+          "metrics": {
+            "correct": 4412,
+            "n": 4755,
+            "accuracy": 92.78654048370136,
+            "hard_correct": 1771,
+            "hard_n": 2114,
+            "hard_accuracy": 83.77483443708608
+          },
+          "group_ce": 0.40949795158416746,
+          "repairs": 18,
+          "regressions": 16,
+          "fold_correct": [
+            573,
+            609,
+            589
+          ]
+        },
+        {
+          "metrics": {
+            "correct": 4402,
+            "n": 4755,
+            "accuracy": 92.57623554153523,
+            "hard_correct": 1761,
+            "hard_n": 2114,
+            "hard_accuracy": 83.30179754020813
+          },
+          "group_ce": 0.40640245071699976,
+          "repairs": 18,
+          "regressions": 15,
+          "fold_correct": [
+            562,
+            594,
+            605
+          ]
+        }
+      ]
+    },
+    {
+      "name": "epoch40_ema_bag5",
+      "recipe": "epoch40_ema",
+      "seeds": [
+        7506,
+        17001,
+        17002,
+        17003,
+        17004
+      ],
+      "repeats": [
+        {
+          "metrics": {
+            "correct": 4417,
+            "n": 4755,
+            "accuracy": 92.89169295478443,
+            "hard_correct": 1776,
+            "hard_n": 2114,
+            "hard_accuracy": 84.01135288552507
+          },
+          "group_ce": 0.40859123776015716,
+          "repairs": 22,
+          "regressions": 15,
+          "fold_correct": [
+            577,
+            608,
+            591
+          ]
+        },
+        {
+          "metrics": {
+            "correct": 4401,
+            "n": 4755,
+            "accuracy": 92.55520504731861,
+            "hard_correct": 1760,
+            "hard_n": 2114,
+            "hard_accuracy": 83.25449385052033
+          },
+          "group_ce": 0.4053812151410774,
+          "repairs": 21,
+          "regressions": 19,
+          "fold_correct": [
+            560,
+            592,
+            608
+          ]
+        }
+      ]
+    },
+    {
+      "name": "epoch40_ema_noise_bag1",
+      "recipe": "epoch40_ema_noise",
+      "seeds": [
+        7506
+      ],
+      "repeats": [
+        {
+          "metrics": {
+            "correct": 4412,
+            "n": 4755,
+            "accuracy": 92.78654048370136,
+            "hard_correct": 1771,
+            "hard_n": 2114,
+            "hard_accuracy": 83.77483443708608
+          },
+          "group_ce": 0.4140424986918634,
+          "repairs": 0,
+          "regressions": 0,
+          "fold_correct": [
+            574,
+            606,
+            591
+          ]
+        },
+        {
+          "metrics": {
+            "correct": 4399,
+            "n": 4755,
+            "accuracy": 92.51314405888539,
+            "hard_correct": 1758,
+            "hard_n": 2114,
+            "hard_accuracy": 83.15988647114474
+          },
+          "group_ce": 0.41015262817988324,
+          "repairs": 0,
+          "regressions": 0,
+          "fold_correct": [
+            563,
+            589,
+            606
+          ]
+        }
+      ]
+    },
+    {
+      "name": "epoch40_ema_noise_bag2",
+      "recipe": "epoch40_ema_noise",
+      "seeds": [
+        7506,
+        17001
+      ],
+      "repeats": [
+        {
+          "metrics": {
+            "correct": 4413,
+            "n": 4755,
+            "accuracy": 92.80757097791799,
+            "hard_correct": 1772,
+            "hard_n": 2114,
+            "hard_accuracy": 83.8221381267739
+          },
+          "group_ce": 0.4107001914655987,
+          "repairs": 15,
+          "regressions": 14,
+          "fold_correct": [
+            574,
+            607,
+            591
+          ]
+        },
+        {
+          "metrics": {
+            "correct": 4401,
+            "n": 4755,
+            "accuracy": 92.55520504731861,
+            "hard_correct": 1760,
+            "hard_n": 2114,
+            "hard_accuracy": 83.25449385052033
+          },
+          "group_ce": 0.40723248401473233,
+          "repairs": 13,
+          "regressions": 11,
+          "fold_correct": [
+            560,
+            591,
+            609
+          ]
+        }
+      ]
+    },
+    {
+      "name": "epoch40_ema_noise_bag3",
+      "recipe": "epoch40_ema_noise",
+      "seeds": [
+        7506,
+        17001,
+        17002
+      ],
+      "repeats": [
+        {
+          "metrics": {
+            "correct": 4409,
+            "n": 4755,
+            "accuracy": 92.72344900105153,
+            "hard_correct": 1768,
+            "hard_n": 2114,
+            "hard_accuracy": 83.6329233680227
+          },
+          "group_ce": 0.4095590624859429,
+          "repairs": 17,
+          "regressions": 20,
+          "fold_correct": [
+            574,
+            607,
+            587
+          ]
+        },
+        {
+          "metrics": {
+            "correct": 4401,
+            "n": 4755,
+            "accuracy": 92.55520504731861,
+            "hard_correct": 1760,
+            "hard_n": 2114,
+            "hard_accuracy": 83.25449385052033
+          },
+          "group_ce": 0.40631114138759944,
+          "repairs": 17,
+          "regressions": 15,
+          "fold_correct": [
+            561,
+            593,
+            606
+          ]
+        }
+      ]
+    },
+    {
+      "name": "epoch40_ema_noise_bag5",
+      "recipe": "epoch40_ema_noise",
+      "seeds": [
+        7506,
+        17001,
+        17002,
+        17003,
+        17004
+      ],
+      "repeats": [
+        {
+          "metrics": {
+            "correct": 4414,
+            "n": 4755,
+            "accuracy": 92.8286014721346,
+            "hard_correct": 1773,
+            "hard_n": 2114,
+            "hard_accuracy": 83.86944181646169
+          },
+          "group_ce": 0.4085948965766445,
+          "repairs": 20,
+          "regressions": 18,
+          "fold_correct": [
+            577,
+            606,
+            590
+          ]
+        },
+        {
+          "metrics": {
+            "correct": 4402,
+            "n": 4755,
+            "accuracy": 92.57623554153523,
+            "hard_correct": 1761,
+            "hard_n": 2114,
+            "hard_accuracy": 83.30179754020813
+          },
+          "group_ce": 0.40521999145211657,
+          "repairs": 22,
+          "regressions": 19,
+          "fold_correct": [
+            561,
+            592,
+            608
+          ]
+        }
+      ]
+    }
+  ],
+  "model_fit_calls": 36,
+  "new_readout_assets": 54,
+  "reused_seed_count": 2,
+  "full_model_fitted": false,
+  "validation_evaluations": 0,
+  "test_access": false,
+  "seconds": 224.8081688000093,
+  "decision": "All5 fixed seeds for subsequent fusion; bag-size comparisons are descriptive only"
+}

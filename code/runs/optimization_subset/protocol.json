@@ -1,0 +1,60 @@
+{
+  "created_utc": "2026-10-26T09:04:50.483372+00:00",
+  "scope": "G1 matched subset augmentation",
+  "data_scope": [
+    "train"
+  ],
+  "validation_access": false,
+  "test_access": false,
+  "fold_seeds": [
+    20261027,
+    20261028
+  ],
+  "folds": 3,
+  "fold_assignment": "fold[default_rng(seed).permutation(N)]=arange(N)%3",
+  "arms": [
+    "original",
+    "drop_one_half"
+  ],
+  "model_seeds": [
+    7506,
+    17001,
+    17002
+  ],
+  "configuration": {
+    "representation": "group",
+    "objective": "pairwise",
+    "dropout": 0.2,
+    "hidden": 128,
+    "l2": 0.01
+  },
+  "epochs": 14,
+  "batch_questions": 128,
+  "optimizer": {
+    "name": "Adam",
+    "learning_rate": 0.001,
+    "beta1": 0.9,
+    "beta2": 0.999,
+    "epsilon": 1e-08
+  },
+  "augmentation": {
+    "probability": 0.5,
+    "selection": "uniform among eligible drop-one views for each sampled fitting question; fallback original if none eligible",
+    "eligibility": "retains at least one correct and one incorrect VALID candidate; reference labels consulted only for current fitting-side view filtering and losses",
+    "representation": "four original slots retained; removed slot empty invalid text and zero embedding; remaining embeddings untouched",
+    "recomputed": "original75 text features, answer groups, support, pooled embeddings/text/max/std; no stale original-support features",
+    "randomness": "Separateaugmentation RNG seed=model_seed+20261026+1000*repeat+100*fold; initialization/shuffle/dropout RNG exactly matched across arms",
+    "budget": "one view per original training question; same epochs, batches and optimizer updates; no added training rows"
+  },
+  "statistics": "one mean/scale per outer partition, fitted ONLY on valid original-view groups of all fitting questions; shared across arms and all model seeds",
+  "training_questions": "original difficult outer-fitting questions; held-out and easy questions never enter optimizer batches",
+  "heldout": "original four-candidate view only",
+  "seed_ensemble": "Each member scaled on original fitting inputs; average three normalized member scores; one fitting-only ensemble scale per arm/partition",
+  "planned_model_fits": 36,
+  "normalizer_fits": 6,
+  "full_training_refits": 0,
+  "threads": 4,
+  "selection": "highest summed repeat hard-correct, then lower mean normalized group CE, original on exact tie; never choose an individual seed",
+  "checks": "support and deletion semantics, unchanged original data, synthetic candidate permutation/empty input, matched init and RNG/update counts, all held-out NumPy export replay",
+  "limitations": "Original base75 has existing float32 centering; do not claim exact bitwise permutation invariance. Repeated training questions are correlated and OOF selection is exploratory."
+}

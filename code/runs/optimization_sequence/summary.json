@@ -1,0 +1,204 @@
+{
+  "recipes": [
+    {
+      "recipe": "head64",
+      "repeats": [
+        {
+          "seed": 20261027,
+          "metrics": {
+            "correct": 4363,
+            "n": 4755,
+            "accuracy": 91.75604626708727,
+            "hard_correct": 1722,
+            "hard_n": 2114,
+            "hard_accuracy": 81.45695364238411
+          },
+          "group_ce": 0.4526258707046509,
+          "repairs_vs_head64": 0,
+          "regressions_vs_head64": 0
+        },
+        {
+          "seed": 20261028,
+          "metrics": {
+            "correct": 4384,
+            "n": 4755,
+            "accuracy": 92.19768664563617,
+            "hard_correct": 1743,
+            "hard_n": 2114,
+            "hard_accuracy": 82.45033112582782
+          },
+          "group_ce": 0.437727153301239,
+          "repairs_vs_head64": 0,
+          "regressions_vs_head64": 0
+        }
+      ],
+      "mean_hard_correct": 1732.5,
+      "mean_group_ce": 0.44517651200294495
+    },
+    {
+      "recipe": "headtail",
+      "repeats": [
+        {
+          "seed": 20261027,
+          "metrics": {
+            "correct": 4355,
+            "n": 4755,
+            "accuracy": 91.58780231335436,
+            "hard_correct": 1714,
+            "hard_n": 2114,
+            "hard_accuracy": 81.07852412488174
+          },
+          "group_ce": 0.4564218819141388,
+          "repairs_vs_head64": 24,
+          "regressions_vs_head64": 32
+        },
+        {
+          "seed": 20261028,
+          "metrics": {
+            "correct": 4381,
+            "n": 4755,
+            "accuracy": 92.13459516298633,
+            "hard_correct": 1740,
+            "hard_n": 2114,
+            "hard_accuracy": 82.30842005676443
+          },
+          "group_ce": 0.43734753131866455,
+          "repairs_vs_head64": 5,
+          "regressions_vs_head64": 8
+        }
+      ],
+      "mean_hard_correct": 1727.0,
+      "mean_group_ce": 0.4468847066164017
+    },
+    {
+      "recipe": "headtail_roles",
+      "repeats": [
+        {
+          "seed": 20261027,
+          "metrics": {
+            "correct": 4374,
+            "n": 4755,
+            "accuracy": 91.98738170347002,
+            "hard_correct": 1733,
+            "hard_n": 2114,
+            "hard_accuracy": 81.97729422894986
+          },
+          "group_ce": 0.44340232014656067,
+          "repairs_vs_head64": 30,
+          "regressions_vs_head64": 19
+        },
+        {
+          "seed": 20261028,
+          "metrics": {
+            "correct": 4391,
+            "n": 4755,
+            "accuracy": 92.34490010515248,
+            "hard_correct": 1750,
+            "hard_n": 2114,
+            "hard_accuracy": 82.78145695364239
+          },
+          "group_ce": 0.43078139424324036,
+          "repairs_vs_head64": 34,
+          "regressions_vs_head64": 27
+        }
+      ],
+      "mean_hard_correct": 1741.5,
+      "mean_group_ce": 0.4370918571949005
+    },
+    {
+      "recipe": "headtail_format",
+      "repeats": [
+        {
+          "seed": 20261027,
+          "metrics": {
+            "correct": 4368,
+            "n": 4755,
+            "accuracy": 91.86119873817034,
+            "hard_correct": 1727,
+            "hard_n": 2114,
+            "hard_accuracy": 81.69347209082308
+          },
+          "group_ce": 0.4524384140968323,
+          "repairs_vs_head64": 8,
+          "regressions_vs_head64": 3
+        },
+        {
+          "seed": 20261028,
+          "metrics": {
+            "correct": 4383,
+            "n": 4755,
+            "accuracy": 92.17665615141955,
+            "hard_correct": 1742,
+            "hard_n": 2114,
+            "hard_accuracy": 82.40302743614002
+          },
+          "group_ce": 0.43686383962631226,
+          "repairs_vs_head64": 8,
+          "regressions_vs_head64": 9
+        }
+      ],
+      "mean_hard_correct": 1734.5,
+      "mean_group_ce": 0.44465112686157227
+    }
+  ],
+  "selected": {
+    "recipe": "headtail_roles",
+    "repeats": [
+      {
+        "seed": 20261027,
+        "metrics": {
+          "correct": 4374,
+          "n": 4755,
+          "accuracy": 91.98738170347002,
+          "hard_correct": 1733,
+          "hard_n": 2114,
+          "hard_accuracy": 81.97729422894986
+        },
+        "group_ce": 0.44340232014656067,
+        "repairs_vs_head64": 30,
+        "regressions_vs_head64": 19
+      },
+      {
+        "seed": 20261028,
+        "metrics": {
+          "correct": 4391,
+          "n": 4755,
+          "accuracy": 92.34490010515248,
+          "hard_correct": 1750,
+          "hard_n": 2114,
+          "hard_accuracy": 82.78145695364239
+        },
+        "group_ce": 0.43078139424324036,
+        "repairs_vs_head64": 34,
+        "regressions_vs_head64": 27
+      }
+    ],
+    "mean_hard_correct": 1741.5,
+    "mean_group_ce": 0.4370918571949005
+  },
+  "model_fit_calls": 48,
+  "vocabulary_fits": 48,
+  "numeric_normalizer_fits": 48,
+  "fold_seeds": [
+    20261027,
+    20261028
+  ],
+  "hard_questions": 2114,
+  "total_seconds": 606.9828353000048,
+  "validation_evaluations": 0,
+  "test_access": false,
+  "max_fold_asset_bytes": 1277855,
+  "max_numpy_export_error": 1.1920928955078125e-06,
+  "full_model_fitted": false,
+  "source_sha256": {
+    "optimization_sequence.py": "0bfdd61832f6b6d78c8936ca19215b5d09a02c05bc623a81930327d7e763d5fd",
+    "optimization_sequence_model.py": "20451c98236cdb9a270da5ef6b5ed496444fdc6e219db760948b4077ce8dea13",
+    "sequence_experiment.py": "fd1277bb265ae56e6e436bb2575d7f720d256f0dc0f3a2132cd2ebb95d1c7150",
+    "sequence_model.py": "ef0ff6104e875338e9c6b3032cb8cd670f1e412064a0a2e4c924984b60ce4b07",
+    "common.py": "aecd10f7ff2e9e82ac5673d34d576e122caac51d2caaa7c7a8aa05906da51f6c",
+    "text_features.py": "96eb0ee4d7e1a526b054db2b9fd5979997327ff0359f5de7baae89b557ab38c7",
+    "selection.py": "8b1f6ce4e7c1e445cbc0f6414a979722879d9fef9aa56073ebe052ac09563e64",
+    "experiment_utils.py": "7f6dda4550acc7c6d3cc6429e46cc8978304ea7062118876ae763030ed2daa39"
+  },
+  "interpretation": "Repeated observations of the same training questions; exploratory family selection, not independent trials or untouched generalization estimate"
+}

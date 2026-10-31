@@ -1,0 +1,43 @@
+{
+  "status": "complete",
+  "summary_sha256_before": "77155f54a20a925882c244827e7c2d51ccd2071069e4a62199efca5910a0ea7e",
+  "summary_sha256_after": "154d56171e073449f14a5b1812228dfcd09870bd75cdfdca87c41886cc239614",
+  "analysis_code_sha256": "02d9b2c2ba52d162fd612174119306d25d1c09be4ae134f73a6b4bae562ada9d",
+  "created_utc": "2026-10-26T10:49:35.931856+00:00",
+  "examples": [
+    {
+      "id": "gsm8k:fd23d86676d457a5edd2ad70cc5accd6b3e3c36e975e3b85316a5e7990357a36",
+      "index": 444,
+      "candidate_answers": [
+        null,
+        "45",
+        "40",
+        null
+      ],
+      "reference_answer": "40",
+      "selected_answer": "45",
+      "reasoning": "The return from school to home is another 50 m, so 50+50+x=140 gives x=40. The selected trace instead sets the return leg to x and solves 50+2x=140, obtaining 45. Its algebra is consistent with the wrong equation; the error is assigning the route quantities. Three traces state 40, but two lack a recognized final-answer marker; official parses are None, 45, 40, None. The valid comparison is therefore one candidate per answer group. A large score margin does not certify semantic correctness."
+    },
+    {
+      "id": "gsm8k:eb1fbf0cbd85808aad3b8deda1374acf76a5cbb9327fc93e661b01da20249712",
+      "index": 229,
+      "candidate_answers": [
+        "0",
+        "0",
+        "12",
+        "12"
+      ],
+      "reference_answer": "12",
+      "selected_answer": "12",
+      "reasoning": "The four candidate answers are 0, 0, 12 and 12: a tied plurality, not an incorrect strict majority. All use 27 red and 48 blue flowers. The first two incorrectly evaluate 96-9-27-48 as 0; the selected third candidate obtains 12, matching the fourth and the reference. The baseline resolves the tie to 0; the learned scores select the correct answer group."
+    }
+  ],
+  "correction": "Example 229 is a 2-2 tied plurality; source labels now derive the vote pattern.",
+  "title_function_synthetic_checks": 3,
+  "prediction_reruns": 0,
+  "new_fits": 0,
+  "selected_examples_changed": false,
+  "model_changes": false,
+  "test_inputs_read": false,
+  "human_review": "pending"
+}

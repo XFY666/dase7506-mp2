@@ -1,0 +1,42 @@
+{
+  "purpose": "E1 and G2 input-token matched comparisons; no validation or test stage",
+  "recipes": [
+    "head64",
+    "headtail",
+    "headtail_roles",
+    "headtail_format"
+  ],
+  "fold_seeds": [
+    20261027,
+    20261028
+  ],
+  "folds": 3,
+  "fold_assignment": "fold[default_rng(seed).permutation(N)] = arange(N) % 3",
+  "inner_split": "85/15 of outer fitting questions, default_rng(outer_seed+100+fold)",
+  "initialization_seed": 7506,
+  "max_epochs": 24,
+  "patience": 4,
+  "minimum_early_improvement": 0.0001,
+  "learners": "historical joint WordCNN, unchanged architecture/optimizer/objective",
+  "architecture": "random token embedding32; ReLU Conv3/5 each32; mean/max pools; concatenate1024+75 numeric inputs; tanh64; scalar",
+  "optimizer": "AdamW lr.001 weight_decay.001 gradient_clip5; batch64",
+  "objective": "question-balanced answer-group-mean cross entropy on eligible fitting questions",
+  "head64": "original first64 question tokens and <num> numeric replacement",
+  "headtail": "first32+last32 question tokens if longer than64; original <num> replacement",
+  "headtail_roles": "same head/tail; one combined numeric token tracks first-occurrence question number q0..q31/qx or derived, own-answer and different-rival-answer membership; combined flags preserve collisions",
+  "role_numerics": "Exact Fraction for unsigned literals, simple a/b fractions and numeric LaTeX fractions; unary signs remain separate tokens; no reference answers are read by tokenizer; derived means not a question literal, not a correctness claim",
+  "headtail_format": "same head/tail and <num>; remove markup dollars/backticks/bold/headings and text style wrappers; no mathematical operator rewriting",
+  "candidate_truncation": "unchanged first128 + gap + last128 if over256; sequence322",
+  "vocabulary": "max4096, fitted only on fitting-side token frequencies; role tokens fixed a priori; no external data or pretrained weights",
+  "numeric_inputs": "unchanged1024 provided embeddings+historical stable75 features; valid fitting candidates determine means/stds; clipping[-8,8]",
+  "normalizers_and_stopping": "inner-fit vocab/statistics for early fit, fresh outer-fit vocab/statistics and fresh model for outer refit; heldout labels never in model training/transforms",
+  "score_scale": "within-question-centered raw scores on valid outer-fitting candidates only",
+  "screen_selection": "highest average correct across two repeated OOF evaluations; lower mean normalized groupCE; recipe order",
+  "uncertainty": "Same2114 hard questions repeated; never treat4228 as independent. This is exploratory selection, not unbiased full-search generalization.",
+  "max_model_fits": 48,
+  "full_training_refit": "not in this stage",
+  "later_E2_C2": "not executed; requires separate preregistration and train-reference-only auxiliary labels",
+  "threads": 4,
+  "source_files_read_only": true,
+  "cost_probe": "Record first completed recipe cost projection; hard stop at3600seconds elapsed before starting another fit; unfinished screen cannot select a winner"
+}
